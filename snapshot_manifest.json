@@ -1,0 +1,165 @@
+{
+  "files": [
+    {
+      "bytes": 55,
+      "path": ".gitignore",
+      "sha256": "4ba859c0b25cbb1709b401dd85682d4445f38e7d9237a9b90cf3f9fca642f00e"
+    },
+    {
+      "bytes": 2367,
+      "path": "AGENTS.md",
+      "sha256": "e1e288d4ad55d6804c322a165ee74bfa0e28ef668fd118a4a37794bfd20cb393"
+    },
+    {
+      "bytes": 907,
+      "path": "COPYING.md",
+      "sha256": "2ea9d486f9dc494c4ded969798acb6c7688ec71140bf33dcb2b2e1d857883873"
+    },
+    {
+      "bytes": 1065,
+      "path": "LICENSE",
+      "sha256": "a92600540b1ab7a18301e2632a29334b3df227ad836e88df9967d69e3c86db66"
+    },
+    {
+      "bytes": 7545,
+      "path": "README.md",
+      "sha256": "a1cc087ec529636a7d0573f1f398a7aa13d9dc812a2fe0f0df85fb2d7caf717d"
+    },
+    {
+      "bytes": 4398,
+      "path": "STATUS.md",
+      "sha256": "7546c5a5449dfeb43c8575f9939e3f0971b4d7869377ccb6864c0bc082f8eef4"
+    },
+    {
+      "bytes": 2261,
+      "path": "WORKSPACES.md",
+      "sha256": "e10b268c0668b9dec24dec715f6462fda7cf2d6df04fbc3694def4dcb886fd66"
+    },
+    {
+      "bytes": 497,
+      "path": "audits/README.md",
+      "sha256": "ecd90ade69c5433e6cb975ed4e04d96a5e8c505085d01838229f25bea3e1ed0a"
+    },
+    {
+      "bytes": 5890,
+      "path": "checks/verify_normalizer.py",
+      "sha256": "69497daee612f35840a1dab48884c65ff38f9344f46898a1342747b224e99409"
+    },
+    {
+      "bytes": 6990,
+      "path": "checks/verify_normalizer_toy.py",
+      "sha256": "01ab97870677f22b7ce784e185fe6560e3527836aabcf9870bbb5e0299454321"
+    },
+    {
+      "bytes": 2459,
+      "path": "checks/verify_repository_integrity.py",
+      "sha256": "a00edffbdbb000e98bd765b9fd1b222507b265702372cb55c777b88844434e01"
+    },
+    {
+      "bytes": 4229,
+      "path": "data/monster_character_excerpt.json",
+      "sha256": "70218f4f87e67896a64c8577b7a86fb0c46cebe3c71678397a7654b8ef0596e0"
+    },
+    {
+      "bytes": 74753,
+      "path": "provenance/Monster_Average_Transport_Checkpoint.zip",
+      "sha256": "49cf36598860bba792dd5c4a19c8530298b1d11315721c484a61a5605a978cfb"
+    },
+    {
+      "bytes": 31433,
+      "path": "provenance/Monster_Bipartite_Correlations_Checkpoint.zip",
+      "sha256": "c84add074c170ef9c144a94c1e089f8853d2e22323416af487dfcc058bd59741"
+    },
+    {
+      "bytes": 10771,
+      "path": "provenance/Monster_Correlation_Local_Rigidity_Checkpoint.zip",
+      "sha256": "44ec14514af43dc75d3472ece10f3f2b15c0637ca4d73235faea7035cff27355"
+    },
+    {
+      "bytes": 51846,
+      "path": "provenance/Monster_Global_Rounding_Checkpoint.zip",
+      "sha256": "5bf8a6ae9106e8126179d466c326cacb3b485e3dcb89dd761a07905a48daaf94"
+    },
+    {
+      "bytes": 236980,
+      "path": "provenance/Repository_Seed_2026-09-23.zip",
+      "sha256": "1124a6477e3a71d43c5af08134dcd5347e253ce6fdd57aa257c88992a72661c8"
+    },
+    {
+      "bytes": 2568,
+      "path": "provenance/import_manifest.json",
+      "sha256": "c8a62f6d0b92733dc507756b37a3c3923b9c0715f8844c3eed7f8098d40700c4"
+    },
+    {
+      "bytes": 6248,
+      "path": "provenance/repository_import.json",
+      "sha256": "40cbbd8dc95d14f8e278e6ea53bd8df2ae44478bb3c58628b5255ff46cbdf6f5"
+    },
+    {
+      "bytes": 115,
+      "path": "requirements.txt",
+      "sha256": "3169cba7975e0b743bc2e1b16099491cdc999dacec349ffeadd808298327f559"
+    },
+    {
+      "bytes": 16822,
+      "path": "research/01_local_rigidity.md",
+      "sha256": "c1938cbc79c8deff194d68e6534a29acb4ea6336873187492652405d06a4bf8a"
+    },
+    {
+      "bytes": 25520,
+      "path": "research/02_pair_correlations.md",
+      "sha256": "1cca118e861977dfe3496c1eee23b53dd78bf8c78da9078a143228e85f810191"
+    },
+    {
+      "bytes": 20336,
+      "path": "research/03_uniform_axis_rounding.md",
+      "sha256": "d7d3f30e974354929d06b5f6973686f2b88e033cc335a60865c275853282d2b4"
+    },
+    {
+      "bytes": 23384,
+      "path": "research/04_average_transport.md",
+      "sha256": "705d25aea83fc81f84391186895792bf54907cfaa1a4895498c33867d40a9ed4"
+    },
+    {
+      "bytes": 21830,
+      "path": "research/05_normalizer_rounding.md",
+      "sha256": "ae570ca7aab3a41a33e81c092611779b53f68f5f26a9dca16b87a6a7a8bbe6fc"
+    },
+    {
+      "bytes": 249,
+      "path": "results/environment.json",
+      "sha256": "a2bca27d98f91806f527103ca01f11699cf3e1b78b92050a24ae56f690ccf156"
+    },
+    {
+      "bytes": 2664,
+      "path": "results/normalizer_exact.json",
+      "sha256": "25302b964def841d062101339fbc9baff43f98eb7f9446bd241e83c5c926623d"
+    },
+    {
+      "bytes": 2843,
+      "path": "results/normalizer_toy.json",
+      "sha256": "6f4fccfaee44033d08efb2ba4229155c61a0a4f2c19e17a3eaf83cfef2ea16ed"
+    },
+    {
+      "bytes": 2969,
+      "path": "results/verification_summary.json",
+      "sha256": "6b4c8d56fcc51f3feef8e89bec82db15724c081ac218329a3badbb25915e26ae"
+    },
+    {
+      "bytes": 6660,
+      "path": "verify.py",
+      "sha256": "db5adc341da7c3382b7ba208b287324b20627bc1f5fa9d5b54a4d81ddccd1ce8"
+    },
+    {
+      "bytes": 3131,
+      "path": "work_orders/CURRENT.md",
+      "sha256": "bc7a5ee650bac149055f9655714aa7a2554d349d0517804303a2302c5fbe9dcf"
+    },
+    {
+      "bytes": 4133,
+      "path": "work_orders/INDEPENDENT_AUDIT.md",
+      "sha256": "42fec084b5aae524e7a2ee85d9a0d68ff743faa3b32ca0fe61310c2a9240ae13"
+    }
+  ],
+  "scope": "Repository initialization; includes LICENSE, original seed, workspace contract, unchanged scientific files, and recorded reports. The manifest itself and Git metadata are excluded."
+}

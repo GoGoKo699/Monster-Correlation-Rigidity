@@ -1,0 +1,122 @@
+{
+  "full_monster_simulation": false,
+  "independent_proof_review": false,
+  "new_verifier_execution_modes": 3,
+  "novelty_established": false,
+  "preserved_imports_valid": true,
+  "prior_verifier_execution_modes": 1,
+  "reports": [
+    {
+      "label": "new exact scalar and character checks",
+      "modes": [
+        {
+          "byte_identical": true,
+          "exit_code": 0,
+          "mode": "normal"
+        },
+        {
+          "byte_identical": true,
+          "exit_code": 0,
+          "mode": "-O"
+        },
+        {
+          "byte_identical": true,
+          "exit_code": 0,
+          "mode": "-OO"
+        }
+      ],
+      "sha256": "25302b964def841d062101339fbc9baff43f98eb7f9446bd241e83c5c926623d"
+    },
+    {
+      "label": "new small normalizer and tensor checks",
+      "modes": [
+        {
+          "byte_identical": true,
+          "exit_code": 0,
+          "mode": "normal"
+        },
+        {
+          "byte_identical": true,
+          "exit_code": 0,
+          "mode": "-O"
+        },
+        {
+          "byte_identical": true,
+          "exit_code": 0,
+          "mode": "-OO"
+        }
+      ],
+      "sha256": "6f4fccfaee44033d08efb2ba4229155c61a0a4f2c19e17a3eaf83cfef2ea16ed"
+    },
+    {
+      "label": "prior average exact",
+      "modes": [
+        {
+          "byte_identical": true,
+          "exit_code": 0,
+          "mode": "normal"
+        }
+      ],
+      "sha256": "b1facbfba0eca5c248c5dbf48b888b99a539f7756b57e1a36b30dfe3463bdf6a"
+    },
+    {
+      "label": "prior average toy",
+      "modes": [
+        {
+          "byte_identical": true,
+          "exit_code": 0,
+          "mode": "normal"
+        }
+      ],
+      "sha256": "afd50b280fa98994d2fa1933e9b1179f548d7fa146344a35e0a9bfaff9bb3dfb"
+    },
+    {
+      "label": "prior global exact",
+      "modes": [
+        {
+          "byte_identical": true,
+          "exit_code": 0,
+          "mode": "normal"
+        }
+      ],
+      "sha256": "158357695a827d2e40991b6f2c9b782097d108d5054895e6753f480187cd27bb"
+    },
+    {
+      "label": "prior pair exact",
+      "modes": [
+        {
+          "byte_identical": true,
+          "exit_code": 0,
+          "mode": "normal"
+        }
+      ],
+      "sha256": "5e67d044c8187e73364124ca7e10c2a685348c9bd11a886cc3dc5d566cd6cc68"
+    },
+    {
+      "label": "prior pair toy",
+      "modes": [
+        {
+          "byte_identical": true,
+          "exit_code": 0,
+          "mode": "normal"
+        }
+      ],
+      "sha256": "e3827fb3a062b68c79fa326b8be7c74619bf606d0b501823260ded0ed3f668db"
+    },
+    {
+      "label": "prior local exact",
+      "modes": [
+        {
+          "byte_identical": true,
+          "exit_code": 0,
+          "mode": "normal"
+        }
+      ],
+      "sha256": "d77f3d5b011820e88d470a4f6f06b562a0f7c6c85d5c1f6c5f51dcdde9e5dac2"
+    }
+  ],
+  "scientific_verifiers": 8,
+  "snapshot_hashes_valid": true,
+  "status": "PASS within declared computational scopes",
+  "total_successful_replays": 12
+}
