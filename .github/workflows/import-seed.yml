@@ -1,0 +1,36 @@
+name: One-shot verified seed import
+on:
+  push:
+    branches: [staging/monster-seed]
+    paths: [.bootstrap/READY]
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: staging/monster-seed
+          fetch-depth: 1
+      - name: Restore and verify exact research tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          test -z "$(git status --porcelain)"
+          python3 .bootstrap/restore.py
+          python3 checks/verify_repository_integrity.py
+          for mode in normal -O -OO; do
+            args=()
+            if [ "$mode" != normal ]; then args=("$mode"); fi
+            PYTHONDONTWRITEBYTECODE=1 python3 "${args[@]}" checks/verify_normalizer.py > /tmp/monster-exact.json
+            cmp /tmp/monster-exact.json results/normalizer_exact.json
+          done
+          git add -A
+          test "$(git write-tree)" = 49e894942b1f7e801195dcd9c8709150668e9342
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Restore hash-verified Monster research seed and audit contract'
+          git push origin HEAD:refs/heads/staging/monster-seed
