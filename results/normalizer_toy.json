@@ -1,0 +1,63 @@
+{
+  "check_count": 40,
+  "checks": [
+    "A5 enumerated as 60 even permutations",
+    "Double-transposition class has 15 involutions",
+    "Standard-module basis is orthonormal",
+    "Standard-module basis is traceless",
+    "All 3600 representation products agree",
+    "Full-class walk has unique constant mode and nontrivial norm 1/3",
+    "Deleting one class element obeys conditioning bound",
+    "Ten-step deleted-class walk has full support",
+    "Conjugation twirl satisfies the same spectral bound",
+    "Five simplex vectors form a tight frame",
+    "Toy cubic contraction is isotropic",
+    "Averaged multiplication residual equals tensor residual divided by d^2",
+    "Spectral-projector global inequality trial 1",
+    "Spectral-projector global inequality trial 2",
+    "Spectral-projector global inequality trial 3",
+    "Spectral-projector global inequality trial 4",
+    "Spectral-projector global inequality trial 5",
+    "Spectral-projector global inequality trial 6",
+    "Spectral-projector global inequality trial 7",
+    "Spectral-projector global inequality trial 8",
+    "Spectral-projector global inequality trial 9",
+    "Spectral-projector global inequality trial 10",
+    "Spectral-projector global inequality trial 11",
+    "Spectral-projector global inequality trial 12",
+    "Odd permutation is outside phase*A5 in this representation",
+    "The outsider odd permutation nevertheless normalizes A5 exactly",
+    "inner: nearest map is bijective",
+    "inner: all 3600 multiplication tests pass",
+    "inner: averaged intertwiner is nonzero",
+    "inner: exact intertwining equations hold numerically",
+    "inner: Schur normalization is scalar",
+    "inner: normalized intertwiner is orthogonal",
+    "inner: class Poincare bound controls distance to normalizer",
+    "outer_normalizer: nearest map is bijective",
+    "outer_normalizer: all 3600 multiplication tests pass",
+    "outer_normalizer: averaged intertwiner is nonzero",
+    "outer_normalizer: exact intertwining equations hold numerically",
+    "outer_normalizer: Schur normalization is scalar",
+    "outer_normalizer: normalized intertwiner is orthogonal",
+    "outer_normalizer: class Poincare bound controls distance to normalizer"
+  ],
+  "full_monster_simulation": false,
+  "independent_proof_review": false,
+  "largest_matrix_dimension": 60,
+  "normalizer_diagnostics": [
+    {
+      "average_class_error_squared": "0.0001234204",
+      "case": "inner",
+      "normalizer_distance_squared": "0.0000462833"
+    },
+    {
+      "average_class_error_squared": "0.0002047983",
+      "case": "outer_normalizer",
+      "normalizer_distance_squared": "0.0000768013"
+    }
+  ],
+  "normalizer_is_not_target_group_negative_control": true,
+  "status": "PASS within small-example scope",
+  "toy_group": "A5 in its four-dimensional standard representation"
+}

@@ -1,0 +1,61 @@
+{
+  "files": [
+    {
+      "bytes": 16822,
+      "path": "research/01_local_rigidity.md",
+      "preserved_byte_identically": true,
+      "sha256": "c1938cbc79c8deff194d68e6534a29acb4ea6336873187492652405d06a4bf8a",
+      "source": "/mnt/data/monster_research/Monster_Correlation_Local_Rigidity.md"
+    },
+    {
+      "bytes": 25520,
+      "path": "research/02_pair_correlations.md",
+      "preserved_byte_identically": true,
+      "sha256": "1cca118e861977dfe3496c1eee23b53dd78bf8c78da9078a143228e85f810191",
+      "source": "/mnt/data/monster_pair_checkpoint/Monster_Bipartite_Correlations.md"
+    },
+    {
+      "bytes": 20336,
+      "path": "research/03_uniform_axis_rounding.md",
+      "preserved_byte_identically": true,
+      "sha256": "d7d3f30e974354929d06b5f6973686f2b88e033cc335a60865c275853282d2b4",
+      "source": "/mnt/data/monster_global_checkpoint/Monster_Global_Rounding.md"
+    },
+    {
+      "bytes": 23384,
+      "path": "research/04_average_transport.md",
+      "preserved_byte_identically": true,
+      "sha256": "705d25aea83fc81f84391186895792bf54907cfaa1a4895498c33867d40a9ed4",
+      "source": "/mnt/data/monster_average_checkpoint/Monster_Average_Transport_and_Synchronization.md"
+    },
+    {
+      "bytes": 10771,
+      "path": "provenance/Monster_Correlation_Local_Rigidity_Checkpoint.zip",
+      "preserved_byte_identically": true,
+      "sha256": "44ec14514af43dc75d3472ece10f3f2b15c0637ca4d73235faea7035cff27355",
+      "source": "/mnt/data/Monster_Correlation_Local_Rigidity_Checkpoint.zip"
+    },
+    {
+      "bytes": 31433,
+      "path": "provenance/Monster_Bipartite_Correlations_Checkpoint.zip",
+      "preserved_byte_identically": true,
+      "sha256": "c84add074c170ef9c144a94c1e089f8853d2e22323416af487dfcc058bd59741",
+      "source": "/mnt/data/Monster_Bipartite_Correlations_Checkpoint.zip"
+    },
+    {
+      "bytes": 51846,
+      "path": "provenance/Monster_Global_Rounding_Checkpoint.zip",
+      "preserved_byte_identically": true,
+      "sha256": "5bf8a6ae9106e8126179d466c326cacb3b485e3dcb89dd761a07905a48daaf94",
+      "source": "/mnt/data/Monster_Global_Rounding_Checkpoint.zip"
+    },
+    {
+      "bytes": 74753,
+      "path": "provenance/Monster_Average_Transport_Checkpoint.zip",
+      "preserved_byte_identically": true,
+      "sha256": "49cf36598860bba792dd5c4a19c8530298b1d11315721c484a61a5605a978cfb",
+      "source": "/mnt/data/Monster_Average_Transport_Checkpoint.zip"
+    }
+  ],
+  "scope": "Original checkpoint archives and readable notes, retained unchanged. Nested source code licenses are not replaced."
+}
