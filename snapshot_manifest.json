@@ -36,14 +36,24 @@
       "sha256": "e10b268c0668b9dec24dec715f6462fda7cf2d6df04fbc3694def4dcb886fd66"
     },
     {
-      "bytes": 497,
+      "bytes": 1702,
       "path": "audits/README.md",
-      "sha256": "ecd90ade69c5433e6cb975ed4e04d96a5e8c505085d01838229f25bea3e1ed0a"
+      "sha256": "11e8429fe585af944f71f3599503ee72dccbb8d121e9c5838b04a3fc57a8d9b4"
+    },
+    {
+      "bytes": 29095,
+      "path": "audits/robustness_proof_audit.md",
+      "sha256": "810bb5d07df79dda965d0cadc2ff09b31b5a1075b59c8b5f44c28a962a978e69"
     },
     {
       "bytes": 30655,
       "path": "audits/voa_extrema_audit.md",
       "sha256": "75569858501ad1d9e0961588a41dbe039b7b8bf46938c9df6b0af0374f6b7275"
+    },
+    {
+      "bytes": 11473,
+      "path": "checks/audit_parameter_domains.py",
+      "sha256": "2c0f2829ab86609f87622f06087f677abf170fc212c690dad1232f4a03656ebe"
     },
     {
       "bytes": 5890,
@@ -166,5 +176,5 @@
       "sha256": "42fec084b5aae524e7a2ee85d9a0d68ff743faa3b32ca0fe61310c2a9240ae13"
     }
   ],
-  "scope": "Repository initialization plus the bounded VOA-to-extremum audit dated 2026-09-23; includes LICENSE, original seed, workspace contract, unchanged scientific files, recorded reports, and audits/voa_extrema_audit.md. All pre-existing manifest entries are preserved. The manifest itself and Git metadata are excluded."
+  "scope": "Repository initialization, the bounded VOA-to-extremum audit, and the robustness proof audit dated 2026-09-23. Includes the two audit reports and the exact parameter-domain witness checker. The audit index is intentionally updated; all other pre-existing manifest entries, including original scientific evidence and LICENSE, are preserved. The manifest itself and Git metadata are excluded."
 }
