@@ -1,6 +1,6 @@
 # Integration errata and evidence boundaries
 
-25 September 2026. Main inspected at a450e022781c4109609ff8f274787942c513df1a; robustness report inspected at c48f2c7798f0c507d657cb43e9ce7c41d7d5b83d. This integration updates current summaries only. Notes01-05, prior audits, original data/results/checkers, provenance archives and LICENSE remain byte-identical.
+25 September 2026. Main inspected at a450e022781c4109609ff8f274787942c513df1a; robustness report inspected at c48f2c7798f0c507d657cb43e9ce7c41d7d5b83d. This integration updates current summaries only. The provenance-protected import-era STATUS.md is retained unchanged; STATUS_CURRENT.md is its current successor. Notes01-05, prior audits, original data/results/checkers, provenance archives and LICENSE remain byte-identical.
 
 ## Mathematical corrections applied to current statements
 

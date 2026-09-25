@@ -1,46 +1,44 @@
-# Claim ledger — 25 September 2026
+# Claim ledger — 23 September 2026
 
-Initial live main inspected: `a450e022781c4109609ff8f274787942c513df1a`.
-Continuation mathematical baseline: `c48f2c7798f0c507d657cb43e9ce7c41d7d5b83d` (PR #2).
-
-**Overall:** exploratory mathematical certification. The bounded VOA audit and eight-obligation robustness audit are assistant reconstructions with explicit errata, not independent human/expert review or formal verification. The [priority matrix](audits/priority_matrix.md) is partial. Note06 specifies access models and costs but constructs no efficient Monster circuit.
+**Overall status:** exploratory mathematical research with written proofs and computational consistency checks. No independent proof review, comprehensive novelty clearance, or efficient implementation claim.
 
 ## Current claims
 
-| ID | Statement | Basis and present boundary |
-|---|---|---|
-| C01 | Full Griess automorphism group is Monster | Imported classical theorem, not project novelty |
-| C02 | Trace identities, Ising spectrum and axis correspondence | Classical inputs with conversions reconstructed in the audits; foundational literature not all independently reproved |
-| C03 | Local cubic sensitivity and pair-test local coefficient | Notes01-02; relevant spectral/local calculations reconstructed in robustness audit |
-| C04 | Pair probe/cubic collective stabilizer is phase times Monster | Note02; fixed logical-space unitary model |
-| C05 | Three-register unique parent ground state, gap11161/13858 | Note02; reconstructed spectral argument, not scalable frustration-free chain |
-| C06 | Global state infidelity controlled by pair rejection | Note02; does not alone bound gate distance |
-| C07 | Historical global gate certificate at rejection<=1e-25 | Note03 plus VOA supplement; sufficient threshold superseded by C13; use non-strict rounded endpoint |
-| C08 | All-error real/complex ensemble transport | Note04 plus audit localization; matching not automatically a group action |
-| C09 | Independent-unitary agreement and product-unitary stabilizers | Note04; not arbitrary channels, feedback, or device independence |
-| C10 | At most four conjugate2A generators suffice | Imported DMPZ theorem crediting Zisser; original Zisser proof not obtained |
-| C11 | Class mixing yields a nearby orthogonal normalizer | Note05 plus R09: 0<=q<1, 0<=beta<1, t>0, positive integer L, and all remaining printed scalar/group hypotheses. General lemma priority unresolved |
-| C12 | W(O)^2<=3e-9 implies D_M(O)^2<=(20842432/196883)W(O)^2<=106W(O)^2 | Note05 plus audits; strictness only for positive error. No all-error constant-factor gate equivalence |
-| C13 | Complex rejection<=1e-12 (real<=1e-10) implies D_M<=c sqrt(rejection), c=sqrt(1681pi^2/12528)<=1.151 | Eight listed dependencies reconstructed with repairs; no calibration promise, no practical implementation claim |
-| C14 | Orthogonal normalizer equals signed Monster | Unique invariant cubic plus full algebra theorem, not a general normalizer-to-group inference |
-| C15 | Clean coherent W access implements preparation and P measurement; sigma=J(E) | Note06 elementary reductions; efficient W access not proved; padding/workspace checks required |
-| C16 | Trusted prep/effect budget a+b converts observed loss bounds into ideal-loss bounds | Note06; classical binomial coverage under independent identical trials; C13 threshold still required |
-| C17 | Ordinary repeated binary SWAP outcomes have d-suppressed signal and quadratic d precision cost | Note06 restricted observation model; not a lower bound for general copy-access protocols or the fixed P |
+| ID | Statement | Basis | Status / boundary |
+|---|---|---|---|
+| C01 | Monster is the full automorphism group of the Griess algebra | Classical literature | Imported theorem; not project novelty |
+| C02 | Trace identities, Ising spectrum, axis correspondence | Matsuo/Norton; axial/VOA literature | Imported inputs with explicit normalization conversions |
+| C03 | Exact local cubic sensitivity and pair-test local coefficient | Notes 01–02 | Written derivations; scalar and contraction checks, not independent review |
+| C04 | Pair probe and cubic ray have collective stabilizer phase times Monster | Note 02 | Written derivation; fixed logical-space unitary model |
+| C05 | Three-site parent unique ground state, gap 11161/13858 | Note 02 | Written derivation; not a scalable frustration-free chain |
+| C06 | Global state fidelity controlled by pair-test rejection | Note 02 | Written derivation; does not by itself bound gate distance |
+| C07 | Uniform-axis global gate result at rejection <=1e-25 | Note 03 | Retained valid checkpoint claim; sufficient threshold superseded by C13 |
+| C08 | All-error real and complex ensemble-transport bounds | Note 04 | Written derivation; arbitrary ensemble matching, not automatically group action |
+| C09 | Independent-unitary synchronization and product-unitary stabilizers | Note 04 | Written derivation; not arbitrary noise or feedback control |
+| C10 | Four conjugate 2A involutions suffice to generate Monster | Di Martino–Pellegrini–Zalesski, Theorem 3.1 | Imported published upper bound, credited there to Zisser |
+| C11 | Good-class mixing gives robust rounding to an orthogonal normalizer | Note 05, general lemma | New written project derivation; priority not established |
+| C12 | W(O)^2<=3e-9 implies D_M(O)^2<106 W(O)^2 | Note 05 | Written average-to-single-symmetry derivation; sufficient small-error range |
+| C13 | Rejection<=1e-12 for complex U (1e-10 for real O) implies D_M<=1.151 sqrt(rejection) | Note 05 | Written derivation without calibration promise; no practical sample claim |
+| C14 | Normalizer equals signed Monster in the chosen representation | Note 05; unique invariant cubic + full algebra automorphism theorem | Essential additional argument; false for general finite representations |
 
-## Required errata
+## Computational evidence
 
-[Integration summary](audits/integration_20260925.md) records the zero-error inequalities, omitted C11 parameter domains, the source complementary-norm typo, and the centralizer locator (2114-2130 at the pinned GAP commit). No original scientific value, note, data array, or archive is rewritten.
+The recorded new exact checker has 35 scalar/character checks. The new small-example checker has 40 tests on A5 and small tensors. All remain active under optimized Python. Root verification also replays six earlier scientific reports. These are consistency tests of arithmetic, normalization, and general finite-dimensional identities. They do **not** test the full Monster tensor or prove imported classifications.
 
-The audits found no blocking gap in the specified Monster proof obligations after these repairs. They did not exhaustively audit every ancillary claim or establish priority.
+The source character excerpt has 194 columns and only the degree-196883 row plus class centralizers. No complete Monster character table was obtained in this checkpoint. The all-representation class-gap bound is deduced from conjugate generation instead.
 
-## Computational scope
+## Not established
 
-The original root verifier executes eight scientific scripts across twelve modes/replays and insists on byte-identical recorded reports. A floating-report mismatch appeared on the GitHub runner; it is not reclassified as a strict pass. `checks/replay_portability.py` reports finite-leaf differences under explicit 5e-12 tolerances for only the two named historical numerical reports. The six pair finite-difference fields are separately checked against their analytic targets with the original 2e-6 tolerance; their cross-platform difference can be up to twice that tolerance. Exact leaves and all other reports remain exact. Original evidence is unchanged.
+- Novelty of the assembled theorem, quantitative constants, or general normalizer lemma relative to all prior literature.
+- Independent correctness review of the analytic proofs, especially VOA-to-extremum and global-to-local transitions.
+- Efficient preparation of the probes, measurement of P, group-word finding, or nearest-element extraction.
+- Useful experimental precision, fault-tolerant implementation, or quantum advantage.
+- Operator/diamond-norm global certification at comparable constants.
+- General channels, leakage, adversarially correlated gate uses, or untrusted preparation/measurement.
+- A manuscript submission target or publication-readiness judgment.
 
-The parameter-domain witness adds20 exact checks; the access checker adds44 checks, largest matrix81. Historical maximum256 remains the largest replayed matrix. The scripts neither build the Monster nor independently prove its classifications. Consult workflow output for the tested commit, strict replay outcome, and bounded-portability outcome rather than assuming universal byte reproducibility.
+## Supersession rules
 
-## Still not established
+Do not edit old archives to make historical status text look current. C13 improves a sufficient threshold, not a lower bound or an experimentally observed limit. C12 resolves the earlier small-error matching-to-one-element gap, not an all-error constant-factor equivalence over the entire unitary group.
 
-Comprehensive novelty/priority; independent specialist correctness review; efficient clean W synthesis, P measurement, group-word finding or nearest-element extraction; practical precision or quantum advantage; comparable worst-case channel certification; general unknown channels, leakage or adversarially correlated uses; untrusted probe preparation/measurement; publication readiness.
-
-The DME and SWAP resource estimates in note06 describe particular access routes and must not be converted into a universal impossibility claim. C15-C17 do not improve C13's thresholds.
+Every proposed change must identify affected claim IDs, add a proof or counterexample, and state what the tests can and cannot detect.

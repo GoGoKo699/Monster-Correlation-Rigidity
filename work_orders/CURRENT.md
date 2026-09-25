@@ -1,6 +1,6 @@
 # Current work order — 25 September 2026
 
-Read AGENTS.md, WORKSPACES.md, STATUS.md and audits/integration_20260925.md. Preserve all protected historical material. Keep proof validity, priority and access feasibility separate.
+Read AGENTS.md, WORKSPACES.md, STATUS_CURRENT.md and audits/integration_20260925.md. Preserve all protected historical material. Keep proof validity, priority and access feasibility separate.
 
 ## Completed within stated scope
 

@@ -6,7 +6,9 @@ Research project for Ruge Lin: exceptional finite symmetry as an operational pro
 
 ## Start here
 
-Read [STATUS.md](STATUS.md), the [audit integration errata](audits/integration_20260925.md), and [the current work order](work_orders/CURRENT.md). The newest work is [probe access and calibration](research/06_probe_access.md); the [priority matrix](audits/priority_matrix.md) is a first source-based pass, not a completed novelty audit.
+`STATUS.md` is the immutable import-era ledger. Its current successor is `STATUS_CURRENT.md`; read the latter for integrated claims and corrections.
+
+Read [STATUS_CURRENT.md](STATUS_CURRENT.md), the [audit integration errata](audits/integration_20260925.md), and [the current work order](work_orders/CURRENT.md). The newest work is [probe access and calibration](research/06_probe_access.md); the [priority matrix](audits/priority_matrix.md) is a first source-based pass, not a completed novelty audit.
 
 ## Current mathematical statement
 
