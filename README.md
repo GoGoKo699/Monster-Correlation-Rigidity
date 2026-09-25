@@ -1,38 +1,80 @@
 # Monster Correlation Rigidity — physical selection
 
-Ruge Lin's project asks whether independently meaningful physical requirements select the Monster, rather than merely recognizing a symmetry built into a chosen tensor. The active ledger is [PHYSICS_STATUS.md](PHYSICS_STATUS.md); the former certification and import ledgers remain unchanged.
+Ruge Lin's project asks whether independently meaningful physical conditions
+select the Monster, rather than merely recognizing symmetry in an engineered
+tensor. [PHYSICS_STATUS.md](PHYSICS_STATUS.md) is the active ledger. The former
+certification and import ledgers remain unchanged.
 
-## Latest: a generated interaction level, and a limit on the bootstrap route
+## Latest: an apparent selection condition fails a physical sanity check
 
-[Note 14](research/14_weight_four_and_four_point_closure.md) completes the weight-four primary projection of products of weight-two primaries, including every vacuum, weight-two and weight-three descendant. Its Gram map is
+[The mixed-action normalization audit](research/15_mixed_action_normalization_audit.md)
+finds a blocking error in the unmerged PR12. Its proposed additional null-state
+condition fails in an explicit sector of the actual Griess algebra: a pair that
+creates the zero state is assigned a nonzero matrix element. The correct
+matrix element is zero. This is not a new physical restriction excluding the
+known Monster theory; it invalidates that proposed restriction.
 
-$$S^\dagger S=F_++\tfrac73I-\tfrac8{41}Q-\tfrac5{213}J=54\Pi_{s+}.$$
+The audit localizes a five-form normalization conflict in the retrieved
+Matsuo arXiv v1. Direct mode evaluation gives48 for a normalized alternating
+five-form, while the full Griess-block trace gives1248: ratio26, not52.
+All120 distinct permutations agree with26 in the tested trace-polynomial shape.
+The source really prints52 and a normalized1/120 definition; its appendix is
+also inconsistent when literally specialized. The journal version has not
+been checked. A corrected universal trace theorem is not claimed solely from
+this finite witness.
 
-Its rank fills all **842609326 weight-four primaries**, so SS^dagger=54I. The normalization sums ordered pairs, or weights unordered off-diagonal pairs twice; it is not the same counting convention as Note 13's exterior map.
+With a reconciled coefficient26, the same formal derivation would give
 
-The more important boundary is now explicit. The complete four-point kernel of the first primary fields is a rational function in six commuting operators. Under all the previous joint multiplication identities, its six scalar eigenfunctions are fixed. Standard crossing and all Virasoro-block Gram-positivity/rank checks in this one four-point family follow from those identities and the existence of the known unitary example. This is a conditional closure result, not an infinite numerical test.
+$$T_e=G\mathcal D_eG/104,$$
 
-It does **not** show that all component correlators agree, exhibit inequivalent admissible cubics, or construct a CFT from an abstract cubic. The projectors still depend on the unknown multiplication, and arbitrary pair-space equivalence is not a single-field basis change. The identities themselves might characterize the Griess algebra; this has not been proved here.
+which respects zero-state relations automatically. This conditional repair
+removes the purported extra selection test. The exact known-algebra
+counterexample is established; the all-input trace repair remains a separate
+proof/source obligation. PR12 stays unmerged, with its branch and evidence
+preserved and a blocking audit comment.
 
-Therefore the next assignment is not another intermediate coefficient of the same four-point function. It is a mixed interaction: the weight-two action on weight-three primaries, pulled back to their pair-generated description. This requires a common set of intermediate states to obey factorization, rather than only matching production norms. See [CURRENT](work_orders/CURRENT.md).
+## What remains established on the physical track
 
-## Physical assumptions and prior work
+[Note12](research/12_physical_selection_from_extremality.md) studies the declared
+class of nontrivial unitary strongly rational bosonic holomorphic current-free
+chiral CFTs of minimum positive central charge. This is a restricted criterion,
+not a universal physical law or an established RG mechanism. Prior modular and
+trace results give c=24, J and normalized low-energy OPE constraints without
+assuming a Monster action. The complete unknown multiplication has not been
+identified with the Conway–Griess algebra.
 
-The declared class consists of nontrivial simple unitary strongly rational bosonic holomorphic chiral CFTs with no weight-one currents, minimizing positive central charge. This is not a universal physical law or an established RG dynamics. [Note 12](research/12_physical_selection_from_extremality.md) assembles prior modular/design/trace results to obtain c=24, J and normalized OPE contraction identities without assuming a Monster action. [Note 13](research/13_weight_three_ope_channel.md) gives the weight-three channel.
+[Note13](research/13_weight_three_ope_channel.md) and
+[Note14](research/14_weight_four_and_four_point_closure.md) derive generated
+weight-three/four channels and conditional closure of the external-weight-two
+four-point tests. Those results do not establish uniqueness. The new audit
+changes none of their statements, the earlier certification constants, or
+circuit costs; it prevents an unmerged five-field normalization error from
+being added as a physical-selection premise.
 
-A further relevant precursor is Tuite's exceptional-VOA theorem: under its vacuum-Casimir hypothesis, the VOA is generated by V2. Note 14 records the hypothesis and the design link. General generation by the first fields is not a new project claim; the calculations here specify normalized channels and identify what they do not constrain. The full weight-two multiplication and its automorphism group remain unselected by the present proof.
+## Evidence and next step
 
-## Evidence and preservation
-
-The [new checker](checks/verify_weight_four.py) has **65 exact checks**. Small even free-boson controls at c=2,3 verify all descendant subtractions, primary conditions, projected Gram entries, and 5769 raw four-label comparisons through weight eight. Largest square matrix:15x15. These examples are not holomorphic c24 theories. No Monster data or full extremal tensor is built; the all-weight closure proof is analytic and conditional.
+The [37-check exact audit](checks/verify_mixed_normalization.py) uses at most
+6x6 matrices and streams98280 length-24 Leech rows. The mode calculation uses
+three active Heisenberg coordinates; the trace accounts for all A/X/Q blocks
+of the actual196884-dimensional algebra. No full multiplication matrix or
+Monster group matrices are built. Integer/fraction reports agree locally under
+normal Python,-O,-OO. Small calculations do not replace source-theorem review.
 
 ```sh
-python checks/verify_weight_four.py
-python -O checks/verify_weight_four.py
-python -OO checks/verify_weight_four.py
+python checks/verify_mixed_normalization.py
+python -O checks/verify_mixed_normalization.py
+python -OO checks/verify_mixed_normalization.py
 # Unchanged historical replay:
 OPENBLAS_NUM_THREADS=1 python verify.py
 OPENBLAS_NUM_THREADS=1 python checks/replay_portability.py
 ```
 
-Historical evidence, notes01-13, old code/results/audits/ledgers, the root verifier, portability policy and original MIT license remain unchanged. The [PR9 reporting erratum](audits/physical_integration_replay_erratum.md) remains in force. A green workflow is not automatically a strict replay pass; read the separate outcomes. No independent expert/formal verification, comprehensive priority clearance, full-probe implementation, manuscript, release or outreach is claimed.
+[CURRENT](work_orders/CURRENT.md) requires reconciliation of the universal
+normalized fifth trace before using the candidate mixed formula or searching
+for independent higher constraints. The goal remains physical selection, not
+an endless series of coefficient matches. Earlier research, audits, code,
+results, status records, archives, the root verifier, portability policy and
+original MIT license are preserved. No independent specialist/formal review,
+comprehensive novelty clearance, full probe compiler, manuscript, release or
+outreach is claimed. Read each workflow's strict and bounded outcomes
+separately; the PR9 reporting erratum remains in force.
