@@ -1,40 +1,41 @@
 # Physical-selection ledger — 25 September 2026
 
-Latest continuation base: `514c11d54ac5d743767ec631f55d258665a5501b`.
-Physical selection remains central. STATUS_CURRENT.md and STATUS.md retain the earlier certification and import records unchanged.
+Latest base: `ba02084a1a74fc0b4db1299f6ab3bc327a0901ef`. Physical selection remains the objective. STATUS_CURRENT.md and STATUS.md retain the former certification and import records unchanged.
 
-## Admissible class
+## Declared class and established consequences
 
-Nontrivial simple unitary strongly rational bosonic holomorphic chiral CFTs, with no weight-one currents, minimizing positive central charge. These are declared restrictions and an optimization criterion, not a universal physical law or a demonstrated RG mechanism. No Monster action, multiplication table, character decomposition, axis orbit or frame is assumed.
+Nontrivial simple unitary strongly rational bosonic holomorphic chiral CFTs, without weight-one currents, minimizing positive central charge. The restrictions and optimization are explicit; they are not a universal necessity or a demonstrated RG mechanism. No Monster action, multiplication table, character decomposition or axis system is an input.
 
-| ID | Conclusion | Basis and boundary |
+| ID | Conclusion | Basis and limitation |
 |---|---|---|
-| P01 | Minimum c=24, character J, dim V2=196884 | Prior modular character theory and known moonshine existence; no uniqueness claim |
-| P02 | Homogeneous energy spaces are conformal 11-designs | Hoehn Theorem 3.1; primary thermal one-point cancellations, not eigenstate thermalization |
-| P03 | Matsuo traces apply without large-Aut hypotheses | Explicit design replacement in Hoehn, printed p.12 |
-| P04 | Primary OPE kappa=13858/3, cubic trace899 and six contraction eigenvalues/multiplicities | Note12 corollary; individual couplings and automorphism group not reconstructed |
-| P05 | Diagonal nonchiral scalar gap4 | No nonidentity relevant/marginal Lorentz scalar; not microscopic or dynamical stability |
-| P06 | First modularly allowed primary torus one-point response at weight12 | a_v Delta; does not fix interactions of lower weights |
-| P07 | Weight-three primary OPE has Gram B^dagger B=F_-+I/3=282 Pi_+ | Note13 mode derivation, full stress product and normalized exterior metric; standard Norton-positivity mechanism |
-| P08 | B is onto all 21296876 weight-three primaries; BB^dagger=282I | Gram rank matches actual primary dimension, not dimension coincidence alone. Every next-level primary couples to initial pairs |
-| P09 | The 2,2,3 channel is fixed up to output basis once the 2,2,2 tensor is fixed | Gram-factor uniqueness. Its positivity/rank add no further restriction after P04; not a construction of all higher OPEs |
+| P01 | Minimal c=24, J spectrum, dim V2=196884 | Prior modular theory and known example for attainment; not uniqueness |
+| P02 | Homogeneous spaces are conformal 11-designs | Hoehn's prior theorem; not individual-eigenstate thermalization |
+| P03 | Trace theorems apply without large-Aut assumptions | Explicit design replacement in Hoehn |
+| P04 | Primary kappa=13858/3, triple trace899, joint contraction identities | Note12 corollary; does not reconstruct the cubic or identify its symmetry group |
+| P05 | Diagonal nonchiral scalar gap4 | No relevant/marginal nonidentity Lorentz scalar, not microscopic stability |
+| P06 | First modularly allowed primary one-point response at weight12 | a_v Delta; lower-weight interactions are not thereby unique |
+| P07 | Weight-three Gram B^dagger B=282Pi_a+ | Note13, full stress term and unit exterior normalization |
+| P08 | B maps onto all21296876 weight-three primaries | Rank proof; fixed unordered-pair coupling282 |
+| P09 | That channel is fixed up to output basis once the cubic is fixed | Positivity/rank already follow from P04; not a full VOA construction |
+| P10 | Weight-four primary Gram S^dagger S=54Pi_s+ and SS^dagger=54I | Note14, all descendant sectors removed; onto842609326 primaries. Ordered-pair convention |
+| P11 | Conditional complete first-primary four-point closure | Under all P04 joint identities, rational kernel has six universal scalar eigenfunctions; crossing and Virasoro Gram positivity/rank add no further condition at this test level. Analytic reference-existence argument, not an infinite computation |
 
-## What the new result means
+## What P11 does not imply
 
-The first two primary levels cannot be specified independently. The primary part of a_(0)b is a_(0)b-(1/2)L_-1(a_(1)b), and its positive four-label Gram form is <a*c,b*d>-<a*d,b*c>. Here * includes the stress-tensor component. The next primary level is generated completely by these products, and each normalized weight-three primary has total squared coupling282 to unordered pairs. The sum over b for a fixed normalized weight-two a is61008, with the ordered/unordered factor two retained.
+Individual component correlators still depend on the unknown cubic through the embedding of the spectral projectors. Equal pair-space spectra do not imply equivalence by O tensor O. No inequivalent pair of admissible cubics is constructed; the P04 algebraic system itself could be rigid. No consistent mixed OPEs or full local CFT are constructed for an abstract tensor. Consequently this is not a proof that physics cannot select the Monster or that all bootstrap information is exhausted. It identifies a specific family of redundant tests after specified constraints.
 
-This is a low-weight corollary from physical consistency and previously sourced trace identities. It does not prove a new general Norton inequality or resolve priority. The unknown primary weight-two multiplication has not been identified with the Conway-Griess algebra, and no alternative full CFT is supplied. An abstract positive Gram factor is not a VOA construction. An extension of a weight-two algebra symmetry to this one channel is not an extension to all fields.
+The next object is T_e(x,y)=<Bx,e_(1)By>, with x,y in wedge^2 P2. It must factor through Pi_a+ in both slots and be Hermitian for real e. It involves five external first-level fields and compatibility of shared intermediate states. Matsuo's five-linear form must be treated explicitly; whether the exceptional fifth-trace identity fixes it or imposes a new restriction is not yet settled here.
 
-## Evidence and source boundaries
+## Prior-work and source updates
 
-42 exact integer/fraction checks reproduce under normal/-O/-OO. Small even free-boson examples in ranks2 and3 check normal-ordered modes, primary subtraction, all exterior Gram entries, and derivative/stress normalization. Largest square matrix15x15; largest oscillator grade3. They are not holomorphic c24 theories. Extremal rank and coupling constants are scalar consequences only. No Monster data or full extremal OPE tensor is constructed.
+Tuite arXiv:0811.4523 Theorems3.3-3.4 already give V2-generation under a vacuum weight-six Casimir condition, and discuss the weight-three sector. The design condition supplies that Casimir membership by the pairing/trace argument stated in Note14. This is prior iterated generation, not a new project phenomenon or a classification of V2. The present work gives explicit channel normalization and the conditional four-point closure argument.
 
-Dong-Lin's positive Hermitian/PCT definition and Heisenberg/fixed-subalgebra discussion were read; printed page3 was visually inspected. Hoehn's design-to-trace replacement and Theorem3.1 were reread; printed page12 was visually inspected. Matsuo section1 mode formulas and Theorem2.1 were reread in parsed text, but screenshots of pp4-5 failed. Miyamoto's original Norton proof was not obtained; Fox's attribution is labelled as a transmission. Earlier source-depth gaps remain open.
+Relevant Dong-Lin, Matsuo, Hoehn and Tuite passages were read. Printed Dong-Lin page3, Hoehn12 and Tuite9 were visually inspected; the Matsuo page11 screenshot failed. None of this is an audit of all original-source proofs or comprehensive priority clearance. The previous original-source gaps remain visible.
 
-The previous PR9 comment and merge message misstated strict replay as passing. The actual job107980561128 had the recognized strict average-toy failure for both trees; the unchanged bounded-portability comparison and new exact report passed. See the explicit [erratum](audits/physical_integration_replay_erratum.md). No historical evidence or commit is rewritten.
+## Evidence
 
-Network cloning again failed. Local new-check execution is not a live-main checkout. Actual baseline/candidate root replay is performed separately in the read-only workflow, with strict and bounded portability outcomes kept distinct. All notes01-12, old science/code/data/results/audits, both former ledgers, provenance, root verifier, portability policy and MIT license remain unchanged.
+65 exact integer/fraction checks reproduce locally under normal/-O/-OO. They use a private in-memory weight-eight instance of the unchanged note13 oscillator helper, whose hash is checked. Free-boson controls at c2,3 verify descendant Gram systems, all primary conditions, projected Grams and5769 raw four-label entries through weight8. Largest square matrix15x15. They are not c24 holomorphic examples. No full extremal tensor or Monster data is built. All-weight block positivity is inferred analytically from the universal sector functions and a known unitary realization, not numerically checked or formally verified.
 
-## Next bounded question
+Network git access failed. The pinned baseline manifest was reconstructed and matched its Git blob f4478c4ffe28dbea6cd0a8e25aeb49a357e77a83 exactly, but that is not a current-main scientific replay. Actual baseline/candidate root verification is performed in the read-only workflow. Strict replay and the unchanged bounded-portability outcomes are reported separately; PR9's correction remains in force. Notes01-13, all old scientific evidence/ledgers/audits, provenance, root verifier, tolerances and license are preserved.
 
-Derive the weight-four primary channel from a_(-1)b, subtracting all Virasoro descendants and the weight-three derivative. Determine whether its Gram rank matches842609326 and, crucially, whether it imposes a genuinely new tensor identity beyond the prior trace constraints. No Monster irreducible decomposition may be used. Physical selection, not another recognition circuit, remains the objective.
+No full Monster selection, comprehensive novelty clearance, independent specialist review, manuscript, release or outreach is claimed.
