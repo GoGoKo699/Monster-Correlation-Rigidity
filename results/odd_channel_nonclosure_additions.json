@@ -1,0 +1,26 @@
+{
+  "base_commit": "09e3f98ad79034eefab43f4fb9ea432368fc19e7",
+  "files": [
+    {
+      "bytes": 18121,
+      "path": "research/20_forced_weight_five_channel.md",
+      "sha256": "05491af98c26f08983a3741ad96ef5624bc4aa1031ef2892ca11bd606f41cc60"
+    },
+    {
+      "bytes": 15859,
+      "path": "checks/verify_odd_channel_nonclosure.py",
+      "sha256": "04691cb28107483097df785e361d1350b2889405dc4ec973ea6a85422318cd83"
+    },
+    {
+      "bytes": 65,
+      "path": "results/odd_channel_nonclosure_report.sha256",
+      "sha256": "e79de96fd17e629986730c8ff03d8d513eed2f922833b0e6e622205476e467bd"
+    },
+    {
+      "bytes": 4712,
+      "path": ".github/workflows/odd-channel-nonclosure.yml",
+      "sha256": "1ff03e5879bf3aad2a11a631719d7baa538e0a675e1c8eaaecaf1d84a2ed3633"
+    }
+  ],
+  "scope": "Additive curvature nonclosure and forced weight-five interaction. Every existing main file remains unchanged. This manifest excludes itself. Pending PR17 is an explicit dependency for the physical channel identification, not merged here."
+}

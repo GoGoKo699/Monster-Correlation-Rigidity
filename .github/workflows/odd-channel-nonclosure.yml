@@ -1,0 +1,102 @@
+name: Odd channel nonclosure
+on:
+  push:
+    branches: [research/odd-channel-nonclosure, main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: 09e3f98ad79034eefab43f4fb9ea432368fc19e7
+          path: baseline
+          persist-credentials: false
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: candidate
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - name: Recorded numerical dependency for historical replay
+        run: python3 -m pip install 'numpy==2.3.5'
+      - name: Preserve baseline and verify additive files
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, pathlib, subprocess
+          base, head = pathlib.Path('baseline'), pathlib.Path('candidate')
+          names=subprocess.check_output(['git','-C',str(base),'ls-files','-z']).decode().split('\0')
+          for name in filter(None,names):
+              if (base/name).read_bytes() != (head/name).read_bytes():
+                  raise RuntimeError('Changed historical file: '+name)
+          manifest=json.loads((head/'results/odd_channel_nonclosure_additions.json').read_text())
+          for e in manifest['files']:
+              raw=(head/e['path']).read_bytes()
+              if len(raw)!=e['bytes'] or hashlib.sha256(raw).hexdigest()!=e['sha256']:
+                  raise RuntimeError('Addition hash mismatch: '+e['path'])
+          print('FROZEN_BASELINE_AND_ADDITIVE_HASHES PASS')
+          PY
+      - name: Separate strict replay from unchanged bounded portability
+        shell: bash
+        run: |
+          set -euo pipefail
+          for tree in baseline candidate; do
+            (
+              cd "$tree"
+              if python3 verify.py > /tmp/nonclosure-strict.out 2>/tmp/nonclosure-strict.err; then
+                strict=PASS
+              else
+                strict=FAIL_RECOGNIZED_FLOAT_REPORT
+                case "$(tail -n 1 /tmp/nonclosure-strict.err)" in
+                  "RuntimeError: prior average toy differs from recorded report under None"|"RuntimeError: prior pair toy differs from recorded report under None") ;;
+                  *) cat /tmp/nonclosure-strict.err; exit 1 ;;
+                esac
+              fi
+              echo "STRICT_REPLAY $tree $strict"
+              cat /tmp/nonclosure-strict.err
+              python3 checks/replay_portability.py > /tmp/nonclosure-portability.json
+              TREE="$tree" python3 - <<'PY'
+          import json, os
+          r=json.load(open('/tmp/nonclosure-portability.json'))
+          print('PORTABILITY',os.environ['TREE'],r['status'])
+          print('ALL_REPORTS_BYTE_IDENTICAL',os.environ['TREE'],r['all_reports_byte_identical'])
+          print('DIFFERING_FLOAT_LEAVES',sum(x['different_float_leaves'] for x in r['reports']))
+          PY
+              test -z "$(git status --porcelain)"
+            )
+          done
+      - name: Exact nonclosure certificate in three modes
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd candidate
+          python3 checks/verify_odd_channel_nonclosure.py > /tmp/nonclosure-normal.json
+          python3 -O checks/verify_odd_channel_nonclosure.py > /tmp/nonclosure-O.json
+          python3 -OO checks/verify_odd_channel_nonclosure.py > /tmp/nonclosure-OO.json
+          cmp /tmp/nonclosure-normal.json /tmp/nonclosure-O.json
+          cmp /tmp/nonclosure-normal.json /tmp/nonclosure-OO.json
+          python3 - <<'PY'
+          import hashlib, json, pathlib
+          raw=pathlib.Path('/tmp/nonclosure-normal.json').read_bytes()
+          expected=pathlib.Path('results/odd_channel_nonclosure_report.sha256').read_text().strip()
+          if hashlib.sha256(raw).hexdigest()!=expected:
+              raise RuntimeError('Exact report fingerprint mismatch')
+          r=json.loads(raw)
+          print('NEW_CHECKS',r['checks'],r['status'])
+          print('CLASSIFICATION_QUADRATICS',len(r['classification_certificate']['quadratic_certificate']))
+          print('LARGEST_SQUARE',r['largest_square_matrix_dimension'])
+          print('EXACT_REPORT_SHA256',expected)
+          print('EXAMPLE_COUPLING',r['known_moonshine_example']['physical_weight_five_primary_squared_norm'])
+          PY
+          git diff --check
+          test -z "$(git status --porcelain)"
