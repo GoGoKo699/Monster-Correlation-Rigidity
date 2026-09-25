@@ -2,7 +2,9 @@
 """Inspect replay portability without changing verify.py or recorded reports.
 
 Only floating leaves in two named historical NumPy reports may differ, with
-atol=rtol=5e-12. All structure, exact leaves, and other reports match exactly.
+atol=rtol=5e-12, except six named pair finite differences. Their original
+2e-6 analytic-target tolerance is checked for BOTH reports. All other
+structure, exact leaves, and reports match exactly.
 Scripts must pass their own original checks. Strict mismatches remain visible.
 """
 from __future__ import annotations
@@ -11,6 +13,7 @@ import importlib.util
 import json
 import math
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -19,24 +22,35 @@ import tempfile
 ATOL=5e-12
 RTOL=5e-12
 ALLOW={'prior average toy','prior pair toy'}
+FINITE_TARGET_TOL=2e-6
+FINITE_PATH=re.compile(r'^\$\.toys\[[01]\]\.response_checks\[[012]\]\.finite_difference$')
 
 
 def need(ok: bool, message: str) -> None:
     if not ok: raise RuntimeError(message)
 
 
-def compare(a, b, path='$') -> list[dict]:
+def compare(a, b, path='$', pair=False) -> list[dict]:
     need(type(a) is type(b), 'Type difference at '+path)
     if isinstance(a,dict):
         need(a.keys()==b.keys(),'Key difference at '+path)
-        return [v for k in a for v in compare(a[k],b[k],path+'.'+k)]
+        if pair and {'finite_difference','quadratic','sector'} <= a.keys():
+            for obj in (a,b):
+                need(abs(obj['finite_difference']-obj['quadratic'])<FINITE_TARGET_TOL,
+                     'Original finite-difference target tolerance failed at '+path)
+        return [v for k in a for v in compare(a[k],b[k],path+'.'+k,pair)]
     if isinstance(a,list):
         need(len(a)==len(b),'Length difference at '+path)
-        return [v for i,(x,y) in enumerate(zip(a,b)) for v in compare(x,y,path+f'[{i}]')]
+        return [v for i,(x,y) in enumerate(zip(a,b)) for v in compare(x,y,path+f'[{i}]',pair)]
     if isinstance(a,float):
         need(math.isfinite(a) and math.isfinite(b),'Nonfinite value at '+path)
-        need(math.isclose(a,b,rel_tol=RTOL,abs_tol=ATOL),'Numeric discrepancy at '+path)
-        return [] if a==b else [{'path':path,'recorded':a,'observed':b,'absolute_difference':abs(a-b)}]
+        finite=pair and FINITE_PATH.fullmatch(path) is not None
+        atol=2*FINITE_TARGET_TOL+ATOL if finite else ATOL
+        need(math.isclose(a,b,rel_tol=RTOL,abs_tol=atol),
+             f'Numeric discrepancy at {path}: recorded={a!r}, observed={b!r}, atol={atol}')
+        return [] if a==b else [{'path':path,'recorded':a,'observed':b,
+            'absolute_difference':abs(a-b),'absolute_tolerance':atol,
+            'finite_difference_exception':finite}]
     need(a==b,'Exact value difference at '+path)
     return []
 
@@ -76,7 +90,7 @@ def main() -> None:
                 differences=[]
                 if not exact:
                     need(label in ALLOW,'Non-allowlisted strict mismatch: '+label)
-                    differences=compare(json.loads(original),json.loads(result.stdout))
+                    differences=compare(json.loads(original),json.loads(result.stdout),pair=(label=='prior pair toy'))
                 reports.append({'label':label,'mode':mode or ['normal'],'byte_identical':exact,
                                 'different_float_leaves':len(differences),
                                 'max_absolute_difference':max((x['absolute_difference'] for x in differences),default=0),
@@ -84,6 +98,7 @@ def main() -> None:
     print(json.dumps({'status':'PASS under explicitly bounded portability comparison',
         'all_reports_byte_identical':all(r['byte_identical'] for r in reports),
         'absolute_tolerance':ATOL,'relative_tolerance':RTOL,
+        'pair_finite_difference_target_tolerance':FINITE_TARGET_TOL,
         'allowlisted_reports':sorted(ALLOW),'reports':reports,
         'original_evidence_modified':False},sort_keys=True,indent=2))
 

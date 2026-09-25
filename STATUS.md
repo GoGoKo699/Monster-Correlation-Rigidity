@@ -35,7 +35,7 @@ The audits found no blocking gap in the specified Monster proof obligations afte
 
 ## Computational scope
 
-The original root verifier executes eight scientific scripts across twelve modes/replays and insists on byte-identical recorded reports. A floating-report mismatch appeared on the GitHub runner; it is not reclassified as a strict pass. `checks/replay_portability.py` reports finite-leaf differences under explicit 5e-12 tolerances for only the two named historical numerical reports. Exact leaves and all other reports remain exact. Original evidence is unchanged.
+The original root verifier executes eight scientific scripts across twelve modes/replays and insists on byte-identical recorded reports. A floating-report mismatch appeared on the GitHub runner; it is not reclassified as a strict pass. `checks/replay_portability.py` reports finite-leaf differences under explicit 5e-12 tolerances for only the two named historical numerical reports. The six pair finite-difference fields are separately checked against their analytic targets with the original 2e-6 tolerance; their cross-platform difference can be up to twice that tolerance. Exact leaves and all other reports remain exact. Original evidence is unchanged.
 
 The parameter-domain witness adds20 exact checks; the access checker adds44 checks, largest matrix81. Historical maximum256 remains the largest replayed matrix. The scripts neither build the Monster nor independently prove its classifications. Consult workflow output for the tested commit, strict replay outcome, and bounded-portability outcome rather than assuming universal byte reproducibility.
 

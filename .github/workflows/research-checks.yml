@@ -41,9 +41,15 @@ jobs:
           for tree in baseline candidate; do
             (
               cd "$tree"
-              if python3 verify.py; then
+              if python3 verify.py 2>/tmp/monster-strict.err; then
+                cat /tmp/monster-strict.err >&2
                 echo "Strict byte replay passed for $tree"
               else
+                cat /tmp/monster-strict.err >&2
+                case "$(tail -n 1 /tmp/monster-strict.err)" in
+                  "RuntimeError: prior average toy differs from recorded report under None"|"RuntimeError: prior pair toy differs from recorded report under None") ;;
+                  *) echo "Unrecognized strict failure; refusing portability fallback" >&2; exit 1 ;;
+                esac
                 echo "::warning::Strict byte replay failed for $tree; inspect the original error above and the independent bounded comparison below."
               fi
               python3 "$inspector" --root .
