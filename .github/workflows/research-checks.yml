@@ -1,7 +1,7 @@
 name: Research verification
 on:
   push:
-    branches: [research/probe-access, research/seysen-qqa-block, research/leech-xxa-block, main]
+    branches: [research/probe-access, research/seysen-qqa-block, research/leech-xxa-block, research/jordan-a0-sector, main]
   pull_request:
     branches: [main]
 permissions:
@@ -16,10 +16,10 @@ jobs:
       MKL_NUM_THREADS: '1'
       PYTHONDONTWRITEBYTECODE: '1'
     steps:
-      - name: Checkout pre-Leech baseline
+      - name: Checkout pre-Jordan baseline
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          ref: 5428fffc82ccd1ede8a4203b1e73acb6816de289
+          ref: c51e5ffaf06b90101c70df1d4f5347aa03b9cc14
           path: baseline
           persist-credentials: false
       - name: Checkout candidate
@@ -53,7 +53,7 @@ jobs:
                 echo "::warning::Strict byte replay failed for $tree; inspect the original failure and separate bounded comparison."
               fi
               python3 "$inspector" --root .
-              for script in checks/audit_*.py checks/verify_probe_access.py checks/verify_seysen_block.py checks/verify_leech_xxa.py; do
+              for script in checks/audit_*.py checks/verify_probe_access.py checks/verify_seysen_block.py checks/verify_leech_xxa.py checks/verify_a0_sector.py; do
                 test -f "$script" || continue
                 python3 "$script" > /tmp/monster-normal.json
                 python3 -O "$script" > /tmp/monster-O.json
@@ -65,6 +65,7 @@ jobs:
                   checks/verify_probe_access.py) cmp /tmp/monster-normal.json results/probe_access.json ;;
                   checks/verify_seysen_block.py) cmp /tmp/monster-normal.json results/seysen_block.json ;;
                   checks/verify_leech_xxa.py) cmp /tmp/monster-normal.json results/leech_xxa_checks.json ;;
+                  checks/verify_a0_sector.py) cmp /tmp/monster-normal.json results/a0_sector_checks.json ;;
                 esac
               done
               test -z "$(git status --porcelain)"

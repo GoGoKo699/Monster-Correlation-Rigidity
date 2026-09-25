@@ -1,0 +1,57 @@
+{
+  "all_input_clean_basis": {
+    "CCX": 823,
+    "CX": 149,
+    "H": 48,
+    "Ry": 48,
+    "X": 728
+  },
+  "amplification_rounds": 1,
+  "bell_preparation": {
+    "CX": 7,
+    "H": 3,
+    "Ry": 3,
+    "X": 2
+  },
+  "branch_weight_in_W": "77/6929",
+  "clean_zero_workspace_wires": 13,
+  "diluted_success_probability": "1/4",
+  "dilution_probability": "72/77",
+  "finite_gate_set_synthesis": false,
+  "full_W": false,
+  "good_reflection": {
+    "CCX": 233,
+    "CX": 164,
+    "H": 2,
+    "X": 256
+  },
+  "input_dimension": 299,
+  "measurements_or_postselection": false,
+  "output_wires": 20,
+  "source_base": "c51e5ffaf06b90101c70df1d4f5347aa03b9cc14",
+  "source_contraction": "308/3",
+  "source_reflection": {
+    "CCX": 17,
+    "H": 2,
+    "X": 22
+  },
+  "status": "constructive ideal-angle Jordan branch; not full W",
+  "total": {
+    "CCX": 7657,
+    "CX": 1571,
+    "H": 447,
+    "Ry": 444,
+    "X": 6838
+  },
+  "total_instructions": 16957,
+  "total_wires": 33,
+  "transfer": {
+    "CCX": 2469,
+    "CX": 469,
+    "H": 147,
+    "Ry": 148,
+    "X": 2186
+  },
+  "transfer_calls": 3,
+  "undiluted_success_probability": "77/288"
+}
