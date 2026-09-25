@@ -1,43 +1,46 @@
-# Monster Correlation Rigidity
+# Monster Correlation Rigidity — physical selection
 
-Ruge Lin's research project on exceptional finite symmetry as a property of quantum correlations, rather than only a representation fitting into a register.
+Ruge Lin's research project asks whether independently meaningful physical requirements select the Monster, rather than merely whether an engineered object can have Monster symmetry.
 
-**Current status:** a source-dependent quantitative rigidity derivation with bounded assistant audits, an ideal-angle circuit for the A0 input sector only, and two rounds of theorem-level precursor comparison. No independent expert review, formal verification, comprehensive novelty clearance, full probe compiler, practical implementation or quantum advantage is claimed.
+**The owner has redirected the main research line.** Gate recognition, circuit compilation and rejection-threshold optimization are now subsidiary records, not the selection principle. The active ledger is [PHYSICS_STATUS.md](PHYSICS_STATUS.md). The unchanged [STATUS_CURRENT.md](STATUS_CURRENT.md) records the earlier certification track; [STATUS.md](STATUS.md) is the original import-era record.
 
-## Latest: the test is standard; the quantitative conditioning is the question
+## Current physical question
 
-[Note 11](research/11_pair_test_prior_art_and_conditioning.md) gives an exact reduction of the pair experiment to a C2 Bose-support test: the auxiliary reflection is S=2P-I. Its acceptance/fidelity interpretation is a direct specialization of LaBorde–Rethinasamy–Wilde and earlier generalized phase estimation. Ordinary state invariance is a different property.
+Among nontrivial, simple, unitary, strongly rational bosonic holomorphic chiral CFTs with no weight-one currents, minimize the positive central charge. This criterion is stated without a Monster action or Griess multiplication. Holomorphicity is a substantial restriction on the class of theories, not a universal law of physics. Minimizing central charge is not an asserted dynamical RG mechanism.
 
-Wang's 2011 finite-unitary-set method already implies a query-level membership tester for the represented Monster. An explicit Gram-matrix specialization gives sufficient forward-U budgets 12561, 1259151 and 125918152 for promised phase-normalized Frobenius distances 0.1, 0.01 and 0.001, respectively, at false acceptance at most 1/3 and perfect completeness. Its collective Choi measurement is not compiled or claimed efficient. Two U calls per pair trial must not be presented as a complete two-query property test or a query advantage. The comparison is between sufficient bounds, not lower bounds or practical performance.
+[Note 12](research/12_physical_selection_from_extremality.md) establishes the following chain using prior modular, conformal-design and trace theorems:
 
-For any one fixed projector with finite collective stabilizer modulo phase, a square-root loss-to-distance law with some finite constant follows from local tangent conditioning and compactness. The exponent alone is not a novelty claim. Note 11 supplies two small analytic examples showing what the unspecified constants conceal: one pair projector family loses tangent sensitivity, while a real cubic family keeps uniformly positive tangent sensitivity but develops a distant almost-symmetry. Their exact finite stabilizers are unchanged for all positive parameters. They do not satisfy all Griess hypotheses or contradict the Monster theorem.
+**minimal current-free holomorphic theory -> c=24 and the J spectrum -> conformal 11-design constraints -> fixed low-energy OPE contraction identities.**
 
-The remaining candidate contribution is the specific low-order Griess correlation realization, its full complex stabilizer identification, and explicit local/global conditioning estimates. Whether that quantitative package is new and significant remains unresolved. [Note 10](research/10_normalizer_stability_comparison.md) previously matched the averaged-intertwiner step to prior work and isolated the reducible representation-compatibility obstruction.
+At c=8 and c=16, modular characters force 248 and 496 currents respectively. At c=24 the current-free condition fixes J=q^(-1)+196884q+..., leaving 196883 weight-two primaries besides the stress tensor. The known moonshine theory attains the minimum; uniqueness is not assumed or proved.
 
-## The existing quantitative certificate
+For any candidate minimizer, all primary torus one-point functions of positive weight at most eleven vanish. This is Hoehn's prior theorem, derived from extremality and modularity, not an assumed finite symmetry. Hoehn explicitly permits replacing Matsuo's large-automorphism assumptions by these design conditions. Consequently the normalized primary three-point coefficients obey
 
-Let d=196883, P=WW^dagger be the full multiplication projector, and sigma=P/d. Preparing sigma, applying the same fixed U to both registers and measuring P defines ideal rejection epsilon(U). Read with the audit repairs,
+$$\sum_{b,c}C_{abc}C_{a'bc}=\frac{13858}{3}\delta_{aa'}.$$
 
-$$\epsilon(U)\le10^{-12}\quad\Longrightarrow\quad
-\min_{\theta,g}\frac{\|U-e^{i\theta}\rho(g)\|_F}{\sqrt d}
-\le\sqrt{\frac{1681\pi^2}{12528}}\sqrt{\epsilon(U)}\le1.151\sqrt{\epsilon(U)}.$$
+The same argument forces the six eigenvalues and multiplicities of the OPE contraction operator used earlier in the project. This is an explicit **corollary of established results**, not a new trace formula, a reconstructed full OPE tensor, or a proof that the Monster group has been selected. No Monster character table or irreducible decomposition is used in this derivation.
 
-The real-orthogonal sufficient threshold is 1e-10. These are normalized Frobenius statements, not worst-case channel bounds, optimal thresholds or efficient nearest-element extraction. Note 11 improves no threshold. Trusted access and the fixed logical-space unitary promise are essential.
+In the diagonal nonchiral completion, the scalar gap is four, excluding nontrivial relevant and marginal Lorentz-scalar deformations. This is a conformal-perturbation statement, not proof of a microscopic realization or attraction basin.
 
-[Note 06](research/06_probe_access.md) accounts for access, calibration and sampling. At zero calibration error, zero-rejection sampling to the current 1e-12 threshold at 95 percent confidence takes about 3e12 independent ideal trials. Full W/P access is not supplied by the [complete tagged A0-sector construction](research/09_jordan_and_a0_sector.md): it covers 299 input dimensions only, with a 135774249-instruction hierarchical ideal-angle budget. All X/Q input sectors, complete probe preparation/measurement, packed-register integration and certified synthesis remain open.
+## The missing interaction problem
 
-## Evidence and coordination
+A spectrum and summed coupling constraints do not identify the full multiplication. We have not proved that every minimizer's weight-two algebra is the Conway–Griess algebra. The conditional Dong–Griess–Lam uniqueness theorem still requires precisely that hypothesis. Current 2026 primary literature also distinguishes partition-function equality from full VOA reconstruction; the moonshine uniqueness problem remains open there.
 
-[STATUS_CURRENT.md](STATUS_CURRENT.md) is the active claim ledger; STATUS.md is the protected import-era record. Read historical notes with the [VOA audit](audits/voa_extrema_audit.md), [robustness audit](audits/robustness_proof_audit.md), [integration errata](audits/integration_20260925.md), and newer comparisons. Neither a script pass nor an unmatched search establishes novelty or proof correctness.
+The [next bounded assignment](work_orders/CURRENT.md) is an uncontracted weight-two four-point/OPE consistency calculation, beginning with the weight-three primary channel and its positive Gram form. Do not insert a Monster representation, axis classification, or known multiplication table to close the argument. Failure to find an alternative tensor is not a uniqueness proof; an algebraic tensor without a complete CFT realization is not an alternative physical theory.
 
-The new [105-check verifier](checks/verify_pair_prior_art.py) checks small support/Choi reductions, finite-set Gram identities, conditioning examples and scalar budgets. Largest square matrix: 81 by 81; largest state vector: length 256. It does not construct a Monster-sized operator or numerically establish the analytic stabilizer-completeness/global-orbit proofs. Reports agree locally under normal/-O/-OO.
+## Evidence and historical record
+
+The [new checker](checks/verify_physical_selection.py) has 37 exact scalar checks of characters, modular-form dimensions, trace normalization, spectral roots and multiplicities. It uses integer/fraction arithmetic and constructs no dense matrix, Monster data or full OPE tensor. Its report reproduces under normal Python, -O and -OO. The source theorems and existence/uniqueness questions are not proved by those checks.
 
 ```sh
+python checks/verify_physical_selection.py
+python -O checks/verify_physical_selection.py
+python -OO checks/verify_physical_selection.py
+# Historical evidence replay, unchanged:
 OPENBLAS_NUM_THREADS=1 python verify.py
 OPENBLAS_NUM_THREADS=1 python checks/replay_portability.py
-OPENBLAS_NUM_THREADS=1 python checks/verify_pair_prior_art.py
 ```
 
-The original root verifier and the separate bounded-portability policy are unchanged. Recognized historical floating-report byte mismatches remain strict failures, not strict passes. No archived report or tolerance is altered. Read the workflow's actual baseline/candidate outcomes.
+All notes 01–11, old code/data/results/audits, original status ledgers, provenance archives and license remain unchanged. The old rigidity theorem is a conditional recognition statement for a specified tensor, not evidence that physics selects that tensor. The prior complete A0-sector circuit is not a full probe compiler. Source depth, numerical portability distinctions and prior-review limits remain recorded.
 
-The [next work order](work_orders/CURRENT.md) targets a structurally stronger coarse soundness estimate, rather than another circuit block or an existence claim already supplied by generic testing. Use [AGENTS.md](AGENTS.md) and [WORKSPACES.md](WORKSPACES.md). The original [MIT license](LICENSE), Copyright (c) 2026 Ruge Lin, and all earlier scientific evidence remain unchanged. No manuscript, release, outreach or large cloud simulation is authorized.
+Use [AGENTS.md](AGENTS.md) and [WORKSPACES.md](WORKSPACES.md). No independent expert review, formal verification, comprehensive novelty clearance, practical implementation, manuscript, release or outreach is claimed. The original [MIT license](LICENSE), Copyright (c) 2026 Ruge Lin, is preserved.
