@@ -1,34 +1,25 @@
-# Current work order: audit the complete robustness argument
+# Current work order — 25 September 2026
 
-The repository is now needed for proof dependencies, source priority, and parallel review. Do not start by adding another application.
+Read AGENTS.md, WORKSPACES.md, STATUS.md and audits/integration_20260925.md. Preserve all protected historical material. Keep proof validity, priority and access feasibility separate.
 
-## First deliverable: a falsification-oriented proof audit
+## Completed within stated scope
 
-Read research/05_normalizer_rounding.md in full and trace every imported result through notes 01–04. Check especially:
+The bounded VOA/extremum audit and the eight listed robustness obligations have assistant reconstructions with narrow repairs. Note06 provides a credible conditional coherent-access model, copy-access comparisons and a calibrated confidence statement. The priority matrix is a first pass only; manuscript preparation is not authorized.
 
-1. Every real sphere critical point used in the earlier extrema argument really produces the stated positive-energy unitary Virasoro representation; zero central charge and the identity branch are excluded correctly.
-2. The projected multiplication's spectral normalization and every factor of d in the averaged matrix/tensor residual agree.
-3. The finite-radius localization and matching-completion inequalities are valid globally on their claimed domains.
-4. Four conjugate generators really imply the absolute 1/2 class ratio for every nontrivial irreducible representation; the minus-eigenspace argument is included.
-5. Conditioning a class walk on the good subset keeps the stated spectral norm despite loss of conjugacy invariance.
-6. Word replacement, nearest-point uniqueness, exact multiplication, injectivity, and the nonzero averaged intertwiner are separate justified steps.
-7. The orthogonal normalizer is reduced to signed Monster using the unique invariant cubic, not an unsupported general inference.
-8. The operator-norm bootstrap uses the actual preliminary Frobenius error and includes centering the logarithm.
+## Next bounded research deliverable
 
-Give each item PASS, ERROR with a correction/counterexample, or UNRESOLVED with the exact missing justification. Do not claim independent review when the same assistant merely repeats a proof.
+Test coherent access to the multiplication isometry from **Seysen arXiv:2002.10921v5 section10.1**, rather than compiling arbitrary Monster matrices or materializing a dense tensor.
 
-## Second deliverable: priority matrix
+First derive the metric, product scaling and identity-vector conversion from the full196884-dimensional block construction to the project's normalized traceless cubic. Account for the sqrt(2) off-diagonal basis normalization. Then choose one nonzero trilinear block and specify a clean reversible primitive for its indices, signs and amplitudes, including any success probability and amplification. State elementary gate assumptions, ancillas, numerical precision and uncomputation. No efficiency claim for the entire W follows from a single block.
 
-Compare the main statements against Norton's original Griess chapter (not yet obtained), Matsuo's trace work, axial-algebra automorphism algorithms, Gowers–Hatami and related stability work, stability of finite subgroups/normalizers, and quantum symmetry testing. Distinguish an old input, a straightforward corollary, a potentially new quantitative statement, and an unresolved priority question. Negative web-search results do not establish novelty.
+A rigorous cost obstruction for a proposed route is a useful result, but distinguish a sufficient algorithm budget from a lower bound. Do not infer a universal lower bound from the repeated-SWAP model or worst-case density-matrix-exponentiation results.
 
-## Third deliverable: probe-access feasibility
+## Priority remains a parallel obligation
 
-Specify what preparation of sigma and measurement of P would require under a credible gate/access model. Do not infer efficiency from the 18-qubit register size or a constant query count. An honest conclusion that the result is presently a mathematical certification theorem rather than an implementation proposal is acceptable.
+Obtain Norton's *The Monster algebra: some new formulae* (Contemp.Math.193,1996,297-306) and compare its tensor/operator identities directly. Continue the fixed-target normalizer comparison with original stability sources and exact axial-automorphism algorithms using the fields in audits/priority_matrix.md. A bibliographic citation or negative search is not a completed priority audit. Original Zisser proof-depth verification remains separate from using the published DMPZ upper bound.
 
-## Acceptance
+## Acceptance and evidence
 
-A useful next checkpoint must contain either an actual correction, a sharper independently traceable argument, or a sourced novelty/resource assessment. A longer list of speculative connections is not a substitute.
+Deliver a normalization-checked primitive/cost model, an explicit counterexample/correction, or a precise theorem-level priority comparison. No further list of speculative applications. Run the unchanged python verify.py and report its strict outcome. If it differs in floating reports, run the separately scoped portability inspector and retain both outcomes. New checks must not depend on assert, must run under normal/-O/-OO, and must state their largest tested dimension. Do not rewrite historical evidence to obtain a green check.
 
-## Parallel-workspace assignment
-
-The first additional workspace should start with [the bounded VOA/extremum audit](INDEPENDENT_AUDIT.md), under [WORKSPACES.md](../WORKSPACES.md). The integration workspace remains responsible for combining corrections and maintaining STATUS.md. No second-workspace review is yet claimed.
+Work on an unused branch and submit a small PR. Main-conversation integration remains responsible for merges. No manuscript, release, external outreach or new workspace is required by this work order.

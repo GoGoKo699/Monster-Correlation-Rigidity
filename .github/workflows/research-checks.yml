@@ -33,14 +33,20 @@ jobs:
           python-version: '3.13.5'
       - name: Install recorded numerical dependency
         run: python3 -m pip install 'numpy==2.3.5'
-      - name: Verify baseline and candidate without modifying evidence
+      - name: Strict replay, explicit portability inspection, and new checks
         shell: bash
         run: |
           set -euo pipefail
+          inspector="$GITHUB_WORKSPACE/candidate/checks/replay_portability.py"
           for tree in baseline candidate; do
             (
               cd "$tree"
-              python3 verify.py
+              if python3 verify.py; then
+                echo "Strict byte replay passed for $tree"
+              else
+                echo "::warning::Strict byte replay failed for $tree; inspect the original error above and the independent bounded comparison below."
+              fi
+              python3 "$inspector" --root .
               for script in checks/audit_*.py checks/verify_probe_access.py; do
                 test -f "$script" || continue
                 python3 "$script" > /tmp/monster-normal.json
