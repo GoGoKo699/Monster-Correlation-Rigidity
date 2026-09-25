@@ -1,0 +1,31 @@
+{
+  "base_commit": "09e3f98ad79034eefab43f4fb9ea432368fc19e7",
+  "files": [
+    {
+      "bytes": 15052,
+      "path": "research/16_mixed_trace_reconstruction.md",
+      "sha256": "f9069792540f24f06993c4a7bbbfba240178bdc5213924140b45f0073e05eeff"
+    },
+    {
+      "bytes": 7102,
+      "path": "checks/mixed_trace_virasoro.py",
+      "sha256": "6ae2b68db054f07c013224128f899f005fc7b58ec3276ab0954735d871f03346"
+    },
+    {
+      "bytes": 12421,
+      "path": "checks/verify_mixed_trace_reconstruction.py",
+      "sha256": "365267392565ebe1bf31a0131af82174ed82962bc61881186703cd7b77e2130c"
+    },
+    {
+      "bytes": 3437,
+      "path": ".github/workflows/mixed-trace-reconstruction.yml",
+      "sha256": "fe003c1bbca163a46030f9d4e13b6e2bb91f440aecb5598b1d678043fed6899d"
+    },
+    {
+      "bytes": 65,
+      "path": "results/mixed_trace_reconstruction_report.sha256",
+      "sha256": "6acc2952768f52c70b4ce584e645af9055c5eda7f09de1d3c29ad64ce3900efc"
+    }
+  ],
+  "scope": "Additive continuation only. Frozen main snapshot and every historical file remain unchanged. This manifest excludes itself."
+}
