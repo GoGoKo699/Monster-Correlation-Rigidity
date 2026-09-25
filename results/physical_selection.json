@@ -1,0 +1,96 @@
+{
+  "Monster_character_data_used": false,
+  "VOA_or_full_OPE_tensor_constructed": false,
+  "algebra": {
+    "contraction_spectrum": [
+      {
+        "eigenvalue": "1",
+        "multiplicity": 1
+      },
+      {
+        "eigenvalue": "2697/13858",
+        "multiplicity": 196883
+      },
+      {
+        "eigenvalue": "155/13858",
+        "multiplicity": 842609326
+      },
+      {
+        "eigenvalue": "-7/13858",
+        "multiplicity": 18538750076
+      },
+      {
+        "eigenvalue": "5/82",
+        "multiplicity": 21296876
+      },
+      {
+        "eigenvalue": "-1/13858",
+        "multiplicity": 19360062527
+      }
+    ],
+    "kappa": "13858/3",
+    "primary_dimension": 196883,
+    "stabilizer_identified_from_these_checks": false,
+    "total_squared_primary_three_point_strength": "2728404614/3",
+    "triple_trace_coefficient": "899"
+  },
+  "arithmetic": "integers and fractions only",
+  "base_commit": "109e1cffd3c61f374635fec0a36f97e972d373e5",
+  "checks": 37,
+  "dense_matrices_constructed": false,
+  "labels": [
+    "series:inverse_identity_c8",
+    "series:inverse_identity_c16",
+    "series:inverse_identity_c24",
+    "modular:weight4_and_weight8_dimensions_one",
+    "modular:weight12_dimension_two",
+    "minimality:c8_has_248_weight_one_states",
+    "minimality:c16_has_496_weight_one_states",
+    "series:j_constant_744",
+    "series:J_first_five_weight_degeneracies",
+    "spectrum:weight_two_primaries_after_stress_removal",
+    "spectrum:weight_three_primary_count",
+    "thermal:no_cusp_form_for_weights_one_through_eleven",
+    "thermal:first_allowed_cusp_space_weight_twelve_dimension_one",
+    "thermal:higher_weight_vanishing_is_not_monotone",
+    "thermal:weight12_Delta_coefficients",
+    "physics:diagonal_completion_scalar_gap_four",
+    "trace:second_coefficient_from_general_c_dimension_formula",
+    "trace:third_coefficient_from_general_c_dimension_formula",
+    "normalization:unit_stress_direction_multiplication_squared",
+    "OPE:primary_contraction_kappa_after_two_scalar_cross_terms",
+    "OPE:primary_triple_trace_after_three_scalar_cross_terms",
+    "OPE:physical_stress_tensor_coefficient",
+    "OPE:total_squared_three_point_strength",
+    "trace:fourth_order_projection_coefficients",
+    "contraction:symmetric_complement_roots",
+    "contraction:antisymmetric_roots",
+    "contraction:multiplication_subspace_root",
+    "contraction:scalar_subspace_root",
+    "contraction:all_multiplicities_positive_integers",
+    "contraction:multiplicities_without_group_characters",
+    "contraction:dimensions_cover_End_primary_space",
+    "contraction:full_superoperator_trace_zero",
+    "contraction:symmetric_supertrace",
+    "contraction:antisymmetric_supertrace",
+    "contraction:nontrivial_norm",
+    "contraction:inherited_three_register_gap_arithmetic",
+    "negative_control:unprojected_trace_constants_are_not_primary_constants"
+  ],
+  "modular": {
+    "c16_weight_one_count": 496,
+    "c8_weight_one_count": 248,
+    "first_modularly_allowed_primary_one_point_weight": 12,
+    "q_times_J_first_five_coefficients": [
+      1,
+      0,
+      196884,
+      21493760,
+      864299970
+    ]
+  },
+  "moonshine_uniqueness_proved": false,
+  "new_physical_selection_theorem_claimed": false,
+  "series_truncation_order": 16,
+  "status": "PASS: exact modular/OPE scalar implications only"
+}
