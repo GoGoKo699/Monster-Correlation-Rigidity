@@ -1,25 +1,29 @@
-# Current work order — 25 September 2026
+# Current work order — 25 September 2026, after the first isometry block
 
-Read AGENTS.md, WORKSPACES.md, STATUS_CURRENT.md and audits/integration_20260925.md. Preserve all protected historical material. Keep proof validity, priority and access feasibility separate.
+Read AGENTS.md, WORKSPACES.md, STATUS_CURRENT.md, the integration errata and research/07_seysen_qqa_block.md. Keep proof validity, priority, and access feasibility separate. Preserve protected historical material; no manuscript, release or outreach is authorized.
 
-## Completed within stated scope
+## Completed bounded access deliverable
 
-The bounded VOA/extremum audit and the eight listed robustness obligations have assistant reconstructions with narrow repairs. Note06 provides a credible conditional coherent-access model, copy-access comparisons and a calibrated confidence statement. The priority matrix is a first pass only; manuscript preparation is not authorized.
+Note 07 converts Seysen's source metric and identity convention, independently reproduces kappa=13858/3, and gives the three exact output weights on A_0 inputs. The normalized A_0 -> Q tensor Q branch has a clean emitted circuit with 1746 instructions in the explicitly stated logical gate library. Its matrix-vectorization subroutine is checked on every valid input basis vector. This is not the complete W, a circuit-synthesis result at 1e-12 accuracy, or a standalone Monster test.
 
-## Next bounded research deliverable
+## Next bounded deliverable: A_0 -> X tensor X
 
-Test coherent access to the multiplication isometry from **Seysen arXiv:2002.10921v5 section10.1**, rather than compiling arbitrary Monster matrices or materializing a dense tensor.
+Construct or falsify a resource-counted clean implementation of the normalized map
 
-First derive the metric, product scaling and identity-vector conversion from the full196884-dimensional block construction to the project's normalized traceless cubic. Account for the sqrt(2) off-diagonal basis normalization. Then choose one nonzero trilinear block and specify a clean reversible primitive for its indices, signs and amplitudes, including any success probability and amplification. State elementary gate assumptions, ancillas, numerical precision and uncomputation. No efficiency claim for the entire W follows from a single block.
+J_X|A> = (1/sqrt(5040)) sum_r (lambda_r A lambda_r^T) |r,r>, for A in A_0,
 
-A rigorous cost obstruction for a proposed route is a useful result, but distinguish a sufficient algorithm budget from a lower bound. Do not infer a universal lower bound from the repeated-SWAP model or worst-case density-matrix-exponentiation results.
+using one representative of each antipodal Leech short-vector pair. Note 07 proves J_X is an isometry using exact fourth moments. Do not retain a copy of the input A label. Distinguish an isometry implemented on arbitrary coherent input from preparation of each column separately with un-erased labels.
 
-## Priority remains a parallel obligation
+Specify a coherent label convention for all three Leech shapes, including the octad and sign routines. Establish amplitude normalization, workspace erasure, success probability of any postselection, and amplification costs. Use small Golay/coordinate calculations, not a dense Monster tensor. Reusing the source's known Golay/Leech formulas is prior art; the resource-counted quantum construction is the proposed deliverable. It is acceptable to prove an obstruction for one particular loading route, but not to relabel that obstruction as a lower bound for every implementation.
 
-Obtain Norton's *The Monster algebra: some new formulae* (Contemp.Math.193,1996,297-306) and compare its tensor/operator identities directly. Continue the fixed-target normalizer comparison with original stability sources and exact axial-automorphism algorithms using the fields in audits/priority_matrix.md. A bibliographic citation or negative search is not a completed priority audit. Original Zisser proof-depth verification remains separate from using the published DMPZ upper bound.
+The remaining A_0 -> A_0 tensor A_0 branch, X/Q input sectors and their coherent combination remain open. Do not claim full preparation or measurement from one branch. Keep the optional native-to-full-register encoding cost explicit.
 
-## Acceptance and evidence
+## Priority remains separate
 
-Deliver a normalization-checked primitive/cost model, an explicit counterexample/correction, or a precise theorem-level priority comparison. No further list of speculative applications. Run the unchanged python verify.py and report its strict outcome. If it differs in floating reports, run the separately scoped portability inspector and retain both outcomes. New checks must not depend on assert, must run under normal/-O/-OO, and must state their largest tested dimension. Do not rewrite historical evidence to obtain a green check.
+Continue theorem-level comparison of the repaired C11 with fixed-target normalizer and approximate-representation stability literature. Record norms, average versus uniform assumptions, representation dimension and prescribed target image. Original Norton/Zisser proof-depth work remains open; a bibliographic reference or negative search does not complete the comparison.
 
-Work on an unused branch and submit a small PR. Main-conversation integration remains responsible for merges. No manuscript, release, external outreach or new workspace is required by this work order.
+## Acceptance and verification
+
+Deliver a clean primitive and resource proof, a demonstrated correction/counterexample, or a precise precursor-theorem comparison. Work on an unused branch, record its exact base, and submit a small PR. Do not force-push or overwrite other workspaces.
+
+Run unchanged python verify.py and report its strict outcome. Use the unchanged separately bounded portability inspector for recognized historical floating-report mismatches; never overwrite old results to make them pass. New checks must remain active under normal Python, -O and -OO. State the largest dense matrix, sparse simulation scope and whether the complete Monster is represented.

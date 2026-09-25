@@ -1,7 +1,7 @@
 name: Research verification
 on:
   push:
-    branches: [research/probe-access, main]
+    branches: [research/probe-access, research/seysen-qqa-block, main]
   pull_request:
     branches: [main]
 permissions:
@@ -16,10 +16,10 @@ jobs:
       MKL_NUM_THREADS: '1'
       PYTHONDONTWRITEBYTECODE: '1'
     steps:
-      - name: Checkout audited baseline
+      - name: Checkout pre-isometry baseline
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          ref: c48f2c7798f0c507d657cb43e9ce7c41d7d5b83d
+          ref: ef7824945e92c12acc3652af21c5b617ce9ca8e8
           path: baseline
           persist-credentials: false
       - name: Checkout candidate
@@ -53,7 +53,7 @@ jobs:
                 echo "::warning::Strict byte replay failed for $tree; inspect the original error above and the independent bounded comparison below."
               fi
               python3 "$inspector" --root .
-              for script in checks/audit_*.py checks/verify_probe_access.py; do
+              for script in checks/audit_*.py checks/verify_probe_access.py checks/verify_seysen_block.py; do
                 test -f "$script" || continue
                 python3 "$script" > /tmp/monster-normal.json
                 python3 -O "$script" > /tmp/monster-O.json
@@ -61,9 +61,10 @@ jobs:
                 cmp /tmp/monster-normal.json /tmp/monster-O.json
                 cmp /tmp/monster-normal.json /tmp/monster-OO.json
                 cat /tmp/monster-normal.json
-                if [ "$script" = checks/verify_probe_access.py ]; then
-                  cmp /tmp/monster-normal.json results/probe_access.json
-                fi
+                case "$script" in
+                  checks/verify_probe_access.py) cmp /tmp/monster-normal.json results/probe_access.json ;;
+                  checks/verify_seysen_block.py) cmp /tmp/monster-normal.json results/seysen_block.json ;;
+                esac
               done
               test -z "$(git status --porcelain)"
               git diff --check
