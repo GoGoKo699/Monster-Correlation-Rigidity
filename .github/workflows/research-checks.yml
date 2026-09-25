@@ -1,7 +1,7 @@
 name: Research verification
 on:
   push:
-    branches: [research/probe-access, research/seysen-qqa-block, main]
+    branches: [research/probe-access, research/seysen-qqa-block, research/leech-xxa-block, main]
   pull_request:
     branches: [main]
 permissions:
@@ -16,10 +16,10 @@ jobs:
       MKL_NUM_THREADS: '1'
       PYTHONDONTWRITEBYTECODE: '1'
     steps:
-      - name: Checkout pre-isometry baseline
+      - name: Checkout pre-Leech baseline
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          ref: ef7824945e92c12acc3652af21c5b617ce9ca8e8
+          ref: 5428fffc82ccd1ede8a4203b1e73acb6816de289
           path: baseline
           persist-credentials: false
       - name: Checkout candidate
@@ -33,7 +33,7 @@ jobs:
           python-version: '3.13.5'
       - name: Install recorded numerical dependency
         run: python3 -m pip install 'numpy==2.3.5'
-      - name: Strict replay, explicit portability inspection, and new checks
+      - name: Strict replay, existing portability policy, and branch checks
         shell: bash
         run: |
           set -euo pipefail
@@ -50,10 +50,10 @@ jobs:
                   "RuntimeError: prior average toy differs from recorded report under None"|"RuntimeError: prior pair toy differs from recorded report under None") ;;
                   *) echo "Unrecognized strict failure; refusing portability fallback" >&2; exit 1 ;;
                 esac
-                echo "::warning::Strict byte replay failed for $tree; inspect the original error above and the independent bounded comparison below."
+                echo "::warning::Strict byte replay failed for $tree; inspect the original failure and separate bounded comparison."
               fi
               python3 "$inspector" --root .
-              for script in checks/audit_*.py checks/verify_probe_access.py checks/verify_seysen_block.py; do
+              for script in checks/audit_*.py checks/verify_probe_access.py checks/verify_seysen_block.py checks/verify_leech_xxa.py; do
                 test -f "$script" || continue
                 python3 "$script" > /tmp/monster-normal.json
                 python3 -O "$script" > /tmp/monster-O.json
@@ -64,6 +64,7 @@ jobs:
                 case "$script" in
                   checks/verify_probe_access.py) cmp /tmp/monster-normal.json results/probe_access.json ;;
                   checks/verify_seysen_block.py) cmp /tmp/monster-normal.json results/seysen_block.json ;;
+                  checks/verify_leech_xxa.py) cmp /tmp/monster-normal.json results/leech_xxa_checks.json ;;
                 esac
               done
               test -z "$(git status --porcelain)"
