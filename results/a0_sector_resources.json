@@ -1,0 +1,84 @@
+{
+  "all_A0_output_branches_combined": true,
+  "branch_weights": [
+    "77/6929",
+    "3780/6929",
+    "3072/6929"
+  ],
+  "canonical_18_qubit_packing": false,
+  "clean_zero_workspace_wires": 65,
+  "controlled_H_relative_phase_retained": true,
+  "controlled_branch_counts": {
+    "AAA": {
+      "CCX": 24542,
+      "CX": 9067,
+      "H": 894,
+      "Ry": 1782
+    },
+    "QQA": {
+      "CCX": 2528,
+      "CX": 984,
+      "H": 120,
+      "Ry": 216
+    },
+    "XXA": {
+      "CCX": 103107464,
+      "CX": 25618383,
+      "H": 2205368,
+      "Ry": 4802704
+    }
+  },
+  "finite_gate_set_synthesis": false,
+  "full_W": false,
+  "full_circuit_simulated": false,
+  "full_input_dimension": 196883,
+  "input_dimension": 299,
+  "measurements_or_postselection": false,
+  "output_wires": 40,
+  "physical_qubits_per_output_register": 20,
+  "sector_dimensions": {
+    "A0": 299,
+    "Q": 98304,
+    "X": 98280
+  },
+  "selector_routing_tag_erasure_overhead": {
+    "CCX": 60,
+    "CX": 116,
+    "Ry": 3,
+    "X": 18
+  },
+  "source_base": "c51e5ffaf06b90101c70df1d4f5347aa03b9cc14",
+  "status": "constructive tagged A0-sector ideal-angle budget; not full W",
+  "total": {
+    "CCX": 103134594,
+    "CX": 25628550,
+    "H": 2206382,
+    "Ry": 4804705,
+    "X": 18
+  },
+  "total_instructions": 135774249,
+  "total_wires": 105,
+  "uncontrolled_branch_counts": {
+    "AAA": {
+      "CCX": 7657,
+      "CX": 1571,
+      "H": 447,
+      "Ry": 444,
+      "X": 6838
+    },
+    "QQA": {
+      "CCX": 799,
+      "CX": 131,
+      "H": 60,
+      "Ry": 48,
+      "X": 708
+    },
+    "XXA": {
+      "CCX": 33936255,
+      "CX": 1298699,
+      "H": 1102684,
+      "Ry": 1298668,
+      "X": 19712995
+    }
+  }
+}
