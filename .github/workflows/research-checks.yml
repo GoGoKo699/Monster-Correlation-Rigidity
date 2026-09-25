@@ -1,7 +1,7 @@
 name: Research verification
 on:
   push:
-    branches: [research/probe-access, research/seysen-qqa-block, research/leech-xxa-block, research/jordan-a0-sector, research/normalizer-priority, research/pair-test-priority, research/physical-selection, research/weight-three-ope, main]
+    branches: [research/probe-access, research/seysen-qqa-block, research/leech-xxa-block, research/jordan-a0-sector, research/normalizer-priority, research/pair-test-priority, research/physical-selection, research/weight-three-ope, research/weight-four-closure, main]
   pull_request:
     branches: [main]
 permissions:
@@ -16,10 +16,10 @@ jobs:
       MKL_NUM_THREADS: '1'
       PYTHONDONTWRITEBYTECODE: '1'
     steps:
-      - name: Checkout pre-weight-three baseline
+      - name: Checkout pre-weight-four baseline
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          ref: 514c11d54ac5d743767ec631f55d258665a5501b
+          ref: ba02084a1a74fc0b4db1299f6ab3bc327a0901ef
           path: baseline
           persist-credentials: false
       - name: Checkout candidate
@@ -53,7 +53,7 @@ jobs:
                 echo "::warning::Strict byte replay failed for $tree; inspect the original failure and separate bounded comparison."
               fi
               python3 "$inspector" --root .
-              for script in checks/audit_*.py checks/verify_probe_access.py checks/verify_seysen_block.py checks/verify_leech_xxa.py checks/verify_a0_sector.py checks/verify_normalizer_priority.py checks/verify_pair_prior_art.py checks/verify_physical_selection.py checks/verify_weight_three.py; do
+              for script in checks/audit_*.py checks/verify_probe_access.py checks/verify_seysen_block.py checks/verify_leech_xxa.py checks/verify_a0_sector.py checks/verify_normalizer_priority.py checks/verify_pair_prior_art.py checks/verify_physical_selection.py checks/verify_weight_three.py checks/verify_weight_four.py; do
                 test -f "$script" || continue
                 python3 "$script" > /tmp/monster-normal.json
                 python3 -O "$script" > /tmp/monster-O.json
@@ -70,6 +70,7 @@ jobs:
                   checks/verify_pair_prior_art.py) cmp /tmp/monster-normal.json results/pair_prior_art.json ;;
                   checks/verify_physical_selection.py) cmp /tmp/monster-normal.json results/physical_selection.json ;;
                   checks/verify_weight_three.py) cmp /tmp/monster-normal.json results/weight_three.json ;;
+                  checks/verify_weight_four.py) cmp /tmp/monster-normal.json results/weight_four.json ;;
                 esac
               done
               test -z "$(git status --porcelain)"

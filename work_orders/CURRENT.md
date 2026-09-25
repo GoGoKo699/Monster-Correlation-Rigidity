@@ -1,19 +1,25 @@
-# Current work order — weight-four interactions after weight-three saturation
+# Current work order — mixed interactions after four-point closure
 
-Read AGENTS.md, WORKSPACES.md, README.md, PHYSICS_STATUS.md and research/13_weight_three_ope_channel.md. The owner's target is physical specialness/selection, not engineered recognition. Preserve notes01-13 and all prior science/code/data/results/audits, old ledgers, provenance and the MIT license. No manuscript, release, outreach or large simulation is authorized.
+Read AGENTS.md, WORKSPACES.md, README.md, PHYSICS_STATUS.md and research/14_weight_four_and_four_point_closure.md. Keep the owner's physical-specialness question central; no return to engineered recognition or gate budgets. Preserve notes01-14 and all previous code/results/audits/ledgers/provenance/license. No manuscript, release, outreach or large simulation is authorized.
 
-## Completed scope
+## What the latest calculation closes
 
-The primary projection B(a,b)=a_(0)b-(1/2)L_-1(a_(1)b) has Gram F_-+I/3=282Pi_+. Its rank equals the entire weight-three primary dimension21296876. This proves onto generation and fixes the 2,2,3 channel up to output basis, conditional on the unknown 2,2,2 tensor. Positivity/rank at this channel are already consequences of the universal trace spectrum, not a new independent restriction or full VOA uniqueness.
+The weight-four primary map has Gram54Pi_s+ and generates all842609326 weight-four primaries. Its positivity/rank, like weight three, follow from the earlier joint multiplication identities. More generally the complete external-P2 four-point kernel lies in a six-dimensional commuting algebra. Under those joint identities, its scalar sector functions and Virasoro Gram eigenvalues are universal. The known unitary example establishes positivity/rank compatibility at all intermediate weights. This conditional result does not identify the cubic, construct an alternative CFT, or equate pair-space spectra with single-field equivalence.
 
-## Next bounded calculation
+Do not treat another intermediate coefficient of the same kernel as an independent selection test. General iterated V2-generation also has a prior theorem in Tuite0811.4523; do not rebrand it as new.
 
-Derive the primary part of a_(-1)b for arbitrary weight-two primaries a,b. Explicitly subtract the vacuum-module descendants at weight4, both level-two descendants of each weight-two primary, and L_-1 of the weight-three channel. Check symmetry after subtraction rather than assuming it for the raw product. Retain Hermitian/PCT phases and all full-versus-projected product distinctions.
+## Next bounded deliverable: the five-label mixed action
 
-Compute the resulting four-label Gram form from mode identities. Determine whether it can be expressed solely in terms of the primary weight-two multiplication, and whether positivity/rank follow from note12's existing trace identities or supply a new condition. The available primary dimension842609326 is a constraint, not a surjectivity premise. Do not assign any contraction eigenspace a Monster representation label.
+For a real primary e in P2 and x,y in wedge^2 P2, derive
 
-A proof that this next channel is also redundant is a useful outcome only if the remaining independent data are identified explicitly. Do not turn an endless sequence of moment repackagings into a uniqueness claim. An abstract finite-dimensional Gram factor is not a complete local/unitary CFT; higher OPEs and crossing remain obligations. Consider the physical interpretation of any new identity, not gate budgets.
+T_e(x,y)=<Bx,e_(1)By>.
+
+Keep the implicit primary compression, because e_(1) need not preserve P3 before compression. Unitarity requires Hermiticity and the quotient consistency condition T_e=Pi_a+ T_e Pi_a+. Determine the exact mode expression for five independent external P2 labels, including all stress and descendant corrections.
+
+Use Matsuo math/0007169 equation(2.2), Theorem2.1's fifth-trace identity and section2.2's five-linear-form discussion as primary inputs. Do not assume that the five-form is either a free variable or fixed by the binary multiplication: test the design-based exceptional identity and its coefficient explicitly. Then determine whether quotient consistency supplies an additional polynomial identity on the still-unknown cubic, follows from the old ones, or requires other data. A fresh bounded audit of Note14's all-weight closure argument is also appropriate before relying on it beyond this research checkpoint.
+
+A new restriction must have a physical interpretation in shared intermediate-state interactions, not just a matching dimension. An abstract Gram factor is not a VOA. A failure to construct competing cubics is not uniqueness; a proven redundancy should identify the next genuinely untested compatibility condition rather than start an endless moment catalogue.
 
 ## Integration
 
-Start from live main, inspect branches/PRs and record the base. PHYSICS_STATUS is the active ledger; former ledgers remain unchanged. The explicit PR9 replay erratum must not be obscured: its overall workflow passed bounded portability, not strict byte replay. Run unchanged root verification on actual baseline and candidate, inspect logs and state strict and bounded outcomes separately. New tests must work under normal/-O/-OO and state their tested sizes. Never widen old tolerances or regenerate old reports to conceal a mismatch. Use a small PR; merges follow standing owner authorization.
+Start from live main, inspect open PRs and record the base. PHYSICS_STATUS is active; former ledgers remain unchanged. Add corrections as explicit errata. Run unchanged root verification on actual baseline/candidate, inspect original logs, and report strict versus bounded-portability outcomes separately. Never widen old tolerances or replace archived reports to hide mismatches. New checks must remain active under normal/-O/-OO and disclose sizes and exact scope. Use a small PR and standing owner merge authorization.
