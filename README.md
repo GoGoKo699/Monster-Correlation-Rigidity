@@ -2,48 +2,44 @@
 
 Ruge Lin's research project on exceptional finite symmetry as a property of quantum correlations, rather than only a representation fitting into a register.
 
-**Current status:** a mathematical rigidity derivation with two bounded assistant audits and explicit repairs, plus a constructive ideal-angle circuit for the complete 299-dimensional A0 input sector. The full 196883-dimensional multiplication isometry is **not** compiled. No independent expert review, formal verification, established novelty, practical implementation or quantum advantage is claimed.
+**Current status:** a mathematical rigidity derivation with two bounded assistant audits, a complete tagged A0-sector circuit, and a theorem-level stability comparison with an explicit reducible counterexample. The full multiplication isometry is not compiled. No independent expert review, formal verification, established novelty, practical implementation or quantum advantage is claimed.
 
-## Latest result: all three A0 branches coherently combined
+## Latest: what makes exact normalizer rounding possible?
 
-[Note 09](research/09_jordan_and_a0_sector.md) completes the normalized projected symmetric-matrix branch and combines it with the [QQA](research/07_seysen_qqa_block.md) and [Leech XXA](research/08_leech_xxa_block.md) constructions:
+[Note 10](research/10_normalizer_stability_comparison.md) compares repaired C11 with original Gowers-Hatami, De Chiffre-Ozawa-Thom, and Burger-Ozawa-Thom statements. C11's averaged-intertwiner equivalence step directly matches Gowers-Hatami Lemma 7.1. Qualitative stability at a fixed representation already follows from compactness. Neither is a new project stability paradigm.
 
-$$W_{A0}=\sqrt{77/6929}\,J_A+\sqrt{3780/6929}\,J_X+\sqrt{3072/6929}\,V_Q.$$
+The comparison yields a concrete obstruction. For the fixed group A5 x A5, faithful reducible representations of dimension D=16k+4 admit operations whose class-mean squared image error is 8/D, while their **exact squared distance from the full orthogonal normalizer is 24k/D**. The nonconstant class-walk norm stays 1/3 and group-matrix separation stays bounded below. Even uniform error over the entire group tends to zero. At k=10000 all other repaired C11 conditions hold, but deleting irreducibility would make its conclusion false by a factor 20000.
 
-The three terms occupy orthogonal AA, XX and QQ output sectors. Controlled circuits, relative phases, output routing and coherent selector erasure are specified; discarding the selector is not substituted for uncomputation.
+This does **not** falsify the actual C11 or the Monster certificate. A four-dimensional unmatched representation component obstructs the exact implementation of an automorphism that works on the much larger remaining space. The averaged intertwiner is nonzero but singular.
 
-The new Jordan branch uses Bell insertion and projection onto two traceless symmetric matrix spaces. Its input-independent transfer probability is 77/288. Dilution to 1/4 permits one exact ideal-angle amplification round. The [emitted circuit](circuits/jordan_aaa.py) has **16957 logical instructions on 33 wires**, with thirteen clean work wires. A new basis extension is clean on every ambient coordinate input, not just the valid matrix-label subspace.
+There is a precise conditional repair: once the recovered automorphism is orthogonally implementable in the given representation, projection onto the full intertwiner space and polar completion recover the same bound z^2/(1-q), even for reducible representations. Compatibility cannot be inferred from small normalized error alone. These are self-contained derivations using standard techniques; comprehensive priority remains unresolved.
 
-The [complete A0 composition](circuits/a0_sector.py) is a hierarchical circuit with **135774249 logical instructions on 105 wires**, including controlling the explicit Leech loader. It has forty output wires and sixty-five clean work wires. Each output uses a **20-qubit tagged encoding**, not a canonical 18-qubit packing. Arbitrary-angle Ry gates, Toffolis and unrestricted connectivity are the stated logical gate model; physical routing, fault-tolerant synthesis and high-precision angle compilation are excluded.
+The [96-check verifier](checks/verify_normalizer_priority.py) checks exact A5 data, small intertwiner/trace identities, a valid irreducible control, compatible reducible controls, and the large-family scalar witness. Largest dense matrix: 60 by 60. The dimension-160004 representation and the full continuous normalizer are not numerically enumerated; the exact minimum is proved analytically.
 
-The new [81-check verifier](checks/verify_a0_sector.py) checks all 1024 ambient basis-change inputs and all 299 flat-eigenspace columns. It sparsely simulates the complete Jordan circuit on three inputs, including a complex superposition, and its inverse. It does **not** simulate the full 105-wire combined circuit or full Monster tensor. Largest dense matrix: 299 by 299; largest coefficient tensor: 24^4 entries.
+## The correlation certificate and its costs remain unchanged
 
-This completes one input sector, **299/196883 of the logical dimension**, not the full W or the full probe. The X and Q input sectors remain uncompiled. No isolated branch or restricted sector is a standalone Monster membership test.
-
-## Mathematical certificate and operational limits
-
-Let d=196883, P=WW^dagger be the full rank-d multiplication projector, and sigma=P/d. Preparing sigma, applying the same fixed U to both registers and measuring P defines ideal rejection epsilon(U). Read with the audit repairs, the assembled derivation gives
+Let d=196883, P=WW^dagger be the full rank-d multiplication projector, and sigma=P/d. Preparing sigma, applying the same fixed U to both registers and measuring P defines ideal rejection epsilon(U). With the audit repairs,
 
 $$\epsilon(U)\le10^{-12}\quad\Longrightarrow\quad
 \min_{\theta,g}\frac{\|U-e^{i\theta}\rho(g)\|_F}{\sqrt d}
 \le\sqrt{\frac{1681\pi^2}{12528}}\sqrt{\epsilon(U)}\le1.151\sqrt{\epsilon(U)}.$$
 
-No prior calibration promise is assumed. The sufficient real-orthogonal threshold is 1e-10. These are normalized Frobenius statements, not worst-case channel bounds or optimal thresholds. Notes 07-09 do not improve them.
+The sufficient real-orthogonal threshold is 1e-10. These are normalized Frobenius statements, not worst-case channel bounds, optimal thresholds or an efficient extraction algorithm. Note 10 changes none of them.
 
-[Note 06](research/06_probe_access.md) separates coherent access, copy/channel access, calibration and statistical costs. Two U calls do not pay for the full probe preparation and measurement. At zero calibration error, zero-rejection sampling to the present 1e-12 threshold at 95 percent confidence requires about 3e12 ideal independent trials. Completing A0 does not supply the full sigma or P experiment.
+[Note 06](research/06_probe_access.md) separates access, calibration and statistical costs. At zero calibration error, zero-rejection sampling to the present 1e-12 threshold at 95 percent confidence requires about 3e12 ideal independent trials. Two calls to U do not pay for the special probe preparation and measurement.
 
-## Claims, priority and verification
+[Note 09](research/09_jordan_and_a0_sector.md) combines all three A0 output branches coherently, using the [QQA](research/07_seysen_qqa_block.md) and [XXA](research/08_leech_xxa_block.md) constructions. Its 135774249-instruction ideal-angle hierarchical circuit uses 105 wires, forty outputs and sixty-five clean work wires. Each output uses twenty tagged qubits, not a canonical eighteen-qubit packing. It covers only 299 of 196883 input dimensions and is not a standalone Monster test. All X/Q input sectors, full sigma/P circuits, finite-gate-set synthesis and certified precision remain open.
 
-[STATUS_CURRENT.md](STATUS_CURRENT.md) is the active ledger; `STATUS.md` is the protected import-era record. Historical notes 01-08 remain unchanged. Read them with the [VOA audit](audits/voa_extrema_audit.md), [robustness audit](audits/robustness_proof_audit.md) and [integration errata](audits/integration_20260925.md). The [priority matrix](audits/priority_matrix.md) is partial. The [next bounded task](work_orders/CURRENT.md) prioritizes a theorem-level precursor comparison for C11, rather than assuming that more circuit components establish publication novelty.
+## Claims, evidence and priority
+
+[STATUS_CURRENT.md](STATUS_CURRENT.md) is the active ledger; `STATUS.md` is the protected import-era record. Notes 01-09, earlier code/results and all archives remain unchanged. Read them with the [VOA audit](audits/voa_extrema_audit.md), [robustness audit](audits/robustness_proof_audit.md) and [integration errata](audits/integration_20260925.md). Note 10 refines, rather than silently rewrites, the historical [priority matrix](audits/priority_matrix.md).
 
 ```sh
 OPENBLAS_NUM_THREADS=1 python verify.py
 OPENBLAS_NUM_THREADS=1 python checks/replay_portability.py
-OPENBLAS_NUM_THREADS=1 python checks/verify_a0_sector.py
-python circuits/jordan_aaa.py --emit
-python circuits/a0_sector.py --plan
+OPENBLAS_NUM_THREADS=1 python checks/verify_normalizer_priority.py
 ```
 
-The unchanged root verifier requires strict byte replay. Recognized historical floating-report mismatches remain strict failures; the separate unchanged portability inspector checks only its previously documented bounded exceptions. New outputs agree locally under normal/-O/-OO. Read the workflow for its actual baseline/candidate outcomes. Numerical tolerance 1e-10 does not certify 1e-12 circuit synthesis.
+Strict historical byte replay and the separate bounded-portability policy remain distinct. Neither archived evidence nor old tolerances are changed to hide a mismatch. The new report agrees locally under normal/-O/-OO. Read the actual baseline/candidate workflow outcomes. Small consistency tests are not formal verification or expert review.
 
-Use [AGENTS.md](AGENTS.md) and [WORKSPACES.md](WORKSPACES.md). The original [MIT license](LICENSE), Copyright (c) 2026 Ruge Lin, and all historical evidence are preserved. No large cloud simulation, manuscript, release or outreach is part of this work order.
+The [current work order](work_orders/CURRENT.md) targets the quantitative correlation-to-symmetry contribution and its precursors, not another isolated circuit. Use [AGENTS.md](AGENTS.md) and [WORKSPACES.md](WORKSPACES.md). The original [MIT license](LICENSE), Copyright (c) 2026 Ruge Lin, remains unchanged. No large cloud simulation, manuscript, release or outreach is authorized.

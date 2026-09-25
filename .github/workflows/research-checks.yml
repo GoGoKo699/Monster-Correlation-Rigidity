@@ -1,7 +1,7 @@
 name: Research verification
 on:
   push:
-    branches: [research/probe-access, research/seysen-qqa-block, research/leech-xxa-block, research/jordan-a0-sector, main]
+    branches: [research/probe-access, research/seysen-qqa-block, research/leech-xxa-block, research/jordan-a0-sector, research/normalizer-priority, main]
   pull_request:
     branches: [main]
 permissions:
@@ -16,10 +16,10 @@ jobs:
       MKL_NUM_THREADS: '1'
       PYTHONDONTWRITEBYTECODE: '1'
     steps:
-      - name: Checkout pre-Jordan baseline
+      - name: Checkout pre-priority baseline
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          ref: c51e5ffaf06b90101c70df1d4f5347aa03b9cc14
+          ref: 5aa28ca60c33a1dcd0d271277b4467803fbea05d
           path: baseline
           persist-credentials: false
       - name: Checkout candidate
@@ -53,7 +53,7 @@ jobs:
                 echo "::warning::Strict byte replay failed for $tree; inspect the original failure and separate bounded comparison."
               fi
               python3 "$inspector" --root .
-              for script in checks/audit_*.py checks/verify_probe_access.py checks/verify_seysen_block.py checks/verify_leech_xxa.py checks/verify_a0_sector.py; do
+              for script in checks/audit_*.py checks/verify_probe_access.py checks/verify_seysen_block.py checks/verify_leech_xxa.py checks/verify_a0_sector.py checks/verify_normalizer_priority.py; do
                 test -f "$script" || continue
                 python3 "$script" > /tmp/monster-normal.json
                 python3 -O "$script" > /tmp/monster-O.json
@@ -66,6 +66,7 @@ jobs:
                   checks/verify_seysen_block.py) cmp /tmp/monster-normal.json results/seysen_block.json ;;
                   checks/verify_leech_xxa.py) cmp /tmp/monster-normal.json results/leech_xxa_checks.json ;;
                   checks/verify_a0_sector.py) cmp /tmp/monster-normal.json results/a0_sector_checks.json ;;
+                  checks/verify_normalizer_priority.py) cmp /tmp/monster-normal.json results/normalizer_priority.json ;;
                 esac
               done
               test -z "$(git status --porcelain)"
