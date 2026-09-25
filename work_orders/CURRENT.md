@@ -1,23 +1,19 @@
-# Current work order — physical selection, not engineered recognition
+# Current work order — weight-four interactions after weight-three saturation
 
-Read AGENTS.md, WORKSPACES.md, README.md, PHYSICS_STATUS.md and research/12_physical_selection_from_extremality.md. The owner explicitly redirected the research toward whether the Monster is physically special. This supersedes the old gate-soundness assignment. Preserve all historical notes, code, results, audits, ledgers, provenance and the original license. No manuscript, release, outreach or large cloud simulation is authorized.
+Read AGENTS.md, WORKSPACES.md, README.md, PHYSICS_STATUS.md and research/13_weight_three_ope_channel.md. The owner's target is physical specialness/selection, not engineered recognition. Preserve notes01-13 and all prior science/code/data/results/audits, old ledgers, provenance and the MIT license. No manuscript, release, outreach or large simulation is authorized.
 
-## Established within this checkpoint's scope
+## Completed scope
 
-Without assuming a group action or a Griess multiplication table, minimizing positive c among unitary strongly rational bosonic holomorphic current-free theories selects c=24 and J. Hoehn's prior conformal11-design theorem then supplies Matsuo trace hypotheses without the usual large-Aut assumption. Note12 converts those source consequences into primary OPE sum rules and the full contraction spectrum. This is an explicit derived corollary, not a new trace theorem or proof of Monster uniqueness.
+The primary projection B(a,b)=a_(0)b-(1/2)L_-1(a_(1)b) has Gram F_-+I/3=282Pi_+. Its rank equals the entire weight-three primary dimension21296876. This proves onto generation and fixes the 2,2,3 channel up to output basis, conditional on the unknown 2,2,2 tensor. Positivity/rank at this channel are already consequences of the universal trace spectrum, not a new independent restriction or full VOA uniqueness.
 
-The partial selection fixes spectra and averaged/contraction data. The uncontracted interaction tensor is not reconstructed, and the Monster has not yet been selected as the automorphism group of every admissible theory. The known example establishes existence/attainability only. Do not import its irreducible representations, axes or multiplication coefficients into the unknown candidate.
+## Next bounded calculation
 
-## Next bounded deliverable: weight-three channel and four-point positivity
+Derive the primary part of a_(-1)b for arbitrary weight-two primaries a,b. Explicitly subtract the vacuum-module descendants at weight4, both level-two descendants of each weight-two primary, and L_-1 of the weight-three channel. Check symmetry after subtraction rather than assuming it for the raw product. Retain Hermitian/PCT phases and all full-versus-projected product distinctions.
 
-Start with two real primary fields a,b of weight two in an arbitrary admissible candidate. Derive the primary projection of the weight-three term a_(0)b, including the derivative of a_(1)b, directly from Virasoro commutators and skew symmetry. State precisely which real/PCT and Hermitian conventions make the resulting antisymmetric map and its Gram form positive.
+Compute the resulting four-label Gram form from mode identities. Determine whether it can be expressed solely in terms of the primary weight-two multiplication, and whether positivity/rank follow from note12's existing trace identities or supply a new condition. The available primary dimension842609326 is a constraint, not a surjectivity premise. Do not assign any contraction eigenspace a Monster representation label.
 
-Compute its bilinear Gram form for four independent external labels a,b,c,d in terms of weight-two products and the invariant metric. Keep the full stress-tensor component where required; do not confuse the full V2 product with its traceless projection. Relate the resulting operator on the antisymmetric square to the contraction operator already determined in note12. Test whether its rank fills the available weight-three primary space of dimension21296876, or whether extra data remain. An equality of dimensions alone is not a surjectivity proof.
+A proof that this next channel is also redundant is a useful outcome only if the remaining independent data are identified explicitly. Do not turn an endless sequence of moment repackagings into a uniqueness claim. An abstract finite-dimensional Gram factor is not a complete local/unitary CFT; higher OPEs and crossing remain obligations. Consider the physical interpretation of any new identity, not gate budgets.
 
-Then identify whether this four-point constraint is genuinely independent of the universal trace relations, or is their restatement. An explicit nonredundant identity, a proof of redundancy with its physical meaning, or a demonstrated inconsistency in the proposed route is a valid result. A fake finite-dimensional cubic satisfying some sums is not a different CFT without higher OPE/locality/positivity consistency. Finite numerical matching is not a uniqueness theorem.
+## Integration
 
-Use primary literature to check the low-weight mode identities and novelty of this specific reduction. Preserve the distinction between no relevant/marginal Lorentz scalar in the diagonal completion and a microscopic or dynamical mechanism selecting that theory. Do not shift back to circuit budgets, statistical rejection counts or simply renaming an imposed symmetry as physics.
-
-## Integration and evidence
-
-Use a new branch from live main, inspect open PRs, and record the base. Notes01-12 and old code/data/results stay unchanged; corrections require an explicit new erratum. PHYSICS_STATUS.md is the current physical ledger; STATUS_CURRENT.md stays as the former-track ledger. Run unchanged python verify.py on the actual baseline/candidate and distinguish strict byte replay from the existing bounded-portability comparison. Do not widen tolerances or regenerate old evidence to hide a mismatch. New checks must run under normal/-O/-OO and disclose their exact scope. Submit a small PR; this integration conversation handles merges under standing authorization.
+Start from live main, inspect branches/PRs and record the base. PHYSICS_STATUS is the active ledger; former ledgers remain unchanged. The explicit PR9 replay erratum must not be obscured: its overall workflow passed bounded portability, not strict byte replay. Run unchanged root verification on actual baseline and candidate, inspect logs and state strict and bounded outcomes separately. New tests must work under normal/-O/-OO and state their tested sizes. Never widen old tolerances or regenerate old reports to conceal a mismatch. Use a small PR; merges follow standing owner authorization.
