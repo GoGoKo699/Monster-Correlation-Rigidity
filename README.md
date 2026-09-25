@@ -2,44 +2,42 @@
 
 Ruge Lin's research project on exceptional finite symmetry as a property of quantum correlations, rather than only a representation fitting into a register.
 
-**Current status:** a mathematical rigidity derivation with two bounded assistant audits, a complete tagged A0-sector circuit, and a theorem-level stability comparison with an explicit reducible counterexample. The full multiplication isometry is not compiled. No independent expert review, formal verification, established novelty, practical implementation or quantum advantage is claimed.
+**Current status:** a source-dependent quantitative rigidity derivation with bounded assistant audits, an ideal-angle circuit for the A0 input sector only, and two rounds of theorem-level precursor comparison. No independent expert review, formal verification, comprehensive novelty clearance, full probe compiler, practical implementation or quantum advantage is claimed.
 
-## Latest: what makes exact normalizer rounding possible?
+## Latest: the test is standard; the quantitative conditioning is the question
 
-[Note 10](research/10_normalizer_stability_comparison.md) compares repaired C11 with original Gowers-Hatami, De Chiffre-Ozawa-Thom, and Burger-Ozawa-Thom statements. C11's averaged-intertwiner equivalence step directly matches Gowers-Hatami Lemma 7.1. Qualitative stability at a fixed representation already follows from compactness. Neither is a new project stability paradigm.
+[Note 11](research/11_pair_test_prior_art_and_conditioning.md) gives an exact reduction of the pair experiment to a C2 Bose-support test: the auxiliary reflection is S=2P-I. Its acceptance/fidelity interpretation is a direct specialization of LaBorde–Rethinasamy–Wilde and earlier generalized phase estimation. Ordinary state invariance is a different property.
 
-The comparison yields a concrete obstruction. For the fixed group A5 x A5, faithful reducible representations of dimension D=16k+4 admit operations whose class-mean squared image error is 8/D, while their **exact squared distance from the full orthogonal normalizer is 24k/D**. The nonconstant class-walk norm stays 1/3 and group-matrix separation stays bounded below. Even uniform error over the entire group tends to zero. At k=10000 all other repaired C11 conditions hold, but deleting irreducibility would make its conclusion false by a factor 20000.
+Wang's 2011 finite-unitary-set method already implies a query-level membership tester for the represented Monster. An explicit Gram-matrix specialization gives sufficient forward-U budgets 12561, 1259151 and 125918152 for promised phase-normalized Frobenius distances 0.1, 0.01 and 0.001, respectively, at false acceptance at most 1/3 and perfect completeness. Its collective Choi measurement is not compiled or claimed efficient. Two U calls per pair trial must not be presented as a complete two-query property test or a query advantage. The comparison is between sufficient bounds, not lower bounds or practical performance.
 
-This does **not** falsify the actual C11 or the Monster certificate. A four-dimensional unmatched representation component obstructs the exact implementation of an automorphism that works on the much larger remaining space. The averaged intertwiner is nonzero but singular.
+For any one fixed projector with finite collective stabilizer modulo phase, a square-root loss-to-distance law with some finite constant follows from local tangent conditioning and compactness. The exponent alone is not a novelty claim. Note 11 supplies two small analytic examples showing what the unspecified constants conceal: one pair projector family loses tangent sensitivity, while a real cubic family keeps uniformly positive tangent sensitivity but develops a distant almost-symmetry. Their exact finite stabilizers are unchanged for all positive parameters. They do not satisfy all Griess hypotheses or contradict the Monster theorem.
 
-There is a precise conditional repair: once the recovered automorphism is orthogonally implementable in the given representation, projection onto the full intertwiner space and polar completion recover the same bound z^2/(1-q), even for reducible representations. Compatibility cannot be inferred from small normalized error alone. These are self-contained derivations using standard techniques; comprehensive priority remains unresolved.
+The remaining candidate contribution is the specific low-order Griess correlation realization, its full complex stabilizer identification, and explicit local/global conditioning estimates. Whether that quantitative package is new and significant remains unresolved. [Note 10](research/10_normalizer_stability_comparison.md) previously matched the averaged-intertwiner step to prior work and isolated the reducible representation-compatibility obstruction.
 
-The [96-check verifier](checks/verify_normalizer_priority.py) checks exact A5 data, small intertwiner/trace identities, a valid irreducible control, compatible reducible controls, and the large-family scalar witness. Largest dense matrix: 60 by 60. The dimension-160004 representation and the full continuous normalizer are not numerically enumerated; the exact minimum is proved analytically.
+## The existing quantitative certificate
 
-## The correlation certificate and its costs remain unchanged
-
-Let d=196883, P=WW^dagger be the full rank-d multiplication projector, and sigma=P/d. Preparing sigma, applying the same fixed U to both registers and measuring P defines ideal rejection epsilon(U). With the audit repairs,
+Let d=196883, P=WW^dagger be the full multiplication projector, and sigma=P/d. Preparing sigma, applying the same fixed U to both registers and measuring P defines ideal rejection epsilon(U). Read with the audit repairs,
 
 $$\epsilon(U)\le10^{-12}\quad\Longrightarrow\quad
 \min_{\theta,g}\frac{\|U-e^{i\theta}\rho(g)\|_F}{\sqrt d}
 \le\sqrt{\frac{1681\pi^2}{12528}}\sqrt{\epsilon(U)}\le1.151\sqrt{\epsilon(U)}.$$
 
-The sufficient real-orthogonal threshold is 1e-10. These are normalized Frobenius statements, not worst-case channel bounds, optimal thresholds or an efficient extraction algorithm. Note 10 changes none of them.
+The real-orthogonal sufficient threshold is 1e-10. These are normalized Frobenius statements, not worst-case channel bounds, optimal thresholds or efficient nearest-element extraction. Note 11 improves no threshold. Trusted access and the fixed logical-space unitary promise are essential.
 
-[Note 06](research/06_probe_access.md) separates access, calibration and statistical costs. At zero calibration error, zero-rejection sampling to the present 1e-12 threshold at 95 percent confidence requires about 3e12 ideal independent trials. Two calls to U do not pay for the special probe preparation and measurement.
+[Note 06](research/06_probe_access.md) accounts for access, calibration and sampling. At zero calibration error, zero-rejection sampling to the current 1e-12 threshold at 95 percent confidence takes about 3e12 independent ideal trials. Full W/P access is not supplied by the [complete tagged A0-sector construction](research/09_jordan_and_a0_sector.md): it covers 299 input dimensions only, with a 135774249-instruction hierarchical ideal-angle budget. All X/Q input sectors, complete probe preparation/measurement, packed-register integration and certified synthesis remain open.
 
-[Note 09](research/09_jordan_and_a0_sector.md) combines all three A0 output branches coherently, using the [QQA](research/07_seysen_qqa_block.md) and [XXA](research/08_leech_xxa_block.md) constructions. Its 135774249-instruction ideal-angle hierarchical circuit uses 105 wires, forty outputs and sixty-five clean work wires. Each output uses twenty tagged qubits, not a canonical eighteen-qubit packing. It covers only 299 of 196883 input dimensions and is not a standalone Monster test. All X/Q input sectors, full sigma/P circuits, finite-gate-set synthesis and certified precision remain open.
+## Evidence and coordination
 
-## Claims, evidence and priority
+[STATUS_CURRENT.md](STATUS_CURRENT.md) is the active claim ledger; STATUS.md is the protected import-era record. Read historical notes with the [VOA audit](audits/voa_extrema_audit.md), [robustness audit](audits/robustness_proof_audit.md), [integration errata](audits/integration_20260925.md), and newer comparisons. Neither a script pass nor an unmatched search establishes novelty or proof correctness.
 
-[STATUS_CURRENT.md](STATUS_CURRENT.md) is the active ledger; `STATUS.md` is the protected import-era record. Notes 01-09, earlier code/results and all archives remain unchanged. Read them with the [VOA audit](audits/voa_extrema_audit.md), [robustness audit](audits/robustness_proof_audit.md) and [integration errata](audits/integration_20260925.md). Note 10 refines, rather than silently rewrites, the historical [priority matrix](audits/priority_matrix.md).
+The new [105-check verifier](checks/verify_pair_prior_art.py) checks small support/Choi reductions, finite-set Gram identities, conditioning examples and scalar budgets. Largest square matrix: 81 by 81; largest state vector: length 256. It does not construct a Monster-sized operator or numerically establish the analytic stabilizer-completeness/global-orbit proofs. Reports agree locally under normal/-O/-OO.
 
 ```sh
 OPENBLAS_NUM_THREADS=1 python verify.py
 OPENBLAS_NUM_THREADS=1 python checks/replay_portability.py
-OPENBLAS_NUM_THREADS=1 python checks/verify_normalizer_priority.py
+OPENBLAS_NUM_THREADS=1 python checks/verify_pair_prior_art.py
 ```
 
-Strict historical byte replay and the separate bounded-portability policy remain distinct. Neither archived evidence nor old tolerances are changed to hide a mismatch. The new report agrees locally under normal/-O/-OO. Read the actual baseline/candidate workflow outcomes. Small consistency tests are not formal verification or expert review.
+The original root verifier and the separate bounded-portability policy are unchanged. Recognized historical floating-report byte mismatches remain strict failures, not strict passes. No archived report or tolerance is altered. Read the workflow's actual baseline/candidate outcomes.
 
-The [current work order](work_orders/CURRENT.md) targets the quantitative correlation-to-symmetry contribution and its precursors, not another isolated circuit. Use [AGENTS.md](AGENTS.md) and [WORKSPACES.md](WORKSPACES.md). The original [MIT license](LICENSE), Copyright (c) 2026 Ruge Lin, remains unchanged. No large cloud simulation, manuscript, release or outreach is authorized.
+The [next work order](work_orders/CURRENT.md) targets a structurally stronger coarse soundness estimate, rather than another circuit block or an existence claim already supplied by generic testing. Use [AGENTS.md](AGENTS.md) and [WORKSPACES.md](WORKSPACES.md). The original [MIT license](LICENSE), Copyright (c) 2026 Ruge Lin, and all earlier scientific evidence remain unchanged. No manuscript, release, outreach or large cloud simulation is authorized.

@@ -1,7 +1,7 @@
 name: Research verification
 on:
   push:
-    branches: [research/probe-access, research/seysen-qqa-block, research/leech-xxa-block, research/jordan-a0-sector, research/normalizer-priority, main]
+    branches: [research/probe-access, research/seysen-qqa-block, research/leech-xxa-block, research/jordan-a0-sector, research/normalizer-priority, research/pair-test-priority, main]
   pull_request:
     branches: [main]
 permissions:
@@ -16,10 +16,10 @@ jobs:
       MKL_NUM_THREADS: '1'
       PYTHONDONTWRITEBYTECODE: '1'
     steps:
-      - name: Checkout pre-priority baseline
+      - name: Checkout pre-pair-priority baseline
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          ref: 5aa28ca60c33a1dcd0d271277b4467803fbea05d
+          ref: 85215c45005a3241485b99b57b2dc9de63b85702
           path: baseline
           persist-credentials: false
       - name: Checkout candidate
@@ -53,7 +53,7 @@ jobs:
                 echo "::warning::Strict byte replay failed for $tree; inspect the original failure and separate bounded comparison."
               fi
               python3 "$inspector" --root .
-              for script in checks/audit_*.py checks/verify_probe_access.py checks/verify_seysen_block.py checks/verify_leech_xxa.py checks/verify_a0_sector.py checks/verify_normalizer_priority.py; do
+              for script in checks/audit_*.py checks/verify_probe_access.py checks/verify_seysen_block.py checks/verify_leech_xxa.py checks/verify_a0_sector.py checks/verify_normalizer_priority.py checks/verify_pair_prior_art.py; do
                 test -f "$script" || continue
                 python3 "$script" > /tmp/monster-normal.json
                 python3 -O "$script" > /tmp/monster-O.json
@@ -67,6 +67,7 @@ jobs:
                   checks/verify_leech_xxa.py) cmp /tmp/monster-normal.json results/leech_xxa_checks.json ;;
                   checks/verify_a0_sector.py) cmp /tmp/monster-normal.json results/a0_sector_checks.json ;;
                   checks/verify_normalizer_priority.py) cmp /tmp/monster-normal.json results/normalizer_priority.json ;;
+                  checks/verify_pair_prior_art.py) cmp /tmp/monster-normal.json results/pair_prior_art.json ;;
                 esac
               done
               test -z "$(git status --porcelain)"

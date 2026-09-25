@@ -1,23 +1,23 @@
-# Current work order — after the C11 precursor comparison
+# Current work order — after the pair-test precursor comparison
 
-Read AGENTS.md, WORKSPACES.md, STATUS_CURRENT.md, integration errata, and research/10_normalizer_stability_comparison.md. Preserve all historical evidence and the original license. No manuscript, release, outreach or large cloud simulation is authorized.
+Read AGENTS.md, WORKSPACES.md, STATUS_CURRENT.md, integration errata and research/11_pair_test_prior_art_and_conditioning.md. Preserve all historical evidence and the original MIT license. No manuscript, release, outreach or large cloud simulation is authorized.
 
-## Completed within scope
+## What this comparison closes
 
-Note 10 identifies C11's averaged-intertwiner equivalence argument as a direct prior match to Gowers-Hatami Lemma 7.1. It distinguishes approximate multiplicativity, partial equivalence and fixed-image normalizer rounding. Qualitative fixed-representation stability is a compactness consequence, not a novelty claim. Its A5 x A5 family falsifies a version of C11 with irreducibility removed, while preserving the other hypotheses. The compatible-reducible conditional extension explains the exact obstruction. These results do not establish priority or alter valid C11/C13.
+Note 11 identifies the support/fidelity experiment as a direct C2 specialization of existing symmetry testing, gives an explicit Monster specialization of Wang's finite-unitary-set tester, and proves the generic fixed-projector square-root law with unspecified constants. Neither test existence nor the exponent is enough for a novelty claim. Two elementary families distinguish tangent conditioning from exclusion of distant almost-symmetries. None changes valid C13 or implements the full probe.
 
-## Next bounded deliverable: isolate the quantitative correlation contribution
+## Next bounded research deliverable: coarse soundness beyond the current entry threshold
 
-Compare the complete pair-correlation certificate C04-C13, not only its normalizer sublemma, to checked primary results on quantum symmetry testing and approximate tensor/algebra stabilizers. Start with the full relevant statements of LaBorde-Rethinasamy-Wilde arXiv:2105.12758 (previously abstract-level only), then follow actual dependencies. State exactly whether the input is a state, unknown gate, representation, or group-labelled oracle; whether the same gate acts on both registers; trusted preparation/measurement and logical-subspace assumptions; the target symmetry versus its normalizer; norm, averaging measure, local promise, and explicit global threshold.
+Try to strengthen the quantitative inverse statement for the ACTUAL Griess pair projector rather than extending the circuit catalogue. A concrete target is a nontrivial explicit lower bound on epsilon_P(U) for D_M(U)>=0.1 that is structurally stronger than the current 1e-12 guarantee. This is a research target, not an assertion that a bound has already been obtained or that the current experiment is practical.
 
-Attempt an explicit reduction of the repository test to the precursor and of the precursor to the repository's setting where meaningful. Separate consequences of exact stabilizer identification plus compactness from a uniform quantitative loss-to-distance estimate. Identify which constants or small-error radius require genuinely additional estimates, and whether those estimates are merely a quantitative specialization of existing theorems. A subsumption or a counterexample to a proposed reduction is useful; failure to find a matching statement is not novelty clearance.
+First reconstruct the separate bottlenecks: pair-to-cubic parent gap, complex-to-real reduction, cubic-to-axis/involution transport, good-set coverage/finite-image rounding, and the operator-norm logarithm step. Determine which is needed for coarse normalized Frobenius soundness and which was introduced only to enter the sharp local theorem. Keep the dimension factor in converting Frobenius to operator norm visible. Do not assume that a positive local Hessian controls the global barrier: note 11's real cubic example disproves that general shortcut.
 
-Keep the original GKR/Kazhdan, Montgomery-Zippin, and Norton/Zisser source-depth gaps visible. Do not describe transmitted theorems as original proofs read. The new reducible counterexample and conditional extension also need a bounded fresh proof audit before any use in a publication claim.
+Attempt a finite-angle commutator, trace/spectral, or global cubic estimate that avoids a genuinely unnecessary step. An explicit derivation under the original access/unitary model, or a counterexample to a proposed stronger generic implication, is a useful bounded outcome. Merely optimizing decimal witnesses, changing the distance metric, assuming prior calibration, or quoting compactness with an unknown minimum is not a stronger theorem.
 
-## Access work remains separate
+Use primary sources for any new structural input. No claim of query advantage may be made solely from two forward U calls per trial: compare total sufficient calls and the costs of the respective measurements. The finite-set benchmark is not a lower bound on the pair experiment. Keep low-order stabilizer-identification priority and the original source-depth obligations open; the new arguments in notes 10-11 still need fresh specialist/proof scrutiny before publication use.
 
-The complete tagged A0 circuit covers 299 inputs only. All X/Q input sectors, full W/P, full sigma preparation, packed-register conversion and certified precision remain unfinished. No new unknown-U rejection threshold follows from known-branch amplification or the normalizer comparison.
+## Access and integration boundaries
 
-## Evidence and integration
+Complete tagged A0 covers only 299 of 196883 inputs. The X/Q input sectors, full sigma/P access, packed encoding and certified synthesis remain unimplemented. Do not infer a full Monster test from a restricted sector.
 
-Use a new branch from live main, inspect open PRs and record the base. Preserve notes 01-10 and all prior audits/code/data/results. Run unchanged python verify.py on baseline/candidate; distinguish strict byte replay from the existing bounded portability comparison. Never widen old tolerances or replace recorded evidence to obtain a pass. New checks must remain active under normal/-O/-OO and state their maximum tested dimensions. Submit a small PR; this integration conversation handles merges under the owner's standing authorization.
+Use a new branch from live main, inspect open PRs and record the base. Preserve notes01-11 and all earlier audits/code/data/results. Run unchanged python verify.py on the actual baseline and candidate, distinguishing strict byte replay from the unchanged bounded-portability comparison. Never widen old tolerances or replace reports to hide a mismatch. New checks must work under normal/-O/-OO and state the largest tested dimensions. Submit a small PR; this integration conversation handles merges under the owner's standing authorization.
