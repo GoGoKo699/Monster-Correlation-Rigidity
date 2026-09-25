@@ -1,0 +1,69 @@
+{
+  "L": {
+    "CCX": 1170164,
+    "CX": 44778,
+    "H": 38020,
+    "Ry": 44780,
+    "X": 679706
+  },
+  "L_forward_calls": 15,
+  "L_inverse_calls": 14,
+  "QRAM": false,
+  "amplification_rounds": 14,
+  "canonical_sector_packing": false,
+  "clean_zero_workspace_wires": 27,
+  "controlled_row_loader_calls": 58,
+  "dilution_amplitude_expression": "sqrt(312)*sin(pi/58)",
+  "finite_gate_set_synthesis": false,
+  "full_W": false,
+  "good_reflection": {
+    "CCX": 17,
+    "H": 2,
+    "X": 20
+  },
+  "input_dimension": 299,
+  "label_bits": 18,
+  "measurements_or_postselection": false,
+  "normalized_branch_weight_in_W": "3780/6929",
+  "oracle_calls_to_unknown_U": 0,
+  "output_wires": 36,
+  "row_loader": {
+    "CCX": 575926,
+    "CX": 21314,
+    "H": 18992,
+    "Ry": 21314,
+    "X": 334006
+  },
+  "source_base": "5428fffc82ccd1ede8a4203b1e73acb6816de289",
+  "source_reflection": {
+    "CCX": 33,
+    "H": 2,
+    "X": 38
+  },
+  "status": "constructive ideal-angle circuit budget, not full W",
+  "total": {
+    "CCX": 33936255,
+    "CX": 1298699,
+    "H": 1102684,
+    "Ry": 1298668,
+    "X": 19712995
+  },
+  "total_instructions": 57349301,
+  "total_wires": 63,
+  "undiluted_success_probability": "1/312",
+  "uniform_loader": {
+    "CCX": 18312,
+    "CX": 2150,
+    "H": 36,
+    "Ry": 2151,
+    "X": 11694
+  },
+  "valid_label_count": 98280,
+  "vectorization": {
+    "CCX": 799,
+    "CX": 119,
+    "H": 48,
+    "Ry": 48,
+    "X": 708
+  }
+}
