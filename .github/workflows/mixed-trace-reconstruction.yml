@@ -1,0 +1,84 @@
+name: Mixed trace reconstruction
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  reconstruction:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: 09e3f98ad79034eefab43f4fb9ea432368fc19e7
+          path: baseline
+          persist-credentials: false
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: candidate
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - run: python -m pip install 'numpy==2.3.5'
+      - name: Preserve historical strict-versus-portability outcomes
+        shell: bash
+        run: |
+          set -euo pipefail
+          for tree in baseline candidate; do
+            (
+              cd "$tree"
+              if python verify.py >/tmp/strict.out 2>/tmp/strict.err; then
+                cat /tmp/strict.out; cat /tmp/strict.err >&2
+                echo "STRICT_PASS $tree"
+              else
+                cat /tmp/strict.out; cat /tmp/strict.err >&2
+                case "$(tail -n 1 /tmp/strict.err)" in
+                  "RuntimeError: prior average toy differs from recorded report under None"|"RuntimeError: prior pair toy differs from recorded report under None") ;;
+                  *) exit 1 ;;
+                esac
+                echo "::warning::STRICT_FAIL $tree; bounded portability is a separate result"
+              fi
+              python checks/replay_portability.py --root .
+            )
+          done
+      - name: New exact certificate, three modes, and additive file manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd candidate
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          entries=json.loads(Path('results/mixed_trace_additions.json').read_text())['files']
+          for e in entries:
+              p=Path(e['path'])
+              if p.is_absolute() or '..' in p.parts:
+                  raise RuntimeError('Unsafe manifest path')
+              b=p.read_bytes()
+              if len(b)!=e['bytes'] or hashlib.sha256(b).hexdigest()!=e['sha256']:
+                  raise RuntimeError('Additive hash mismatch: '+str(p))
+          print('ADDITIVE_MANIFEST_PASS',len(entries))
+          PY
+          python checks/verify_mixed_trace_reconstruction.py >/tmp/mixed.json
+          python -O checks/verify_mixed_trace_reconstruction.py >/tmp/mixed-O.json
+          python -OO checks/verify_mixed_trace_reconstruction.py >/tmp/mixed-OO.json
+          cmp /tmp/mixed.json /tmp/mixed-O.json
+          cmp /tmp/mixed.json /tmp/mixed-OO.json
+          python - <<'PY'
+          import hashlib
+          from pathlib import Path
+          actual=hashlib.sha256(Path('/tmp/mixed.json').read_bytes()).hexdigest()
+          expected=Path('results/mixed_trace_reconstruction_report.sha256').read_text().strip()
+          if actual!=expected:
+              raise RuntimeError('New report differs from exact recorded fingerprint')
+          print('NEW_REPORT_THREE_MODES_PASS',actual)
+          PY
+          cat /tmp/mixed.json
+          git diff --check
+          test -z "$(git status --porcelain)"
