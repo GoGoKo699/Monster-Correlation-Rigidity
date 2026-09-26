@@ -1,0 +1,36 @@
+{
+  "base_commit": "09e3f98ad79034eefab43f4fb9ea432368fc19e7",
+  "files": [
+    {
+      "bytes": 20275,
+      "path": "audits/readout_scope_audit.md",
+      "sha256": "6b0f961caf0a26465c99e82ce8b1e69f5b5bc0174b8944f4a198e2370f5acaa8"
+    },
+    {
+      "bytes": 5275,
+      "path": "docs/CORE_REVIEW.md",
+      "sha256": "0bd993ca73af56fe17cbf8ec15fabd88fc6af55326299885e22265d61b691b09"
+    },
+    {
+      "bytes": 18785,
+      "path": "checks/audit_readout_scope.py",
+      "sha256": "f67e185ed87e49500330af412d4a6cd6102aef7a19bd01d62c1328bea8fc317f"
+    },
+    {
+      "bytes": 4719,
+      "path": "checks/reference_virasoro.py",
+      "sha256": "cefc291c6be9de9518037d353dc9b25857735963fb8747aea579bce41cc24fdb"
+    },
+    {
+      "bytes": 65,
+      "path": "results/readout_scope_report.sha256",
+      "sha256": "9d57bd0591fe85c651587b2cef15188f37da51a73b3731e556dcca6820ad9944"
+    },
+    {
+      "bytes": 4305,
+      "path": ".github/workflows/readout-scope-audit.yml",
+      "sha256": "e9c42ebd85ce798b6f3c4b684001dddd33a0ff3d1b22eee2a4155db939efe782"
+    }
+  ],
+  "scope": "Seven additive files only. All existing main files and pending PRs remain unchanged. This manifest excludes itself. Full emitted certificate is reproducible from the fingerprint."
+}
