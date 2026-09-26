@@ -10,30 +10,30 @@ Everything below is arithmetic or explanation of [core Q4–Q5](../../research/u
 
 Assume the exact ambient class and two actual real unit primaries. Suppose certified bounds establish
 
-$$
+```math
 f(x),f(y)\ge M-\frac1{32768},\qquad
 \left|\langle x,y\rangle+\frac1{47}\right|\le\frac1{128}.
-$$
+```
 
 The two self-coupling deficits are below $1/50$, so the field-localization theorem applies. Each field is within
 
-$$
+```math
 \sqrt{\frac{1/32768}{2}}=\frac1{256}
-$$
+```
 
 of an exact Ising direction. The total primary-overlap error is at most
 
-$$
+```math
 \frac1{128}+\frac1{256}+\frac1{256}=\frac1{64}<\frac3{188}.
-$$
+```
 
 The corresponding exact Ising-stress overlap therefore has magnitude at most
 
-$$
+```math
 \frac{47}{192}\frac1{64}
 =\frac{47}{12288}
 <\frac{48}{12288}=\frac1{256}.
-$$
+```
 
 The gap forces zero overlap. The prior classification theorem now identifies the ambient VOA as moonshine. The spare margin is $1/12288$ in the Ising-stress overlap; it is not an optimal tolerance or an experimental resolution requirement.
 
@@ -49,30 +49,30 @@ Likewise, a lower bound claiming $f(x)>M$ is inconsistent with the model and nor
 
 Let $w_1,w_2$ be actual real states of **exact weight two**, with the known ambient stress tensor $\omega$. Seven scalar inputs are used:
 
-$$
+```math
 n_i=\langle w_i,w_i\rangle,\quad
 \tau_i=\langle\omega,w_i\rangle,\quad
 q_i=\langle w_i*w_i,w_i\rangle\quad(i=1,2),
-$$
+```
 
 and $m=\langle w_1,w_2\rangle$. The symbols $q_i$ are mode-product coefficients; for nonprimary fields they must not be read from the primary-only three-point position formula without the appropriate stress-tensor terms.
 
 Set $N_i=n_i-\tau_i^2/12$. Provided both $N_i>0$, stress subtraction and normalization give
 
-$$
+```math
 f(x_i)=\frac{q_i-\tau_i n_i/2+\tau_i^3/36}{N_i^{3/2}},
-$$
+```
 
-$$
+```math
 \langle x_1,x_2\rangle=
 \frac{m-\tau_1\tau_2/12}{\sqrt{N_1N_2}}.
-$$
+```
 
 **Single-field calculation.** Reuse $w=2x+\omega$ from Lesson 2 and write $F=f(x)$. Its scalars are $n=16$, $\tau=12$, and $q=8F+48$. The corrected cubic numerator is
 
-$$
+```math
 (8F+48)-12\cdot16/2+12^3/36=8F.
-$$
+```
 
 Since $N=4$, division by $N^{3/2}=8$ returns $F$. The apparently large raw cubic contained known stress contributions, not a stronger primary signal.
 

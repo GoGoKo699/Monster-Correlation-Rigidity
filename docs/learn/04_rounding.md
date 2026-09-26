@@ -10,10 +10,10 @@ This lesson follows [core Q1–Q4](../../research/uniform_extraction_core.md). N
 
 The loss of a unit primary $x$ is $M-f(x)$. Near each exact maximizing direction $a$, the core proves
 
-$$
+```math
 M-f(x)\ge 2\|x-a\|^2
 \quad\text{when}\quad \|x-a\|\le\frac1{10}.
-$$
+```
 
 A useful mental picture is a peak whose height decreases at least quadratically as one moves away from its summit. The function being plotted is a self-coupling on a space of field directions, not a physical potential in spacetime.
 
@@ -29,11 +29,11 @@ Here is the logic of the global step. Once an input exceeds the lower stationary
 
 The local estimate now applies, giving
 
-$$
+```math
 f(x)\ge M-\epsilon,\quad 0\le\epsilon<\frac1{50}
 \quad\Longrightarrow\quad
 \|x-a\|\le\sqrt{\epsilon/2}
-$$
+```
 
 for some exact maximizing direction $a$. The core also supplies the separation and finiteness details used in this compactness argument.
 
@@ -43,26 +43,26 @@ The same constants apply in every admissible candidate. We are not assuming the 
 
 Apply the bound separately to the supplied fields $x,y$. For deficits $\epsilon_x,\epsilon_y$, obtain exact directions $a,b$ with
 
-$$
+```math
 \|x-a\|\le r_x=\sqrt{\epsilon_x/2},\qquad
 \|y-b\|\le r_y=\sqrt{\epsilon_y/2}.
-$$
+```
 
 The elementary identity
 
-$$
+```math
 \langle a,b\rangle-\langle x,y\rangle
 =\langle a-x,b\rangle+\langle x,b-y\rangle
-$$
+```
 
 and unit norms imply an overlap error at most $r_x+r_y$. No additional product $r_xr_y$ is needed with this decomposition.
 
 Suppose also $|\langle x,y\rangle+1/47|\le\delta$. Then
 
-$$
+```math
 \left|\langle a,b\rangle+\frac1{47}\right|
 \le\delta+r_x+r_y.
-$$
+```
 
 This is ordinary error propagation. The discrete classification of Ising-pair overlaps has not yet been used.
 
@@ -70,19 +70,19 @@ This is ordinary error propagation. The discrete classification of Ising-pair ov
 
 Sakuma's theorem permits only a finite set of overlaps for exact Ising vectors in the relevant positive-real setting. Zero is allowed, and the smallest positive overlap is $1/256$. There are no negative possibilities. Thus
 
-$$
+```math
 |\langle e_a,e_b\rangle|<\frac1{256}
 \quad\Longrightarrow\quad
 \langle e_a,e_b\rangle=0.
-$$
+```
 
 For comparison, an integer $n$ with $|n|<1$ must be zero. The inequality supplies precision; the discrete allowed set supplies exactness. Here discreteness comes from an imported theorem, not from rounding a numerical output by convention.
 
 Using the stress-to-primary conversion from Lesson 3, a sufficient combined budget is
 
-$$
+```math
 \boxed{\delta+\sqrt{\epsilon_x/2}+\sqrt{\epsilon_y/2}<\frac3{188}.}
-$$
+```
 
 The inequality is strict because the boundary corresponds to the first nonzero allowed Ising overlap. Orthogonality gives commuting Ising subalgebras, with vanishing singular mutual OPE. It does not mean all regular products vanish.
 
