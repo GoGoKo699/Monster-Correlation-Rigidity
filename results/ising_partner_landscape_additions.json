@@ -1,0 +1,31 @@
+{
+  "base_commit": "09e3f98ad79034eefab43f4fb9ea432368fc19e7",
+  "files": [
+    {
+      "path": "research/ising_partner_landscape.md",
+      "bytes": 20028,
+      "sha256": "ce7b44f198a47921a3eec5d812960a3f8b3ac79f3860a3f50b3a726cc1d765ad"
+    },
+    {
+      "path": "docs/PARTNER_SEARCH_STATUS.md",
+      "bytes": 2858,
+      "sha256": "8a63a8b6df473156409829d5614ac0d7808e6513013ad77a2a992f455f7bd6df"
+    },
+    {
+      "path": "checks/verify_ising_partner_landscape.py",
+      "bytes": 13421,
+      "sha256": "936ef2bc2524b05d0d1c894ecb13e50e417b951bd5d3e4cb2846b57fa5ad5b97"
+    },
+    {
+      "path": "results/ising_partner_landscape_report.sha256",
+      "bytes": 65,
+      "sha256": "f151c180b6d4f196a67ecb3c7eb8f2bafb962a5cb8e1620f0e428b520d8c41fe"
+    },
+    {
+      "path": ".github/workflows/ising-partner-landscape.yml",
+      "bytes": 4311,
+      "sha256": "af0cec73eb826e916ed726271e3894d96faa4d49718d5d47f8452c0044e12b42"
+    }
+  ],
+  "scope": "Six additive files only. Every existing main file and pending branch is preserved. This manifest excludes itself. Source spectrum/classification theorems remain explicit dependencies."
+}
