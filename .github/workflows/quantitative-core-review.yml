@@ -33,6 +33,11 @@ jobs:
           persist-credentials: false
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
+          ref: 7653d6cef036f40db2746b3379e84dc161b18f55
+          path: displaybase
+          persist-credentials: false
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
           path: candidate
           persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
@@ -78,12 +83,21 @@ jobs:
           cmp /tmp/teaching-normal.json /tmp/teaching-O.json
           cmp /tmp/teaching-normal.json /tmp/teaching-OO.json
           cat /tmp/teaching-normal.json
-      - name: Current reading-path display checks in three modes
+      - name: Preserved math-repair delta in three modes
+        run: |
+          cd displaybase
+          python3 checks/verify_display.py --baseline ../teaching > /tmp/pr31-normal.json
+          python3 -O checks/verify_display.py --baseline ../teaching > /tmp/pr31-O.json
+          python3 -OO checks/verify_display.py --baseline ../teaching > /tmp/pr31-OO.json
+          cmp /tmp/pr31-normal.json /tmp/pr31-O.json
+          cmp /tmp/pr31-normal.json /tmp/pr31-OO.json
+          cat /tmp/pr31-normal.json
+      - name: Current fenced-math checks and exact presentation delta
         run: |
           cd candidate
-          python3 checks/verify_teaching.py --baseline ../teaching > /tmp/display-normal.json
-          python3 -O checks/verify_teaching.py --baseline ../teaching > /tmp/display-O.json
-          python3 -OO checks/verify_teaching.py --baseline ../teaching > /tmp/display-OO.json
+          python3 checks/verify_teaching.py --baseline ../displaybase > /tmp/display-normal.json
+          python3 -O checks/verify_teaching.py --baseline ../displaybase > /tmp/display-O.json
+          python3 -OO checks/verify_teaching.py --baseline ../displaybase > /tmp/display-OO.json
           cmp /tmp/display-normal.json /tmp/display-O.json
           cmp /tmp/display-normal.json /tmp/display-OO.json
           cat /tmp/display-normal.json
@@ -97,7 +111,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for tree in baseline reviewed teaching candidate; do
+          for tree in baseline reviewed teaching displaybase candidate; do
             (
               cd "$tree"
               if python3 verify.py >/tmp/final-strict.out 2>/tmp/final-strict.err; then

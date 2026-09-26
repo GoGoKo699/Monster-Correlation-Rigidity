@@ -12,9 +12,9 @@ Write a chiral state as $x$ and its field as $\phi_x(z)$. The state–field corr
 
 The chiral conformal weight is the eigenvalue of $L_0$. In this project, the supplied fields have **exact weight two**:
 
-$$
+```math
 L_0x=2x.
-$$
+```
 
 “Low energy” refers here to a low conformal grade. It is not a numerical energy in joules, an experimental bandwidth, or a claim that a laboratory can isolate that grade.
 
@@ -24,27 +24,27 @@ A primary state also obeys $L_nx=0$ for every positive integer $n$. This is stro
 
 For real weight-two primaries in the normalization of the core, the two-point function is
 
-$$
+```math
 \langle \phi_x(z_1)\phi_y(z_2)\rangle
 =\frac{\langle x,y\rangle}{(z_1-z_2)^4}.
-$$
+```
 
 The bracket on the left is a vacuum correlation function. The bracket in the numerator is the invariant inner product of the corresponding real states. Thus the two-point coefficient is an inner product, not the entire position-dependent function.
 
 For three such primaries,
 
-$$
+```math
 \langle \phi_x(z_1)\phi_y(z_2)\phi_u(z_3)\rangle
 =\frac{C(x,y,u)}{(z_{12}z_{23}z_{31})^2},
-$$
+```
 
 where $z_{ij}=z_i-z_j$. The coefficient $C$ contains information about the state-field product. Conformal symmetry fixes the displayed position dependence, but does not by itself supply this coefficient.
 
 For a unit vector $x$, define its self-three-point coefficient by
 
-$$
+```math
 f(x)=C(x,x,x).
-$$
+```
 
 The normalized theorem takes $f(x)$, $f(y)$, and $\langle x,y\rangle$ as input. “Three coefficients” does not mean three individual measurement shots; the theorem does not specify a measurement protocol or sample complexity.
 
@@ -54,9 +54,9 @@ Linearity gives a useful calculation. Replacing a field by $2\phi_x$ multiplies 
 
 For a nonzero real primary $w$, the scale-corrected quantity is
 
-$$
+```math
 \frac{C(w,w,w)}{\langle w,w\rangle^{3/2}}.
-$$
+```
 
 It is invariant under positive rescaling. Under a negative rescaling, its sign changes. Flipping only $x$ also changes the sign of $\langle x,y\rangle$, so the two signs cannot be chosen independently just to make each inequality look favorable.
 

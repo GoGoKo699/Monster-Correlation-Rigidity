@@ -1,0 +1,81 @@
+{
+  "base_commit": "7653d6cef036f40db2746b3379e84dc161b18f55",
+  "style_reference_commit": "231ac31265a02ea4bd63239e364fefc0a239c6a3",
+  "preview_archive_sha256": "6210e1877ceed3825bdee1554cabb24cf3828118f49e55e406536170eda0f706",
+  "modified": [
+    {
+      "path": ".github/workflows/quantitative-core-review.yml",
+      "bytes": 8211,
+      "sha256": "77bca74a609cbf8eb162b23de7655ab97a850bf57a64aae6a60a0a6b6c1c0d8d",
+      "previous_sha256": "13b4250c2fdb87285d50ec0884a107e0f47f18c7c2cbe667ef851a33226a49e1"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5395,
+      "sha256": "07c05d6314d03e76b786acf32d85d8533a5a5f5b350a06268e865df3ec8d2f5f",
+      "previous_sha256": "04fc9caedd0c0ce1494f52f2c6d04af6104074fb9b6f68367af5e8da605052d0"
+    },
+    {
+      "path": "checks/verify_display.py",
+      "bytes": 12201,
+      "sha256": "a0e14ed9bf99a60dc21dae52b78e07f47b4aff34367b2e54a57f7a3aa9ffb622",
+      "previous_sha256": "86481945b84f1c6bd4d321314e1a9457433c847a5dae9d5ee11a8813f73f0841"
+    },
+    {
+      "path": "docs/learn/01_correlations.md",
+      "bytes": 4853,
+      "sha256": "e8610c886da179faf8eab8a09dfe832d5a96b352f2551d5715a19329464788d8",
+      "previous_sha256": "6990f20a004cf4f5bfe6f469696139016d1761a31be4f028b23825a4e34e4cd4"
+    },
+    {
+      "path": "docs/learn/02_weight_two.md",
+      "bytes": 4586,
+      "sha256": "1e2e8b35a924a7b90aeb508f6c8efc2224951a832713a459d9da179839bb3791",
+      "previous_sha256": "fd2c8e6ad67835385e357b1c4591056ed1497c66580241bbcc03bc8170e92940"
+    },
+    {
+      "path": "docs/learn/03_ising.md",
+      "bytes": 5622,
+      "sha256": "754aa3aa9ee670aeafc2cf7002d2843ee3c8a7639a152faf68bc59c6df6dbb1b",
+      "previous_sha256": "2aac22b31b9bfec9a62b69dca04d1cf275c611f95aad75dc255199bb5d02c412"
+    },
+    {
+      "path": "docs/learn/04_rounding.md",
+      "bytes": 5793,
+      "sha256": "27d775490fda1291da07b136774972ff559ec4ae62c9161e0213dd1f5c6b65d3",
+      "previous_sha256": "13918c72b0c2665373c0a8f934ce62b52fc31ef217d470b7a26ecb4ef2e39932"
+    },
+    {
+      "path": "docs/learn/05_worked_certificate.md",
+      "bytes": 5822,
+      "sha256": "fd4e01fb1b8578598055d1024f39013bab419f0d17300956e759d69d39f7a4c4",
+      "previous_sha256": "ba25eaa649f157a6e97bc6a2a0623a679a8c0b62276320821975ed49192fcc16"
+    },
+    {
+      "path": "research/sharpness_and_calibration.md",
+      "bytes": 12549,
+      "sha256": "713c77bf5b1811f8566485305b117294828a31497cfdd006b69a728f26dd521a",
+      "previous_sha256": "18989f33158e43b672012c990df37bf38046c1814413bdd92ff384034f54e1df"
+    },
+    {
+      "path": "research/uniform_extraction_core.md",
+      "bytes": 13487,
+      "sha256": "2bf8232fa14ecdd28a108d5e911ee500cf4f1498df3a1c5517ae6b895a22be6c",
+      "previous_sha256": "01325d72b8cea50341355c8342e2eb65ecf50848a3e2c723f77ca521fbf10c36"
+    },
+    {
+      "path": "snapshot_manifest.json",
+      "bytes": 10312,
+      "sha256": "3e798b9d48a94406348f65e65acc9673d17cab380849631244be6002c240134d",
+      "previous_sha256": "4b4b24126e654766e41ff292f4129a7c1f4985741c93577a2a44ef8a6b6a19c2"
+    }
+  ],
+  "added": [
+    {
+      "path": "audits/hopf_style_integration.md",
+      "bytes": 4026,
+      "sha256": "f8534d589a8e11ac708de7dd0ad980da6bc211a672f0cfa49125f04c0c3ecde0"
+    }
+  ],
+  "scope": "Eight preview-identical Markdown revisions plus display-checker, workflow, and README-only snapshot updates. Thirteen paths total, including this self-excluded manifest. All other baseline files, numerical evidence, old manifests, original license and archives are preserved. Exact presentation_transform equality is required for all eight pages."
+}

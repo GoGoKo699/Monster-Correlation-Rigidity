@@ -14,14 +14,18 @@ For direct proof checking, start with the selected result below and the research
 
 ## The selected result
 
-Work in an **exact** simple unitary, rational, C2-cofinite, holomorphic vertex operator algebra of CFT type, with central charge 24 and no weight-one states. Let x and y be real unit weight-two primaries, and let f(x) be the normalized self-three-point coefficient. Put
+Work in an **exact** simple unitary, rational, $C_2$-cofinite, holomorphic vertex operator algebra of CFT type, with central charge 24 and no weight-one states. Let $x$ and $y$ be real unit weight-two primaries, and let $f(x)$ be the normalized self-three-point coefficient. Put
 
-$$M=\frac{46}{\sqrt{141}}.$$
+```math
+M=\frac{46}{\sqrt{141}}.
+```
 
 If
 
-$$f(x),f(y)\ge M-\frac1{32768},\qquad
-\left|\langle x,y\rangle+\frac1{47}\right|\le\frac1{128},$$
+```math
+f(x),f(y)\ge M-\frac1{32768},\qquad
+\left|\langle x,y\rangle+\frac1{47}\right|\le\frac1{128},
+```
 
 then the underlying VOA is isomorphic to the moonshine VOA.
 
