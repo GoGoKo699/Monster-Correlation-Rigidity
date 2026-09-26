@@ -1,0 +1,56 @@
+{
+  "base_commit": "09e3f98ad79034eefab43f4fb9ea432368fc19e7",
+  "files": [
+    {
+      "path": "research/uniform_extraction_core.md",
+      "bytes": 12672,
+      "sha256": "8527c05c0a4720f0350fd2602c503e5ee8f7375cc2ee96ced5d97533b0510186"
+    },
+    {
+      "path": "research/sharpness_and_calibration.md",
+      "bytes": 11953,
+      "sha256": "987d866ac4a9cc30b0be58cc37457875c28de4f52faa94333e33a2e924b3e0aa"
+    },
+    {
+      "path": "checks/verify_extraction_core.py",
+      "bytes": 11722,
+      "sha256": "d2062b1577beb7a34c0665fc358da7b1daf846886cd48dfa0b26acf83c107e83"
+    },
+    {
+      "path": "checks/verify_calibration_and_sharpness.py",
+      "bytes": 12865,
+      "sha256": "d2c16a6c9c01af9d1198cfc2b4459d78966a42c314b8a0575bd37626bcd2eef1"
+    },
+    {
+      "path": "docs/background_claims.md",
+      "bytes": 10216,
+      "sha256": "8ca74a07e83d05fcbfccbaed73b2b0cb1791594d393f668cacfd55979b16d800"
+    },
+    {
+      "path": "docs/BOUNDED_CORE_STATUS.md",
+      "bytes": 5310,
+      "sha256": "d1858624a3ec1ca0f5a1a5fa018e1df287891dbe0f358a54b837c5e5e1eceaef"
+    },
+    {
+      "path": "docs/QUANTITATIVE_CORE.md",
+      "bytes": 2720,
+      "sha256": "41c56637bcaf925ba8ae2bea7014a95813b4174c4b84cc4d469eb0b5515b4ed5"
+    },
+    {
+      "path": "audits/quantitative_contribution_verdict.md",
+      "bytes": 14039,
+      "sha256": "e478d8a1a5c1e2c939f21f6cdd39bf5d822d97778380f9ec8c091815d6274299"
+    },
+    {
+      "path": "results/quantitative_core_reports.json",
+      "bytes": 509,
+      "sha256": "9f559fb1644fab7d6ad39ada38a0307d9baf372fc3f9687dc449201c466e0a44"
+    },
+    {
+      "path": ".github/workflows/quantitative-core-review.yml",
+      "bytes": 4027,
+      "sha256": "18f734a8a7bea64aa254865f3a9e8da6eee8fb7fd9a72feb952348c9c44988f5"
+    }
+  ],
+  "scope": "Eleven additive files including this self-excluded manifest; all existing main files and pending branches preserved. No manuscript or private planning included."
+}
