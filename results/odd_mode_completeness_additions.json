@@ -1,0 +1,31 @@
+{
+  "base_commit": "09e3f98ad79034eefab43f4fb9ea432368fc19e7",
+  "files": [
+    {
+      "bytes": 17530,
+      "path": "research/19_odd_mode_completeness.md",
+      "sha256": "958e720d88527234f5a9babe62c976ef9a8e887579cd29503e811008cfedcc55"
+    },
+    {
+      "bytes": 4719,
+      "path": "checks/odd_mode_ward.py",
+      "sha256": "cefc291c6be9de9518037d353dc9b25857735963fb8747aea579bce41cc24fdb"
+    },
+    {
+      "bytes": 18325,
+      "path": "checks/verify_odd_mode_completeness.py",
+      "sha256": "f7c58aabda81f5a4614c53b2bc598a4904bd672be468bdcac728a9f9ec438f1a"
+    },
+    {
+      "bytes": 65,
+      "path": "results/odd_mode_completeness_report.sha256",
+      "sha256": "fb85e53b93afaa1589b675353603841fb2c5b27331325ff18f9b0ea496668611"
+    },
+    {
+      "bytes": 4593,
+      "path": ".github/workflows/odd-mode-completeness.yml",
+      "sha256": "c775aef089dfa87b76c5c34385eafcee9f87a15b92a69ef42169082dc6357699"
+    }
+  ],
+  "scope": "Additive complementary odd-channel and commutator completion. Every existing main file and pending branch preserved. This manifest excludes itself. No uniqueness or new independent selection axiom."
+}

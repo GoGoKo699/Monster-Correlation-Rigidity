@@ -1,0 +1,102 @@
+name: Odd-mode completeness
+on:
+  push:
+    branches: [research/odd-mode-completeness, main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: 09e3f98ad79034eefab43f4fb9ea432368fc19e7
+          path: baseline
+          persist-credentials: false
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: candidate
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - name: Recorded numerical dependency for historical replay
+        run: python3 -m pip install 'numpy==2.3.5'
+      - name: Preserve the entire frozen baseline and check additions
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, pathlib, subprocess
+          base, head = pathlib.Path('baseline'), pathlib.Path('candidate')
+          old = subprocess.check_output(['git','-C',str(base),'ls-files','-z']).decode().split('\0')
+          for name in filter(None,old):
+              if (base/name).read_bytes() != (head/name).read_bytes():
+                  raise RuntimeError('Changed historical file: '+name)
+          manifest = json.loads((head/'results/odd_mode_completeness_additions.json').read_text())
+          for entry in manifest['files']:
+              raw = (head/entry['path']).read_bytes()
+              if len(raw) != entry['bytes'] or hashlib.sha256(raw).hexdigest() != entry['sha256']:
+                  raise RuntimeError('Addition hash mismatch: '+entry['path'])
+          print('All baseline files preserved; additive payload hashes verified.')
+          PY
+      - name: Distinguish strict replay from unchanged bounded portability
+        shell: bash
+        run: |
+          set -euo pipefail
+          for tree in baseline candidate; do
+            (
+              cd "$tree"
+              if python3 verify.py > /tmp/odd-strict.out 2>/tmp/odd-strict.err; then
+                strict=PASS
+              else
+                strict=FAIL_RECOGNIZED_FLOAT_REPORT
+                case "$(tail -n 1 /tmp/odd-strict.err)" in
+                  "RuntimeError: prior average toy differs from recorded report under None"|"RuntimeError: prior pair toy differs from recorded report under None") ;;
+                  *) cat /tmp/odd-strict.err; exit 1 ;;
+                esac
+              fi
+              echo "STRICT_REPLAY $tree $strict"
+              cat /tmp/odd-strict.err
+              python3 checks/replay_portability.py > /tmp/odd-portability.json
+              TREE="$tree" python3 - <<'PY'
+          import json, os
+          r=json.load(open('/tmp/odd-portability.json'))
+          print('PORTABILITY', os.environ['TREE'], r['status'])
+          print('ALL_REPORTS_BYTE_IDENTICAL', os.environ['TREE'], r['all_reports_byte_identical'])
+          print('DIFFERING_FLOAT_LEAVES', sum(x['different_float_leaves'] for x in r['reports']))
+          PY
+              test -z "$(git status --porcelain)"
+            )
+          done
+      - name: Exact checker in all three modes
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd candidate
+          python3 checks/verify_odd_mode_completeness.py > /tmp/odd-normal.json
+          python3 -O checks/verify_odd_mode_completeness.py > /tmp/odd-O.json
+          python3 -OO checks/verify_odd_mode_completeness.py > /tmp/odd-OO.json
+          cmp /tmp/odd-normal.json /tmp/odd-O.json
+          cmp /tmp/odd-normal.json /tmp/odd-OO.json
+          python3 - <<'PY'
+          import hashlib, json, pathlib
+          raw=pathlib.Path('/tmp/odd-normal.json').read_bytes()
+          expected=pathlib.Path('results/odd_mode_completeness_report.sha256').read_text().strip()
+          if hashlib.sha256(raw).hexdigest()!=expected:
+              raise RuntimeError('New report differs from recorded exact fingerprint')
+          r=json.loads(raw)
+          print('NEW_CHECKS',r['checks'],r['status'])
+          print('LARGEST_SQUARE',r['largest_square_matrix_dimension'])
+          print('EXACT_REPORT_SHA256',expected)
+          print('PAIR_H5',r['certificates']['pair']['5']['total'])
+          print('INDEPENDENCE',r['Note18_polynomial_independence'])
+          PY
+          git diff --check
+          test -z "$(git status --porcelain)"
