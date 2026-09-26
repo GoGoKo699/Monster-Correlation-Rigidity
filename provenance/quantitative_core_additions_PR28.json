@@ -28,13 +28,13 @@
     },
     {
       "path": "docs/BOUNDED_CORE_STATUS.md",
-      "bytes": 5578,
-      "sha256": "dc450a28853e99a909660b400783cc6d1886491249644a64fbcc77d38b273340"
+      "bytes": 5310,
+      "sha256": "d1858624a3ec1ca0f5a1a5fa018e1df287891dbe0f358a54b837c5e5e1eceaef"
     },
     {
       "path": "docs/QUANTITATIVE_CORE.md",
-      "bytes": 2988,
-      "sha256": "b87aa137897c0f84fd0ec8231110fddc2d2a6adef498e88e66398c55ea9646e5"
+      "bytes": 2720,
+      "sha256": "41c56637bcaf925ba8ae2bea7014a95813b4174c4b84cc4d469eb0b5515b4ed5"
     },
     {
       "path": "audits/quantitative_contribution_verdict.md",
@@ -48,9 +48,9 @@
     },
     {
       "path": ".github/workflows/quantitative-core-review.yml",
-      "bytes": 5555,
-      "sha256": "e9f0f1df34e92a8a2b743ad1d49c932ab893a37a89c1e418b1017afbea02ff57"
+      "bytes": 4027,
+      "sha256": "18f734a8a7bea64aa254865f3a9e8da6eee8fb7fd9a72feb952348c9c44988f5"
     }
   ],
-  "scope": "Current PR28 payload fingerprints after final reader integration. Only the two status/reader banners and the workflow differ; the original manifest is preserved in provenance/quantitative_core_additions_PR28.json. Core proof, calibration proof, their checkers, reports and background/prior comparison remain unchanged. This manifest excludes itself."
+  "scope": "Eleven additive files including this self-excluded manifest; all existing main files and pending branches preserved. No manuscript or private planning included."
 }

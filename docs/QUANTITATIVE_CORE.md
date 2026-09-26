@@ -1,3 +1,5 @@
+> Integration note (26 September 2026): PR28 is now merged. The dated text below records its pre-integration stage. See [current scientific status](RESEARCH_STATUS.md) and [the final bounded review](../audits/final_quantitative_review.md) for the active disposition.
+
 # Quantitative correlation criterion: research entry
 
 Manuscript writing remains on hold. This page is an entry to the completed proof records and their stated review boundaries, not manuscript prose.
