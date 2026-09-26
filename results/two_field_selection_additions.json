@@ -1,0 +1,36 @@
+{
+  "base_commit": "09e3f98ad79034eefab43f4fb9ea432368fc19e7",
+  "files": [
+    {
+      "path": "research/two_field_selection.md",
+      "bytes": 21637,
+      "sha256": "b17023a4bda44863f70c3ce8e36d990d9d98a76d33a3c1109fdd3d361d53b070"
+    },
+    {
+      "path": "docs/SELECTION_BRIDGE.md",
+      "bytes": 3528,
+      "sha256": "59e7395a33a5857fdcb77486c1857e2a982a567a724aa5611034366e2697cfe2"
+    },
+    {
+      "path": "checks/verify_two_field_selection.py",
+      "bytes": 13200,
+      "sha256": "4ba2405c98bc47f65f1df81747335a8316f3542403ed02e852f165f89be0622f"
+    },
+    {
+      "path": "checks/selection_virasoro.py",
+      "bytes": 4719,
+      "sha256": "cefc291c6be9de9518037d353dc9b25857735963fb8747aea579bce41cc24fdb"
+    },
+    {
+      "path": "results/two_field_selection_report.sha256",
+      "bytes": 65,
+      "sha256": "77e55f27c61be1a04ee5c7688f714d80ffb2d368849c56f4499b17fd1ef80732"
+    },
+    {
+      "path": ".github/workflows/two-field-selection.yml",
+      "bytes": 4293,
+      "sha256": "2a9108ce1f86e1179805ca794d8d0ac171732b5554f9eb9ca92d0c7412d50ac6"
+    }
+  ],
+  "scope": "Seven additive files. Every pre-existing main file and pending branch is preserved. This manifest excludes itself. No new exact classification theorem is claimed; ALY and Sakuma are explicit source dependencies."
+}
