@@ -1,0 +1,71 @@
+{
+  "base_commit": "a7ccd55cc729bb1643c668ec6d2085363b17096b",
+  "modified": [
+    {
+      "path": "README.md",
+      "bytes": 5370,
+      "sha256": "04fc9caedd0c0ce1494f52f2c6d04af6104074fb9b6f68367af5e8da605052d0",
+      "previous_sha256": "6863c63bae66cdab7dd7f607e3a239e135fd968059050c9c92ec0aa6c1d0caeb"
+    },
+    {
+      "path": "snapshot_manifest.json",
+      "bytes": 10378,
+      "sha256": "4b4b24126e654766e41ff292f4129a7c1f4985741c93577a2a44ef8a6b6a19c2",
+      "previous_sha256": "e99f41196feee4b7f59f8f42e6b3c55b7584546d639f5b976f4f1d09c567388b"
+    },
+    {
+      "path": ".github/workflows/quantitative-core-review.yml",
+      "bytes": 6304,
+      "sha256": "2cfb5a3c01f61e82030b5638e7903b3e1e8e22be3019dfb628350ad80cb654ed",
+      "previous_sha256": "e9f0f1df34e92a8a2b743ad1d49c932ab893a37a89c1e418b1017afbea02ff57"
+    }
+  ],
+  "added": [
+    {
+      "path": "audits/physics_teaching_integration.md",
+      "bytes": 4084,
+      "sha256": "bdf8b83b4d970dcfab7fb4b50cfd150fc11d94fd3f498bfca2527207f6da601b"
+    },
+    {
+      "path": "checks/verify_teaching.py",
+      "bytes": 8340,
+      "sha256": "3ac78467d5d668ca7345d33f1e3a051c714e681fd60a7f873e03bd9578420b32"
+    },
+    {
+      "path": "docs/learn/01_correlations.md",
+      "bytes": 4823,
+      "sha256": "6990f20a004cf4f5bfe6f469696139016d1761a31be4f028b23825a4e34e4cd4"
+    },
+    {
+      "path": "docs/learn/02_weight_two.md",
+      "bytes": 4532,
+      "sha256": "fd2c8e6ad67835385e357b1c4591056ed1497c66580241bbcc03bc8170e92940"
+    },
+    {
+      "path": "docs/learn/03_ising.md",
+      "bytes": 5556,
+      "sha256": "2aac22b31b9bfec9a62b69dca04d1cf275c611f95aad75dc255199bb5d02c412"
+    },
+    {
+      "path": "docs/learn/04_rounding.md",
+      "bytes": 5751,
+      "sha256": "13918c72b0c2665373c0a8f934ce62b52fc31ef217d470b7a26ecb4ef2e39932"
+    },
+    {
+      "path": "docs/learn/05_worked_certificate.md",
+      "bytes": 5774,
+      "sha256": "ba25eaa649f157a6e97bc6a2a0623a679a8c0b62276320821975ed49192fcc16"
+    },
+    {
+      "path": "docs/learn/README.md",
+      "bytes": 5297,
+      "sha256": "de4724dbfb263fd1bae102ed3f7044039739851a5e3bb7f86b0a917109104877"
+    },
+    {
+      "path": "docs/learn/assumptions_and_sources.md",
+      "bytes": 5823,
+      "sha256": "ea1098995d91e05442b84db3888af9546f3e3503af685166c69c0e04a3ad4de1"
+    }
+  ],
+  "scope": "Three declared reader/snapshot/workflow changes; nine added teaching/audit/check files and this self-excluded manifest. Every other baseline file is preserved. Historical integration evidence is validated on its frozen reviewed tree, not rewritten. No scientific proof, report, numerical tolerance, license or archive changes."
+}

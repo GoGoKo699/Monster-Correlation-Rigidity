@@ -4,6 +4,14 @@ Quantitative identification of the moonshine vertex operator algebra from near-e
 
 **Manuscript writing is on hold.** This repository contains research proofs, source comparisons, scope controls and reproducible certificates, not a drafted paper. The [current scientific status](docs/RESEARCH_STATUS.md) records the reviewed scope and remaining boundaries.
 
+## Start here: a physicist's reading path
+
+Can nearly extremal interaction coefficients identify an exact chiral theory within a specified class? Begin with [the five-lesson learning path](docs/learn/README.md): correlation functions, weight-two geometry, internal Ising structure, quantitative rounding, and a worked certificate. No prior VOA or Monster-group expertise is assumed.
+
+The primary anchor is **Gaberdiel, _An Introduction to Conformal Field Theory_**. Selected parts of **Yamauchi, _3-transposition groups arising in VOA theory_**, provide the secondary algebraic anchor. The [reading map](docs/learn/README.md) interleaves short source selections with local explanations, calculations, and self-checks; it does not require two complete courses. [Assumptions and source roles](docs/learn/assumptions_and_sources.md) separates the physical language, exact premises, imported theorems, and project estimates.
+
+For direct proof checking, start with the selected result below and the research documents that follow. The teaching path does not enlarge the theorem's scope.
+
 ## The selected result
 
 Work in an **exact** simple unitary, rational, C2-cofinite, holomorphic vertex operator algebra of CFT type, with central charge 24 and no weight-one states. Let x and y be real unit weight-two primaries, and let f(x) be the normalized self-three-point coefficient. Put
