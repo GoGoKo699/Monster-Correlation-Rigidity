@@ -1,0 +1,31 @@
+{
+  "base_commit": "09e3f98ad79034eefab43f4fb9ea432368fc19e7",
+  "files": [
+    {
+      "path": "research/extended_six_sevenths_forces_ising.md",
+      "bytes": 16924,
+      "sha256": "c8874a100326bfa8ffe6bab41b33d77d9a21b48f836ab1ce5c5b54e022e5540c"
+    },
+    {
+      "path": "checks/verify_extended_six_sevenths.py",
+      "bytes": 13434,
+      "sha256": "bfcf4d83fc564aee80a8fe7f6f7a1a96d16a6163fcc5fd50842766e86cdc6ee9"
+    },
+    {
+      "path": "docs/EXTENDED_SECTOR_UPDATE.md",
+      "bytes": 2032,
+      "sha256": "37f38fcddcd03a712f539787011ae98813bf72b7878a912fc0cdc310243b221b"
+    },
+    {
+      "path": "results/extended_six_sevenths_report.sha256",
+      "bytes": 65,
+      "sha256": "ee3ade70f9e9b7cf4cc0ef79780a74c07ca8efdb0b800fb6c52ceb9f87c407af"
+    },
+    {
+      "path": ".github/workflows/extended-six-sevenths.yml",
+      "bytes": 4361,
+      "sha256": "76e46d9d8fc882034be179a650e537488aee8d6b70c56e1866937b88e0b109f3"
+    }
+  ],
+  "scope": "Six additive files only, preserving all baseline files and other branches. This manifest excludes itself. Full report is emitted; the fingerprint is recorded. Imported classification theorems are not verified by finite checks."
+}
