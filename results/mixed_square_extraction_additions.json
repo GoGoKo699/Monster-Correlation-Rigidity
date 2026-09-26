@@ -1,0 +1,31 @@
+{
+  "base_commit": "09e3f98ad79034eefab43f4fb9ea432368fc19e7",
+  "files": [
+    {
+      "path": "research/mixed_square_extraction.md",
+      "bytes": 20369,
+      "sha256": "746fc22e5af20a34ff0672fa89ec10e4eac993012da352308c5222bc8067b6bc"
+    },
+    {
+      "path": "docs/MIXED_SQUARE_TARGET.md",
+      "bytes": 3122,
+      "sha256": "3ab05b10e93ac3fa02895cd3554d0e36699c82f0c41d2131d9a5456168c34488"
+    },
+    {
+      "path": "checks/verify_mixed_square_extraction.py",
+      "bytes": 15231,
+      "sha256": "c8aaa71840f2f9936c086a6909284d31f59006959ef1072507805024ee758de5"
+    },
+    {
+      "path": "results/mixed_square_extraction_report.sha256",
+      "bytes": 65,
+      "sha256": "8acfc1ae1e1b09213f17e0ebdb63e62142f8234139efb12b33878e66248d3a41"
+    },
+    {
+      "path": ".github/workflows/mixed-square-extraction.yml",
+      "bytes": 4473,
+      "sha256": "cdc7b825d34c29a7d5515922d3689520ce867021f1c339ee52802f93fadf6eac"
+    }
+  ],
+  "scope": "Six additive files only. Every existing main file and pending branch remains unchanged. This manifest excludes itself. Source embeddings are imported; no new first-Ising or orthogonal-pair existence theorem is claimed."
+}
