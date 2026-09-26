@@ -1,0 +1,31 @@
+{
+  "base_commit": "09e3f98ad79034eefab43f4fb9ea432368fc19e7",
+  "files": [
+    {
+      "path": "research/potts_local_maximum.md",
+      "bytes": 19207,
+      "sha256": "a66506338aa10028f85f30c571ee66e43c60809c790a2c15b6bb53615c39f85b"
+    },
+    {
+      "path": "docs/SELECTION_UPDATE.md",
+      "bytes": 2338,
+      "sha256": "4a3dead976e8cb00b813e47f417341a434765c64e3ec8eb6439faa4636b10110"
+    },
+    {
+      "path": "checks/verify_potts_landscape.py",
+      "bytes": 14337,
+      "sha256": "3dcce41f81de8766ddb2f82e1bf8e565bc726f4e4994dac74060e190b96e76dc"
+    },
+    {
+      "path": "results/potts_landscape_report.sha256",
+      "bytes": 65,
+      "sha256": "2ef8d81206e02b2cb8f922dd0ed3321604279e57cc6f299c0dfd22c90fd2a23a"
+    },
+    {
+      "path": ".github/workflows/potts-landscape.yml",
+      "bytes": 4319,
+      "sha256": "30720c52ad3fb09e729be016aac8ce826002413c681ef34862c97fac8917c1bd"
+    }
+  ],
+  "scope": "Six additive files. All existing main files and pending branches remain unchanged. This manifest excludes itself. Known Potts embedding and module structure are prior source inputs; no full VOA or new uniqueness theorem is claimed."
+}

@@ -1,0 +1,99 @@
+name: Potts local maximum
+on:
+  push:
+    branches: [research/potts-local-maximum, main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: 09e3f98ad79034eefab43f4fb9ea432368fc19e7
+          path: baseline
+          persist-credentials: false
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: candidate
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - run: python3 -m pip install 'numpy==2.3.5'
+      - name: Preserve the frozen baseline and verify additive files
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,pathlib,subprocess
+          b,c=pathlib.Path('baseline'),pathlib.Path('candidate')
+          names=subprocess.check_output(['git','-C',str(b),'ls-files','-z']).decode().split('\0')
+          for name in filter(None,names):
+              if (b/name).read_bytes()!=(c/name).read_bytes():
+                  raise RuntimeError('Changed baseline: '+name)
+          for e in json.loads((c/'results/potts_landscape_additions.json').read_text())['files']:
+              raw=(c/e['path']).read_bytes()
+              if len(raw)!=e['bytes'] or hashlib.sha256(raw).hexdigest()!=e['sha256']:
+                  raise RuntimeError('Addition mismatch: '+e['path'])
+          print('BASELINE_PRESERVED ADDITIONS_VERIFIED')
+          PY
+      - name: Strict replay and separate bounded portability
+        shell: bash
+        run: |
+          set -euo pipefail
+          for tree in baseline candidate; do
+            (
+              cd "$tree"
+              if python3 verify.py >/tmp/potts-strict.out 2>/tmp/potts-strict.err; then
+                strict=PASS
+              else
+                strict=FAIL_RECOGNIZED_FLOAT_REPORT
+                case "$(tail -n 1 /tmp/potts-strict.err)" in
+                  "RuntimeError: prior average toy differs from recorded report under None"|"RuntimeError: prior pair toy differs from recorded report under None") ;;
+                  *) cat /tmp/potts-strict.err; exit 1 ;;
+                esac
+              fi
+              echo "STRICT_REPLAY $tree $strict"
+              cat /tmp/potts-strict.err
+              python3 checks/replay_portability.py >/tmp/potts-portability.json
+              TREE="$tree" python3 - <<'PY'
+          import json,os
+          r=json.load(open('/tmp/potts-portability.json'))
+          print('PORTABILITY',os.environ['TREE'],r['status'])
+          print('ALL_REPORTS_BYTE_IDENTICAL',os.environ['TREE'],r['all_reports_byte_identical'])
+          print('DIFFERING_FLOAT_LEAVES',sum(x['different_float_leaves'] for x in r['reports']))
+          PY
+              test -z "$(git status --porcelain)"
+            )
+          done
+      - name: Exact certificate in all three modes
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd candidate
+          python3 checks/verify_potts_landscape.py >/tmp/potts-normal.json
+          python3 -O checks/verify_potts_landscape.py >/tmp/potts-O.json
+          python3 -OO checks/verify_potts_landscape.py >/tmp/potts-OO.json
+          cmp /tmp/potts-normal.json /tmp/potts-O.json
+          cmp /tmp/potts-normal.json /tmp/potts-OO.json
+          python3 - <<'PY'
+          import hashlib,json,pathlib
+          raw=pathlib.Path('/tmp/potts-normal.json').read_bytes()
+          expected=pathlib.Path('results/potts_landscape_report.sha256').read_text().strip()
+          if hashlib.sha256(raw).hexdigest()!=expected:
+              raise RuntimeError('Exact report fingerprint mismatch')
+          r=json.loads(raw)
+          print('NEW_CHECKS',r['checks'],r['status'])
+          print('REPORT_SHA256',expected)
+          print('FULL_TANGENT_DIMENSION',sum(map(int,r['Potts_peak']['tangent_multiplicities'])))
+          print('LARGEST_SQUARE',r['largest_constructed_square_matrix'])
+          PY
+          git diff --check
+          test -z "$(git status --porcelain)"
