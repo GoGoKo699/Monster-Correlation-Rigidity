@@ -5,18 +5,22 @@ This is a self-contained consolidation of the quantitative part of `research/two
 
 ## Q0. Fixed scope and normalization
 
-For the final application let V be a simple unitary, rational, C2-cofinite, holomorphic bosonic VOA of CFT type, with central charge 24 and V1=0. Grades are finite dimensional. Work on the real subspace fixed by the unitary PCT involution, with vacuum norm one. A real weight-two primary lies in P2=omega-perp inside V2. Its two-point metric is positive; ||omega||^2=12. Use the product a*b=a_(1)b and its primary projection mu.
+For the final application let $V$ be a simple unitary, rational, $C_2$-cofinite, holomorphic bosonic VOA of CFT type, with central charge 24 and $V_1=0$. Grades are finite dimensional. Work on the real subspace fixed by the unitary PCT involution, with vacuum norm one. A real weight-two primary lies in $P_2=\omega^\perp$ inside $V_2$. Its two-point metric is positive; $\|\omega\|^2=12$. Use the product $a*b=a_{(1)}b$ and its primary projection $\mu$.
 
-For primaries a,b,
+For primaries $a,b$,
 
-$$a*b=\mu(a,b)+\frac{\langle a,b\rangle}{6}\omega,\qquad
-\omega*a=2a.$$
+$$
+a*b=\mu(a,b)+\frac{\langle a,b\rangle}{6}\omega,\qquad
+\omega*a=2a.
+$$
 
 The three-point coefficient is the symmetric cubic
 
-$$C(a,b,c)=\langle a*b,c\rangle,\qquad f(x)=C(x,x,x).$$
+$$
+C(a,b,c)=\langle a*b,c\rangle,\qquad f(x)=C(x,x,x).
+$$
 
-Two- and three-point chiral functions of these weight-two primaries have these coefficients times the fixed position factors z12^(-4) and (z12 z23 z31)^(-2), respectively. Thus the inputs are normalized coefficients, not whole unknown functions or arbitrary laboratory readings. All signs refer to the SAME two supplied real fields. Flipping a field to make its cubic positive also flips its overlap and must not be done silently.
+Two- and three-point chiral functions of these weight-two primaries have these coefficients times the fixed position factors $z_{12}^{-4}$ and $(z_{12}z_{23}z_{31})^{-2}$, respectively. Thus the inputs are normalized coefficients, not whole unknown functions or arbitrary laboratory readings. All signs refer to the SAME two supplied real fields. Flipping a field to make its cubic positive also flips its overlap and must not be done silently.
 
 An exact VOA and exact primarity, reality, and normalization are premises. Only coefficient inequalities may have finite tolerance. No norm on approximately satisfied VOA axioms, no measurement implementation, and no device-independent conclusion are asserted.
 
@@ -24,116 +28,166 @@ Source conventions: Dong–Lin [DL, Definitions 2.1–2.2]; weight-two mode iden
 
 ## Q1. Elementary uniform localization lemma
 
-Let f be C1 on a finite-dimensional Euclidean unit sphere. Fix M, Delta, kappa, R>0. Suppose:
+Let $f$ be $C^1$ on a finite-dimensional Euclidean unit sphere. Fix $M,\Delta,\kappa,R>0$. Suppose:
 
-1. f<=M, and every critical point has value either M or at most M-Delta.
-2. For each a with f(a)=M, one has M-f(x)>=kappa||x-a||^2 whenever ||x-a||<=R.
+1. $f\le M$, and every critical point has value either $M$ or at most $M-\Delta$.
+2. For each $a$ with $f(a)=M$, one has $M-f(x)\ge\kappa\|x-a\|^2$ whenever $\|x-a\|\le R$.
 
 Then, if
 
-$$f(x)\ge M-\epsilon,\qquad
-0\le\epsilon<\min(\Delta,\kappa R^2),$$
+$$
+f(x)\ge M-\epsilon,\qquad
+0\le\epsilon<\min(\Delta,\kappa R^2),
+$$
 
-there exists a with f(a)=M such that
+there exists $a$ with $f(a)=M$ such that
 
-$$\|x-a\|\le\sqrt{\epsilon/\kappa}.$$
+$$
+\|x-a\|\le\sqrt{\epsilon/\kappa}.
+$$
 
-The chosen a is unique whenever 2 sqrt(epsilon/kappa)<=R.
+The chosen $a$ is unique whenever $2\sqrt{\epsilon/\kappa}\le R$.
 
-**Proof.** A global maximum exists on the compact sphere. Its value is at least f(x)>M-Delta; it is critical and therefore equals M. Let A=f^(-1)(M). By assumption 2, distinct elements of A are separated by strictly more than R, so A is finite. On the compact set K={z:dist(z,A)>=R}, a maximum either occurs on the boundary, where its loss is at least kappa R^2, or in the sphere-interior of K, where it is a critical point outside A and has loss at least Delta. If K is empty the entry conclusion is immediate. Otherwise these two alternatives exclude x from K. For a nearest a, assumption 2 now gives the distance bound. Two possible choices would have mutual distance at most 2 sqrt(epsilon/kappa)<=R, a contradiction. End proof.
+**Proof.** A global maximum exists on the compact sphere. Its value is at least $f(x)>M-\Delta$; it is critical and therefore equals $M$. Let $\mathcal A=f^{-1}(M)$. By assumption 2, distinct elements of $\mathcal A$ are separated by strictly more than $R$, so $\mathcal A$ is finite.
 
-No compactness of the collection of all VOAs is assumed. Compactness is applied separately in each finite primary space; uniformity across theories comes from the SAME values of M, Delta, kappa, and R.
+On the compact set $K=\{z:\mathrm{dist}(z,\mathcal A)\ge R\}$, a maximum either occurs on the boundary, where its loss is at least $\kappa R^2$, or in the sphere-interior of $K$, where it is a critical point outside $\mathcal A$ and has loss at least $\Delta$. If $K$ is empty the entry conclusion is immediate. Otherwise these two alternatives exclude $x$ from $K$.
 
-Both hypotheses matter. On the circle, f_t(x,y)=x^2-y^2+t x has maxima at (1,0) and a lower local maximum at (-1,0), with losses differing by 2t and uniformly negative local curvature as t tends to zero. Curvature alone therefore gives no uniform global entry threshold. Conversely f(x,y)=1-(1-x)^2 has loss ||(x,y)-(1,0)||^4/4 and no quadratic-growth estimate near its unique maximum. These are exact elementary countercontrols, not candidate VOAs.
+For a nearest $a$, assumption 2 now gives the distance bound. Two possible choices would have mutual distance at most $2\sqrt{\epsilon/\kappa}\le R$, a contradiction. End proof.
+
+No compactness of the collection of all VOAs is assumed. Compactness is applied separately in each finite primary space; uniformity across theories comes from the SAME values of $M$, $\Delta$, $\kappa$, and $R$.
+
+Both hypotheses matter. On the circle, $f_t(x,y)=x^2-y^2+tx$ has maxima at $(1,0)$ and a lower local maximum at $(-1,0)$, with losses differing by $2t$ and uniformly negative local curvature as $t$ tends to zero. Curvature alone therefore gives no uniform global entry threshold. Conversely $f(x,y)=1-(1-x)^2$ has loss $\|(x,y)-(1,0)\|^4/4$ and no quadratic-growth estimate near its unique maximum. These are exact elementary countercontrols, not candidate VOAs.
 
 ## Q2. Critical values in the physical class
 
-At a real unit sphere critical point a, symmetry of the cubic gives mu(a,a)=lambda a with lambda=f(a). Set
+At a real unit sphere critical point $a$, symmetry of the cubic gives $\mu(a,a)=\lambda a$ with $\lambda=f(a)$. Set
 
-$$D_\lambda=\sqrt{\lambda^2+4/3},\quad
-r=12(1-\lambda/D_\lambda),\quad b=2/D_\lambda,\quad
- e=\frac r{24}\omega+ba.$$
+$$
+D_\lambda=\sqrt{\lambda^2+4/3},\qquad r=12(1-\lambda/D_\lambda),
+$$
 
-Then b^2=r(24-r)/48, b lambda=2-r/6, e*e=2e, and ||e||^2=r/2, with 0<r<24. Since V1=0, e is quasi-primary. Skew symmetry supplies e_(0)e=L_-1 e and e_(2)e=0; the invariant form supplies e_(3)e=(r/2)1. Its modes therefore generate a Virasoro algebra.
+$$
+b=2/D_\lambda,\qquad e=\frac r{24}\omega+ba.
+$$
 
-The cyclic vacuum module generated by e is positively graded by the ambient degree, with the internal L0 equal to that degree on its monomials. The mode adjoints are unitary. A proper submodule of this cyclic module would have a lowest-weight vector orthogonal to all vacuum descendants, hence zero by positivity. Thus it is a positive-energy unitary irreducible vacuum representation.
+Then $b^2=r(24-r)/48$, $b\lambda=2-r/6$, $e*e=2e$, and $\|e\|^2=r/2$, with $0<r<24$. Since $V_1=0$, $e$ is quasi-primary. Skew symmetry supplies $e_{(0)}e=L_{-1}e$ and $e_{(2)}e=0$; the invariant form supplies $e_{(3)}e=(r/2)\mathbf1$. Its modes therefore generate a Virasoro algebra.
 
-The FQS necessity theorem, stated explicitly in Wassermann [W, p.2], implies that r is in {1-6/[m(m+1)]:m>=3} or [1,infinity). In particular r>=1/2 and, unless r=1/2, r>=7/10. The inverse relation
+The cyclic vacuum module generated by $e$ is positively graded by the ambient degree, with the internal $L_0$ equal to that degree on its monomials. The mode adjoints are unitary. A proper submodule of this cyclic module would have a lowest-weight vector orthogonal to all vacuum descendants, hence zero by positivity. Thus it is a positive-energy unitary irreducible vacuum representation.
 
-$$\lambda(r)=\frac{2-r/6}{\sqrt{r(24-r)/48}},\qquad
-\lambda'(r)=-\frac{1}{2[r(24-r)/48]^{3/2}}$$
+The FQS necessity theorem, stated explicitly in Wassermann [W, p.2], implies that $r$ is in $\{1-6/[m(m+1)]:m\ge3\}$ or $[1,\infty)$. In particular $r\ge1/2$ and, unless $r=1/2$, $r\ge7/10$. The inverse relation
 
-is strictly decreasing. Every sphere maximum is critical, and f is odd. Therefore
+$$
+\lambda(r)=\frac{2-r/6}{\sqrt{r(24-r)/48}},\qquad
+\lambda'(r)=-\frac{1}{2[r(24-r)/48]^{3/2}}
+$$
 
-$$|f(x)|\le M=\frac{46}{\sqrt{141}},\qquad
-f(a)\le M_2=\frac{226}{\sqrt{4893}}$$
+is strictly decreasing. Every sphere maximum is critical, and $f$ is odd. Therefore
 
-for every non-Ising critical point. Equality f(a)=M is equivalent to e being an Ising vector, with
+$$
+|f(x)|\le M=\frac{46}{\sqrt{141}},\qquad
+f(a)\le M_2=\frac{226}{\sqrt{4893}}
+$$
 
-$$e_a=\omega/48+(\sqrt{141}/24)a.$$
+for every non-Ising critical point. Equality $f(a)=M$ is equivalent to $e$ being an Ising vector, with
+
+$$
+e_a=\omega/48+(\sqrt{141}/24)a.
+$$
 
 This identification uses unitary Virasoro classification, not a known Monster orbit or an axis count. The exact charge classification is imported, not re-proved by the numerical certificate. Source [W] attributes it to FQS; the original FQS full proof was not newly obtained here.
 
 ## Q3. Uniform local growth without multiplicities
 
-For an Ising vector e, the module types L(1/2,0), L(1/2,1/2), L(1/2,1/16) give the possible e_(1) eigenvalues on V2: 0,1/16,1/2,2. V1=0 eliminates level-one descendants. The eigenspace 2 is just the stress direction e: it can arise at ambient weight two only from the vacuum module starting at the ambient vacuum. A vacuum-module highest vector starting at ambient degree two instead has e-weight zero. These are the exact hypotheses behind the multiplicity-free statement [S, sections 1–2].
+For an Ising vector $e$, the module types $L(1/2,0)$, $L(1/2,1/2)$, $L(1/2,1/16)$ give the possible $e_{(1)}$ eigenvalues on $V_2$: $0,1/16,1/2,2$. $V_1=0$ eliminates level-one descendants. The eigenspace $2$ is just the stress direction $e$: it can arise at ambient weight two only from the vacuum module starting at the ambient vacuum. A vacuum-module highest vector starting at ambient degree two instead has $e$-weight zero. These are the exact hypotheses behind the multiplicity-free statement [S, sections 1–2].
 
-For the corresponding primary a and a unit primary v perpendicular to a,
+For the corresponding primary $a$ and a unit primary $v$ perpendicular to $a$,
 
-$$C(a,v,v)\le\frac{11}{\sqrt{141}}.$$
+$$
+C(a,v,v)\le\frac{11}{\sqrt{141}}.
+$$
 
-Indeed on this tangent space e_(1)=I/24+(sqrt(141)/24)L_a. No dimension of an eigenspace is needed.
+Indeed on this tangent space $e_{(1)}=I/24+(\sqrt{141}/24)L_a$. No dimension of an eigenspace is needed.
 
-For s=||x-a||<=1/10, put q=1-s^2/2 and t=sqrt(1-q^2), so x=qa+tv. Cubic symmetry gives
+For $s=\|x-a\|\le1/10$, put $q=1-s^2/2$ and $t=\sqrt{1-q^2}$, so $x=qa+tv$. Cubic symmetry gives
 
-$$f(x)=Mq^3+3qt^2C(a,v,v)+t^3f(v).$$
+$$
+f(x)=Mq^3+3qt^2C(a,v,v)+t^3f(v).
+$$
 
-Using q>=0, qt^2<=s^2, t<=s and |f(v)|<=M,
+Using $q\ge0$, $qt^2\le s^2$, $t\le s$ and $|f(v)|\le M$,
 
-$$M-f(x)\ge s^2\left[\frac{36}{\sqrt{141}}-\frac{3M}{4}s^2-Ms\right]\ge2s^2.$$
+$$
+M-f(x)\ge s^2\left[\frac{36}{\sqrt{141}}-\frac{3M}{4}s^2-Ms\right]\ge2s^2.
+$$
 
-The last estimate follows from 36/sqrt(141)>3, M<4 and 3-3/100-4/10=257/100>2. Thus Q1 applies with R=1/10, kappa=2. Since M>19/5 and M2<33/10, Delta=M-M2>1/2. The uniform entry threshold is therefore 1/50:
+The last estimate follows from $36/\sqrt{141}>3$, $M<4$ and
 
-$$f(x)\ge M-\epsilon,\quad0\le\epsilon<1/50
-\quad\Longrightarrow\quad
-\operatorname{dist}(x,\mathcal A)\le\sqrt{\epsilon/2}.$$
+$$
+3-3/100-4/10=257/100>2.
+$$
+
+Thus Q1 applies with $R=1/10$, $\kappa=2$. Since $M>19/5$ and $M_2<33/10$, $\Delta=M-M_2>1/2$. The uniform entry threshold is therefore $1/50$:
+
+$$
+f(x)\ge M-\epsilon,\qquad0\le\epsilon<1/50
+$$
+
+implies
+
+$$
+\mathrm{dist}(x,\mathcal A)\le\sqrt{\epsilon/2}.
+$$
 
 This is value-to-vector control: no approximate stationarity or preidentified nearby exact axis is assumed. The generic quadratic-growth and compactness methods are not claimed as new mathematics.
 
 ## Q4. Asymmetric correlation tolerances and the exact endpoint
 
-Let x,y be the two real unit primaries. Suppose
+Let $x,y$ be the two real unit primaries. Suppose
 
-$$f(x)\ge M-\epsilon_x,\quad f(y)\ge M-\epsilon_y,\quad
-|\langle x,y\rangle+1/47|\le\delta,$$
+$$
+f(x)\ge M-\epsilon_x,\quad f(y)\ge M-\epsilon_y,\quad
+|\langle x,y\rangle+1/47|\le\delta,
+$$
 
-with 0<=epsilon_x,epsilon_y<1/50 and delta>=0. If
+with $0\le\epsilon_x,\epsilon_y<1/50$ and $\delta\ge0$. If
 
-$$\boxed{\delta+\sqrt{\epsilon_x/2}+\sqrt{\epsilon_y/2}<3/188,}$$
+$$
+\boxed{\delta+\sqrt{\epsilon_x/2}+\sqrt{\epsilon_y/2}<3/188,}
+$$
 
-then V is isomorphic as a VOA to moonshine.
+then $V$ is isomorphic as a VOA to moonshine.
 
-**Proof.** Q3 gives maximizing directions a,b within the two displayed distances. Since all vectors have norm one, the overlap perturbation is at most the SUM of the two distances, by writing <a,b>-<x,y>=<a-x,b>+<x,b-y>. No extra product of distances is needed. The exact Ising overlap is
+**Proof.** Q3 gives maximizing directions $a,b$ within the two displayed distances. Since all vectors have norm one, the overlap perturbation is at most the SUM of the two distances, by writing
 
-$$\langle e_a,e_b\rangle=\frac{1+47\langle a,b\rangle}{192}.$$
+$$
+\langle a,b\rangle-\langle x,y\rangle=\langle a-x,b\rangle+\langle x,b-y\rangle.
+$$
 
-Its absolute value is strictly below (47/192)(3/188)=1/256. Sakuma's Theorem 4.4, with the identical-vector case included, allows only
+No extra product of distances is needed. The exact Ising overlap is
 
-$$0,\quad1/256,\quad5/1024,\quad3/512,\quad1/128,\quad13/1024,\quad1/32,\quad1/4.$$
+$$
+\langle e_a,e_b\rangle=\frac{1+47\langle a,b\rangle}{192}.
+$$
 
-Thus the overlap is zero, and the vectors are distinct. Their singular OPE vanishes and they generate commuting Ising subalgebras. For completeness, positivity of e_(1) on V2 and metric invariance give ||e_(0)f||^2=2<f,e_(1)f>=0 when <e,f>=0; the other singular coefficients vanish as well. This does NOT say regular tensor-product states vanish.
+Its absolute value is strictly below $(47/192)(3/188)=1/256$. Sakuma's Theorem 4.4, with the identical-vector case included, allows only
+
+$$
+0,\quad1/256,\quad5/1024,\quad3/512,\quad1/128,\quad13/1024,\quad1/32,\quad1/4.
+$$
+
+Thus the overlap is zero, and the vectors are distinct. Their singular OPE vanishes and they generate commuting Ising subalgebras. For completeness, positivity of $e_{(1)}$ on $V_2$ and metric invariance give $\|e_{(0)}f\|^2=2\langle f,e_{(1)}f\rangle=0$ when $\langle e,f\rangle=0$; the other singular coefficients vanish as well. This does NOT say regular tensor-product states vanish.
 
 Now apply Abe–Lam–Yamada [ALY, Theorem A.1]. It identifies the ambient VOA, not just the subalgebra generated by the pair. This exact classification is prior work. End proof.
 
-The symmetric historical tolerances are recovered by epsilon_x=epsilon_y=1/32768, delta=1/128. The resulting bound is 1/64<3/188, and the Ising overlap is at most 47/12288, leaving margin 1/12288 below 1/256. These numbers are sufficient, not optimal.
+The symmetric historical tolerances are recovered by $\epsilon_x=\epsilon_y=1/32768$, $\delta=1/128$. The resulting bound is $1/64<3/188$, and the Ising overlap is at most $47/12288$, leaving margin $1/12288$ below $1/256$. These numbers are sufficient, not optimal.
 
-The asymmetric formula is explicit error propagation of the existing proof, not a separate claim of a newly classified family. Failure to satisfy it is failure of this certificate, NOT proof that V differs from moonshine.
+The asymmetric formula is explicit error propagation of the existing proof, not a separate claim of a newly classified family. Failure to satisfy it is failure of this certificate, NOT proof that $V$ differs from moonshine.
 
 ## Q5. Honest interpretation of approximate inputs
 
-Certified coefficient intervals can be substituted conservatively. If f(x)>=f_x^- and f(y)>=f_y^- are established lower bounds, take epsilon_x=M-f_x^- and epsilon_y=M-f_y^- when these are nonnegative. If an overlap estimate c_hat has an absolute error bound eta, use delta=|c_hat+1/47|+eta. Each distance square root can be bounded from above by exact rational interval arithmetic, as in the checker.
+Certified coefficient intervals can be substituted conservatively. If $f(x)\ge f_x^-$ and $f(y)\ge f_y^-$ are established lower bounds, take $\epsilon_x=M-f_x^-$ and $\epsilon_y=M-f_y^-$ when these are nonnegative. If an overlap estimate $\hat c$ has an absolute error bound $\eta$, use $\delta=|\hat c+1/47|+\eta$. Each distance square root can be bounded from above by exact rational interval arithmetic, as in the checker.
 
-A lower bound f_x^->M contradicts the assumed model/normalization; it must not be clipped to zero and presented as a successful physical test. No uncertainty in normalization, primarity, real structure, locality, or holomorphicity is absorbed by this procedure unless separately bounded by a proved theorem. The theorem does not establish sample complexity, field finding, or a method to compute an isomorphism.
+A lower bound $f_x^->M$ contradicts the assumed model/normalization; it must not be clipped to zero and presented as a successful physical test. No uncertainty in normalization, primarity, real structure, locality, or holomorphicity is absorbed by this procedure unless separately bounded by a proved theorem. The theorem does not establish sample complexity, field finding, or a method to compute an isomorphism.
 
 One may choose far stronger exact structural assumptions and get a prior theorem immediately. The candidate scientific contribution is the uniform replacement by a limited set of coefficient inequalities, not a new exact classification or a general Morse theorem. The exact Ising tensor power outside the holomorphic class passes the local data, so the ambient hypotheses cannot be omitted. The existing explicit lattice pair verifies that the admitted region is attained in the known moonshine example; this consolidation does not re-run a full VOA construction.
 
@@ -155,5 +209,5 @@ https://arxiv.org/abs/1012.6003
 [S] Sakuma, *6-transposition property of tau-involutions of vertex operator algebras*, arXiv:math/0608709v1, general hypotheses in section 2 and Theorem 4.4.
 https://arxiv.org/abs/math/0608709
 
-[ALY] Abe–Lam–Yamada, *A remark on Z_p-orbifold constructions of the Moonshine vertex operator algebra*, arXiv:1705.09022v4, Theorem A.1.
+[ALY] Abe–Lam–Yamada, *A remark on $\mathbb Z_p$-orbifold constructions of the Moonshine vertex operator algebra*, arXiv:1705.09022v4, Theorem A.1.
 https://arxiv.org/abs/1705.09022

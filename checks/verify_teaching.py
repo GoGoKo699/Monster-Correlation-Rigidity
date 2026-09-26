@@ -151,6 +151,12 @@ def preservation(root: Path, baseline: Path, manifest: dict) -> None:
 
 
 def main() -> None:
+    # The historical teaching manifest remains frozen at its original commit.
+    # The current display manifest explicitly covers subsequent reader changes.
+    if (ROOT/'results/math_rendering_changes.json').is_file():
+        from verify_display import main as current_display_check
+        current_display_check()
+        return
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--baseline',type=Path)
     args=parser.parse_args()
