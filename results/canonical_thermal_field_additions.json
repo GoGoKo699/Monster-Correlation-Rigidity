@@ -1,0 +1,31 @@
+{
+  "base_commit": "09e3f98ad79034eefab43f4fb9ea432368fc19e7",
+  "files": [
+    {
+      "bytes": 19054,
+      "path": "research/21_canonical_thermal_field.md",
+      "sha256": "d5466dc63bbac736284c6573d2f1537ede14a6230e28385e25a7ee69456ae060"
+    },
+    {
+      "bytes": 4719,
+      "path": "checks/thermal_field_virasoro.py",
+      "sha256": "cefc291c6be9de9518037d353dc9b25857735963fb8747aea579bce41cc24fdb"
+    },
+    {
+      "bytes": 17274,
+      "path": "checks/verify_canonical_thermal_field.py",
+      "sha256": "dc3f922a8120c0472d69833c15b26d2d2b7057b5df16fbaafa90f15f0ceac9db"
+    },
+    {
+      "bytes": 65,
+      "path": "results/canonical_thermal_field_report.sha256",
+      "sha256": "449593d341ccf0c2935cb8a53f50d486d929ad7515ae642c7d1f70c719fe3575"
+    },
+    {
+      "bytes": 4433,
+      "path": ".github/workflows/canonical-thermal-field.yml",
+      "sha256": "0c4e42419aaed87109cf5ffc584f6c06e41f0979f90df13b93dcff0757efe1b6"
+    }
+  ],
+  "scope": "Additive canonical thermal field and cross-channel normalization; every existing main file remains unchanged. This manifest excludes itself. No pending PR is integrated."
+}
