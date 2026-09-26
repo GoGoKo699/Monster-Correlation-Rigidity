@@ -1,0 +1,31 @@
+{
+  "base_commit": "09e3f98ad79034eefab43f4fb9ea432368fc19e7",
+  "files": [
+    {
+      "bytes": 17631,
+      "path": "research/24_operator_factorization_closure.md",
+      "sha256": "e67e6834eeebb582845043e16de2879b89c789415de096b403827d5526827c29"
+    },
+    {
+      "bytes": 14726,
+      "path": "checks/operator_factorization_graphs.py",
+      "sha256": "aa4c666edf49757bdf76ba6f041f5e9ff78af73e2211e6bcab733773cc949963"
+    },
+    {
+      "bytes": 15946,
+      "path": "checks/verify_operator_factorization.py",
+      "sha256": "71e83666d87171ae0c09eb326e2d317ce52be74ea6858f5805d91c8410bfca49"
+    },
+    {
+      "bytes": 65,
+      "path": "results/operator_factorization_report.sha256",
+      "sha256": "01788baa2285df3f94c20903f22e6de66ebb2d91d412520066b30774e985c2b4"
+    },
+    {
+      "bytes": 4504,
+      "path": ".github/workflows/operator-factorization-closure.yml",
+      "sha256": "9cdcf3fb9c906c1cb431511b461809470f6a0757731b9659a7b92210d15bd9c5"
+    }
+  ],
+  "scope": "Six additions only; every existing main file and all pending PRs remain unchanged. This manifest excludes itself. The exact full certificate is emitted by the new checker; the repository stores its fingerprint."
+}
