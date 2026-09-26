@@ -1,3 +1,5 @@
+> Integration note (26 September 2026): PR28 is now merged. The dated text below records its pre-integration stage. See [current scientific status](RESEARCH_STATUS.md) and [the final bounded review](../audits/final_quantitative_review.md) for the active disposition.
+
 # Bounded research core: status and remaining integration work
 
 26 September 2026. Manuscript writing remains on hold. This is a status map, not manuscript prose. Private submission planning is not included.

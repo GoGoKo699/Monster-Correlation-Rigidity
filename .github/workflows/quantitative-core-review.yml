@@ -1,7 +1,7 @@
 name: Quantitative core review
 on:
   push:
-    branches: [research/quantitative-core-review, main]
+    branches: [audit/quantitative-final-integration, main]
   pull_request:
     branches: [main]
 permissions:
@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          ref: 09e3f98ad79034eefab43f4fb9ea432368fc19e7
+          ref: 98d4fe9fdab36d0b10176e0105b1283889c9b227
           path: baseline
           persist-credentials: false
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -29,64 +29,77 @@ jobs:
         with:
           python-version: '3.13.5'
       - run: python3 -m pip install 'numpy==2.3.5'
-      - name: Preserve baseline and verify the additive payload
+      - name: Exact preservation with declared reader changes
         run: |
-          python3 - <<'PY'
+          python3 - <<'PYCODE'
           import hashlib,json,pathlib,subprocess
           b,c=pathlib.Path('baseline'),pathlib.Path('candidate')
-          names=subprocess.check_output(['git','-C',str(b),'ls-files','-z']).decode().split('\0')
-          for name in filter(None,names):
-              if (b/name).read_bytes()!=(c/name).read_bytes():
-                  raise RuntimeError('Changed baseline: '+name)
+          m=json.loads((c/'results/final_core_integration.json').read_text())
+          changed={e['path']:e for e in m['modified']}
+          names=set(filter(None,subprocess.check_output(['git','-C',str(b),'ls-files','-z']).decode().split('\0')))
+          if not set(changed)<=names: raise RuntimeError('Invalid changed-path set')
+          for name in names:
+              old,new=(b/name).read_bytes(),(c/name).read_bytes()
+              if name not in changed:
+                  if old!=new: raise RuntimeError('Unapproved baseline change: '+name)
+              else:
+                  e=changed[name]
+                  if hashlib.sha256(old).hexdigest()!=e['previous_sha256'] or hashlib.sha256(new).hexdigest()!=e['sha256'] or len(new)!=e['bytes']:
+                      raise RuntimeError('Declared change mismatch: '+name)
+          for e in m['added']:
+              if e['path'] in names: raise RuntimeError('Addition already in baseline')
+              raw=(c/e['path']).read_bytes()
+              if len(raw)!=e['bytes'] or hashlib.sha256(raw).hexdigest()!=e['sha256']: raise RuntimeError('Addition mismatch: '+e['path'])
+          if (c/'provenance/quantitative_core_additions_PR28.json').read_bytes()!=(b/'results/quantitative_core_additions.json').read_bytes(): raise RuntimeError('PR28 manifest archive changed')
+          old={e['path']:e for e in json.loads((b/'snapshot_manifest.json').read_text())['files']}
+          new={e['path']:e for e in json.loads((c/'snapshot_manifest.json').read_text())['files']}
+          if set(old)!=set(new) or {p for p in old if old[p]!=new[p]}!={'README.md','work_orders/CURRENT.md'}: raise RuntimeError('Unexpected snapshot modification')
           for e in json.loads((c/'results/quantitative_core_additions.json').read_text())['files']:
               raw=(c/e['path']).read_bytes()
-              if len(raw)!=e['bytes'] or hashlib.sha256(raw).hexdigest()!=e['sha256']:
-                  raise RuntimeError('Addition mismatch: '+e['path'])
-          print('BASELINE_PRESERVED ADDITIONS_VERIFIED')
-          PY
-      - name: Strict replay and separate unchanged portability policy
+              if len(raw)!=e['bytes'] or hashlib.sha256(raw).hexdigest()!=e['sha256']: raise RuntimeError('Core source fingerprint mismatch')
+          print('PRESERVATION_PASS: only declared reader/status/metadata changes; scientific payloads unchanged')
+          PYCODE
+      - name: Strict replay and separate unchanged portability
         shell: bash
         run: |
           set -euo pipefail
           for tree in baseline candidate; do
             (
               cd "$tree"
-              if python3 verify.py >/tmp/core-strict.out 2>/tmp/core-strict.err; then
+              if python3 verify.py >/tmp/final-strict.out 2>/tmp/final-strict.err; then
                 strict=PASS
               else
                 strict=FAIL_RECOGNIZED_FLOAT_REPORT
-                case "$(tail -n 1 /tmp/core-strict.err)" in
+                case "$(tail -n 1 /tmp/final-strict.err)" in
                   "RuntimeError: prior average toy differs from recorded report under None"|"RuntimeError: prior pair toy differs from recorded report under None") ;;
-                  *) cat /tmp/core-strict.err; exit 1 ;;
+                  *) cat /tmp/final-strict.err; exit 1 ;;
                 esac
               fi
               echo "STRICT_REPLAY $tree $strict"
-              cat /tmp/core-strict.err
-              python3 checks/replay_portability.py >/tmp/core-portability.json
-              TREE="$tree" python3 - <<'PY'
+              cat /tmp/final-strict.err
+              python3 checks/replay_portability.py >/tmp/final-portability.json
+              TREE="$tree" python3 - <<'PYCODE'
           import json,os
-          r=json.load(open('/tmp/core-portability.json'))
+          r=json.load(open('/tmp/final-portability.json'))
           print('PORTABILITY',os.environ['TREE'],r['status'])
           print('ALL_REPORTS_BYTE_IDENTICAL',os.environ['TREE'],r['all_reports_byte_identical'])
           print('DIFFERING_FLOAT_LEAVES',sum(x['different_float_leaves'] for x in r['reports']))
-          PY
+          PYCODE
               test -z "$(git status --porcelain)"
             )
           done
-      - name: Both exact certificates in all three modes
+      - name: Three exact checks in three modes
         run: |
           cd candidate
-          python3 - <<'PY'
+          python3 - <<'PYCODE'
           import hashlib,json,pathlib,subprocess,sys
-          report=json.loads(pathlib.Path('results/quantitative_core_reports.json').read_text())
-          for e in report['reports']:
+          rows=json.loads(pathlib.Path('results/quantitative_core_reports.json').read_text())['reports']
+          rows+=json.loads(pathlib.Path('results/final_core_integration.json').read_text())['new_reports']
+          for e in rows:
               runs=[subprocess.check_output([sys.executable,*opt,e['script']]) for opt in [[],['-O'],['-OO']]]
-              if any(x!=runs[0] for x in runs):
-                  raise RuntimeError('Mode mismatch: '+e['script'])
-              raw=runs[0]
-              if hashlib.sha256(raw).hexdigest()!=e['sha256'] or json.loads(raw)['checks']!=e['checks']:
-                  raise RuntimeError('Exact report mismatch: '+e['script'])
+              if any(r!=runs[0] for r in runs): raise RuntimeError('Mode mismatch: '+e['script'])
+              if hashlib.sha256(runs[0]).hexdigest()!=e['sha256'] or json.loads(runs[0])['checks']!=e['checks']: raise RuntimeError('Report mismatch: '+e['script'])
               print('EXACT_REPORT',e['script'],e['checks'],e['sha256'])
-          PY
+          PYCODE
           git diff --check
           test -z "$(git status --porcelain)"

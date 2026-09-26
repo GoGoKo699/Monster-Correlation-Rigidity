@@ -1,0 +1,43 @@
+{
+  "analytic_proof_or_source_theorems_verified_by_sampling": false,
+  "arithmetic": "rational arithmetic; independent bisection oracle",
+  "case_counts": {
+    "field_pairs": 36,
+    "inconclusive_pairs": 9,
+    "interval_endpoint_cases": 74529,
+    "monotonicity_pairs": 36,
+    "sound_successes": 27,
+    "square_root_cases": 45
+  },
+  "checks": 23,
+  "full_VOA_simulated": false,
+  "labels": [
+    "preservation:verify_extraction_core.py",
+    "preservation:verify_calibration_and_sharpness.py",
+    "proof:qt_squared_le_chord_squared_on_declared_ball",
+    "proof:quadratic_loss_constant_has_strict_margin",
+    "proof:entry_loss_strictly_below_critical_gap",
+    "proof:singular_product_norm_is_four_times_Ising_overlap",
+    "proof:discrete_gap_conversion",
+    "proof:historical_pair_budget_is_strict",
+    "proof:certifying_overlap_budget_implies_unique_rounding",
+    "proof:sharp_curve_leading_coefficients",
+    "implementation:exhaustive_rational_interval_box_controls",
+    "implementation:roots_cover_tiny_large_and_exact_square_inputs",
+    "implementation:invalid_root_domains_rejected",
+    "implementation:zero_crossing_denominator_rejected",
+    "implementation:successful_calibrations_pass_independent_rational_oracle",
+    "implementation:off_target_inputs_are_not_all_accepted",
+    "implementation:interval_enlargement_does_not_improve_certification",
+    "negative_control:stress_term_is_essential",
+    "implementation:uncentered_exact_Ising_pair_passes",
+    "implementation:inconsistent_cap_is_not_a_success",
+    "implementation:duplicating_one_Ising_field_fails_pair_condition",
+    "implementation:pure_stress_projection_is_rejected",
+    "implementation:discrete_gap_boundary_is_strict"
+  ],
+  "largest_physical_coefficient_vector": 3,
+  "manuscript_written": false,
+  "reviewed_head": "6d460bef7041f17cba1658c99d6797ef4b00275c",
+  "status": "PASS bounded adversarial implementation and normalization checks"
+}

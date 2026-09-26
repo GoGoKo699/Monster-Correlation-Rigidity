@@ -1,0 +1,82 @@
+{
+  "base_commit": "98d4fe9fdab36d0b10176e0105b1283889c9b227",
+  "modified": [
+    {
+      "path": "README.md",
+      "bytes": 4287,
+      "sha256": "6863c63bae66cdab7dd7f607e3a239e135fd968059050c9c92ec0aa6c1d0caeb",
+      "previous_sha256": "9588b25695c7be719769208d49dee4823a7136b4253d8f4897698e8a03cab9b2"
+    },
+    {
+      "path": "work_orders/CURRENT.md",
+      "bytes": 2143,
+      "sha256": "36f01aabd62c23e4ee157da5cd95bfe01f1f55a62eac55ff08847035ef688f26",
+      "previous_sha256": "069669f443dd33b3c8f5a122d800d2bd4feae946ca012a1e6831e4df2bfafb3c"
+    },
+    {
+      "path": "snapshot_manifest.json",
+      "bytes": 10314,
+      "sha256": "e99f41196feee4b7f59f8f42e6b3c55b7584546d639f5b976f4f1d09c567388b",
+      "previous_sha256": "ce1c815cb95c860b04685dcb484a7e7758a32b843a5d12907da9cd517b0a0b01"
+    },
+    {
+      "path": "docs/BOUNDED_CORE_STATUS.md",
+      "bytes": 5578,
+      "sha256": "dc450a28853e99a909660b400783cc6d1886491249644a64fbcc77d38b273340",
+      "previous_sha256": "d1858624a3ec1ca0f5a1a5fa018e1df287891dbe0f358a54b837c5e5e1eceaef"
+    },
+    {
+      "path": "docs/QUANTITATIVE_CORE.md",
+      "bytes": 2988,
+      "sha256": "b87aa137897c0f84fd0ec8231110fddc2d2a6adef498e88e66398c55ea9646e5",
+      "previous_sha256": "41c56637bcaf925ba8ae2bea7014a95813b4174c4b84cc4d469eb0b5515b4ed5"
+    },
+    {
+      "path": ".github/workflows/quantitative-core-review.yml",
+      "bytes": 5555,
+      "sha256": "e9f0f1df34e92a8a2b743ad1d49c932ab893a37a89c1e418b1017afbea02ff57",
+      "previous_sha256": "18f734a8a7bea64aa254865f3a9e8da6eee8fb7fd9a72feb952348c9c44988f5"
+    },
+    {
+      "path": "results/quantitative_core_additions.json",
+      "bytes": 2150,
+      "sha256": "00dbe13b22bd61132b8987e0e00a0b54b2ce9921dbe480d86fce7b9d146e861f",
+      "previous_sha256": "2a9104dc4c816990a99bf66c7caa6f5f2ed311cf85b801c2b42ed520e7821baa"
+    }
+  ],
+  "added": [
+    {
+      "path": "audits/final_quantitative_review.md",
+      "bytes": 9745,
+      "sha256": "3a1810f167c9646d49726bf036a6af589d6d8bebcd228c2be63c9b7fed19a408"
+    },
+    {
+      "path": "docs/RESEARCH_STATUS.md",
+      "bytes": 3336,
+      "sha256": "8c6a616753f0a4011c10cc1256077979bfd7c3d1d304efeb54091bfe64fc3ef5"
+    },
+    {
+      "path": "checks/audit_quantitative_core.py",
+      "bytes": 9848,
+      "sha256": "59272de376aae3b03c1408aab2dd39adc7e3d60fdaf824fb19f18c1ea7643c62"
+    },
+    {
+      "path": "results/quantitative_final_audit.json",
+      "bytes": 1943,
+      "sha256": "2b863f6f9edbc17abed7eaf4bb6bc832cf0f356d44280467a5fcc51ac6b495e2"
+    },
+    {
+      "path": "provenance/quantitative_core_additions_PR28.json",
+      "bytes": 1961,
+      "sha256": "2a9104dc4c816990a99bf66c7caa6f5f2ed311cf85b801c2b42ed520e7821baa"
+    }
+  ],
+  "new_reports": [
+    {
+      "script": "checks/audit_quantitative_core.py",
+      "checks": 23,
+      "sha256": "2b863f6f9edbc17abed7eaf4bb6bc832cf0f356d44280467a5fcc51ac6b495e2"
+    }
+  ],
+  "scope": "Seven declared reader/status/verification metadata changes; six additions including this self-excluded manifest. Every other baseline file is preserved byte-for-byte. No old scientific output, proof, checker, license or archive changes. Manuscript remains on hold."
+}
