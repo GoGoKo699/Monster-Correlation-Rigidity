@@ -1,0 +1,44 @@
+name: Pinned release sanity audit
+on:
+  push:
+    branches: [audit/release-sanity-20260927]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: harness
+          persist-credentials: false
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ecd0623e9de41b49754b6ca16dc23752443143af
+          path: subject
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - run: python -m pip install 'numpy==2.3.5'
+      - name: Execute complete checker inventory and record every result
+        shell: bash
+        run: |
+          set -euo pipefail
+          python harness/audit_tools/release_sanity.py --root subject --output "$RUNNER_TEMP/audit-reports" | tee "$RUNNER_TEMP/audit-results.log"
+      - name: Parse all active-path mathematical expressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd subject
+          python checks/verify_display.py --export-math "$RUNNER_TEMP/math-corpus.json"
+          npm install --prefix "$RUNNER_TEMP/math-renderer" --ignore-scripts --no-audit --no-fund mathjax-full@3.2.1
+          NODE_PATH="$RUNNER_TEMP/math-renderer/node_modules" node checks/render_math.cjs "$RUNNER_TEMP/math-corpus.json"
+          git diff --check
+          test -z "$(git status --porcelain)"
