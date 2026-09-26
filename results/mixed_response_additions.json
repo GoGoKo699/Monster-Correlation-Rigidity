@@ -1,0 +1,26 @@
+{
+  "base_commit": "09e3f98ad79034eefab43f4fb9ea432368fc19e7",
+  "files": [
+    {
+      "bytes": 16458,
+      "path": "research/17_mixed_response_closure.md",
+      "sha256": "cc0c81986a31aa49353326e11757528e0dc3ed3bca3864f9273ed471db56a60b"
+    },
+    {
+      "bytes": 12021,
+      "path": "checks/verify_mixed_response_closure.py",
+      "sha256": "d060299eb1b9ad75bf4fa04663b3d8cc0e09231b17191f1be6535453213b7361"
+    },
+    {
+      "bytes": 65,
+      "path": "results/mixed_response_closure_report.sha256",
+      "sha256": "78415df3beb7bb2e361ee460da00a75fc3bf2150c831655b65e753417cf080c8"
+    },
+    {
+      "bytes": 4598,
+      "path": ".github/workflows/mixed-response-closure.yml",
+      "sha256": "a44d423ec37bd9db899791bd54739f5a8a00af8867e23564b9a811a13a7374ec"
+    }
+  ],
+  "scope": "Additive mixed-response closure; every existing baseline file remains unchanged. This manifest excludes itself. No pending PR is merged by this manifest."
+}
