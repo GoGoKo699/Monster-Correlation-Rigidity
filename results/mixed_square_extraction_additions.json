@@ -13,13 +13,13 @@
     },
     {
       "path": "checks/verify_mixed_square_extraction.py",
-      "bytes": 15063,
-      "sha256": "7c25f55fc4e90369cd144cc68503ca290bc341e7855ee5a0862565a641e5bc58"
+      "bytes": 15231,
+      "sha256": "c8aaa71840f2f9936c086a6909284d31f59006959ef1072507805024ee758de5"
     },
     {
       "path": "results/mixed_square_extraction_report.sha256",
       "bytes": 65,
-      "sha256": "02d636c64995fe33d5a21309485c551245d26f9c535f20c2e45cc3dc0567d1cc"
+      "sha256": "8acfc1ae1e1b09213f17e0ebdb63e62142f8234139efb12b33878e66248d3a41"
     },
     {
       "path": ".github/workflows/mixed-square-extraction.yml",

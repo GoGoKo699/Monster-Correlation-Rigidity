@@ -177,15 +177,17 @@ def extraction():
     roots=[R3(-Q(4,3)),R3(Q(16,13),-Q(25,39)),R3(Q(16,13),Q(25,39))]
     for j,t in enumerate(roots):
         need(((A*t-3*B)*t-3*A)*t+B==0,f'extraction:stationary_root{j}')
-    # Recover all oriented maxima of the harmonic cubic, not preinserted e's.
-    directions=[(R3(1),R3(0)),(R3(-Q(1,2)),R3(0,Q(1,2))),
-                (R3(-Q(1,2)),R3(0,-Q(1,2)))]
+    # Synthesize each field FROM its computed root in the rotated seed basis.
+    # At a stationary line z, multiplication has eigenvalue C(z,z,z)/||z||^2.
+    # Scaling that eigenvalue to +20 also gives squared norm162; no stored
+    # maximum angle or Ising endpoint is used to construct h.
     recovered=[]
-    for j,(c,s) in enumerate(directions):
-        h=vv(sc(Y,c),Z,s)
+    for j,t in enumerate(roots):
+        z=vv(p,q,t)
+        h=sc(z, R3(20)*a.ip(z,z)/a.ip(a.prod(z,z),z))
         d,v_found,charge=mixed_square(a,u,h)
         hpart=vv(vv(a.prod(h,h),u,-270),v_found,-504)
-        need(hpart==sc(h,20),f'extraction:maximum_direction{j}_quadratic_fixed_point')
+        need(hpart==sc(h,20) and a.ip(h,h)==n,f'extraction:maximum_direction{j}_quadratic_fixed_point')
         e=vv(vv(sc(u,Q(5,32)),v_found,Q(7,16)),h,Q(1,32))
         # Equivalent endpoint-free formula using only u and the maximizing h.
         e2=vv(vv(sc(a.prod(h,h),Q(1,1152)),h,Q(1,72)),u,-Q(5,64))
