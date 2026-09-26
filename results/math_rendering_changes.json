@@ -1,0 +1,47 @@
+{
+  "base_commit": "96d3c7011645ace358844d3494eef0bef657d104",
+  "modified": [
+    {
+      "path": "research/uniform_extraction_core.md",
+      "bytes": 13228,
+      "sha256": "01325d72b8cea50341355c8342e2eb65ecf50848a3e2c723f77ca521fbf10c36",
+      "previous_sha256": "8527c05c0a4720f0350fd2602c503e5ee8f7375cc2ee96ced5d97533b0510186"
+    },
+    {
+      "path": "research/sharpness_and_calibration.md",
+      "bytes": 12322,
+      "sha256": "18989f33158e43b672012c990df37bf38046c1814413bdd92ff384034f54e1df",
+      "previous_sha256": "987d866ac4a9cc30b0be58cc37457875c28de4f52faa94333e33a2e924b3e0aa"
+    },
+    {
+      "path": "checks/verify_teaching.py",
+      "bytes": 8673,
+      "sha256": "673d7b0f3384af4669376eed93cedd224cc1855c4c667fa70cbbcf62eef3bad2",
+      "previous_sha256": "3ac78467d5d668ca7345d33f1e3a051c714e681fd60a7f873e03bd9578420b32"
+    },
+    {
+      "path": ".github/workflows/quantitative-core-review.yml",
+      "bytes": 7470,
+      "sha256": "13b4250c2fdb87285d50ec0884a107e0f47f18c7c2cbe667ef851a33226a49e1",
+      "previous_sha256": "2cfb5a3c01f61e82030b5638e7903b3e1e8e22be3019dfb628350ad80cb654ed"
+    }
+  ],
+  "added": [
+    {
+      "path": "checks/verify_display.py",
+      "bytes": 7552,
+      "sha256": "86481945b84f1c6bd4d321314e1a9457433c847a5dae9d5ee11a8813f73f0841"
+    },
+    {
+      "path": "checks/render_math.cjs",
+      "bytes": 1717,
+      "sha256": "56099b0d3987da819bf0cc4695ff9b7e9907f5fc33aa350cbcc348d7d6d118aa"
+    },
+    {
+      "path": "audits/math_rendering_repair.md",
+      "bytes": 3717,
+      "sha256": "d440b78694af5a818696a4dc3b5c24ed80de064af9e8977703ebccf0cb1b5922"
+    }
+  ],
+  "scope": "Four declared display/check/workflow edits and four additions including this self-excluded manifest. Mathematical content is unchanged; all other baseline files and historical evidence are byte-preserved."
+}

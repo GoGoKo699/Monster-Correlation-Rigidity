@@ -28,6 +28,11 @@ jobs:
           persist-credentials: false
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
+          ref: 96d3c7011645ace358844d3494eef0bef657d104
+          path: teaching
+          persist-credentials: false
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
           path: candidate
           persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
@@ -64,20 +69,35 @@ jobs:
               if len(raw)!=e['bytes'] or hashlib.sha256(raw).hexdigest()!=e['sha256']: raise RuntimeError('Core source fingerprint mismatch')
           print('PRESERVATION_PASS: only declared reader/status/metadata changes; scientific payloads unchanged')
           PYCODE
-      - name: Teaching-only delta and examples in three modes
+      - name: Preserved teaching delta and examples in three modes
         run: |
-          cd candidate
+          cd teaching
           python3 checks/verify_teaching.py --baseline ../reviewed > /tmp/teaching-normal.json
           python3 -O checks/verify_teaching.py --baseline ../reviewed > /tmp/teaching-O.json
           python3 -OO checks/verify_teaching.py --baseline ../reviewed > /tmp/teaching-OO.json
           cmp /tmp/teaching-normal.json /tmp/teaching-O.json
           cmp /tmp/teaching-normal.json /tmp/teaching-OO.json
           cat /tmp/teaching-normal.json
+      - name: Current reading-path display checks in three modes
+        run: |
+          cd candidate
+          python3 checks/verify_teaching.py --baseline ../teaching > /tmp/display-normal.json
+          python3 -O checks/verify_teaching.py --baseline ../teaching > /tmp/display-O.json
+          python3 -OO checks/verify_teaching.py --baseline ../teaching > /tmp/display-OO.json
+          cmp /tmp/display-normal.json /tmp/display-O.json
+          cmp /tmp/display-normal.json /tmp/display-OO.json
+          cat /tmp/display-normal.json
+          python3 checks/verify_display.py --export-math /tmp/monster-math.json
+      - name: Parse every active-page expression with MathJax
+        run: |
+          npm install --prefix "$RUNNER_TEMP/monster-math" --ignore-scripts --no-audit --no-fund mathjax-full@3.2.1
+          cd candidate
+          NODE_PATH="$RUNNER_TEMP/monster-math/node_modules" node checks/render_math.cjs /tmp/monster-math.json
       - name: Strict replay and separate unchanged portability
         shell: bash
         run: |
           set -euo pipefail
-          for tree in baseline reviewed candidate; do
+          for tree in baseline reviewed teaching candidate; do
             (
               cd "$tree"
               if python3 verify.py >/tmp/final-strict.out 2>/tmp/final-strict.err; then
