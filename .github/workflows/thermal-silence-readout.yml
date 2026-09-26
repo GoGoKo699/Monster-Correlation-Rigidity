@@ -1,0 +1,101 @@
+name: Thermal silence and complete readout
+on:
+  push:
+    branches: [research/thermal-silence-readout, main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: 09e3f98ad79034eefab43f4fb9ea432368fc19e7
+          path: baseline
+          persist-credentials: false
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: candidate
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - run: python3 -m pip install 'numpy==2.3.5'
+      - name: Frozen baseline and additive payload
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,pathlib,subprocess
+          b,c=pathlib.Path('baseline'),pathlib.Path('candidate')
+          names=subprocess.check_output(['git','-C',str(b),'ls-files','-z']).decode().split('\0')
+          for name in filter(None,names):
+              if (b/name).read_bytes()!=(c/name).read_bytes():
+                  raise RuntimeError('Changed baseline file: '+name)
+          m=json.loads((c/'results/thermal_silence_readout_additions.json').read_text())
+          for e in m['files']:
+              raw=(c/e['path']).read_bytes()
+              if len(raw)!=e['bytes'] or hashlib.sha256(raw).hexdigest()!=e['sha256']:
+                  raise RuntimeError('Addition hash mismatch: '+e['path'])
+          print('BASELINE_PRESERVED and ADDITIONS_VERIFIED')
+          PY
+      - name: Strict replay and separate unchanged portability policy
+        shell: bash
+        run: |
+          set -euo pipefail
+          for tree in baseline candidate; do
+            (
+              cd "$tree"
+              if python3 verify.py >/tmp/readout-strict.out 2>/tmp/readout-strict.err; then
+                strict=PASS
+              else
+                strict=FAIL_RECOGNIZED_FLOAT_REPORT
+                case "$(tail -n 1 /tmp/readout-strict.err)" in
+                  "RuntimeError: prior average toy differs from recorded report under None"|"RuntimeError: prior pair toy differs from recorded report under None") ;;
+                  *) cat /tmp/readout-strict.err; exit 1 ;;
+                esac
+              fi
+              echo "STRICT_REPLAY $tree $strict"
+              cat /tmp/readout-strict.err
+              python3 checks/replay_portability.py >/tmp/readout-portability.json
+              TREE="$tree" python3 - <<'PY'
+          import json,os
+          r=json.load(open('/tmp/readout-portability.json'))
+          print('PORTABILITY',os.environ['TREE'],r['status'])
+          print('ALL_REPORTS_BYTE_IDENTICAL',os.environ['TREE'],r['all_reports_byte_identical'])
+          print('DIFFERING_FLOAT_LEAVES',sum(x['different_float_leaves'] for x in r['reports']))
+          PY
+              test -z "$(git status --porcelain)"
+            )
+          done
+      - name: Exact certificate in all three modes
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd candidate
+          python3 checks/verify_thermal_silence_readout.py >/tmp/readout-normal.json
+          python3 -O checks/verify_thermal_silence_readout.py >/tmp/readout-O.json
+          python3 -OO checks/verify_thermal_silence_readout.py >/tmp/readout-OO.json
+          cmp /tmp/readout-normal.json /tmp/readout-O.json
+          cmp /tmp/readout-normal.json /tmp/readout-OO.json
+          python3 - <<'PY'
+          import hashlib,json,pathlib
+          raw=pathlib.Path('/tmp/readout-normal.json').read_bytes()
+          expected=pathlib.Path('results/thermal_silence_readout_report.sha256').read_text().strip()
+          if hashlib.sha256(raw).hexdigest()!=expected:
+              raise RuntimeError('Exact report fingerprint differs')
+          r=json.loads(raw)
+          print('NEW_CHECKS',r['checks'],r['status'])
+          print('IMAGE_RANKS',r['channel_certificate']['mode_image_ranks'])
+          print('MINIMAL_LINEAR_CUTOFF',r['channel_certificate']['minimum_cutoff_for_all_state_linear_readout'])
+          print('LARGEST_SQUARE',r['largest_square_matrix_dimension'])
+          print('REPORT_SHA256',expected)
+          PY
+          git diff --check
+          test -z "$(git status --porcelain)"

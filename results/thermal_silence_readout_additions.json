@@ -1,0 +1,31 @@
+{
+  "base_commit": "09e3f98ad79034eefab43f4fb9ea432368fc19e7",
+  "files": [
+    {
+      "bytes": 18945,
+      "path": "research/22_thermal_silence_complete_readout.md",
+      "sha256": "83b90c3b26c5e3649ff675be80c307d86c2a95f02cfa327837b0c70178d8d852"
+    },
+    {
+      "bytes": 4719,
+      "path": "checks/readout_virasoro.py",
+      "sha256": "cefc291c6be9de9518037d353dc9b25857735963fb8747aea579bce41cc24fdb"
+    },
+    {
+      "bytes": 16849,
+      "path": "checks/verify_thermal_silence_readout.py",
+      "sha256": "4d760c99a1f027d6d35a522c9466727250b850935ff7818ca6e1f213760073c0"
+    },
+    {
+      "bytes": 65,
+      "path": "results/thermal_silence_readout_report.sha256",
+      "sha256": "a6ff7a58c83a47826671d5c4b0d6a9f1f0c2f89bcabd52cf781fb5659e059004"
+    },
+    {
+      "bytes": 4517,
+      "path": ".github/workflows/thermal-silence-readout.yml",
+      "sha256": "a00afe397c936feb2779cc6ac305fa6e20a03ac86d7c8f20115794b6e36cd211"
+    }
+  ],
+  "scope": "Six additive files only; every existing main file and pending PR is preserved. This manifest excludes itself."
+}
