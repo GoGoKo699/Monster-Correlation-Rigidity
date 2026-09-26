@@ -1,0 +1,31 @@
+{
+  "base_commit": "09e3f98ad79034eefab43f4fb9ea432368fc19e7",
+  "files": [
+    {
+      "bytes": 15922,
+      "path": "research/18_primary_three_bracket.md",
+      "sha256": "0037559ec74b49b0f84932cfc6a4d610c84965e878e748a42bb498c9dd65811d"
+    },
+    {
+      "bytes": 4719,
+      "path": "checks/primary_three_ward.py",
+      "sha256": "cefc291c6be9de9518037d353dc9b25857735963fb8747aea579bce41cc24fdb"
+    },
+    {
+      "bytes": 14219,
+      "path": "checks/verify_primary_three_bracket.py",
+      "sha256": "c1b47e9ed6d7b474369d4261eef81f37e3ea1fd45bd379f677ff096a16c486f9"
+    },
+    {
+      "bytes": 65,
+      "path": "results/primary_three_bracket_report.sha256",
+      "sha256": "169289a3cbe6bc9dbc83c02995ee8ed56314b1e453f3c29fc6d573374f08700c"
+    },
+    {
+      "bytes": 4680,
+      "path": ".github/workflows/primary-three-bracket.yml",
+      "sha256": "16af5af2137e77eab4373a14d85bfa11980b59f07c25c1ca53dd43ab42169751"
+    }
+  ],
+  "scope": "Additive primary-three bracket and operator-factorization checkpoint. Every existing main file remains unchanged. Manifest excludes itself; no pending PR is integrated."
+}
