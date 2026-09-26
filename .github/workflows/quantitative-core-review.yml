@@ -1,0 +1,92 @@
+name: Quantitative core review
+on:
+  push:
+    branches: [research/quantitative-core-review, main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: 09e3f98ad79034eefab43f4fb9ea432368fc19e7
+          path: baseline
+          persist-credentials: false
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: candidate
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - run: python3 -m pip install 'numpy==2.3.5'
+      - name: Preserve baseline and verify the additive payload
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,pathlib,subprocess
+          b,c=pathlib.Path('baseline'),pathlib.Path('candidate')
+          names=subprocess.check_output(['git','-C',str(b),'ls-files','-z']).decode().split('\0')
+          for name in filter(None,names):
+              if (b/name).read_bytes()!=(c/name).read_bytes():
+                  raise RuntimeError('Changed baseline: '+name)
+          for e in json.loads((c/'results/quantitative_core_additions.json').read_text())['files']:
+              raw=(c/e['path']).read_bytes()
+              if len(raw)!=e['bytes'] or hashlib.sha256(raw).hexdigest()!=e['sha256']:
+                  raise RuntimeError('Addition mismatch: '+e['path'])
+          print('BASELINE_PRESERVED ADDITIONS_VERIFIED')
+          PY
+      - name: Strict replay and separate unchanged portability policy
+        shell: bash
+        run: |
+          set -euo pipefail
+          for tree in baseline candidate; do
+            (
+              cd "$tree"
+              if python3 verify.py >/tmp/core-strict.out 2>/tmp/core-strict.err; then
+                strict=PASS
+              else
+                strict=FAIL_RECOGNIZED_FLOAT_REPORT
+                case "$(tail -n 1 /tmp/core-strict.err)" in
+                  "RuntimeError: prior average toy differs from recorded report under None"|"RuntimeError: prior pair toy differs from recorded report under None") ;;
+                  *) cat /tmp/core-strict.err; exit 1 ;;
+                esac
+              fi
+              echo "STRICT_REPLAY $tree $strict"
+              cat /tmp/core-strict.err
+              python3 checks/replay_portability.py >/tmp/core-portability.json
+              TREE="$tree" python3 - <<'PY'
+          import json,os
+          r=json.load(open('/tmp/core-portability.json'))
+          print('PORTABILITY',os.environ['TREE'],r['status'])
+          print('ALL_REPORTS_BYTE_IDENTICAL',os.environ['TREE'],r['all_reports_byte_identical'])
+          print('DIFFERING_FLOAT_LEAVES',sum(x['different_float_leaves'] for x in r['reports']))
+          PY
+              test -z "$(git status --porcelain)"
+            )
+          done
+      - name: Both exact certificates in all three modes
+        run: |
+          cd candidate
+          python3 - <<'PY'
+          import hashlib,json,pathlib,subprocess,sys
+          report=json.loads(pathlib.Path('results/quantitative_core_reports.json').read_text())
+          for e in report['reports']:
+              runs=[subprocess.check_output([sys.executable,*opt,e['script']]) for opt in [[],['-O'],['-OO']]]
+              if any(x!=runs[0] for x in runs):
+                  raise RuntimeError('Mode mismatch: '+e['script'])
+              raw=runs[0]
+              if hashlib.sha256(raw).hexdigest()!=e['sha256'] or json.loads(raw)['checks']!=e['checks']:
+                  raise RuntimeError('Exact report mismatch: '+e['script'])
+              print('EXACT_REPORT',e['script'],e['checks'],e['sha256'])
+          PY
+          git diff --check
+          test -z "$(git status --porcelain)"

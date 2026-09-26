@@ -1,0 +1,279 @@
+#!/usr/bin/env python3
+"""Exact finite certificates for calibration and optimal extraction exponent.
+
+These tests do not prove the imported VOA classification theorems. The
+asymptotic optimality argument is analytic; its coefficients are checked here.
+Only rational arithmetic and 3-coordinate commuting stress algebras are used.
+"""
+from __future__ import annotations
+from dataclasses import dataclass
+from fractions import Fraction as Q
+from math import isqrt
+import json
+
+BASE = '09e3f98ad79034eefab43f4fb9ea432368fc19e7'
+LABELS: list[str] = []
+
+
+def need(ok: bool, label: str) -> None:
+    if not bool(ok):
+        raise RuntimeError(label)
+    LABELS.append(label)
+
+
+def sqrt_bounds(x: Q, bits: int = 80) -> tuple[Q, Q]:
+    if x < 0 or bits < 0:
+        raise ValueError('nonnegative radicand and bit count required')
+    d = 1 << bits
+    k = isqrt(x.numerator * d * d // x.denominator)
+    lo = Q(k, d)
+    hi = lo if lo * lo == x else Q(k + 1, d)
+    return lo, hi
+
+
+@dataclass(frozen=True)
+class Interval:
+    lo: Q
+    hi: Q
+
+    def __post_init__(self) -> None:
+        if self.lo > self.hi:
+            raise ValueError('reversed interval')
+        if not isinstance(self.lo, Q) or not isinstance(self.hi, Q):
+            raise TypeError('exact Fraction endpoints required')
+
+    @staticmethod
+    def point(x) -> 'Interval':
+        y = Q(x)
+        return Interval(y, y)
+
+    @staticmethod
+    def radius(x, r) -> 'Interval':
+        x, r = Q(x), Q(r)
+        if r < 0:
+            raise ValueError('negative radius')
+        return Interval(x-r, x+r)
+
+    def __add__(self, other) -> 'Interval':
+        b = other if isinstance(other, Interval) else Interval.point(other)
+        return Interval(self.lo+b.lo, self.hi+b.hi)
+
+    __radd__ = __add__
+
+    def __neg__(self) -> 'Interval':
+        return Interval(-self.hi, -self.lo)
+
+    def __sub__(self, other) -> 'Interval':
+        return self + -(other if isinstance(other, Interval) else Interval.point(other))
+
+    def __mul__(self, other) -> 'Interval':
+        b = other if isinstance(other, Interval) else Interval.point(other)
+        p = [self.lo*b.lo, self.lo*b.hi, self.hi*b.lo, self.hi*b.hi]
+        return Interval(min(p), max(p))
+
+    __rmul__ = __mul__
+
+    def __truediv__(self, other) -> 'Interval':
+        b = other if isinstance(other, Interval) else Interval.point(other)
+        if b.lo <= 0 <= b.hi:
+            raise ValueError('denominator interval contains zero')
+        inverse = Interval(min(1/b.lo, 1/b.hi), max(1/b.lo, 1/b.hi))
+        return self * inverse
+
+    def square(self) -> 'Interval':
+        a, b = self.lo*self.lo, self.hi*self.hi
+        return Interval(Q(0) if self.lo <= 0 <= self.hi else min(a,b), max(a,b))
+
+    def cube(self) -> 'Interval':
+        return Interval(self.lo**3, self.hi**3)
+
+    def sqrt(self) -> 'Interval':
+        if self.lo < 0:
+            raise ValueError('negative square-root interval')
+        return Interval(sqrt_bounds(self.lo)[0], sqrt_bounds(self.hi)[1])
+
+    def contains(self, x) -> bool:
+        return self.lo <= x <= self.hi
+
+
+def calibrated_criterion(n1: Interval, n2: Interval, tau1: Interval,
+                         tau2: Interval, q1: Interval, q2: Interval,
+                         mutual: Interval) -> dict:
+    """Conservative sufficient test on seven certified scalar intervals.
+
+    Assumes exact ambient VOA, known stress tensor, and PCT-real weight-two
+    input fields. Does not certify any of these premises from the intervals.
+    A false return is an inconclusive certificate, not exclusion of moonshine.
+    """
+    N1 = n1 - tau1.square()/12
+    N2 = n2 - tau2.square()/12
+    if N1.lo <= 0 or N2.lo <= 0:
+        return {'certified': False, 'reason': 'positive primary norm not certified'}
+    k1 = q1 - tau1*n1/2 + tau1.cube()/36
+    k2 = q2 - tau2*n2/2 + tau2.cube()/36
+    f1 = k1/(N1*N1.sqrt())
+    f2 = k2/(N2*N2.sqrt())
+    overlap = (mutual-tau1*tau2/12)/(N1*N2).sqrt()
+    cap = Interval.point(46)/Interval.point(141).sqrt()
+    if f1.lo > cap.hi or f2.lo > cap.hi:
+        return {'certified': False, 'reason': 'bounds inconsistent with unitary cap'}
+    eps1, eps2 = cap.hi-f1.lo, cap.hi-f2.lo
+    delta = max(abs(overlap.lo+Q(1,47)), abs(overlap.hi+Q(1,47)))
+    rx, ry = sqrt_bounds(eps1/2)[1], sqrt_bounds(eps2/2)[1]
+    budget = delta+rx+ry
+    good = eps1 < Q(1,50) and eps2 < Q(1,50) and budget < Q(3,188)
+    return {'certified': good, 'reason': 'sufficient inequalities pass' if good else 'inconclusive bounds',
+            'primary_norm_intervals': [N1,N2], 'self_coupling_intervals': [f1,f2],
+            'primary_overlap_interval': overlap, 'deficit_upper_bounds': [eps1,eps2],
+            'overlap_error_upper': delta, 'localization_radius_upper': [rx,ry],
+            'budget_upper': budget, 'strict_budget': Q(3,188),
+            'premises_tested_by_this_program': False}
+
+
+# Three commuting stress components, charges 1/2,1/2,23. This is the weight-two
+# subalgebra generated by an orthogonal Ising pair and ambient omega, not an
+# assumed tensor-product decomposition of the entire moonshine theory.
+G = [Q(1,4), Q(1,4), Q(23,2)]
+O = [Q(1),Q(1),Q(1)]
+E = [Q(1),Q(0),Q(0)]
+F = [Q(0),Q(1),Q(0)]
+
+
+def add(a,b): return [x+y for x,y in zip(a,b)]
+def scale(a,t): return [Q(t)*x for x in a]
+def prod(a,b): return [2*x*y for x,y in zip(a,b)]
+def ip(a,b): return sum((g*x*y for g,x,y in zip(G,a,b)),Q(0))
+def cubic(a,b,c): return ip(prod(a,b),c)
+def raw(a): return ip(a,a),ip(O,a),cubic(a,a,a)
+def centered(a): return add(a,scale(O,-ip(O,a)/12))
+
+
+def calibration_tests() -> dict:
+    need(ip(O,O)==12 and prod(O,E)==scale(E,2),'calibration:ambient_stress_normalization')
+    need(ip(E,F)==0 and prod(E,F)==[0,0,0],'calibration:orthogonal_Ising_component_products')
+    need(ip(E,E)==ip(F,F)==Q(1,4),'calibration:Ising_component_norms')
+    cases = [(Q(1),Q(0),Q(1),Q(0)),(Q(2),Q(3),Q(3),-Q(2)),
+             (Q(1,3),-Q(1,7),Q(7,5),Q(1,9))]
+    certificates=[]
+    for i,(s,a,t,b) in enumerate(cases):
+        w=add(scale(E,s),scale(O,a)); z=add(scale(F,t),scale(O,b))
+        n,tau,q=raw(w); nn,tt,qq=raw(z)
+        wp,zp=centered(w),centered(z)
+        N=n-tau*tau/12; Nn=nn-tt*tt/12
+        k=q-tau*n/2+tau**3/36
+        kk=qq-tt*nn/2+tt**3/36
+        m=ip(w,z)-tau*tt/12
+        need(ip(wp,O)==0 and ip(zp,O)==0,f'calibration:{i}_exact_primary_projection')
+        need(N==ip(wp,wp) and Nn==ip(zp,zp),f'calibration:{i}_norm_correction')
+        need(k==cubic(wp,wp,wp) and kk==cubic(zp,zp,zp),f'calibration:{i}_cubic_correction')
+        need(m==ip(wp,zp),f'calibration:{i}_overlap_correction')
+        need(k>0 and kk>0 and k*k/N**3==Q(2116,141) and kk*kk/Nn**3==Q(2116,141),
+             f'calibration:{i}_normalized_cubic_is_cap')
+        need(m<0 and m*m/(N*Nn)==Q(1,47**2),f'calibration:{i}_normalized_pair_overlap')
+        args=[Interval.point(x) for x in [n,nn,tau,tt,q,qq,ip(w,z)]]
+        cert=calibrated_criterion(*args)
+        need(cert['certified'],f'calibration:{i}_exact_raw_data_certificate')
+        certificates.append(cert)
+    # Finite rational error intervals, not only exact input data.
+    n,tau,q=raw(E); nn,tt,qq=raw(F)
+    noisy=[Interval.radius(x,Q(1,10**12)) for x in [n,nn,tau,tt,q,qq,ip(E,F)]]
+    cert=calibrated_criterion(*noisy)
+    need(cert['certified'],'calibration:finite_width_intervals_certify')
+    need(cert['budget_upper']<Q(1,1000),'calibration:finite_width_budget_has_positive_margin')
+    # Sound inclusion controls for product, square, cube, division and roots.
+    intervals=[Interval(Q(-2),Q(3)),Interval(Q(1,3),Q(7,5)),Interval(Q(-4),Q(-1))]
+    for i,A in enumerate(intervals):
+        samples=[A.lo,(A.lo+A.hi)/2,A.hi]
+        need(all(A.square().contains(x*x) and A.cube().contains(x**3) for x in samples),
+             f'interval:{i}_even_and_odd_powers')
+        for j,B in enumerate(intervals):
+            need(all((A*B).contains(x*y) for x in samples for y in [B.lo,(B.lo+B.hi)/2,B.hi]),
+                 f'interval:{i}_{j}_product_inclusion')
+    for x in [Q(0),Q(1),Q(2),Q(141),Q(1,10**30),Q(47,192)]:
+        lo,hi=sqrt_bounds(x)
+        need(lo*lo<=x<=hi*hi,f'interval:square_root_{x}')
+    # Zero primary norm (pure stress), sign loss, wide intervals and cap violations.
+    args=[Interval.point(x) for x in [12,nn,12,tt,24,qq,ip(O,F)]]
+    need(not calibrated_criterion(*args)['certified'],'negative:pure_stress_input_is_not_a_primary_probe')
+    w=scale(E,-1); n,tau,q=raw(w)
+    args=[Interval.point(x) for x in [n,nn,tau,tt,q,qq,ip(w,F)]]
+    need(not calibrated_criterion(*args)['certified'],'negative:field_sign_is_not_silently_changed')
+    n,tau,q=raw(E)
+    args=[Interval.radius(x,Q(1,10)) for x in [n,nn,tau,tt,q,qq,ip(E,F)]]
+    need(not calibrated_criterion(*args)['certified'],'negative:wide_calibration_intervals_inconclusive')
+    args=[Interval.point(x) for x in [n,nn,tau,tt,Q(100),qq,ip(E,F)]]
+    need(calibrated_criterion(*args)['reason']=='bounds inconsistent with unitary cap',
+         'negative:impossible_large_cubic_is_not_accepted')
+    return {'exact_rescaling_stress_shift_cases':len(cases),'finite_error_radius':Q(1,10**12),
+            'finite_error_certificate':cert,'nonprimary_inputs_allowed_only_at_exact_weight_two':True,
+            'source_embedding_of_Ising_pair_is_imported':True}
+
+
+def sharpness_tests() -> dict:
+    A=centered(E);B=centered(F);b2=ip(A,A);r=Q(1,47)
+    V=add(B,scale(A,r));d=Q(2208,2209)
+    need(b2==Q(47,192) and ip(B,B)==b2,'sharpness:two_equal_centered_norms')
+    need(ip(A,B)/b2==-r,'sharpness:normalized_overlap_minus_one_over47')
+    need(ip(A,V)==0 and ip(V,V)/b2==d,'sharpness:explicit_nonzero_tangent')
+    # Normalized cubic multiplied by sqrt(141); sqrt(141)/b^3 = 13824/141.
+    pref=Q(13824,141)
+    c000=pref*cubic(A,A,A)
+    c001=pref*cubic(A,A,V)
+    c011=pref*cubic(A,V,V)
+    c111=pref*cubic(V,V,V)
+    k=46*(1-3*r*r-2*r**3)
+    need(c000==46 and c001==0,'sharpness:critical_linear_term_zero')
+    need(c011==-d and c111==k,'sharpness:cubic_path_coefficients')
+    # sqrt(141) f(x_t)=(46-3d t^2+k t^3)/(1+d t^2)^(3/2).
+    # Formal expansion to degree three uses the binomial coefficient -3/2.
+    second= -3*d-Q(3,2)*46*d
+    need(second==-72*d,'sharpness:loss_leading_coefficient')
+    need(d>0 and 72*d>0,'sharpness:nondegenerate_quadratic_loss')
+    # d(x_t,a)^2=2-2/(1+d t^2)^(1/2)=d t^2+O(t^4).
+    need(-2*(-Q(1,2)*d)==d,'sharpness:distance_squared_leading_coefficient')
+    # overlap with b=(-r+d t)/(1+d t^2)^(1/2).
+    need(d>0,'sharpness:cross_overlap_has_nonzero_linear_term')
+    need(Q(1,72)>0,'sharpness:limiting_loss_over_squared_distance_is72_over_sqrt141')
+    # Rational-point controls use squares to avoid uncertified radicals.
+    checks=[]
+    for t in [Q(1,100),Q(1,1000),-Q(1,1000),Q(1,10000)]:
+        vec=add(A,scale(V,t));D=1+d*t*t;N=46-3*d*t*t+k*t**3
+        need(ip(vec,vec)==b2*D,f'sharpness:t{t}_exact_path_norm')
+        need(pref*cubic(vec,vec,vec)==N,f'sharpness:t{t}_exact_path_cubic')
+        need(0<N*N<46*46*D**3,f'sharpness:t{t}_strictly_below_maximum')
+        # For these small t the distance to a is <1/20. Other maxima are
+        # >1/10 away from a by the inherited local-growth theorem.
+        need(D<(1/(1-Q(1,800)))**2,f'sharpness:t{t}_unique_nearest_axis_neighborhood')
+        checks.append({'t':t,'norm_ratio_squared':D,'scaled_cubic_numerator':N})
+    return {'r':r,'tangent_norm_squared':d,'scaled_cubic_numerator':[46,0,-3*d,k],
+            'squared_norm_denominator':[1,0,d],
+            'loss_t2_coefficient_times_sqrt141':72*d,
+            'distance_squared_t2_coefficient':d,
+            'overlap_shift_t_coefficient':d,
+            'limit_distance_over_sqrt_loss_squared':'sqrt(141)/72',
+            'optimal_exponent_for_value_to_nearest_axis_distance':'1/2',
+            'optimal_numerical_constants_proved':False,
+            'analytic_Taylor_argument_not_proof_by_samples':True,'rational_controls':checks}
+
+
+def strings(x):
+    if isinstance(x,Q): return str(x)
+    if isinstance(x,Interval): return {'lower':str(x.lo),'upper':str(x.hi)}
+    if isinstance(x,dict): return {str(k):strings(v) for k,v in x.items()}
+    if isinstance(x,(list,tuple)): return [strings(v) for v in x]
+    return x
+
+
+def main() -> None:
+    calibration=calibration_tests(); sharpness=sharpness_tests()
+    result={'status':'PASS within exact calibration and sharpness-coefficient scopes',
+            'base_commit':BASE,'checks':len(LABELS),'labels':LABELS,
+            'calibration':calibration,'sharpness':sharpness,
+            'arithmetic':'integers and fractions only','largest_coordinate_vector':3,
+            'full_Monster_tensor_constructed':False,'source_theorems_formally_verified':False,
+            'unrestricted_moonshine_uniqueness_proved':False,'manuscript_written':False}
+    print(json.dumps(strings(result),sort_keys=True,indent=2))
+
+
+if __name__=='__main__':
+    main()
