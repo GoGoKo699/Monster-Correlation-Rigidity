@@ -1,0 +1,52 @@
+name: Calibration scale audit
+on:
+  push:
+    branches: [audit/release-sanity-20260927]
+    paths: [.github/workflows/release-edge.yml]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ecd0623e9de41b49754b6ca16dc23752443143af
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - name: Valid scaled Ising-pair inputs and in-memory resolution control
+        run: |
+          python - <<'PY'
+          from fractions import Fraction as Q
+          import hashlib,json,pathlib,sys
+          sys.path.insert(0,'checks')
+          import verify_calibration_and_sharpness as cal
+          path=pathlib.Path(cal.__file__)
+          before=hashlib.sha256(path.read_bytes()).hexdigest()
+          def evaluate(k):
+              s=Q(2)**(-k)
+              values=(s*s/4,s*s/4,s/4,s/4,s**3/2,s**3/2,Q(0))
+              try:
+                  answer=cal.calibrated_criterion(*(cal.Interval.point(v) for v in values))
+                  return {'power':k,'certified':answer['certified'],'reason':answer['reason']}
+              except Exception as e:
+                  return {'power':k,'exception':type(e).__name__,'message':str(e)}
+          native=[evaluate(k) for k in (-100,0,10,38,39,40,60,100)]
+          print('NATIVE_SCALE_AUDIT',json.dumps(native,sort_keys=True))
+          original=cal.sqrt_bounds
+          def adaptive(x,bits=80):
+              if x>0:
+                  bits+=max(0,(x.denominator.bit_length()-x.numerator.bit_length()+1)//2)
+              return original(x,bits)
+          cal.sqrt_bounds=adaptive
+          control=[evaluate(k) for k in (-100,0,10,38,39,40,60,100)]
+          print('ADAPTIVE_IN_MEMORY_CONTROL',json.dumps(control,sort_keys=True))
+          print('SOURCE_UNCHANGED',before==hashlib.sha256(path.read_bytes()).hexdigest(),before)
+          print('BOUNDARY', 'Exact scalar inputs of rescaled known Ising pair; not a new VOA construction, source edit, or false-positive counterexample.')
+          PY
+          test -z "$(git status --porcelain)"
