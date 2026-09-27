@@ -8,7 +8,10 @@ Only rational arithmetic and 3-coordinate commuting stress algebras are used.
 from __future__ import annotations
 from dataclasses import dataclass
 from fractions import Fraction as Q
-from math import isqrt
+if __package__:
+    from .scale_safe_roots import sqrt_bounds, SquareRootPrecisionLimit
+else:
+    from scale_safe_roots import sqrt_bounds, SquareRootPrecisionLimit
 import json
 
 BASE = '09e3f98ad79034eefab43f4fb9ea432368fc19e7'
@@ -20,15 +23,6 @@ def need(ok: bool, label: str) -> None:
         raise RuntimeError(label)
     LABELS.append(label)
 
-
-def sqrt_bounds(x: Q, bits: int = 80) -> tuple[Q, Q]:
-    if x < 0 or bits < 0:
-        raise ValueError('nonnegative radicand and bit count required')
-    d = 1 << bits
-    k = isqrt(x.numerator * d * d // x.denominator)
-    lo = Q(k, d)
-    hi = lo if lo * lo == x else Q(k + 1, d)
-    return lo, hi
 
 
 @dataclass(frozen=True)
@@ -96,7 +90,7 @@ class Interval:
         return self.lo <= x <= self.hi
 
 
-def calibrated_criterion(n1: Interval, n2: Interval, tau1: Interval,
+def _calibrated_criterion(n1: Interval, n2: Interval, tau1: Interval,
                          tau2: Interval, q1: Interval, q2: Interval,
                          mutual: Interval) -> dict:
     """Conservative sufficient test on seven certified scalar intervals.
@@ -128,6 +122,26 @@ def calibrated_criterion(n1: Interval, n2: Interval, tau1: Interval,
             'overlap_error_upper': delta, 'localization_radius_upper': [rx,ry],
             'budget_upper': budget, 'strict_budget': Q(3,188),
             'premises_tested_by_this_program': False}
+
+
+def calibrated_criterion(n1: Interval, n2: Interval, tau1: Interval,
+                         tau2: Interval, q1: Interval, q2: Interval,
+                         mutual: Interval) -> dict:
+    """Apply the sufficient criterion with scale-aware exact root enclosures.
+
+    Exact physical premises remain supplied, not verified. A work-budget
+    limit returns an explicit inconclusive result. Invalid input types and
+    malformed intervals are not disguised as physical certification failures.
+    """
+    values = (n1, n2, tau1, tau2, q1, q2, mutual)
+    if not all(isinstance(v, Interval) for v in values):
+        raise TypeError('seven exact Interval inputs required')
+    try:
+        return _calibrated_criterion(*values)
+    except SquareRootPrecisionLimit:
+        return {'certified': False,
+                'reason': 'inconclusive: square-root precision budget exceeded',
+                'premises_tested_by_this_program': False}
 
 
 # Three commuting stress components, charges 1/2,1/2,23. This is the weight-two

@@ -3,7 +3,7 @@
 [← Learning path](../docs/learn/README.md) · [Overview](../README.md) · [Sharpness and calibration →](sharpness_and_calibration.md)
 
 Research proof record, 26 September 2026. Read baseline: `09e3f98ad79034eefab43f4fb9ea432368fc19e7`.
-This is a self-contained consolidation of the quantitative part of `research/two_field_selection.md`, not a manuscript or a new exact classification theorem. The geometric argument is elementary quadratic growth plus compactness. Its novelty must not be conflated with the old classification theorems.
+This is a self-contained consolidation of the quantitative part of [the earlier two-field selection note](https://github.com/GoGoKo699/Monster-Correlation-Rigidity/blob/ac5acad7cad4a63f0d879e4ea716f5a27c3bcd61/research/two_field_selection.md) (historical provenance in unmerged PR23, not an omitted prerequisite), not a manuscript or a new exact classification theorem. The geometric argument is elementary quadratic growth plus compactness. Its novelty must not be conflated with the old classification theorems.
 
 ## Q0. Fixed scope and normalization
 

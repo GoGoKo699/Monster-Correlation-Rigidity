@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Please cite this research repository and include the exact commit or tagged version used. Citation is a scholarly request, not an additional license condition."
+type: software
+title: "Monster Correlation Rigidity"
+authors:
+  - family-names: "Lin"
+    given-names: "Ruge"
+    email: "gogoko699@gmail.com"
+repository-code: "https://github.com/GoGoKo699/Monster-Correlation-Rigidity"
+url: "https://github.com/GoGoKo699/Monster-Correlation-Rigidity"
+license: MIT
+abstract: >-
+  Research proofs, exact finite certificates, and a physics-first tutorial for
+  quantitative conditional identification of the moonshine vertex operator
+  algebra from near-extremal correlation coefficients. The exact ambient
+  assumptions and imported classification endpoint remain explicit.
+keywords:
+  - conformal-field-theory
+  - vertex-operator-algebras
+  - moonshine
+  - monster-group
+  - correlation-functions
+  - rigidity
+  - interval-arithmetic

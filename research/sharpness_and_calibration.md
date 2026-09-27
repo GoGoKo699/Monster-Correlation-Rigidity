@@ -76,6 +76,8 @@ Solving for $q(z)$ gives $q-\tau n/2+\tau^3/36$. The bilinear projection identit
 
 This argument needs no multiplication table and no chosen Ising vector in the unknown candidate. It does not alter the field signs: a negative primary self-coupling remains negative unless a sign change and the accompanying overlap change are explicitly made.
 
+The current implementation uses scale-aware outward square-root bounds. The [calibration precision note](../docs/CALIBRATION_PRECISION.md) proves the arithmetic enclosure and explains its explicit work limit; the [implementation erratum](../audits/calibration_scale_erratum.md) records the earlier small-scale exception. The identities and physical premises above are unchanged.
+
 ### Certified scalar intervals
 
 Suppose each of the seven exact numbers lies in a supplied rational interval. Evaluate (1) by outward interval arithmetic, first requiring strict positive lower bounds for both $N_i$. If the resulting lower bounds on $f(x_i)$ and upper bound on the overlap error satisfy the original sufficient criterion, the conclusion follows for every exact input consistent with those intervals.

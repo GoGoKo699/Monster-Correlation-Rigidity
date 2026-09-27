@@ -1,3 +1,5 @@
+> **Historical record, not the current project status.** The dated ledger below is preserved unchanged. Start with [current scientific status](docs/RESEARCH_STATUS.md), [the physics learning path](docs/learn/README.md), or [the archive index](docs/ARCHIVE.md).
+
 # Physical-selection ledger — 25 September 2026
 
 Latest base: `ba02084a1a74fc0b4db1299f6ab3bc327a0901ef`. Physical selection remains the objective. STATUS_CURRENT.md and STATUS.md retain the former certification and import records unchanged.

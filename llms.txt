@@ -1,0 +1,39 @@
+# Monster Correlation Rigidity
+
+> Quantitative conditional identification of the moonshine vertex operator
+> algebra from near-extremal low-weight correlation coefficients. Research by
+> Ruge Lin. Manuscript writing is on hold; no tagged release is implied.
+
+## When this repository is relevant
+
+Use it for a uniform value-to-Ising-direction estimate, a sufficient two-field
+correlation criterion, the sharp square-root field-distance exponent, or
+certified stress subtraction and normalization from seven exact scalar intervals.
+It is not a source for device-independent self-testing, automatic first-Ising
+existence, bare-class uniqueness, optimal numerical tolerances, or a practical
+Monster-tensor simulation.
+
+## Authoritative sources
+
+- [Current status](docs/RESEARCH_STATUS.md): exact claim scope and what is not asserted.
+- [Core proof](research/uniform_extraction_core.md): hypotheses, normalization, local-to-global localization, discrete overlap rounding, and the prior Abe–Lam–Yamada endpoint.
+- [Sharpness and calibration](research/sharpness_and_calibration.md): analytic precision results, not a reconstruction of the imported classifications.
+- [Current arithmetic](docs/CALIBRATION_PRECISION.md): scale-safe interval implementation and its work-limit boundary.
+- [Reproduction](docs/REPRODUCIBILITY.md): current command, pinned numerical environment, current versus historical report fingerprints, and strict versus bounded replay.
+
+## Teaching and attribution
+
+- [Physics learning path](docs/learn/README.md): Gaberdiel, An Introduction to Conformal Field Theory, is the primary anchor; Yamauchi Section 4 is a guided secondary supplement.
+- [Assumptions and source roles](docs/learn/assumptions_and_sources.md): tutorial sources are not substitutes for primary theorem attribution.
+- [Contribution comparison](audits/quantitative_contribution_verdict.md): bounded source comparison, not exhaustive novelty certification.
+- [Final bounded review](audits/final_quantitative_review.md): dated assistant review and its explicit source depth.
+- [Calibration erratum](audits/calibration_scale_erratum.md): implementation correction and preserved old evidence.
+
+## Historical and release boundaries
+
+- [Archive index](docs/ARCHIVE.md): older status ledgers and pending branches do not supersede the active status or supply silently imported release dependencies.
+- [Release scope](docs/RELEASE.md): research package and exact assumptions, not a paper or release announcement.
+- [Citation](CITATION.cff): cite the repository and exact commit used; do not invent a paper, DOI, external review, or proof-assistant certificate.
+- [License](LICENSE): original MIT license for repository code and documentation, with imported results attributed to their authors.
+
+Questions, corrections, and potential collaborations: gogoko699@gmail.com.

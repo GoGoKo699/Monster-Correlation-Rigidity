@@ -193,13 +193,14 @@ def calibration_audit():
 
 def main():
     files={'verify_extraction_core.py':'d2062b1577beb7a34c0665fc358da7b1daf846886cd48dfa0b26acf83c107e83',
-           'verify_calibration_and_sharpness.py':'d2c16a6c9c01af9d1198cfc2b4459d78966a42c314b8a0575bd37626bcd2eef1'}
+           'verify_calibration_and_sharpness.py':'7a2b98dab6df116ea804706d75e8fb5a0d246ea889f6381f13e88dd85bedbb5a'}
     for path,h in files.items():
         need(hashlib.sha256(Path(__file__).with_name(path).read_bytes()).hexdigest()==h,
              'preservation:'+path)
     structural_identities(); interval_audit(); calibration_audit()
     print(json.dumps({'status':'PASS bounded adversarial implementation and normalization checks',
-        'reviewed_head':'6d460bef7041f17cba1658c99d6797ef4b00275c',
+        'original_reviewed_head':'6d460bef7041f17cba1658c99d6797ef4b00275c',
+        'implementation_scope':'scale-safe calibration repair; original controls retained',
         'checks':len(LABELS),'labels':LABELS,'case_counts':COUNTS,
         'arithmetic':'rational arithmetic; independent bisection oracle',
         'largest_physical_coefficient_vector':3,'full_VOA_simulated':False,

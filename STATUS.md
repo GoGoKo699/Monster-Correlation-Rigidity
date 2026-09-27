@@ -1,3 +1,5 @@
+> **Historical record, not the current project status.** The dated ledger below is preserved unchanged. Start with [current scientific status](docs/RESEARCH_STATUS.md), [the physics learning path](docs/learn/README.md), or [the archive index](docs/ARCHIVE.md).
+
 # Claim ledger — 23 September 2026
 
 **Overall status:** exploratory mathematical research with written proofs and computational consistency checks. No independent proof review, comprehensive novelty clearance, or efficient implementation claim.

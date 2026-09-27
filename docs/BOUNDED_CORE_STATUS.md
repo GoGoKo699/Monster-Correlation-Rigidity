@@ -1,3 +1,5 @@
+> **Historical integration-stage dossier.** For the active theorem and current code use [current status](RESEARCH_STATUS.md) and [reproduction](REPRODUCIBILITY.md). Old fingerprint and “remaining integration” statements below describe their recorded version, not today's release candidate.
+
 > Integration note (26 September 2026): PR28 is now merged. The dated text below records its pre-integration stage. See [current scientific status](RESEARCH_STATUS.md) and [the final bounded review](../audits/final_quantitative_review.md) for the active disposition.
 
 # Bounded research core: status and remaining integration work

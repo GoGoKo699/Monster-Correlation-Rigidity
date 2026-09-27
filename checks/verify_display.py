@@ -152,6 +152,8 @@ def split_fences(text: str, name: str) -> list[tuple[str, str]]:
 
 
 def inspect_page(text: str, name: str, root: Path | None = None) -> list[dict]:
+    require(not any(ord(c) < 32 and c not in '\n\r\t' for c in text),
+            'Unexpected control character in Markdown: ' + name)
     require(not any(s.rstrip() != s for s in text.splitlines()), 'Trailing whitespace: ' + name)
     require(text.count('<details>') == text.count('</details>'), 'Unclosed details: ' + name)
     corpus, outside = [], []
@@ -195,7 +197,7 @@ def negative_controls() -> int:
     tests += [r'$x=1', 'A bare sqrt(141) remains.', '```math\nx=1\n',
               '```math\nx=1\n~~~', '```Math\nx=1\n```',
               '```math\n$x$\n```', '```math extra\nx=1\n```',
-              '```python\nx=1\n', r'$\frac{1}{2$']
+              '```python\nx=1\n', r'$\frac{1}{2$', '```math\nx=\x0crac{1}{2}\n```']
     for s in tests:
         try:
             inspect_page(s, PROOFS[0])
@@ -223,6 +225,12 @@ def positive_controls() -> int:
 
 
 def main() -> None:
+    # Historical style manifests remain frozen; current packaging is checked
+    # against its separately declared source delta, not by rewriting old hashes.
+    if (ROOT/'results/release_preparation.json').is_file():
+        from verify_release_package import main as release_main
+        release_main()
+        return
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--baseline', type=Path)
     parser.add_argument('--export-math', type=Path)
