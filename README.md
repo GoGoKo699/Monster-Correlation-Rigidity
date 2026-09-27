@@ -47,19 +47,52 @@ Finite coefficient tolerances are not approximate VOA axioms or a device-indepen
 
 ## Reproduce the selected certificates
 
+The current exact checks and documentation checks use Python's standard library:
+
 ```sh
-python checks/verify_extraction_core.py
-python checks/verify_calibration_and_sharpness.py
-python checks/audit_quantitative_core.py
-# Each script also runs unchanged with python -O and python -OO.
+python verify_current.py
 ```
 
-The preserved core reports have 63 and 74 labeled checks. The final review adds 23 labeled controls, including exact interval and independent rational-oracle cases. No full Monster tensor is simulated. Passing finite checks is not a proof-assistant verification of the source theorems or an independent human review.
+For the complete checker inventory and the separate historical comparisons,
+use the [pinned reproduction environment](docs/REPRODUCIBILITY.md):
 
-The historical `verify.py` and `checks/replay_portability.py` are unchanged. Their strict replay and bounded-portability outcomes are reported separately; a green overall job is not a claim of byte-identical historical floating-point output.
+```sh
+python -m pip install -r requirements-reproduce.txt
+python verify_current.py --all
+```
+
+The wrapper runs each selected checker in normal, `-O`, and `-OO` modes and
+compares the current exact report fingerprints. The original 63-, 74-, and
+23-check evidence is retained at its recorded versions. The repaired calibration
+has its own current fingerprint and additional scale-regression checks; see
+[calibration precision](docs/CALIBRATION_PRECISION.md) and
+[current report metadata](results/current_reports.json).
+
+The historical `verify.py` is **not** the current suite. Its strict byte replay
+and the unchanged bounded-portability comparison are reported separately.
+A historical floating-point mismatch remains a strict failure even when the
+current exact suite and bounded comparison pass. The reproduction guide explains
+exit codes and the optional strict-replay requirement.
+
+No full Monster tensor is simulated. Finite checks do not verify the imported
+classification theorems or constitute independent human review.
 
 ## Earlier research and preservation
 
-The earlier [physical-selection ledger](PHYSICS_STATUS.md), [claim ledger](STATUS.md), numbered research notes, immutable archives, code and recorded results remain available as historical research. Their older “current” labels do not supersede [the active work order](work_orders/CURRENT.md) or [the present status](docs/RESEARCH_STATUS.md). Unrelated pending branches are not merged merely to create this reader path.
+Use [the archive and pending-work index](docs/ARCHIVE.md) for older gate-testing,
+circuit, and readout records. The dated ledgers now carry historical banners.
+Their older “current” labels do not supersede
+[the current scientific status](docs/RESEARCH_STATUS.md). Protected source notes,
+provenance archives, and saved evidence remain available unchanged; legacy
+mathematics may not render correctly in every GitHub viewer.
 
-Original code and documentation retain the owner's [MIT license](LICENSE). Imported mathematical results remain attributed to their authors. Research inquiries and corrections may be sent to Ruge Lin at gogoko699@gmail.com.
+[Release scope](docs/RELEASE.md), [the changelog](CHANGELOG.md), and
+[citation metadata](CITATION.cff) describe the current research package without
+claiming a manuscript, publication, DOI, or tagged release. For LLM-assisted
+research, [the source map](llms.txt) points questions to the theorem, its exact
+assumptions, teaching anchors, verification, and historical boundaries.
+
+Original code and documentation retain the owner's [MIT license](LICENSE).
+Imported mathematical results remain attributed to their authors. **Manuscript
+writing remains on hold.** Potential collaborators, readers with corrections,
+and other research inquiries may contact Ruge Lin at gogoko699@gmail.com.

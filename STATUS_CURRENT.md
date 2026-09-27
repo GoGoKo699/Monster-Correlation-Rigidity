@@ -1,3 +1,5 @@
+> **Historical record, not the current project status.** The dated ledger below is preserved unchanged. Start with [current scientific status](docs/RESEARCH_STATUS.md), [the physics learning path](docs/learn/README.md), or [the archive index](docs/ARCHIVE.md).
+
 # Current claim ledger — 25 September 2026
 
 Latest continuation base: `85215c45005a3241485b99b57b2dc9de63b85702`.

@@ -1,0 +1,32 @@
+{
+  "reports": [
+    {
+      "script": "checks/verify_extraction_core.py",
+      "checks": 63,
+      "sha256": "1dc55b7cdb8a614af4aaece9099f9bb4282e3583a0032a9050914e5f3873e06d",
+      "source_sha256": "d2062b1577beb7a34c0665fc358da7b1daf846886cd48dfa0b26acf83c107e83",
+      "historical_report_sha256": "1dc55b7cdb8a614af4aaece9099f9bb4282e3583a0032a9050914e5f3873e06d"
+    },
+    {
+      "script": "checks/verify_calibration_and_sharpness.py",
+      "checks": 74,
+      "sha256": "36a602a1fb4c75a46db41766b7da1031b8ac7bc5cec200eafac46df2b45552b1",
+      "source_sha256": "7a2b98dab6df116ea804706d75e8fb5a0d246ea889f6381f13e88dd85bedbb5a",
+      "historical_report_sha256": "13a5cc28750faa5c5916f4d9e2717ccdc4cc3957c4911fb98b434dcc522d6ca3"
+    },
+    {
+      "script": "checks/audit_quantitative_core.py",
+      "checks": 23,
+      "sha256": "23add83ad8021a1fab2212f0bf1931b00bca68171e8b82b4bcd405286c5a5c38",
+      "source_sha256": "227fc983f450b615b7b34231a0d806ca8d49ae80c0abb7927be6bb1f4922d3ff",
+      "historical_report_sha256": "2b863f6f9edbc17abed7eaf4bb6bc832cf0f356d44280467a5fcc51ac6b495e2"
+    },
+    {
+      "script": "checks/verify_calibration_scales.py",
+      "checks": 3082,
+      "sha256": "845e824d1bf2470c3bf401d741e506bd47cc03d2cc168fcbcede5570881c15b9",
+      "source_sha256": "c311e90fda80858d5d0e64e86c035a8f7bec287e275ae76e4f7367160d2dc77b"
+    }
+  ],
+  "scope": "Current exact outputs after the scale-safe repair. Earlier report manifests and saved reports remain unchanged; code and source theorem validation are distinct."
+}

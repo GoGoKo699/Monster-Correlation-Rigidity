@@ -1,0 +1,4 @@
+# Complete historical-check environment; selected exact checks need no packages.
+# Use Python 3.13.5 to match the recorded runner. Byte identity is not promised
+# across platforms, even with this NumPy pin.
+numpy==2.3.5
