@@ -8,11 +8,7 @@ The selected quantitative result has a complete written proof, sharpness and cal
 
 Within an exact simple unitary rational C2-cofinite holomorphic VOA of CFT type with c=24 and V1=0, sufficiently near-extremal coefficients of two actual real weight-two primaries force exact orthogonal Ising subalgebras and hence the underlying moonshine VOA by the prior Abe–Lam–Yamada theorem. The square-root field-distance exponent is optimal. Seven certified scalar intervals suffice to remove known stress contamination and normalization from actual real weight-two inputs.
 
-The [core](../research/uniform_extraction_core.md), [precision results](../research/sharpness_and_calibration.md), [prior comparison](../audits/quantitative_contribution_verdict.md), and [final review](../audits/final_quantitative_review.md) are the active scientific path. The original 63- and 74-check reports and the 23-check audit record are preserved
-at their historical versions. The calibration implementation now has scale-aware
-square-root enclosures, updated current report fingerprints, and additional
-scale-regression tests. [The implementation erratum](../audits/calibration_scale_erratum.md)
-records the exact correction; it does not change the analytic theorem.
+The [core](../research/uniform_extraction_core.md), [precision results](../research/sharpness_and_calibration.md), [prior comparison](../audits/quantitative_contribution_verdict.md), and [final review](../audits/final_quantitative_review.md) are the active scientific path. The subsequent [implementation erratum](../audits/calibration_scale_erratum.md) repairs small-scale calibration and documents its precision limit without changing the analytic theorem.
 
 No additional essential lemma has been identified as missing for this bounded claim. The directed priority assessment is a revisable scholarly judgment, not an exhaustive firstness assertion or a guarantee of importance. The review was conducted by the research assistant, not an independent human referee or proof assistant.
 
@@ -24,22 +20,10 @@ The extended-six-sevenths implication, generic readout results, and other open P
 
 ## Evidence access
 
-Run `python verify_current.py` for the selected exact and documentation suite.
-Run `python verify_current.py --all` in the
-[pinned reproduction environment](REPRODUCIBILITY.md) for every current checker
-and the separate historical comparisons. [Current fingerprints](../results/current_reports.json)
-and [release integrity](../results/release_preparation.json) are distinct from
-the frozen historical manifests. Strict byte replay and bounded portability
-retain separate outcomes; no prior result or tolerance was overwritten.
-
-The small-scale exception identified in the pre-release audit is corrected by
-adaptive exact precision and covered by direct regression tests. The explicit
-square-root work limit returns an inconclusive certificate, not an unexplained
-exception or a positive result. All exact ambient, grading, reality, and
-known-stress assumptions remain supplied premises.
-
-The [archive index](ARCHIVE.md) is the entry for older status ledgers and pending
-research. The [release scope](RELEASE.md) describes what a future tag would contain;
-it does not announce a release.
+The [reproduction guide](REPRODUCIBILITY.md) provides current commands,
+fingerprints, and separate strict-versus-bounded historical replay outcomes.
+Original reports and tolerances are preserved. The [archive index](ARCHIVE.md)
+covers older ledgers and pending research; [release scope](RELEASE.md) defines
+the research package.
 
 Future work on the bounded result should respond to a concrete proof objection, source overlap, or documentation defect. Enlarging the theorem or beginning manuscript drafting requires a separate scope decision; an unresolved stronger conjecture is not by itself a reason to keep extending this paper's research indefinitely.

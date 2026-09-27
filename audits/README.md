@@ -1,12 +1,28 @@
 # Audit record
 
-Two assistant proof-audit reports are available. They reconstruct arguments and check named primary-source inputs; they are not independent human/expert review or formal verification. Automated reports certify only their declared arithmetic and toy scopes.
+Start with [current scientific status](../docs/RESEARCH_STATUS.md). These are
+assistant reconstructions and finite checks, not independent human review or
+formal verification of the imported theorems.
 
-| Report | Audited base | Outcome and scope |
+## Selected quantitative result
+
+| Report | Scope |
+|---|---|
+| [Final bounded review](final_quantitative_review.md) | Theorem chain, source interfaces, calibration identities and sharpness; dated implementation findings. |
+| [Contribution comparison](quantitative_contribution_verdict.md) | Closest inspected prior results and attributed classification endpoint; bounded priority assessment. |
+| [Calibration erratum](calibration_scale_erratum.md) | Subsequent small-scale implementation repair, precision limit and preserved historical evidence. |
+
+Use [current reproduction](../docs/REPRODUCIBILITY.md) for commands and report
+fingerprints. The [maintenance work order](../work_orders/CURRENT.md) governs
+new work on this selected result.
+
+## Earlier gate-rigidity audits
+
+| Report | Audited base | Findings |
 |---|---|---|
-| [VOA-to-extremum audit](voa_extrema_audit.md) | `0376cbfb8e8640d1b278b5c55c4815d83f5b6ca1` | Bounded assignment: no blocking gap found in the reconstructed dependency; external complement-norm typo and strict zero-error endpoint errors recorded. |
-| [Robustness proof audit](robustness_proof_audit.md) | `a450e022781c4109609ff8f274787942c513df1a` | Completes the eight specified obligations in CURRENT.md; missing general-lemma parameter domains and inaccurate character-source locator recorded. Monster specialization passes with the explicit repairs. |
+| [VOA-to-extremum audit](voa_extrema_audit.md) | `0376cbf` | Reconstructs the critical-point dependency; records a source typo and zero-error endpoint corrections. |
+| [Robustness audit](robustness_proof_audit.md) | `a450e02` | Records general-lemma parameter restrictions and a character-source correction; retains the Monster specialization with those repairs. |
 
-The [parameter-domain checker](../checks/audit_parameter_domains.py) supplies an exact small-group witness for an unrestricted proof step and a valid-domain control. Run it with normal Python, `-O`, and `-OO`; it is separate from the preserved root verifier. Its largest matrix is 60 by 60, and it uses no full Monster simulation.
-
-The original [bounded assignment](../work_orders/INDEPENDENT_AUDIT.md) and [complete work order](../work_orders/CURRENT.md) remain the scope authorities. Priority and probe-access feasibility remain unresolved. Reports name their base commit, distinguish source inputs from project deductions, and use PASS, ERROR, or UNRESOLVED with supporting reasoning. Historical research notes are not edited retroactively; corrections and downstream claim IDs are recorded in the reports.
+The [parameter-domain checker](../checks/audit_parameter_domains.py) accompanies
+the latter audit. The [archive index](../docs/ARCHIVE.md) separates these older
+gate-testing investigations and pending branches from the selected release scope.

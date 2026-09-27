@@ -100,7 +100,7 @@ This identification uses unitary Virasoro classification, not a known Monster or
 
 ## Q3. Uniform local growth without multiplicities
 
-For an Ising vector $e$, the module types $L(1/2,0)$, $L(1/2,1/2)$, $L(1/2,1/16)$ give the possible $e_{(1)}$ eigenvalues on $V_2$: $0,1/16,1/2,2$. $V_1=0$ eliminates level-one descendants. The eigenspace $2$ is just the stress direction $e$: it can arise at ambient weight two only from the vacuum module starting at the ambient vacuum. A vacuum-module highest vector starting at ambient degree two instead has $e$-weight zero. These are the exact hypotheses behind the multiplicity-free statement [S, sections 1–2].
+For an Ising vector $e$, the module types $L(1/2,0)$, $L(1/2,1/2)$, $L(1/2,1/16)$ give the possible $e_{(1)}$ eigenvalues on $V_2$: $0,1/16,1/2,2$. $V_1=0$ eliminates level-one descendants. The eigenspace $2$ is just the stress direction $e$: it can arise at ambient weight two only from the vacuum module starting at the ambient vacuum. A vacuum-module highest vector starting at ambient degree two instead has $e$-weight zero. These are the exact hypotheses behind this eigenspace statement [S, sections 1–2]; the other eigenspaces need not be one-dimensional.
 
 For the corresponding primary $a$ and a unit primary $v$ perpendicular to $a$,
 

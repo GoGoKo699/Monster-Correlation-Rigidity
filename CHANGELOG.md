@@ -2,6 +2,12 @@
 
 ## Unreleased — release preparation, 27 September 2026
 
+The final reader cleanup removes repeated reproduction and status prose, repairs
+the audit index and worked-certificate command, and marks the earlier review's
+implementation findings as dated. The core's “multiplicity-free” wording is
+corrected to an eigenspace statement; all equations, assumptions, thresholds,
+checker sources and scientific report fingerprints are unchanged by this cleanup.
+
 Corrected a small-scale interval-calibration exception without changing the
 analytic theorem, exact premises, or sufficient error tolerances. Added adaptive
 exact square-root enclosures, an explicit precision-work-limit outcome, and

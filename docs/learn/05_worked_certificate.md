@@ -103,12 +103,10 @@ The project does not rely only on this picture: its sharpness note constructs su
 
 Read [the core proof](../../research/uniform_extraction_core.md) in order Q0–Q4. Match Q0 to Lessons 1–2, Q2–Q3 to Lesson 3, and Q1/Q4 to Lesson 4. Then read [sharpness and calibration](../../research/sharpness_and_calibration.md).
 
-To reproduce the unchanged selected certificates, run from the repository root:
+To run the current certificates and documentation checks, use the repository root:
 
 ```sh
-python checks/verify_extraction_core.py
-python checks/verify_calibration_and_sharpness.py
-python checks/audit_quantitative_core.py
+python verify_current.py
 ```
 
-These are finite arithmetic and implementation checks, not proofs of the imported VOA classifications. No full Monster tensor is simulated.
+The [reproduction guide](../REPRODUCIBILITY.md) distinguishes current fingerprints from historical reports. These are finite arithmetic and implementation checks, not proofs of the imported VOA classifications. No full Monster tensor is simulated.
