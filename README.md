@@ -1,6 +1,6 @@
 # Monster Correlation Rigidity
 
-Quantitative identification of the moonshine vertex operator algebra from near-extremal low-energy correlation coefficients. Research by Ruge Lin.
+Quantitative identification of the moonshine vertex operator algebra from near-extremal low-energy correlation coefficients under exact structural assumptions. Research by Ruge Lin.
 
 **Manuscript writing is on hold.** This repository contains research proofs, source comparisons, scope controls and reproducible certificates, not a drafted paper. The [current scientific status](docs/RESEARCH_STATUS.md) records the reviewed scope and remaining boundaries.
 
@@ -53,26 +53,13 @@ The current exact checks and documentation checks use Python's standard library:
 python verify_current.py
 ```
 
-For the complete checker inventory and the separate historical comparisons,
-use the [pinned reproduction environment](docs/REPRODUCIBILITY.md):
-
-```sh
-python -m pip install -r requirements-reproduce.txt
-python verify_current.py --all
-```
-
-The wrapper runs each selected checker in normal, `-O`, and `-OO` modes and
-compares the current exact report fingerprints. The original 63-, 74-, and
-23-check evidence is retained at its recorded versions. The repaired calibration
-has its own current fingerprint and additional scale-regression checks; see
-[calibration precision](docs/CALIBRATION_PRECISION.md) and
-[current report metadata](results/current_reports.json).
-
-The historical `verify.py` is **not** the current suite. Its strict byte replay
-and the unchanged bounded-portability comparison are reported separately.
-A historical floating-point mismatch remains a strict failure even when the
-current exact suite and bounded comparison pass. The reproduction guide explains
-exit codes and the optional strict-replay requirement.
+The command runs the selected checks in normal, `-O`, and `-OO` modes and
+compares current fingerprints. The [reproduction guide](docs/REPRODUCIBILITY.md)
+provides the complete inventory, pinned environment, and `--all` command.
+It reports historical strict byte replay and bounded portability separately:
+a floating-point mismatch remains a strict failure even if the bounded check passes.
+See [calibration precision](docs/CALIBRATION_PRECISION.md) for the current
+implementation and its explicit precision limit.
 
 No full Monster tensor is simulated. Finite checks do not verify the imported
 classification theorems or constitute independent human review.
@@ -80,8 +67,8 @@ classification theorems or constitute independent human review.
 ## Earlier research and preservation
 
 Use [the archive and pending-work index](docs/ARCHIVE.md) for older gate-testing,
-circuit, and readout records. The dated ledgers now carry historical banners.
-Their older “current” labels do not supersede
+circuit, and readout records. It identifies the dated ledgers, including the
+unchanged import-era `STATUS.md`. Their older “current” labels do not supersede
 [the current scientific status](docs/RESEARCH_STATUS.md). Protected source notes,
 provenance archives, and saved evidence remain available unchanged; legacy
 mathematics may not render correctly in every GitHub viewer.
@@ -93,6 +80,5 @@ research, [the source map](llms.txt) points questions to the theorem, its exact
 assumptions, teaching anchors, verification, and historical boundaries.
 
 Original code and documentation retain the owner's [MIT license](LICENSE).
-Imported mathematical results remain attributed to their authors. **Manuscript
-writing remains on hold.** Potential collaborators, readers with corrections,
+Imported mathematical results remain attributed to their authors. Potential collaborators, readers with corrections,
 and other research inquiries may contact Ruge Lin at gogoko699@gmail.com.
