@@ -1,0 +1,25 @@
+name: Pinned source transfer
+on:
+  push:
+    branches: [audit/release-source-export-20260927]
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ecd0623e9de41b49754b6ca16dc23752443143af
+          persist-credentials: false
+      - name: Archive the exact audited tree without credentials
+        run: |
+          git archive --format=zip --output="$RUNNER_TEMP/monster-source.zip" HEAD
+          sha256sum "$RUNNER_TEMP/monster-source.zip"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pinned-monster-source
+          path: ${{ runner.temp }}/monster-source.zip
+          retention-days: 7
+          if-no-files-found: error
