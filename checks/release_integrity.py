@@ -46,7 +46,7 @@ def tracked(root: Path) -> set[str] | None:
 
 
 def protected(name: str) -> bool:
-    return (name in ('LICENSE', 'verify.py', 'checks/replay_portability.py')
+    return (name in ('LICENSE', 'STATUS.md', 'verify.py', 'checks/replay_portability.py')
             or name.startswith('provenance/')
             or bool(re.match(r'research/\d\d_', name))
             or name.startswith('results/'))
@@ -98,7 +98,7 @@ def verify_files(root: Path = ROOT, baseline: Path | None = None) -> dict:
             old = inspect_page((baseline / name).read_text(), name)
             new = inspect_page((root / name).read_text(), name)
             require(old == new, 'Canonical proof mathematics changed: ' + name)
-        for name in ('STATUS.md', 'STATUS_CURRENT.md', 'PHYSICS_STATUS.md'):
+        for name in ('STATUS_CURRENT.md', 'PHYSICS_STATUS.md'):
             body = (root / name).read_text().split('\n\n', 1)[1]
             require(body == (baseline / name).read_text(), 'Historical ledger body changed: ' + name)
     return {'files': len(entries) + 1, 'baseline_compared': baseline is not None,

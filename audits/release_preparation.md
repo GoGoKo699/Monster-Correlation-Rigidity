@@ -16,8 +16,10 @@ Network Git cloning in the local container was unavailable.
 The release manifest declares every source change and addition and fingerprints
 all other baseline files. Protected numbered research notes, provenance files,
 original license, historical root verifier, bounded-portability policy, and all
-pre-existing saved result files remain byte-identical. The dated status ledgers
-are unchanged below new historical banners. Canonical proof mathematics is
+pre-existing saved result files remain byte-identical. The gate-testing and
+physical-selection ledgers retain their bodies below new historical banners.
+The seed-protected `STATUS.md` remains wholly unchanged; the archive index
+identifies it as historical. Canonical proof mathematics is
 compared expression by expression; only provenance and implementation pointers
 were added to those proofs.
 
@@ -64,3 +66,12 @@ manifest; legacy rendering limitations remain documented in the archive index.
 These are implementation, preservation, and release-readiness checks, not a new
 scientific campaign, independent human review, complete audit of the research
 backlog, or proof-assistant verification. Manuscript writing remains on hold.
+
+## Integration regression caught before merge
+
+The first candidate added a historical banner to the seed-protected `STATUS.md`.
+The complete CI suite correctly rejected that edit through the unchanged
+provenance verifier. The banner was removed and the exact original file restored;
+`STATUS.md` is now also explicitly protected by the current integrity check.
+No historical checker, source hash, or numerical tolerance was weakened to
+accept the edit. Current readers are directed through the archive index instead.

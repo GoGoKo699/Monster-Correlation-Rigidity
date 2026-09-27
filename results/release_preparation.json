@@ -22,12 +22,6 @@
       "previous_sha256": "07c05d6314d03e76b786acf32d85d8533a5a5f5b350a06268e865df3ec8d2f5f"
     },
     {
-      "path": "STATUS.md",
-      "bytes": 4660,
-      "sha256": "7c31caf04636ce1cad2656e55f96b584753d2d2b795de429426b5fd1658805e4",
-      "previous_sha256": "7546c5a5449dfeb43c8575f9939e3f0971b4d7869377ccb6864c0bc082f8eef4"
-    },
-    {
       "path": "STATUS_CURRENT.md",
       "bytes": 11106,
       "sha256": "9d8f96cca1cb89368cb4f43cace66f8aedc71fad447dfaa29c6c0b368f448200",
@@ -90,7 +84,7 @@
     {
       "path": "snapshot_manifest.json",
       "bytes": 10245,
-      "sha256": "32d38a8b55192855e4aaa10f84cc198c96eab677bb7095db46f71d38f743f354",
+      "sha256": "713faba50b42c8bb3a2f80d2b5b920c83a8d0911d4ea6af28cdc8aafd8be44a9",
       "previous_sha256": "3e798b9d48a94406348f65e65acc9673d17cab380849631244be6002c240134d"
     }
   ],
@@ -117,13 +111,13 @@
     },
     {
       "path": "audits/release_preparation.md",
-      "bytes": 3724,
-      "sha256": "692d04f43c6f25cf4bb0cf45fb85a0790767d95f9f69a01f2e50354f7e1678ca"
+      "bytes": 4374,
+      "sha256": "55eb0a9635ca844432625e9907d8f6e370d7610a26f71d2cae7d4531d94a0220"
     },
     {
       "path": "checks/release_integrity.py",
       "bytes": 5168,
-      "sha256": "c0b494770523a991e9a4f32c208c1f98052bd95898b8f289a04e9f0c6af17d77"
+      "sha256": "6ef07ba7e6efe709c101ab2637e5da373a5fb939d49e02bfd29f2320f89708b1"
     },
     {
       "path": "checks/scale_safe_roots.py",
@@ -137,13 +131,13 @@
     },
     {
       "path": "checks/verify_release_package.py",
-      "bytes": 4867,
-      "sha256": "c4dec7dfd2867e9af4e7d7aaee2e9a03413f0b855db10ee4090f78321a0d1818"
+      "bytes": 4854,
+      "sha256": "7b7e8369277754f2f9db8af0e5436cfc52e3c73489b270e585b8a6f17eb57b0e"
     },
     {
       "path": "docs/ARCHIVE.md",
-      "bytes": 4514,
-      "sha256": "21aae1824001fb0fe31a534d4f7330074d889c6b8d16ebf18e871fed87bccd1e"
+      "bytes": 4794,
+      "sha256": "7794cb8f6bc7007e2dcd9fa81129031cc34097152fab0ab7f1cf7e7941c8ff76"
     },
     {
       "path": "docs/CALIBRATION_PRECISION.md",
@@ -206,6 +200,11 @@
       "path": "LICENSE",
       "bytes": 1065,
       "sha256": "a92600540b1ab7a18301e2632a29334b3df227ad836e88df9967d69e3c86db66"
+    },
+    {
+      "path": "STATUS.md",
+      "bytes": 4398,
+      "sha256": "7546c5a5449dfeb43c8575f9939e3f0971b4d7869377ccb6864c0bc082f8eef4"
     },
     {
       "path": "WORKSPACES.md",

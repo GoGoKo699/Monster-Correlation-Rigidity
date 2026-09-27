@@ -59,7 +59,7 @@ def metadata(root: Path) -> None:
     require('## Unreleased' in (root / 'CHANGELOG.md').read_text(), 'Missing unreleased changelog')
     source_map = (root / 'llms.txt').read_text()
     require('Gaberdiel' in source_map and 'Yamauchi' in source_map, 'Teaching anchors not retained')
-    for p in ('STATUS.md', 'STATUS_CURRENT.md', 'PHYSICS_STATUS.md'):
+    for p in ('STATUS_CURRENT.md', 'PHYSICS_STATUS.md'):
         require((root / p).read_text().startswith('> **Historical record'), 'Missing historical banner')
 
 

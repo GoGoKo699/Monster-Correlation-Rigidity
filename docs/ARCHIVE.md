@@ -50,3 +50,8 @@ or a merge of those proposals**.
 
 Other pending pull requests remain separate as well. The release is not a
 certification of the full research backlog. Manuscript writing remains on hold.
+
+The import-era `STATUS.md` is protected by the original seed verifier and remains
+byte-identical, including its dated headings. Use this index and the current
+scientific-status page rather than interpreting its old “current” label as a
+statement about the release candidate.
