@@ -25,4 +25,4 @@ new work on this selected result.
 
 The [parameter-domain checker](../checks/audit_parameter_domains.py) accompanies
 the latter audit. The [archive index](../docs/ARCHIVE.md) separates these older
-gate-testing investigations and pending branches from the selected release scope.
+gate-testing investigations and archived branches from the selected release scope.

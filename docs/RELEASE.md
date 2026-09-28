@@ -20,7 +20,7 @@ Consult the [changelog](../CHANGELOG.md) for changes and
 [reproduction](REPRODUCIBILITY.md) for exact certificates, historical replay,
 and their limits. Finite checks do not verify imported classifications or
 constitute independent human review. The [archive index](ARCHIVE.md) identifies
-legacy rendering limitations and pending branches outside the selected scope.
+legacy rendering limitations and archived branches outside the selected scope.
 
 Original code and documentation retain the [MIT license](../LICENSE).
 Questions, corrections, and potential collaborations: Ruge Lin,

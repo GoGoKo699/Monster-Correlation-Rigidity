@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased — research-backlog disposition, 28 September 2026
+
+Recorded individual dispositions and immutable source links for PRs #12–27:
+PR12 is rejected as written, PR23 is superseded by the consolidated core, and
+the other fourteen proposals are archived as separate research. Added the
+normalization counterexample warning and retained PR26’s latest checker
+correction. Branches and commits are preserved; the selected proofs, checkers,
+scientific outputs and numerical tolerances are unchanged.
+
 ## Unreleased — release preparation, 27 September 2026
 
 The final reader cleanup removes repeated reproduction and status prose, repairs

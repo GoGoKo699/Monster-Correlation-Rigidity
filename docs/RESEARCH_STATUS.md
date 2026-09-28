@@ -16,14 +16,14 @@ No additional essential lemma has been identified as missing for this bounded cl
 
 The theorem does not prove that every member of the bare ambient class is moonshine. It does not find the required fields, verify the exact ambient axioms from measurements, control approximate VOA axioms or uncertain conformal grades, or reconstruct an implemented physical system. These stronger questions are outside the stated claim, not hidden gaps assigned to manuscript drafting.
 
-The extended-six-sevenths implication, generic readout results, and other open PRs are separate research records and are not premises of this core. In particular the rejected normalization-dependent condition has not been integrated. This review does not certify every historical research branch.
+The extended-six-sevenths implication, generic readout results, and other archived proposals are separate research records and are not premises of this core. In particular the rejected normalization-dependent condition has not been integrated. This review does not certify every historical research branch.
 
 ## Evidence access
 
 The [reproduction guide](REPRODUCIBILITY.md) provides current commands,
 fingerprints, and separate strict-versus-bounded historical replay outcomes.
 Original reports and tolerances are preserved. The [archive index](ARCHIVE.md)
-covers older ledgers and pending research; [release scope](RELEASE.md) defines
+covers older ledgers and archived research; [release scope](RELEASE.md) defines
 the research package.
 
 Future work on the bounded result should respond to a concrete proof objection, source overlap, or documentation defect. Enlarging the theorem or beginning manuscript drafting requires a separate scope decision; an unresolved stronger conjecture is not by itself a reason to keep extending this paper's research indefinitely.

@@ -66,7 +66,7 @@ classification theorems or constitute independent human review.
 
 ## Earlier research and preservation
 
-Use [the archive and pending-work index](docs/ARCHIVE.md) for older gate-testing,
+Use [the archive and research index](docs/ARCHIVE.md) for older gate-testing,
 circuit, and readout records. It identifies the dated ledgers, including the
 unchanged import-era `STATUS.md`. Their older “current” labels do not supersede
 [the current scientific status](docs/RESEARCH_STATUS.md). Protected source notes,

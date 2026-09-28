@@ -31,7 +31,7 @@ Monster-tensor simulation.
 
 ## Historical and release boundaries
 
-- [Archive index](docs/ARCHIVE.md): older status ledgers and pending branches do not supersede the active status or supply silently imported release dependencies.
+- [Archive index](docs/ARCHIVE.md): older status ledgers and archived branches do not supersede the active status or supply silently imported release dependencies.
 - [Release scope](docs/RELEASE.md): research package and exact assumptions, not a paper or release announcement.
 - [Citation](CITATION.cff): cite the repository and exact commit used; do not invent a paper, DOI, external review, or proof-assistant certificate.
 - [License](LICENSE): original MIT license for repository code and documentation, with imported results attributed to their authors.
