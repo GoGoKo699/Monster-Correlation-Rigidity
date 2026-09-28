@@ -41,19 +41,19 @@ A common source of overclaim is the word “finite”: a finite list of coeffici
 
 The research-completion boundary is not “every stronger theorem is proved.” It is that every scientific assertion needed by the CHOSEN contribution and its framing has proof or accurately scoped primary evidence. No essential reasoning is to be left for the manuscript-writing stage.
 
-## Separate pending work, not evidence for the selected release
+## Archived separate work, not evidence for the selected release
 
 The following entries are deliberately outside the active tables. They are not
 premises of the correlation criterion and have not been merged or certified as
 part of this release-preparation pass. IDs are retained to make older references
-interpretable; their presence is not an endorsement of the pending claims.
+interpretable; their presence is not an endorsement of the archived claims.
 
 | Earlier ID | Pinned record | Role and boundary |
 |---|---|---|
 | A05 / C05 | [Extended-six-sevenths proposal, PR27](https://github.com/GoGoKo699/Monster-Correlation-Rigidity/blob/576fd31b53862d0b7667a723330ae27c859cc774/research/extended_six_sevenths_forces_ising.md) | Separate proposed existence implication with additional module/trace inputs; not released evidence or a premise of the selected theorem. |
 | B08 | [Readout-scope audit, PR22](https://github.com/GoGoKo699/Monster-Correlation-Rigidity/blob/d2b85266d4273ae7c6ce32d87e0b6060a881b87e/audits/readout_scope_audit.md) | Separate general-readout comparison; not part of the selected release proof. |
 
-The [archive index](ARCHIVE.md) distinguishes historical provenance, pending
+The [archive index](ARCHIVE.md) distinguishes historical provenance, archived
 branches, and the authoritative current path. Do not merge unrelated results
 merely to resolve a file reference.
 

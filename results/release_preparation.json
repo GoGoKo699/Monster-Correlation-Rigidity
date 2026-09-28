@@ -17,8 +17,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5897,
-      "sha256": "4e95601f3c2bfef00b40bc942600c184e15263208878463e747a4053d235662f",
+      "bytes": 5893,
+      "sha256": "a07a0b63763008eadace6114ad87f059aaa1f72d6d04e67be36fffcb61a9dc9e",
       "previous_sha256": "07c05d6314d03e76b786acf32d85d8533a5a5f5b350a06268e865df3ec8d2f5f"
     },
     {
@@ -29,8 +29,8 @@
     },
     {
       "path": "audits/README.md",
-      "bytes": 1655,
-      "sha256": "4436d5f8821a276dac460801e5b42ac89c4b0b22e952f1b0dfe5c3e6112cc0b5",
+      "bytes": 1656,
+      "sha256": "b9d102e695bdd18ac894a428bd39e781b3f1f177e01adebbb042e5fc7ebd5e13",
       "previous_sha256": "11e8429fe585af944f71f3599503ee72dccbb8d121e9c5838b04a3fc57a8d9b4"
     },
     {
@@ -71,14 +71,14 @@
     },
     {
       "path": "docs/RESEARCH_STATUS.md",
-      "bytes": 3397,
-      "sha256": "de844c073f84e74287cf585e9fb254b5719bb8bee7f693a814952282a2abe128",
+      "bytes": 3408,
+      "sha256": "771629e0f5921874f3f35e43782909e8a06078bd246be373005ae197cdb62d72",
       "previous_sha256": "8c6a616753f0a4011c10cc1256077979bfd7c3d1d304efeb54091bfe64fc3ef5"
     },
     {
       "path": "docs/background_claims.md",
-      "bytes": 10602,
-      "sha256": "5ab91dc7fda957f10b6f5265ca91f11a5f6b5d25d5b9ddf81f525e5f099c6039",
+      "bytes": 10605,
+      "sha256": "323b789edeea3a8ef777ddd1e2c4fdfedf7344efe0d3ee56a06ba456c5986b64",
       "previous_sha256": "8ca74a07e83d05fcbfccbaed73b2b0cb1791594d393f668cacfd55979b16d800"
     },
     {
@@ -102,7 +102,7 @@
     {
       "path": "snapshot_manifest.json",
       "bytes": 10216,
-      "sha256": "e1ee77d34b6b4a441c53bf7dc1213be561f7644df02b17460154a9a1ec293e15",
+      "sha256": "b1303823d43bb53b5b466b502412c93564edc048d839ed094135c5da92126a5a",
       "previous_sha256": "3e798b9d48a94406348f65e65acc9673d17cab380849631244be6002c240134d"
     }
   ],
@@ -114,8 +114,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 2003,
-      "sha256": "b663e7ff1097934ab79626c661dbad80bbd4d921553353af8860edca36772a91"
+      "bytes": 2513,
+      "sha256": "6f2c5523a83c98e756ae25f636ad3691f3b14e7e4bf803052e3eea432b47f74b"
     },
     {
       "path": "CITATION.cff",
@@ -154,8 +154,8 @@
     },
     {
       "path": "docs/ARCHIVE.md",
-      "bytes": 4794,
-      "sha256": "7794cb8f6bc7007e2dcd9fa81129031cc34097152fab0ab7f1cf7e7941c8ff76"
+      "bytes": 11010,
+      "sha256": "7f89a03458cf6f05069f3367bed02c9cb19f5eb0b1899d5850809d2e8cfc341c"
     },
     {
       "path": "docs/CALIBRATION_PRECISION.md",
@@ -164,8 +164,8 @@
     },
     {
       "path": "docs/RELEASE.md",
-      "bytes": 1456,
-      "sha256": "22bf2fc61cfe4e6c52ae20fead40339b7a9d00d5e5ad9bcf75c3a75d2e50ef89"
+      "bytes": 1457,
+      "sha256": "262d311a7fe3d6d7baaf8901338dea7b5df9c20559c0ade13977d83715786469"
     },
     {
       "path": "docs/REPRODUCIBILITY.md",
@@ -174,8 +174,8 @@
     },
     {
       "path": "llms.txt",
-      "bytes": 2848,
-      "sha256": "8f66bf42d7366093e63b935449a876ff38cb1d2e15c72dcd981bdc098e392ab0"
+      "bytes": 2849,
+      "sha256": "2fdd11092768a3adf6bd3c3113f4f46589bec88420ec7c8e8007a8002ae85071"
     },
     {
       "path": "requirements-reproduce.txt",
@@ -753,6 +753,66 @@
         "path": "snapshot_manifest.json",
         "previous_sha256": "713faba50b42c8bb3a2f80d2b5b920c83a8d0911d4ea6af28cdc8aafd8be44a9",
         "sha256": "e1ee77d34b6b4a441c53bf7dc1213be561f7644df02b17460154a9a1ec293e15",
+        "bytes": 10216
+      }
+    ]
+  },
+  "pr_disposition_maintenance": {
+    "base_commit": "7b9b14dc5d2a693b8607332089407f11a08f84a9",
+    "scope": "Document PR12 rejection, PR23 supersession, and fourteen archived separate proposals; preserve all branches and scientific payloads. Source/dependency triage is not a new proof audit of the archived work.",
+    "changes": [
+      {
+        "path": "CHANGELOG.md",
+        "previous_sha256": "b663e7ff1097934ab79626c661dbad80bbd4d921553353af8860edca36772a91",
+        "sha256": "6f2c5523a83c98e756ae25f636ad3691f3b14e7e4bf803052e3eea432b47f74b",
+        "bytes": 2513
+      },
+      {
+        "path": "README.md",
+        "previous_sha256": "4e95601f3c2bfef00b40bc942600c184e15263208878463e747a4053d235662f",
+        "sha256": "a07a0b63763008eadace6114ad87f059aaa1f72d6d04e67be36fffcb61a9dc9e",
+        "bytes": 5893
+      },
+      {
+        "path": "audits/README.md",
+        "previous_sha256": "4436d5f8821a276dac460801e5b42ac89c4b0b22e952f1b0dfe5c3e6112cc0b5",
+        "sha256": "b9d102e695bdd18ac894a428bd39e781b3f1f177e01adebbb042e5fc7ebd5e13",
+        "bytes": 1656
+      },
+      {
+        "path": "docs/ARCHIVE.md",
+        "previous_sha256": "7794cb8f6bc7007e2dcd9fa81129031cc34097152fab0ab7f1cf7e7941c8ff76",
+        "sha256": "7f89a03458cf6f05069f3367bed02c9cb19f5eb0b1899d5850809d2e8cfc341c",
+        "bytes": 11010
+      },
+      {
+        "path": "docs/RELEASE.md",
+        "previous_sha256": "22bf2fc61cfe4e6c52ae20fead40339b7a9d00d5e5ad9bcf75c3a75d2e50ef89",
+        "sha256": "262d311a7fe3d6d7baaf8901338dea7b5df9c20559c0ade13977d83715786469",
+        "bytes": 1457
+      },
+      {
+        "path": "docs/RESEARCH_STATUS.md",
+        "previous_sha256": "de844c073f84e74287cf585e9fb254b5719bb8bee7f693a814952282a2abe128",
+        "sha256": "771629e0f5921874f3f35e43782909e8a06078bd246be373005ae197cdb62d72",
+        "bytes": 3408
+      },
+      {
+        "path": "docs/background_claims.md",
+        "previous_sha256": "5ab91dc7fda957f10b6f5265ca91f11a5f6b5d25d5b9ddf81f525e5f099c6039",
+        "sha256": "323b789edeea3a8ef777ddd1e2c4fdfedf7344efe0d3ee56a06ba456c5986b64",
+        "bytes": 10605
+      },
+      {
+        "path": "llms.txt",
+        "previous_sha256": "8f66bf42d7366093e63b935449a876ff38cb1d2e15c72dcd981bdc098e392ab0",
+        "sha256": "2fdd11092768a3adf6bd3c3113f4f46589bec88420ec7c8e8007a8002ae85071",
+        "bytes": 2849
+      },
+      {
+        "path": "snapshot_manifest.json",
+        "previous_sha256": "e1ee77d34b6b4a441c53bf7dc1213be561f7644df02b17460154a9a1ec293e15",
+        "sha256": "b1303823d43bb53b5b466b502412c93564edc048d839ed094135c5da92126a5a",
         "bytes": 10216
       }
     ]
