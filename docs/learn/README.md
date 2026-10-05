@@ -38,4 +38,8 @@ At the end, you should be able to explain why normalization matters, why a nearl
 
 Then read the [core proof](../../research/uniform_extraction_core.md), followed by [sharpness and calibration](../../research/sharpness_and_calibration.md). The [research status](../RESEARCH_STATUS.md), [contribution comparison](../../audits/quantitative_contribution_verdict.md), and [final bounded review](../../audits/final_quantitative_review.md) belong to the research-checking route, not the first lesson.
 
-The teaching notes explain the existing theorem. They do not replace its exact hypotheses or re-prove its imported classification theorems. Manuscript writing remains on hold. Questions and corrections may be sent to Ruge Lin at gogoko699@gmail.com.
+The teaching notes explain the existing theorem. They do not replace its exact hypotheses or re-prove its imported classification theorems.
+
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).

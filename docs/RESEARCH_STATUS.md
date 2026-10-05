@@ -2,7 +2,11 @@
 
 The selected quantitative result has a complete written proof, sharpness and calibration boundaries, primary-source comparisons, and a final falsification-oriented review with no blocking error found at its documented scope. See [the final review](../audits/final_quantitative_review.md). This status replaces the pre-integration coordination notes, not the historical mathematical record.
 
-**Manuscript writing is on hold.** No manuscript, submission, DOI, or tagged GitHub release has been created. The repository now includes release-preparation notes and a changelog. Scientific evidence for eventual framing is in [background_claims.md](background_claims.md).
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+
+No manuscript, submission, DOI, or tagged GitHub release has been created. The repository now includes release-preparation notes and a changelog. Scientific evidence for eventual framing is in [background_claims.md](background_claims.md).
 
 ## The bounded contribution
 

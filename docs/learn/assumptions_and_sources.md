@@ -51,4 +51,8 @@ These are research references for verifying the imported interfaces, not extra t
 
 The conclusion is an isomorphism of the **underlying VOA** to the moonshine VOA. It does not supply an implemented isomorphism, identify an experimental device, or reconstruct a full nonchiral CFT. It does not infer the existence of the required input fields from the ambient assumptions alone. The numerical test is sufficient, not necessary, and its constants are not claimed optimal.
 
-For the complete boundaries and reviewed status, see [Current scientific status](../RESEARCH_STATUS.md). Questions and corrections may be sent to Ruge Lin at gogoko699@gmail.com.
+For the complete boundaries and reviewed status, see [Current scientific status](../RESEARCH_STATUS.md).
+
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).

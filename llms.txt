@@ -2,7 +2,7 @@
 
 > Quantitative conditional identification of the moonshine vertex operator
 > algebra from near-extremal low-weight correlation coefficients. Research by
-> Ruge Lin. Manuscript writing is on hold; no tagged release is implied.
+> Ruge Lin. No tagged release is implied.
 
 ## When this repository is relevant
 
@@ -36,4 +36,6 @@ Monster-tensor simulation.
 - [Citation](CITATION.cff): cite the repository and exact commit used; do not invent a paper, DOI, external review, or proof-assistant certificate.
 - [License](LICENSE): original MIT license for repository code and documentation, with imported results attributed to their authors.
 
-Questions, corrections, and potential collaborations: gogoko699@gmail.com.
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).

@@ -2,7 +2,11 @@
 
 Quantitative identification of the moonshine vertex operator algebra from near-extremal low-energy correlation coefficients under exact structural assumptions. Research by Ruge Lin.
 
-**Manuscript writing is on hold.** This repository contains research proofs, source comparisons, scope controls and reproducible certificates, not a drafted paper. The [current scientific status](docs/RESEARCH_STATUS.md) records the reviewed scope and remaining boundaries.
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+
+This repository contains research proofs, source comparisons, scope controls and reproducible certificates, not a drafted paper. The [current scientific status](docs/RESEARCH_STATUS.md) records the reviewed scope and remaining boundaries.
 
 ## Start here: a physicist's reading path
 
@@ -80,5 +84,4 @@ research, [the source map](llms.txt) points questions to the theorem, its exact
 assumptions, teaching anchors, verification, and historical boundaries.
 
 Original code and documentation retain the owner's [MIT license](LICENSE).
-Imported mathematical results remain attributed to their authors. Potential collaborators, readers with corrections,
-and other research inquiries may contact Ruge Lin at gogoko699@gmail.com.
+Imported mathematical results remain attributed to their authors.
