@@ -17,8 +17,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5893,
-      "sha256": "a07a0b63763008eadace6114ad87f059aaa1f72d6d04e67be36fffcb61a9dc9e",
+      "bytes": 5981,
+      "sha256": "ddb633e59fb14d76051ee886b1b91942e873fb33a81f0fc2b6b9ed997010094e",
       "previous_sha256": "07c05d6314d03e76b786acf32d85d8533a5a5f5b350a06268e865df3ec8d2f5f"
     },
     {
@@ -71,8 +71,8 @@
     },
     {
       "path": "docs/RESEARCH_STATUS.md",
-      "bytes": 3408,
-      "sha256": "771629e0f5921874f3f35e43782909e8a06078bd246be373005ae197cdb62d72",
+      "bytes": 3621,
+      "sha256": "0da0387392e71c0878f86a0f7ee383c93ffb94ba177d7584aea9c461e4a882a8",
       "previous_sha256": "8c6a616753f0a4011c10cc1256077979bfd7c3d1d304efeb54091bfe64fc3ef5"
     },
     {
@@ -86,6 +86,18 @@
       "bytes": 5827,
       "sha256": "12f8920e66c74ca52648e26137cbdd28f3a095f53305375eba03e9dce30324ac",
       "previous_sha256": "fd4e01fb1b8578598055d1024f39013bab419f0d17300956e759d69d39f7a4c4"
+    },
+    {
+      "path": "docs/learn/README.md",
+      "bytes": 5435,
+      "sha256": "f3bfe6533cdc9c210f6e134f4828c443a5910b6535a6543717ad18511788d082",
+      "previous_sha256": "de4724dbfb263fd1bae102ed3f7044039739851a5e3bb7f86b0a917109104877"
+    },
+    {
+      "path": "docs/learn/assumptions_and_sources.md",
+      "bytes": 5997,
+      "sha256": "0d48f27e0ebfa3d1b9acbb966e6c2dc33bf2205c38c18e4bc0b4012d4eb33833",
+      "previous_sha256": "ea1098995d91e05442b84db3888af9546f3e3503af685166c69c0e04a3ad4de1"
     },
     {
       "path": "research/sharpness_and_calibration.md",
@@ -102,7 +114,7 @@
     {
       "path": "snapshot_manifest.json",
       "bytes": 10216,
-      "sha256": "b1303823d43bb53b5b466b502412c93564edc048d839ed094135c5da92126a5a",
+      "sha256": "79655b7b39b7389309e8b86798875aa9c5cf6f6aceba7fe28b85b40bfccc03b9",
       "previous_sha256": "3e798b9d48a94406348f65e65acc9673d17cab380849631244be6002c240134d"
     }
   ],
@@ -154,8 +166,8 @@
     },
     {
       "path": "docs/ARCHIVE.md",
-      "bytes": 11010,
-      "sha256": "7f89a03458cf6f05069f3367bed02c9cb19f5eb0b1899d5850809d2e8cfc341c"
+      "bytes": 11221,
+      "sha256": "d52f499ad3f3e7c9538a1b9141ec4f86d40486674a4c800eba238082ee0c011e"
     },
     {
       "path": "docs/CALIBRATION_PRECISION.md",
@@ -164,8 +176,8 @@
     },
     {
       "path": "docs/RELEASE.md",
-      "bytes": 1457,
-      "sha256": "262d311a7fe3d6d7baaf8901338dea7b5df9c20559c0ade13977d83715786469"
+      "bytes": 1589,
+      "sha256": "dadcdb4ea52d22fdac1d939c753a651749f1adce2a75dce4653ff6ee2335d26d"
     },
     {
       "path": "docs/REPRODUCIBILITY.md",
@@ -174,8 +186,8 @@
     },
     {
       "path": "llms.txt",
-      "bytes": 2849,
-      "sha256": "2fdd11092768a3adf6bd3c3113f4f46589bec88420ec7c8e8007a8002ae85071"
+      "bytes": 2990,
+      "sha256": "c02ef5051ffd89d6ec81846eded95413070833d9c9387dd737b4d8384a28b15c"
     },
     {
       "path": "requirements-reproduce.txt",
@@ -403,16 +415,6 @@
       "path": "docs/learn/04_rounding.md",
       "bytes": 5793,
       "sha256": "27d775490fda1291da07b136774972ff559ec4ae62c9161e0213dd1f5c6b65d3"
-    },
-    {
-      "path": "docs/learn/README.md",
-      "bytes": 5297,
-      "sha256": "de4724dbfb263fd1bae102ed3f7044039739851a5e3bb7f86b0a917109104877"
-    },
-    {
-      "path": "docs/learn/assumptions_and_sources.md",
-      "bytes": 5823,
-      "sha256": "ea1098995d91e05442b84db3888af9546f3e3503af685166c69c0e04a3ad4de1"
     },
     {
       "path": "provenance/Monster_Average_Transport_Checkpoint.zip",
@@ -813,6 +815,60 @@
         "path": "snapshot_manifest.json",
         "previous_sha256": "e1ee77d34b6b4a441c53bf7dc1213be561f7644df02b17460154a9a1ec293e15",
         "sha256": "b1303823d43bb53b5b466b502412c93564edc048d839ed094135c5da92126a5a",
+        "bytes": 10216
+      }
+    ]
+  },
+  "purpose_contact_maintenance": {
+    "base_commit": "aef97f5f99871aac1b32fcdbe03b24e95ab3493f",
+    "scope": "Replace current reader-facing manuscript-hold/contact notices with the author\u2019s purpose and contact wording and clickable email. No scientific claims, proofs, mathematics, verification status, limitations, references, authorship, licensing, historical records, checkers, saved reports or protected scientific hashes changed. No generated website or reading-page copies are present.",
+    "changes": [
+      {
+        "path": "README.md",
+        "previous_sha256": "a07a0b63763008eadace6114ad87f059aaa1f72d6d04e67be36fffcb61a9dc9e",
+        "sha256": "ddb633e59fb14d76051ee886b1b91942e873fb33a81f0fc2b6b9ed997010094e",
+        "bytes": 5981
+      },
+      {
+        "path": "docs/ARCHIVE.md",
+        "previous_sha256": "7f89a03458cf6f05069f3367bed02c9cb19f5eb0b1899d5850809d2e8cfc341c",
+        "sha256": "d52f499ad3f3e7c9538a1b9141ec4f86d40486674a4c800eba238082ee0c011e",
+        "bytes": 11221
+      },
+      {
+        "path": "docs/RELEASE.md",
+        "previous_sha256": "262d311a7fe3d6d7baaf8901338dea7b5df9c20559c0ade13977d83715786469",
+        "sha256": "dadcdb4ea52d22fdac1d939c753a651749f1adce2a75dce4653ff6ee2335d26d",
+        "bytes": 1589
+      },
+      {
+        "path": "docs/RESEARCH_STATUS.md",
+        "previous_sha256": "771629e0f5921874f3f35e43782909e8a06078bd246be373005ae197cdb62d72",
+        "sha256": "0da0387392e71c0878f86a0f7ee383c93ffb94ba177d7584aea9c461e4a882a8",
+        "bytes": 3621
+      },
+      {
+        "path": "docs/learn/README.md",
+        "previous_sha256": "de4724dbfb263fd1bae102ed3f7044039739851a5e3bb7f86b0a917109104877",
+        "sha256": "f3bfe6533cdc9c210f6e134f4828c443a5910b6535a6543717ad18511788d082",
+        "bytes": 5435
+      },
+      {
+        "path": "docs/learn/assumptions_and_sources.md",
+        "previous_sha256": "ea1098995d91e05442b84db3888af9546f3e3503af685166c69c0e04a3ad4de1",
+        "sha256": "0d48f27e0ebfa3d1b9acbb966e6c2dc33bf2205c38c18e4bc0b4012d4eb33833",
+        "bytes": 5997
+      },
+      {
+        "path": "llms.txt",
+        "previous_sha256": "2fdd11092768a3adf6bd3c3113f4f46589bec88420ec7c8e8007a8002ae85071",
+        "sha256": "c02ef5051ffd89d6ec81846eded95413070833d9c9387dd737b4d8384a28b15c",
+        "bytes": 2990
+      },
+      {
+        "path": "snapshot_manifest.json",
+        "previous_sha256": "b1303823d43bb53b5b466b502412c93564edc048d839ed094135c5da92126a5a",
+        "sha256": "79655b7b39b7389309e8b86798875aa9c5cf6f6aceba7fe28b85b40bfccc03b9",
         "bytes": 10216
       }
     ]

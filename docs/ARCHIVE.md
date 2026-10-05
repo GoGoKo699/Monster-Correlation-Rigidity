@@ -79,9 +79,11 @@ this counterexample.
 PR26's fixed record uses its actual latest head `18c3839`, including the
 root-based checker correction. Its original PR description names an earlier
 head; the fixed link above is authoritative for this archival disposition.
-Manuscript writing remains on hold.
-
 The import-era `STATUS.md` is protected by the original seed verifier and remains
 byte-identical, including its dated headings. Use this index and the current
 scientific-status page rather than interpreting its old “current” label as a
 statement about the release candidate.
+
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).

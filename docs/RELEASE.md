@@ -5,7 +5,7 @@
 This research package contains the quantitative correlation-identification
 proof, sharpness and calibration results, the physics-first tutorial,
 finite verification code, attributed source comparisons, and preserved history.
-Manuscript writing is on hold; these notes do not create or announce a tag,
+These notes do not create or announce a tag,
 DOI, publication, or manuscript.
 
 The criterion assumes an exact simple unitary rational C2-cofinite holomorphic
@@ -23,5 +23,7 @@ constitute independent human review. The [archive index](ARCHIVE.md) identifies
 legacy rendering limitations and archived branches outside the selected scope.
 
 Original code and documentation retain the [MIT license](../LICENSE).
-Questions, corrections, and potential collaborations: Ruge Lin,
-gogoko699@gmail.com.
+
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
