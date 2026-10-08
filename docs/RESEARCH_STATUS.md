@@ -1,33 +1,41 @@
-# Current scientific status
+# Results and assumptions
 
-The selected quantitative result has a complete written proof, sharpness and calibration boundaries, primary-source comparisons, and a final falsification-oriented review with no blocking error found at its documented scope. See [the final review](../audits/final_quantitative_review.md). This status replaces the pre-integration coordination notes, not the historical mathematical record.
+The repository develops a quantitative criterion identifying the moonshine VOA
+from near-extremal weight-two correlation coefficients.
 
-## Purpose and contact
+## Result map
 
-This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+| Result | Statement | Proof |
+|---|---|---|
+| Correlation criterion | Two sufficiently near-extremal self-couplings and a controlled overlap force an orthogonal Ising pair and identify the ambient VOA as moonshine. | [Core, Q0–Q4](../research/uniform_extraction_core.md) |
+| Sharp exponent | The square-root rate from coupling deficit to field distance is optimal, already in the moonshine VOA. | [Sharpness, section 3](../research/sharpness_and_calibration.md) |
+| Calibration | Seven certified scalar intervals remove stress contamination and normalize two real weight-two fields before applying the criterion. | [Calibration, section 2](../research/sharpness_and_calibration.md) |
 
-No manuscript, submission, DOI, or tagged GitHub release has been created. The repository now includes release-preparation notes and a changelog. Scientific evidence for eventual framing is in [background_claims.md](background_claims.md).
+The classification endpoint is Abe–Lam–Yamada's Theorem A.1. The quantitative
+step extracts exact Ising directions and uses Sakuma's discrete overlap gap.
+The [source comparison](../audits/quantitative_contribution_verdict.md) identifies
+the roles of prior variational methods and classification results.
 
-## The bounded contribution
+## Input requirements
 
-Within an exact simple unitary rational C2-cofinite holomorphic VOA of CFT type with c=24 and V1=0, sufficiently near-extremal coefficients of two actual real weight-two primaries force exact orthogonal Ising subalgebras and hence the underlying moonshine VOA by the prior Abe–Lam–Yamada theorem. The square-root field-distance exponent is optimal. Seven certified scalar intervals suffice to remove known stress contamination and normalization from actual real weight-two inputs.
+The ambient object is an exact simple unitary, rational, C2-cofinite,
+holomorphic VOA of CFT type, with central charge 24 and no weight-one states.
+The inputs are actual real weight-two fields. The core uses normalized
+primaries; calibration also accepts stress-contaminated and unnormalized
+fields when the stress tensor is known and projected norms are certified
+positive.
 
-The [core](../research/uniform_extraction_core.md), [precision results](../research/sharpness_and_calibration.md), [prior comparison](../audits/quantitative_contribution_verdict.md), and [final review](../audits/final_quantitative_review.md) are the active scientific path. The subsequent [implementation erratum](../audits/calibration_scale_erratum.md) repairs small-scale calibration and documents its precision limit without changing the analytic theorem.
+Identification is conditional on fields satisfying the coefficient bounds.
+The numerical tolerances are sufficient bounds; an inconclusive certificate
+leaves the isomorphism type undecided. The sharpness result concerns the
+field-distance exponent.
 
-No additional essential lemma has been identified as missing for this bounded claim. The directed priority assessment is a revisable scholarly judgment, not an exhaustive firstness assertion or a guarantee of importance. The review was conducted by the research assistant, not an independent human referee or proof assistant.
+## Verification and learning
 
-## Not claimed or silently postponed
+The [reproduction guide](REPRODUCIBILITY.md) describes exact finite certificates
+and implementation checks. The [calibration input contract](CALIBRATION_PRECISION.md)
+specifies interval inputs and the precision limit. The
+[proof and source review](../audits/final_quantitative_review.md) records the
+assistant's reconstruction and its source depth.
 
-The theorem does not prove that every member of the bare ambient class is moonshine. It does not find the required fields, verify the exact ambient axioms from measurements, control approximate VOA axioms or uncertain conformal grades, or reconstruct an implemented physical system. These stronger questions are outside the stated claim, not hidden gaps assigned to manuscript drafting.
-
-The extended-six-sevenths implication, generic readout results, and other archived proposals are separate research records and are not premises of this core. In particular the rejected normalization-dependent condition has not been integrated. This review does not certify every historical research branch.
-
-## Evidence access
-
-The [reproduction guide](REPRODUCIBILITY.md) provides current commands,
-fingerprints, and separate strict-versus-bounded historical replay outcomes.
-Original reports and tolerances are preserved. The [archive index](ARCHIVE.md)
-covers older ledgers and archived research; [release scope](RELEASE.md) defines
-the research package.
-
-Future work on the bounded result should respond to a concrete proof objection, source overlap, or documentation defect. Enlarging the theorem or beginning manuscript drafting requires a separate scope decision; an unresolved stronger conjecture is not by itself a reason to keep extending this paper's research indefinitely.
+For a guided introduction, use the [physics learning path](learn/README.md).

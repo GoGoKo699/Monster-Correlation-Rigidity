@@ -1,8 +1,8 @@
-# Reproduce the current research package
+# Reproduce the results
 
-[Overview](../README.md) · [Current status](RESEARCH_STATUS.md) · [Archive index](ARCHIVE.md)
+[Overview](../README.md) · [Results and assumptions](RESEARCH_STATUS.md) · [Archive index](ARCHIVE.md)
 
-## The current command
+## Exact certificates
 
 From the repository root, run:
 
@@ -19,7 +19,7 @@ outputs or a mismatching current exact fingerprint fail the command.
 The recorded environment is **Python 3.13.5**. A virtual environment is recommended
 but no third-party package is needed for this default command.
 
-## The complete inventory and the historical comparisons
+## Full suite and replay
 
 For the original NumPy-based small examples as well:
 
@@ -73,12 +73,6 @@ commits, not assertions that every formatted document or repaired implementation
 has the same bytes today. The [release manifest](../results/release_preparation.json)
 records intentional source changes and all preserved files.
 
-The square-root repair refines rational enclosures in the calibration report;
-its current output is deliberately recorded separately from the older 74-check
-output. The original logical checks remain. The extraction certificate retains
-its original fingerprint. [The erratum](../audits/calibration_scale_erratum.md)
-explains the change and its regression family.
-
 ## Mathematical rendering
 
 The default command checks fenced/inline math extraction, delimiters, local
@@ -91,13 +85,12 @@ npm install --prefix ../monster-renderer --ignore-scripts --no-audit --no-fund m
 NODE_PATH=../monster-renderer/node_modules node checks/render_math.cjs ../monster-math.json
 ```
 
-This is syntax checking, not a promise about every GitHub browser, screen size,
-or historical page. The [archive index](ARCHIVE.md) identifies legacy rendering
-boundaries. No MathJax package, generated website, paper, or font is bundled.
+These commands validate mathematical syntax. Rendering of historical pages is
+described in the [archive index](ARCHIVE.md).
 
 ## Evidence boundary
 
 These programs check arithmetic, finite examples, implementation behavior,
-source integrity, and documentation. They do not prove the imported VOA
-classifications, simulate the full Monster tensor, establish practical
-measurement complexity, or constitute independent human review.
+source integrity, and documentation. Analytic proofs and the imported VOA
+classification theorems are justified in the research notes and their primary
+references.

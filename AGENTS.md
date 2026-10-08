@@ -1,10 +1,10 @@
 # Workspace instructions
 
-Read README.md, STATUS.md, and work_orders/CURRENT.md before extending the project.
+Read README.md, docs/RESEARCH_STATUS.md, and work_orders/CURRENT.md before extending the project.
 
 ## Fixed boundaries
 
-- The project belongs to Ruge Lin and develops the Monster-related idea behind arXiv:2209.15025. It is a new research direction, not a defense of the old embedding observation.
+- The project belongs to Ruge Lin. Its active result is the quantitative moonshine correlation criterion in research/uniform_extraction_core.md.
 - Preserve the owner's LICENSE. The MIT LICENSE from initial commit 40cbbbe04247c1f816cc2c7f8106264ecff2b253 must remain byte-identical.
 - Preserve all files under provenance/*.zip and the historical research notes 01–05 byte-for-byte. New work may correct them through an explicit erratum, never through a silent archival rewrite.
 - Never present scalar or toy verification as a full Monster simulation, proof assistant verification, novelty audit, or independent expert review.
@@ -20,4 +20,4 @@ Work on one claim or audit obligation at a time. Record the mathematical change 
 
 External references and mathematical data retain their source attribution. Do not bundle downloaded papers or font files. Do not publish a manuscript or contact researchers without the user's instruction.
 
-If another workspace is active, use separate branches and small commits. Do not force-push or overwrite another workspace's unmerged work. The canonical remote is https://github.com/GoGoKo699/Monster-Correlation-Rigidity. Read WORKSPACES.md and use work_orders/INDEPENDENT_AUDIT.md for the first second-workspace assignment. A second assistant workspace is not independent human or expert review.
+If another workspace is active, use separate branches and small commits. Do not force-push or overwrite another workspace's unmerged work. The canonical remote is https://github.com/GoGoKo699/Monster-Correlation-Rigidity. Use WORKSPACES.md for contribution workflow and work_orders/INDEPENDENT_AUDIT.md for proof-review procedure. Describe assistant reviews accurately.

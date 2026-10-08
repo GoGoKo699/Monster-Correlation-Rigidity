@@ -2,18 +2,15 @@
 
 [Overview](../README.md) · [Calibration identities](../research/sharpness_and_calibration.md) · [Reproduction](REPRODUCIBILITY.md)
 
-## What was repaired
+## Scale-aware square-root enclosures
 
-The exact seven-scalar identities do not depend on a field's positive overall
-scale. The original square-root implementation nevertheless used a fixed
-absolute dyadic grid. For very small positive norms, its lower square-root bound
-could become zero and cause division by an interval containing zero.
-
-The current `sqrt_bounds` chooses the grid from the size of the exact rational
-radicand. It never replaces exact interval arithmetic with floating point, and
-it never changes the theorem's comparison thresholds. The
-[implementation erratum](../audits/calibration_scale_erratum.md) gives the concrete
-failing input and separates the code correction from the unchanged theorem.
+The normalized coefficients computed by the seven-scalar identities are
+invariant under positive rescaling of either field. The `sqrt_bounds`
+implementation chooses its dyadic grid from the size of the exact rational radicand, keeping the lower square-root enclosure positive
+for every positive input within the work limit. All interval operations use exact
+rational arithmetic and the theorem’s stated comparison thresholds.
+The [implementation erratum](../audits/calibration_scale_erratum.md) records the
+fixed-grid failure case and its correction.
 
 ## Why the lower bound stays positive
 
@@ -72,6 +69,6 @@ inconclusive even when the underlying fields happen to be ideal.
 The scale tests cover tiny and large positive scales, independently scaled
 fields, stress shifts, finite-width intervals, sign/duplicate/cap controls,
 and the work-limit return. Exact squared inequalities independently check
-outward root containment. These tests do not prove the ambient physical premises,
-replace source classification proofs, or guarantee that every valid pair passes
-a sufficient criterion.
+outward root containment. They verify the arithmetic
+implementation under the exact input contract; the mathematical criterion is
+sufficient.

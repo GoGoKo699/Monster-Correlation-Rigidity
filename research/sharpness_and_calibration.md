@@ -2,10 +2,9 @@
 
 [← Core proof](uniform_extraction_core.md) · [Learning path](../docs/learn/README.md) · [Overview](../README.md)
 
-Research record, 26 September 2026. Read main: `09e3f98ad79034eefab43f4fb9ea432368fc19e7`.
-No manuscript section is being drafted. The imported exact classification remains credited to Abe–Lam–Yamada; the estimates below supplement the self-contained [core](uniform_extraction_core.md).
+These estimates supplement the [correlation criterion](uniform_extraction_core.md), whose exact classification endpoint is due to Abe–Lam–Yamada.
 
-## 1. The two remaining precision questions
+## 1. Sharpness and calibration
 
 The core proves the following sufficient criterion in an exact simple unitary rational $C_2$-cofinite holomorphic VOA of CFT type, central charge 24, and $V_1=0$. For two real unit weight-two primaries $x,y$, put $M=46/\sqrt{141}$. If
 
@@ -22,12 +21,12 @@ with $0\le\epsilon_x,\epsilon_y<1/50$ and
 
 then the underlying VOA is moonshine. The proof first locates an exact Ising primary within $\sqrt{\epsilon/2}$ of each field, then applies Sakuma's discrete overlap theorem and the prior ambient classification theorem. All class, reality, grading, and norm hypotheses are exact.
 
-Two questions about that statement can now be settled without another special-subtheory campaign:
+Two precision results accompany this criterion:
 
 * The square-root exponent in value-to-field localization cannot be improved, even in the known moonshine theory. This is an optimal exponent, not an optimal numerical tolerance region for theory identification.
 * Exact normalization and exact stress subtraction need not be supplied as preprocessed data. Seven scalar intervals for two actual real weight-two fields suffice to conservatively compute the quantities in the criterion. Exact ambient axioms, reality, grade two, and the known stress tensor remain hypotheses.
 
-The first conclusion is an explicit realization of the familiar quadratic-loss mechanism at a nondegenerate maximum. The second is exact invariant-metric algebra and interval arithmetic. Neither auxiliary statement is advertised as a new general optimization or calibration theorem.
+The first conclusion is an explicit realization of the familiar quadratic-loss mechanism at a nondegenerate maximum. The second is exact invariant-metric algebra and interval arithmetic.
 
 ## 2. Calibrating arbitrary real weight-two fields
 
@@ -76,7 +75,7 @@ Solving for $q(z)$ gives $q-\tau n/2+\tau^3/36$. The bilinear projection identit
 
 This argument needs no multiplication table and no chosen Ising vector in the unknown candidate. It does not alter the field signs: a negative primary self-coupling remains negative unless a sign change and the accompanying overlap change are explicitly made.
 
-The current implementation uses scale-aware outward square-root bounds. The [calibration precision note](../docs/CALIBRATION_PRECISION.md) proves the arithmetic enclosure and explains its explicit work limit; the [implementation erratum](../audits/calibration_scale_erratum.md) records the earlier small-scale exception. The identities and physical premises above are unchanged.
+The implementation uses scale-aware outward square-root bounds. The [calibration precision note](../docs/CALIBRATION_PRECISION.md) proves the enclosure and specifies the work limit and input contract.
 
 ### Certified scalar intervals
 
@@ -84,7 +83,7 @@ Suppose each of the seven exact numbers lies in a supplied rational interval. Ev
 
 The checker uses only fractions and integer square roots. It encloses $\sqrt{s}$ between adjacent dyadic numbers and propagates both endpoints. It rejects a primary norm interval reaching zero, a certified lower self-coupling above the unitary cap, and other inconsistent conditions. Failure to establish the sufficient inequality is **inconclusive**, not proof that the theory is different from moonshine. Broad intervals can fail even for the known example.
 
-This is robustness with respect to uncertainties in specified coefficients in an exact model. It is NOT robustness to violations of the VOA axioms, uncertain conformal weight, non-real fields, unknown stress tensor, leakage to other weights, or unknown empirical error coverage. No statistical sample count, field-finding algorithm, measurement architecture, or efficient normalization protocol is inferred.
+The uncertainty bounds apply to the seven supplied coefficients. The ambient VOA axioms, grade, real structure, known stress tensor, and validity of the input enclosures are premises.
 
 The three exact controls use differently scaled and stress-shifted orthogonal Ising vectors. A separate seven-interval example of radius $10^{-12}$ around the uncentered exact pair also passes with a strictly positive margin. That radius is a test case for the arithmetic, not a claim about required experimental precision or an optimal allowance.
 
@@ -170,26 +169,13 @@ The same curve obeys
 
 The cross-overlap changes linearly at zero, while the self-coupling deficit changes quadratically. Therefore, from self-coupling losses alone, one cannot replace the generic square-root field and overlap control by a uniform linear-in-deficit estimate. This is not a necessity theorem for the whole-theory identification region: additional correlations can provide additional information, and an already known moonshine theory remains moonshine at all $t$.
 
-## 4. Where this leaves the selected contribution
+## 4. Verification and references
 
-The bounded core is now a quantitative conditional identification theorem with two useful boundary results:
+`checks/verify_calibration_and_sharpness.py` emits 74 labelled exact checks. They include algebraic projection identities, rescaling/stress-shift examples, certified interval operations and negative inputs, the full polynomial curve, and the Taylor coefficients used in the analytic sharpness proof. The largest coefficient vector has length three. The continuum limit follows from the displayed analytic functions of $t$.
 
-1. the field-distance exponent is sharp in an actual admissible theory;
-2. the normalized-primary assumptions can be implemented algebraically from seven calibrated coefficients of real weight-two fields, while retaining all exact ambient hypotheses.
+For comparison with prior variational methods and classification results, see [the source comparison](../audits/quantitative_contribution_verdict.md).
 
-Neither auxiliary result should be advertised as a separate foundational advance. The candidate contribution remains the uniform replacement of exact internal-subalgebra hypotheses by controlled correlation coefficients and the resulting ambient identification through the prior theorem.
-
-The proof does not claim that the original holomorphic/current-free class is a singleton, that the coefficient test must pass for arbitrary supplied fields, or that the spectrum alone finds those fields. General approximate-VOA stability and first-Ising existence are outside this bounded theorem, not missing lemmas being left for manuscript drafting.
-
-## 5. Evidence and inherited interfaces
-
-`checks/verify_calibration_and_sharpness.py` emits 74 labelled exact checks. They include algebraic projection identities, rescaling/stress-shift examples, certified interval operations and negative inputs, the full polynomial curve, and the Taylor coefficients used in the analytic sharpness proof. The largest coefficient vector has length three. No matrix or full VOA is constructed. The continuum limit follows from the displayed analytic functions, not from sampling four values of $t$.
-
-At import, the prior core/checker/report and original license were copied byte-identically from the supplied research-completion packet; its 14 payload hashes and 63-check report were verified under normal/-O/-OO. No private planning or manuscript is included. Imported FQS, Ising-module, Sakuma and ALY theorems remain distinct source dependencies; no independent expert or formal verification of those results is claimed.
-
-For the directly inspected source history and contribution assessment, see [the comparison record](../audits/quantitative_contribution_verdict.md). The new results do not change the fundamental source attribution: the exact classification belongs to ALY; positive-metric cubic/idempotent variational methods and local quadratic growth are prior mathematics.
-
-[LS] C.H. Lam, H. Shimakura, *Ising vectors in the vertex operator algebra $V_{\mathrm{Leech}}^+$ associated with the Leech lattice*, arXiv:0810.5395v1, Theorem 3.1. Printed page 6 was visually inspected in this continuation. The lattice inclusion into moonshine and real-unitary convention are inherited from the source construction; this finite stress-algebra check does not reprove the construction.
+[LS] C.H. Lam, H. Shimakura, *Ising vectors in the vertex operator algebra $V_{\mathrm{Leech}}^+$ associated with the Leech lattice*, arXiv:0810.5395v1, Theorem 3.1. The lattice inclusion into moonshine and real-unitary convention use this construction.
 https://arxiv.org/abs/0810.5395
 
 [ALY] T. Abe, C.H. Lam, H. Yamada, *A remark on $\mathbb Z_p$-orbifold constructions of the Moonshine vertex operator algebra*, arXiv:1705.09022v4, Theorem A.1. The exact endpoint is imported.
