@@ -65,7 +65,7 @@ manifest; legacy rendering limitations remain documented in the archive index.
 
 These are implementation, preservation, and release-readiness checks, not a new
 scientific campaign, independent human review, complete audit of the research
-backlog, or proof-assistant verification. Manuscript writing remains on hold.
+backlog, or proof-assistant verification.
 
 ## Integration regression caught before merge
 

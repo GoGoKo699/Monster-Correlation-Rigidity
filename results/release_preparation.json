@@ -35,9 +35,21 @@
     },
     {
       "path": "audits/final_quantitative_review.md",
-      "bytes": 10064,
-      "sha256": "7b35653147032837fabfa6b8ad3c0fa6043bc53c82f27f2d7d9af56cff32f4b0",
+      "bytes": 10027,
+      "sha256": "f0f4de13e14bc10caf271584cc5543acb4e3adb38ae2aa42733c49ddb293f60b",
       "previous_sha256": "3a1810f167c9646d49726bf036a6af589d6d8bebcd228c2be63c9b7fed19a408"
+    },
+    {
+      "path": "audits/hopf_style_integration.md",
+      "bytes": 3989,
+      "sha256": "776b0a5372d81fe61cfc6ec7ca75109fa59e01eb33b28ec277ffeb26e0de7ee1",
+      "previous_sha256": "f8534d589a8e11ac708de7dd0ad980da6bc211a672f0cfa49125f04c0c3ecde0"
+    },
+    {
+      "path": "audits/physics_teaching_integration.md",
+      "bytes": 4048,
+      "sha256": "6ae1aa3516426b2f2a30f56ca5903096d4792485a318a0fd3dd2327d2882750c",
+      "previous_sha256": "bdf8b83b4d970dcfab7fb4b50cfd150fc11d94fd3f498bfca2527207f6da601b"
     },
     {
       "path": "checks/audit_quantitative_core.py",
@@ -59,8 +71,8 @@
     },
     {
       "path": "docs/BOUNDED_CORE_STATUS.md",
-      "bytes": 5873,
-      "sha256": "697788ff568f6234d33d7f3c7c0ae4b72d266c488f5becceb1371874df385143",
+      "bytes": 5837,
+      "sha256": "f9805745431902f7d5122e2cf75a371f04a68b3a72ced00d4111b51ff0feb695",
       "previous_sha256": "dc450a28853e99a909660b400783cc6d1886491249644a64fbcc77d38b273340"
     },
     {
@@ -112,10 +124,22 @@
       "previous_sha256": "2bf8232fa14ecdd28a108d5e911ee500cf4f1498df3a1c5517ae6b895a22be6c"
     },
     {
+      "path": "results/final_core_integration.json",
+      "bytes": 3183,
+      "sha256": "6a1f4247a7663ef16ede4a479df7e4ef610f280da6bff592b7fbf3e3463cce96",
+      "previous_sha256": "4f94eb48f23c07e0905c6f8940b5eb6f0cdae4866c7ae96006b8b96bb4af30cb"
+    },
+    {
       "path": "snapshot_manifest.json",
       "bytes": 10216,
-      "sha256": "79655b7b39b7389309e8b86798875aa9c5cf6f6aceba7fe28b85b40bfccc03b9",
+      "sha256": "6ba16c5d42ed6cd53dbe28922e4c1aeb4a3bc22212f30a54a7318bdf0ff85a36",
       "previous_sha256": "3e798b9d48a94406348f65e65acc9673d17cab380849631244be6002c240134d"
+    },
+    {
+      "path": "work_orders/CURRENT.md",
+      "bytes": 2072,
+      "sha256": "e09b9f6abfac0793f10e2eaa4048ed4a5ceeeed84a1d2cd01d5a3210db862c2c",
+      "previous_sha256": "36f01aabd62c23e4ee157da5cd95bfe01f1f55a62eac55ff08847035ef688f26"
     }
   ],
   "added": [
@@ -141,13 +165,13 @@
     },
     {
       "path": "audits/release_preparation.md",
-      "bytes": 4374,
-      "sha256": "55eb0a9635ca844432625e9907d8f6e370d7610a26f71d2cae7d4531d94a0220"
+      "bytes": 4338,
+      "sha256": "8c002e9d0b4a72b4d858c3214f10b0013a2934a783af93f0b343c1572d631373"
     },
     {
       "path": "checks/release_integrity.py",
-      "bytes": 5168,
-      "sha256": "6ef07ba7e6efe709c101ab2637e5da373a5fb939d49e02bfd29f2320f89708b1"
+      "bytes": 5658,
+      "sha256": "2fd315d8b4b141a03007dedb64d48d5fa56f793718ed61d041bc568e89051281"
     },
     {
       "path": "checks/scale_safe_roots.py",
@@ -242,11 +266,6 @@
       "sha256": "e10b268c0668b9dec24dec715f6462fda7cf2d6df04fbc3694def4dcb886fd66"
     },
     {
-      "path": "audits/hopf_style_integration.md",
-      "bytes": 4026,
-      "sha256": "f8534d589a8e11ac708de7dd0ad980da6bc211a672f0cfa49125f04c0c3ecde0"
-    },
-    {
       "path": "audits/integration_20260925.md",
       "bytes": 4941,
       "sha256": "3f0531fde8bfe6599f261e2c1817697cabaf07be01b68c2cd116b345f0d33af7"
@@ -260,11 +279,6 @@
       "path": "audits/physical_integration_replay_erratum.md",
       "bytes": 1897,
       "sha256": "f0144624a15ca5beb602a173184b8a1f9f2d84616fb24f5e49b4dd44a8854667"
-    },
-    {
-      "path": "audits/physics_teaching_integration.md",
-      "bytes": 4084,
-      "sha256": "bdf8b83b4d970dcfab7fb4b50cfd150fc11d94fd3f498bfca2527207f6da601b"
     },
     {
       "path": "audits/priority_matrix.md",
@@ -547,11 +561,6 @@
       "sha256": "a2bca27d98f91806f527103ca01f11699cf3e1b78b92050a24ae56f690ccf156"
     },
     {
-      "path": "results/final_core_integration.json",
-      "bytes": 3211,
-      "sha256": "4f94eb48f23c07e0905c6f8940b5eb6f0cdae4866c7ae96006b8b96bb4af30cb"
-    },
-    {
       "path": "results/hopf_style_changes.json",
       "bytes": 3620,
       "sha256": "c06efbb01963198ae24b237487f5270e802bdf4811712b62dcf2b2a3a4604a2a"
@@ -650,11 +659,6 @@
       "path": "verify.py",
       "bytes": 6660,
       "sha256": "db5adc341da7c3382b7ba208b287324b20627bc1f5fa9d5b54a4d81ddccd1ce8"
-    },
-    {
-      "path": "work_orders/CURRENT.md",
-      "bytes": 2143,
-      "sha256": "36f01aabd62c23e4ee157da5cd95bfe01f1f55a62eac55ff08847035ef688f26"
     },
     {
       "path": "work_orders/INDEPENDENT_AUDIT.md",
@@ -821,7 +825,7 @@
   },
   "purpose_contact_maintenance": {
     "base_commit": "aef97f5f99871aac1b32fcdbe03b24e95ab3493f",
-    "scope": "Replace current reader-facing manuscript-hold/contact notices with the author\u2019s purpose and contact wording and clickable email. No scientific claims, proofs, mathematics, verification status, limitations, references, authorship, licensing, historical records, checkers, saved reports or protected scientific hashes changed. No generated website or reading-page copies are present.",
+    "scope": "Replace current reader-facing purpose and contact notices with the author\u2019s purpose and contact wording and clickable email. No scientific claims, proofs, mathematics, verification status, limitations, references, authorship, licensing, historical records, checkers, saved reports or protected scientific hashes changed. No generated website or reading-page copies are present.",
     "changes": [
       {
         "path": "README.md",
@@ -870,6 +874,66 @@
         "previous_sha256": "b1303823d43bb53b5b466b502412c93564edc048d839ed094135c5da92126a5a",
         "sha256": "79655b7b39b7389309e8b86798875aa9c5cf6f6aceba7fe28b85b40bfccc03b9",
         "bytes": 10216
+      }
+    ]
+  },
+  "editorial_status_cleanup": {
+    "base_commit": "78e2a87356eac45164249997bebfc0f9821f9ff1",
+    "scope": "Owner-requested removal of obsolete drafting-status sentences from repository documentation, work orders, and manifest prose, including dated records. Scientific source files, report payloads and recorded scientific hashes are unchanged. The sole protected-manifest prose correction is pinned by exact full-file before/after hashes in the integrity checker. Existing Git history is retained.",
+    "changes": [
+      {
+        "path": "audits/final_quantitative_review.md",
+        "previous_sha256": "7b35653147032837fabfa6b8ad3c0fa6043bc53c82f27f2d7d9af56cff32f4b0",
+        "sha256": "f0f4de13e14bc10caf271584cc5543acb4e3adb38ae2aa42733c49ddb293f60b",
+        "bytes": 10027
+      },
+      {
+        "path": "audits/hopf_style_integration.md",
+        "previous_sha256": "f8534d589a8e11ac708de7dd0ad980da6bc211a672f0cfa49125f04c0c3ecde0",
+        "sha256": "776b0a5372d81fe61cfc6ec7ca75109fa59e01eb33b28ec277ffeb26e0de7ee1",
+        "bytes": 3989
+      },
+      {
+        "path": "audits/physics_teaching_integration.md",
+        "previous_sha256": "bdf8b83b4d970dcfab7fb4b50cfd150fc11d94fd3f498bfca2527207f6da601b",
+        "sha256": "6ae1aa3516426b2f2a30f56ca5903096d4792485a318a0fd3dd2327d2882750c",
+        "bytes": 4048
+      },
+      {
+        "path": "audits/release_preparation.md",
+        "previous_sha256": "55eb0a9635ca844432625e9907d8f6e370d7610a26f71d2cae7d4531d94a0220",
+        "sha256": "8c002e9d0b4a72b4d858c3214f10b0013a2934a783af93f0b343c1572d631373",
+        "bytes": 4338
+      },
+      {
+        "path": "checks/release_integrity.py",
+        "previous_sha256": "6ef07ba7e6efe709c101ab2637e5da373a5fb939d49e02bfd29f2320f89708b1",
+        "sha256": "2fd315d8b4b141a03007dedb64d48d5fa56f793718ed61d041bc568e89051281",
+        "bytes": 5658
+      },
+      {
+        "path": "docs/BOUNDED_CORE_STATUS.md",
+        "previous_sha256": "697788ff568f6234d33d7f3c7c0ae4b72d266c488f5becceb1371874df385143",
+        "sha256": "f9805745431902f7d5122e2cf75a371f04a68b3a72ced00d4111b51ff0feb695",
+        "bytes": 5837
+      },
+      {
+        "path": "results/final_core_integration.json",
+        "previous_sha256": "4f94eb48f23c07e0905c6f8940b5eb6f0cdae4866c7ae96006b8b96bb4af30cb",
+        "sha256": "6a1f4247a7663ef16ede4a479df7e4ef610f280da6bff592b7fbf3e3463cce96",
+        "bytes": 3183
+      },
+      {
+        "path": "snapshot_manifest.json",
+        "previous_sha256": "79655b7b39b7389309e8b86798875aa9c5cf6f6aceba7fe28b85b40bfccc03b9",
+        "sha256": "6ba16c5d42ed6cd53dbe28922e4c1aeb4a3bc22212f30a54a7318bdf0ff85a36",
+        "bytes": 10216
+      },
+      {
+        "path": "work_orders/CURRENT.md",
+        "previous_sha256": "36f01aabd62c23e4ee157da5cd95bfe01f1f55a62eac55ff08847035ef688f26",
+        "sha256": "e09b9f6abfac0793f10e2eaa4048ed4a5ceeeed84a1d2cd01d5a3210db862c2c",
+        "bytes": 2072
       }
     ]
   }

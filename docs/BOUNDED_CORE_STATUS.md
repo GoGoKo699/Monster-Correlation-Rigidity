@@ -4,7 +4,7 @@
 
 # Bounded research core: status and remaining integration work
 
-26 September 2026. Manuscript writing remains on hold. This is a status map, not manuscript prose. Private submission planning is not included.
+26 September 2026. This is a status map, not manuscript prose. Private submission planning is not included.
 
 ## What the chosen contribution now contains
 
