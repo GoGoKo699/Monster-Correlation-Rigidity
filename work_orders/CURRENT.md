@@ -1,6 +1,6 @@
 # Current work order: maintain the reviewed quantitative core
 
-The active reader entry is README.md and docs/RESEARCH_STATUS.md. Read AGENTS.md and WORKSPACES.md before changes. Manuscript drafting, publication, release and outreach remain on hold.
+The active reader entry is README.md and docs/RESEARCH_STATUS.md. Read AGENTS.md and WORKSPACES.md before changes.
 
 The selected bounded scientific result is the quantitative correlation criterion in research/uniform_extraction_core.md, with research/sharpness_and_calibration.md and the evidence in docs/background_claims.md. Its final adversarial review is audits/final_quantitative_review.md. Do not resume the historical five-label exploration simply because an older ledger still calls it current.
 

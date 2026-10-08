@@ -25,4 +25,4 @@ Local checks recovered the original eight pages with their prior fingerprints an
 
 Network git checkout was unavailable locally. Full tracked-file preservation, current link targets, the unchanged 63/74/23 exact scientific reports in normal/-O/-OO, and strict-versus-bounded historical replay are therefore verified by the actual GitHub workflow. Its results must be read from the PR job logs; an aggregate green status is not a strict-byte-replay claim. Neither saved output nor replay tolerance is changed.
 
-No new scientific assertion, manuscript, release, or unrelated pending branch is included. Manuscript drafting remains on hold.
+No new scientific assertion, manuscript, release, or unrelated pending branch is included.

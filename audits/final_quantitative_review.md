@@ -2,7 +2,7 @@
 
 > **Dated review.** The later [calibration erratum](calibration_scale_erratum.md) corrects a small-scale implementation exception without changing the theorem. Claims below about unchanged sources and fingerprints refer to the reviewed version; use [current reproduction](../docs/REPRODUCIBILITY.md) for today's code.
 
-26 September 2026. Reviewed head: `6d460bef7041f17cba1658c99d6797ef4b00275c` (PR28). Integration base: `98d4fe9fdab36d0b10176e0105b1283889c9b227`. This is a falsification-oriented reconstruction by the research assistant, not independent human review or proof-assistant verification. Manuscript drafting remains on hold.
+26 September 2026. Reviewed head: `6d460bef7041f17cba1658c99d6797ef4b00275c` (PR28). Integration base: `98d4fe9fdab36d0b10176e0105b1283889c9b227`. This is a falsification-oriented reconstruction by the research assistant, not independent human review or proof-assistant verification.
 
 ## 1. Verdict
 

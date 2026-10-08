@@ -24,4 +24,4 @@ The workflow separately runs unchanged strict historical replay and unchanged bo
 
 Local work used connector-read sources and hash-verified reconstructions of the three modified baseline files. Network checkout was unavailable in the local container. Local syntax/arithmetic and documentation checks must therefore not be described as a complete local repository replay; the full baseline/candidate comparison runs in GitHub Actions. The PR records its actual job results after execution.
 
-This is teaching and reader maintenance, not new research, a fresh scientific audit, manuscript drafting, a release, or a claim of independent expert review. Manuscript writing remains on hold.
+This is teaching and reader maintenance, not new research, a fresh scientific audit, manuscript drafting, a release, or a claim of independent expert review.
