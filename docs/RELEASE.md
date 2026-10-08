@@ -1,29 +1,18 @@
-# Release scope
+# Package contents
 
-[Overview](../README.md) · [Current status](RESEARCH_STATUS.md) · [Changelog](../CHANGELOG.md)
+| Material | Entry point |
+|---|---|
+| Correlation criterion and its hypotheses | [Core proof](../research/uniform_extraction_core.md) |
+| Optimal exponent and seven-scalar calibration | [Sharpness and calibration](../research/sharpness_and_calibration.md) |
+| Five physics lessons and exercises | [Learning path](learn/README.md) |
+| Scientific context and primary-source roles | [Context and sources](background_claims.md) |
+| Exact certificates and implementation checks | [Reproduction guide](REPRODUCIBILITY.md) |
+| Interval arithmetic and precision limit | [Calibration arithmetic](CALIBRATION_PRECISION.md) |
+| Source comparisons and proof reviews | [Review index](../audits/README.md) |
+| Further research records | [Archive index](ARCHIVE.md) |
 
-This research package contains the quantitative correlation-identification
-proof, sharpness and calibration results, the physics-first tutorial,
-finite verification code, attributed source comparisons, and preserved history.
-These notes do not create or announce a tag,
-DOI, publication, or manuscript.
+Cite the repository and the commit used, following [CITATION.cff](../CITATION.cff).
+Original code and documentation use the [MIT license](../LICENSE); imported
+mathematical results retain their source attribution.
 
-The criterion assumes an exact simple unitary rational C2-cofinite holomorphic
-VOA of CFT type, central charge 24, no weight-one states, and actual fields
-satisfying the stated inequalities. The classification endpoint is the prior
-Abe–Lam–Yamada theorem. The field-distance exponent is sharp; the numerical
-tolerances are sufficient, not claimed optimal. No practical field-finding
-algorithm, sample complexity, or verification of ambient axioms from measurements
-is supplied.
-
-Consult the [changelog](../CHANGELOG.md) for changes and
-[reproduction](REPRODUCIBILITY.md) for exact certificates, historical replay,
-and their limits. Finite checks do not verify imported classifications or
-constitute independent human review. The [archive index](ARCHIVE.md) identifies
-legacy rendering limitations and archived branches outside the selected scope.
-
-Original code and documentation retain the [MIT license](../LICENSE).
-
-## Purpose and contact
-
-This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+[Overview and contact](../README.md)

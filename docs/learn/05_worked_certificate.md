@@ -4,7 +4,7 @@
 
 **Question:** can we apply the sufficient criterion without confusing its conclusion with its assumptions?
 
-Everything below is arithmetic or explanation of [core Q4–Q5](../../research/uniform_extraction_core.md) and [sharpness and calibration](../../research/sharpness_and_calibration.md). It is not a simulated experiment.
+This worked example applies [core Q4–Q5](../../research/uniform_extraction_core.md) and [sharpness and calibration](../../research/sharpness_and_calibration.md).
 
 ## An example using the repository's stated thresholds
 
@@ -35,7 +35,7 @@ The corresponding exact Ising-stress overlap therefore has magnitude at most
 <\frac{48}{12288}=\frac1{256}.
 ```
 
-The gap forces zero overlap. The prior classification theorem now identifies the ambient VOA as moonshine. The spare margin is $1/12288$ in the Ising-stress overlap; it is not an optimal tolerance or an experimental resolution requirement.
+The gap forces zero overlap. The prior classification theorem now identifies the ambient VOA as moonshine. The spare margin is $1/12288$ in the Ising-stress overlap for this sufficient certificate.
 
 ## A failed test is not a different theory
 
@@ -76,13 +76,13 @@ f(x_i)=\frac{q_i-\tau_i n_i/2+\tau_i^3/36}{N_i^{3/2}},
 
 Since $N=4$, division by $N^{3/2}=8$ returns $F$. The apparently large raw cubic contained known stress contributions, not a stronger primary signal.
 
-With intervals rather than exact scalars, every operation must enclose all permitted exact values. In particular, require a strictly positive lower bound for each projected norm and use conservative upper bounds for the error budget. The existing calibration checker performs outward interval arithmetic. This does not certify uncertain conformal grade, non-real inputs, unknown stress tensor, or empirical coverage of measurement errors.
+With intervals rather than exact scalars, every operation must enclose all permitted exact values. In particular, require a strictly positive lower bound for each projected norm and use conservative upper bounds for the error budget. The existing calibration checker performs outward interval arithmetic. The exact grade, real structure, known stress tensor, and certified input intervals remain assumptions.
 
 ## Why the square root is natural—and sharp here
 
 A small displacement along a unit-sphere curve through a smooth nondegenerate maximum changes the value quadratically but changes the field direction linearly. Thus a loss of order $t^2$ naturally controls distance of order $|t|$, or the square root of the loss.
 
-The project does not rely only on this picture: its sharpness note constructs such a curve inside the actual moonshine VOA and shows that the nearest maximizing direction remains the selected one. Hence no larger uniform exponent can replace $1/2$ near that example. This does not prove the numerical constants or the whole identification region are optimal.
+The project does not rely only on this picture: its sharpness note constructs such a curve inside the actual moonshine VOA and shows that the nearest maximizing direction remains the selected one. Hence no larger uniform exponent can replace $1/2$ near that example. The numerical tolerances remain sufficient bounds.
 
 ## Check your understanding
 
@@ -109,4 +109,4 @@ To run the current certificates and documentation checks, use the repository roo
 python verify_current.py
 ```
 
-The [reproduction guide](../REPRODUCIBILITY.md) distinguishes current fingerprints from historical reports. These are finite arithmetic and implementation checks, not proofs of the imported VOA classifications. No full Monster tensor is simulated.
+The [reproduction guide](../REPRODUCIBILITY.md) describes the finite arithmetic and implementation checks, their fingerprints, and the separate historical replay.

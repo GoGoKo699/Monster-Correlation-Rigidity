@@ -2,9 +2,9 @@
 
 [Learning path](README.md) · [Canonical proof](../../research/uniform_extraction_core.md)
 
-## The exact class is supplied, not measured by the criterion
+## Exact assumptions
 
-The ambient object is an **exact simple unitary, rational, C2-cofinite, holomorphic bosonic VOA of CFT type**, with central charge 24, no weight-one states, and finite-dimensional grades. The following explanations orient a physics reader; they do not replace the formal hypotheses of [core Q0](../../research/uniform_extraction_core.md).
+The ambient object is an **exact simple unitary, rational, C2-cofinite, holomorphic bosonic VOA of CFT type**, with central charge 24, no weight-one states, and finite-dimensional grades. The following explanations orient a physics reader to the formal hypotheses of [core Q0](../../research/uniform_extraction_core.md).
 
 | Term | Meaning needed for this reading path |
 |---|---|
@@ -20,7 +20,7 @@ The ambient object is an **exact simple unitary, rational, C2-cofinite, holomorp
 
 Gaberdiel's “meromorphic” terminology should not silently be replaced by the stronger holomorphic-module condition above. His Section 2.1 explicitly flags a terminology distinction, and Appendix A discusses differing rationality definitions. Yamauchi's OZ-type setting means one-dimensional grade zero and vanishing grade one, with the positive-real assumptions relevant to Section 4. Those low-grade conditions alone do not supply all the ambient classification hypotheses.
 
-The normalized criterion additionally assumes two actual real unit weight-two primaries. The calibration extension begins with two actual real weight-two fields and a known stress tensor, then removes their stress components and normalizes them. Neither version tests approximate VOA axioms or identifies conformal grades from noisy data.
+The normalized criterion additionally assumes two actual real unit weight-two primaries. The calibration extension begins with two actual real weight-two fields and a known stress tensor, then removes their stress components and normalizes them. Both versions retain the exact ambient class, conformal grade, and real structure as assumptions.
 
 ## A compact translation dictionary
 
@@ -43,16 +43,12 @@ The mathematical formulas, rather than these plain-text table labels, define the
 
 **Imported proof inputs.** The core attributes unitary conventions to [Dong–Lin, 1308.2361](https://arxiv.org/abs/1308.2361), and mode/product conventions to [Matsuo, math/0007169](https://arxiv.org/abs/math/0007169). The unitary Virasoro necessity theorem is attributed to Friedan–Qiu–Shenker via its explicit statement in [Wassermann, 1012.6003, pp. 1–2](https://arxiv.org/abs/1012.6003). The discrete Ising overlaps come from [Sakuma, math/0608709, Theorem 4.4](https://arxiv.org/abs/math/0608709). The ambient identification is [Abe–Lam–Yamada, 1705.09022v4, Theorem A.1](https://arxiv.org/abs/1705.09022v4).
 
-These are research references for verifying the imported interfaces, not extra tutorial assignments. The two anchors are not substitutes for primary-source attribution.
+These research references supply the imported theorem statements; the anchors provide the teaching route.
 
-**Project argument.** [Uniform extraction](../../research/uniform_extraction_core.md) supplies the quantitative localization, overlap propagation, and composition with the prior endpoint. [Sharpness and calibration](../../research/sharpness_and_calibration.md) gives the additional bounds. The teaching notes provide a route into those records, not a new scientific result or an independent source-proof audit.
+**Project argument.** [Uniform extraction](../../research/uniform_extraction_core.md) supplies the quantitative localization, overlap propagation, and composition with the prior endpoint. [Sharpness and calibration](../../research/sharpness_and_calibration.md) gives the additional bounds.
 
-## What the conclusion does not say
+## Conclusion
 
-The conclusion is an isomorphism of the **underlying VOA** to the moonshine VOA. It does not supply an implemented isomorphism, identify an experimental device, or reconstruct a full nonchiral CFT. It does not infer the existence of the required input fields from the ambient assumptions alone. The numerical test is sufficient, not necessary, and its constants are not claimed optimal.
+The conclusion is an isomorphism of the **underlying VOA** to the moonshine VOA, conditional on the supplied fields satisfying the coefficient bounds. The numerical criterion is sufficient. Its field-distance exponent is sharp; its numerical tolerances are sufficient bounds.
 
-For the complete boundaries and reviewed status, see [Current scientific status](../RESEARCH_STATUS.md).
-
-## Purpose and contact
-
-This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+See [results and assumptions](../RESEARCH_STATUS.md) for the theorem and supporting results.

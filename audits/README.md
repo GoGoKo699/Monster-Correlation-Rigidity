@@ -1,6 +1,6 @@
 # Audit record
 
-Start with [current scientific status](../docs/RESEARCH_STATUS.md). These are
+Start with [results and assumptions](../docs/RESEARCH_STATUS.md). These are
 assistant reconstructions and finite checks, not independent human review or
 formal verification of the imported theorems.
 
@@ -13,8 +13,7 @@ formal verification of the imported theorems.
 | [Calibration erratum](calibration_scale_erratum.md) | Subsequent small-scale implementation repair, precision limit and preserved historical evidence. |
 
 Use [current reproduction](../docs/REPRODUCIBILITY.md) for commands and report
-fingerprints. The [maintenance work order](../work_orders/CURRENT.md) governs
-new work on this selected result.
+fingerprints.
 
 ## Earlier gate-rigidity audits
 

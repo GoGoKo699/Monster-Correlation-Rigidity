@@ -8,7 +8,7 @@ Gaberdiel Sections 3.7.3 and 4.4 introduce the relevant Virasoro and Ising backg
 
 ## An Ising vector is an internal stress tensor
 
-Do not picture a spin variable on a lattice. Here an **Ising vector** $e$ is a weight-two state whose field generates an internal unitary Virasoro theory with central charge $1/2$. It is that subtheory's stress tensor. It is not the Ising spin primary of weight $1/16$.
+Here an **Ising vector** $e$ is a weight-two state whose field generates an internal unitary Virasoro theory with central charge $1/2$. It is that subtheory's stress tensor. It is not the Ising spin primary of weight $1/16$.
 
 In the product convention of Lesson 2,
 
@@ -59,7 +59,7 @@ The core constructs $r$ for every stationary $\lambda$ and proves that this is a
 \lambda'(r)=-\frac{1}{2[r(24-r)/48]^{3/2}}<0.
 ```
 
-Thus smaller allowed internal charge means larger stationary self-coupling. This is an algebraic relation, not an RG flow or a dynamical relaxation law.
+Thus smaller allowed internal charge means larger stationary self-coupling.
 
 </details>
 

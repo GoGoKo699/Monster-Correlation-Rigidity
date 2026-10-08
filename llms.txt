@@ -1,41 +1,39 @@
 # Monster Correlation Rigidity
 
 > Quantitative conditional identification of the moonshine vertex operator
-> algebra from near-extremal low-weight correlation coefficients. Research by
-> Ruge Lin. No tagged release is implied.
+> algebra from near-extremal weight-two correlation coefficients. Research by
+> Ruge Lin.
 
-## When this repository is relevant
+## Retrieval topics
 
-Use it for a uniform value-to-Ising-direction estimate, a sufficient two-field
-correlation criterion, the sharp square-root field-distance exponent, or
-certified stress subtraction and normalization from seven exact scalar intervals.
-It is not a source for device-independent self-testing, automatic first-Ising
-existence, bare-class uniqueness, optimal numerical tolerances, or a practical
-Monster-tensor simulation.
+Use this repository for uniform value-to-Ising-direction estimates, a sufficient
+two-field correlation criterion, the sharp square-root field-distance exponent,
+and certified stress subtraction and normalization from seven scalar intervals.
 
-## Authoritative sources
+The criterion applies to actual real weight-two fields in an exact simple
+unitary, rational, C2-cofinite, holomorphic VOA of CFT type, with central charge
+24 and no weight-one states. Attribute the exact classification endpoint to
+Abe–Lam–Yamada and the Ising overlap gap to Sakuma.
 
-- [Current status](docs/RESEARCH_STATUS.md): exact claim scope and what is not asserted.
-- [Core proof](research/uniform_extraction_core.md): hypotheses, normalization, local-to-global localization, discrete overlap rounding, and the prior Abe–Lam–Yamada endpoint.
-- [Sharpness and calibration](research/sharpness_and_calibration.md): analytic precision results, not a reconstruction of the imported classifications.
-- [Current arithmetic](docs/CALIBRATION_PRECISION.md): scale-safe interval implementation and its work-limit boundary.
-- [Reproduction](docs/REPRODUCIBILITY.md): current command, pinned numerical environment, current versus historical report fingerprints, and strict versus bounded replay.
+## Research and implementation
 
-## Teaching and attribution
+- [Results and assumptions](docs/RESEARCH_STATUS.md): result map, exact input requirements, and interpretation of a sufficient certificate.
+- [Core proof](research/uniform_extraction_core.md): normalization, uniform localization, and discrete overlap rounding.
+- [Sharpness and calibration](research/sharpness_and_calibration.md): optimal field-distance exponent and seven-scalar reduction.
+- [Calibration arithmetic](docs/CALIBRATION_PRECISION.md): scale-safe interval implementation and precision limit.
+- [Reproduction](docs/REPRODUCIBILITY.md): commands, environment, and exact versus bounded replay.
 
-- [Physics learning path](docs/learn/README.md): Gaberdiel, An Introduction to Conformal Field Theory, is the primary anchor; Yamauchi Section 4 is a guided secondary supplement.
-- [Assumptions and source roles](docs/learn/assumptions_and_sources.md): tutorial sources are not substitutes for primary theorem attribution.
-- [Contribution comparison](audits/quantitative_contribution_verdict.md): bounded source comparison, not exhaustive novelty certification.
-- [Final bounded review](audits/final_quantitative_review.md): dated assistant review and its explicit source depth.
-- [Calibration erratum](audits/calibration_scale_erratum.md): implementation correction and preserved old evidence.
+## Teaching and sources
 
-## Historical and release boundaries
+- [Physics learning path](docs/learn/README.md): Gaberdiel, An Introduction to Conformal Field Theory, is the primary anchor; Yamauchi Section 4 is the secondary supplement.
+- [Assumptions and source roles](docs/learn/assumptions_and_sources.md): physical language, exact premises, and imported theorems.
+- [Scientific context](docs/background_claims.md): claim-to-source mapping and primary references.
+- [Contribution comparison](audits/quantitative_contribution_verdict.md): detailed comparison with inspected prior results.
 
-- [Archive index](docs/ARCHIVE.md): older status ledgers and archived branches do not supersede the active status or supply silently imported release dependencies.
-- [Release scope](docs/RELEASE.md): research package and exact assumptions, not a paper or release announcement.
-- [Citation](CITATION.cff): cite the repository and exact commit used; do not invent a paper, DOI, external review, or proof-assistant certificate.
-- [License](LICENSE): original MIT license for repository code and documentation, with imported results attributed to their authors.
+## Reference
 
-## Purpose and contact
-
-This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+- [Package contents](docs/RELEASE.md): file navigation.
+- [Additional research and archive](docs/ARCHIVE.md): earlier investigations, corrections, and fixed source records.
+- [Citation](CITATION.cff): cite the repository and exact commit used.
+- [License](LICENSE): MIT license for original code and documentation.
+- [Purpose and contact](README.md#purpose-and-contact): repository purpose and Ruge Lin's email.

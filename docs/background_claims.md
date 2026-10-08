@@ -1,86 +1,96 @@
-# Background and interpretation evidence for the eventual paper
+# Scientific context and sources
 
-26 September 2026. This is a research ledger, NOT drafted abstract, introduction, or conclusion text. Each proposed scientific claim has an evidence slot and an explicit boundary. The study concerns exact VOAs and normalized chiral coefficient data.
+[Overview](../README.md) · [Core proof](../research/uniform_extraction_core.md) · [Contribution comparison](../audits/quantitative_contribution_verdict.md)
 
-## 1. Abstract-level claim slots
+The correlation criterion identifies an underlying VOA from normalized chiral
+coefficient data within an exact class. The tables connect its claims and
+interpretation to the proofs and primary sources.
 
-| ID | Claim permitted by the present proof | Evidence | Boundary that must accompany it |
+## 1. Quantitative identification
+
+| ID | Result | Evidence | Assumptions and interpretation |
 |---|---|---|---|
-| A01 | In the fixed unitary rational holomorphic current-free c24 class, explicit inequalities on two real normalized primary self-couplings and one overlap imply moonshine VOA isomorphism. | `research/uniform_extraction_core.md`, Q0–Q4. | Exact ambient axioms, primarity, reality, and normalization are premises. This does not prove that the bare class is a singleton. |
-| A02 | The error thresholds are uniform over unknown admissible candidates and do not start from a supplied nearby Ising vector. | Q1–Q3; same gap, radius, and quadratic-growth constants in every candidate. | No compactness of the moduli space of VOAs, construction of an isomorphism, or efficient field search is asserted. |
-| A03 | The exact orthogonal-Ising-pair classification is an imported final step. | Abe–Lam–Yamada, Theorem A.1 [ALY]. | The exact classification must be attributed; it is not the new theorem. |
-| A04 | The rounding proof combines a discrete critical-value gap, a local quadratic estimate, global compactness, and a discrete overlap gap. | Q1–Q4; [W,S]. | Quadratic growth and compactness are standard tools; the fractions alone do not establish novelty. |
+| A01 | In the fixed unitary rational holomorphic current-free c24 class, explicit inequalities on two real normalized primary self-couplings and one overlap imply moonshine VOA isomorphism. | `research/uniform_extraction_core.md`, Q0–Q4. | The full exact ambient class is specified in Q0. Primarity, reality, and normalization are premises, and actual fields satisfying the inequalities are supplied. |
+| A02 | The error thresholds are uniform over admissible candidates and require no preidentified nearby Ising vector. | Q1–Q3; the same gap, radius, and quadratic-growth constants apply in every candidate. | Compactness is applied separately within each finite-dimensional primary sphere. |
+| A03 | An exact orthogonal Ising pair identifies the ambient VOA in the stated class. | Abe–Lam–Yamada, Theorem A.1 [ALY]. | This exact classification is the imported endpoint of the quantitative criterion. |
+| A04 | Rounding combines a discrete critical-value gap, a local quadratic estimate, global compactness, and a discrete overlap gap. | Q1–Q4; [W,S]. | Quadratic growth and compactness are standard tools; the project composes them with the attributed classification inputs. |
 
-Do not use unqualified wording such as “three measurements identify a physical theory,” “robust under arbitrary CFT errors,” “self-testing the Monster,” “first characterization,” or “proves moonshine uniqueness.” Those assertions exceed the present evidence. A failed sufficient test does not exclude moonshine.
+These are sufficient inequalities on coefficients of supplied fields. Failure
+of the test is inconclusive: broad input intervals or unsuitable fields can fail
+even in the moonshine VOA. The exact class and field assumptions are part of the
+criterion, rather than conclusions of the coefficient test.
 
-## 2. Introduction-level background slots
+## 2. Interaction data and prior structure
 
-| ID | Background fact or motivation | Primary source / derivation | Permitted use |
+| ID | Background fact | Primary source / derivation | Role in the argument |
 |---|---|---|---|
-| B01 | The normalized genus-one character contains graded dimensions; reconstructing the state-field product is a distinct question. | Carpi–Codogni 2026, introduction and Conjecture 1.3 [CC]. | Motivate interaction-sensitive identification. Do not claim equality of characters determines a VOA. |
-| B02 | The known moonshine VOA has c24, V1=0, and Monster automorphisms. The bare uniqueness statement remains formulated as a conjecture in the inspected 2026 source. | [CC], introduction and section 14; construction attributed there to Frenkel–Lepowsky–Meurman. | Locate the conditional theorem relative to the broader problem. The project does not claim that broader problem is solved or use its status as a reason not to attempt research. |
-| B03 | Exact Ising data give strong structural restrictions. | Sakuma's positive-real hypotheses and Theorem 4.4 [S]; ALY Theorem A.1 [ALY]. | State the exact prior route before introducing finite tolerances. Neither theorem begins with arbitrary nearly extremal fields. |
-| B04 | A positive unitary form and real involution supply mode adjoints and a real sphere on which the cubic is bounded. | Dong–Lin, Definitions 2.1–2.2 [DL]. | Define the physical inner-product convention. Distinguish the author's first-linear Hermitian convention from alternative notation; the present proof stays on the real subspace. |
-| B05 | Normalized two- and three-point coefficients are genuinely interaction-sensitive inputs. | Invariant metric and mode/state-field definitions [M, section 1]; Q0 gives the actual coefficient convention. | Explain the observables mathematically. Do not infer an apparatus, noise model, or number of statistical samples. |
-| B06 | Quantitative Morse/near-critical-point methods predate this project. | Loi–Phien, Lemma 2.11 and Theorem 3.1 [LP]. | Credit the general geometry. Their main theorem perturbs a smooth function to obtain Morse properties; that is not a physically allowed modification of an exact VOA's product. |
-| B07 | Other exact two-Ising results classify the subVOA generated by a specified exact pair. | Jiao–Zheng [JZ], introduction and main result. | Compare the actual hypotheses and endpoint, not just the word “two.” Local subVOA identification is different from the ALY ambient conclusion. |
+| B01 | The normalized genus-one character contains graded dimensions; reconstructing the state-field product is a distinct question. | Carpi–Codogni, introduction and Conjecture 1.3 [CC]. | Motivates identification through interaction data. |
+| B02 | The moonshine VOA has c24, vanishing weight-one space, and Monster automorphisms. | [CC], introduction and section 14; construction attributed there to Frenkel–Lepowsky–Meurman. | Supplies the known example. The criterion adds coefficient hypotheses to this ambient class. |
+| B03 | Exact Ising data impose structural restrictions. | Sakuma's positive-real hypotheses and Theorem 4.4 [S]; ALY Theorem A.1 [ALY]. | The quantitative bounds recover the exact hypotheses required by these prior results. |
+| B04 | A positive unitary form and real involution supply mode adjoints and a real sphere on which the cubic is bounded. | Dong–Lin, Definitions 2.1–2.2 [DL]. | Defines the inner-product convention. Dong–Lin use a first-linear Hermitian form; the quantitative geometry is on its real subspace. |
+| B05 | Normalized two- and three-point coefficients encode interaction data. | Invariant metric and mode/state-field definitions [M, section 1]; Q0 gives the coefficient convention. | Specifies the mathematical inputs to the criterion. |
+| B06 | Quantitative Morse and near-critical-point methods predate this project. | Loi–Phien, Lemma 2.11 and Theorem 3.1 [LP]. | Their theorem perturbs a smooth function to obtain Morse properties. Q1 instead proves the needed localization directly for the fixed VOA cubic. |
+| B07 | Exact two-Ising results can classify the subVOA generated by a specified pair. | Jiao–Zheng [JZ], introduction and main result. | Distinguishes the generated-subalgebra endpoint from the ambient-VOA identification in ALY. |
 
-The current paper's theorem may take c24 and V1=0 as explicit assumptions. Re-proving the broader minimum-central-charge characterization is unnecessary for that bounded theorem. If a future framing promotes that minimization to a physical-selection principle, its source and assumption audit becomes part of the required core, not an unstated motivation.
+The central charge and vanishing weight-one space are explicit assumptions of
+the criterion. A finite list of coefficient inequalities carries its force
+together with these exact structural assumptions and identified fields.
 
-A common source of overclaim is the word “finite”: a finite list of coefficient inequalities is not the same as a finite experimentally validated theory description. The class assumptions and exact field identification carry substantial information.
+## 3. Interpretation
 
-## 3. Conclusion-level implications and exclusions
-
-| ID | Justified implication | Not justified |
+| ID | Consequence | Precise meaning |
 |---|---|---|
-| C01 | Near-boundary coefficient data can force exact internal subalgebras and, through an existing theorem, the underlying VOA isomorphism type. | Small changes in arbitrary VOA axioms or all OPE coefficients yield a nearby conformal net. |
-| C02 | The proof does not require a chosen Monster matrix representation or its multiplication table as input. | The background class itself is established by those three coefficients, or the theorem is device independent. |
-| C03 | The result supplies a sufficient correlation criterion with an attained region in the known example. | A hypothetical non-moonshine candidate exists; finite separation proves that such a competitor has been constructed. |
-| C04 | The geometric extraction method and its discrete classification inputs have distinct roles. | A new general Morse theorem, an independently proved FQS/Sakuma/ALY classification, or optimal constants. |
-| C06 | Automatic existence of a pair and robustness to approximate axioms are legitimate future questions. | Either is a missing lemma required to prove the stated conditional theorem. They become required only if the advertised claim is enlarged. |
+| C01 | Near-extremal coefficient data can force exact internal subalgebras and the underlying VOA isomorphism type. | The estimates recover an orthogonal Ising pair; the prior ALY theorem supplies the ambient conclusion. |
+| C02 | The criterion can be applied without a chosen Monster matrix representation or multiplication table. | Its inputs are the exact ambient class, specified fields, and their coefficient bounds. |
+| C03 | The sufficient criterion has an attained region in the known example. | Moonshine supplies an exact orthogonal Ising pair satisfying the bounds. |
+| C04 | Geometric extraction and classification have distinct roles. | The quantitative estimates use the imported FQS and Sakuma structure and lead to the ALY classification endpoint. The field-distance exponent is sharp, while the numerical tolerances are sufficient bounds. |
 
-The research-completion boundary is not “every stronger theorem is proved.” It is that every scientific assertion needed by the CHOSEN contribution and its framing has proof or accurately scoped primary evidence. No essential reasoning is to be left for the manuscript-writing stage.
+## 4. Sources and theorem interfaces
 
-## Archived separate work, not evidence for the selected release
-
-The following entries are deliberately outside the active tables. They are not
-premises of the correlation criterion and have not been merged or certified as
-part of this release-preparation pass. IDs are retained to make older references
-interpretable; their presence is not an endorsement of the archived claims.
-
-| Earlier ID | Pinned record | Role and boundary |
-|---|---|---|
-| A05 / C05 | [Extended-six-sevenths proposal, PR27](https://github.com/GoGoKo699/Monster-Correlation-Rigidity/blob/576fd31b53862d0b7667a723330ae27c859cc774/research/extended_six_sevenths_forces_ising.md) | Separate proposed existence implication with additional module/trace inputs; not released evidence or a premise of the selected theorem. |
-| B08 | [Readout-scope audit, PR22](https://github.com/GoGoKo699/Monster-Correlation-Rigidity/blob/d2b85266d4273ae7c6ce32d87e0b6060a881b87e/audits/readout_scope_audit.md) | Separate general-readout comparison; not part of the selected release proof. |
-
-The [archive index](ARCHIVE.md) distinguishes historical provenance, archived
-branches, and the authoritative current path. Do not merge unrelated results
-merely to resolve a file reference.
-
-## 4. Source reading in this continuation
-
-[ALY] T. Abe, C. H. Lam, H. Yamada, arXiv:1705.09022v4, Appendix A, Theorem A.1 and A.6–A.8. The exact theorem and its role were rechecked; PDF index9 (printed10) was visually inspected. Orbifold and extension-uniqueness proofs are imported, not independently reconstructed.
+[ALY] T. Abe, C. H. Lam, H. Yamada, arXiv:1705.09022v4,
+Appendix A, Theorem A.1 and A.6–A.8. The exact orthogonal-pair theorem supplies
+the ambient identification; its orbifold and extension-uniqueness arguments
+are imported.
 https://arxiv.org/abs/1705.09022
 
-[S] S. Sakuma, arXiv:math/0608709v1, general real-positive hypotheses, Ising module decomposition, Theorems4.3–4.4. Parsed theorem text was read. Screenshot of PDF index13 failed; the formula set comes from the theorem text, not a claimed successful table image.
+[S] S. Sakuma, arXiv:math/0608709v1, general real-positive hypotheses,
+Ising module decomposition, Theorems 4.3–4.4. These supply the exact spectral
+and discrete-overlap inputs.
 https://arxiv.org/abs/math/0608709
 
-[DL] C. Dong, X. Lin, arXiv:1308.2361v1, Definitions2.1–2.2 and the normalization convention. Parsed text inspected; no new full-paper proof audit is claimed.
+[DL] C. Dong, X. Lin, arXiv:1308.2361v1, Definitions 2.1–2.2
+and the normalization convention. These specify unitarity and the mode adjoints.
 https://arxiv.org/abs/1308.2361
 
-[W] A. Wassermann, arXiv:1012.6003v1, introduction pp.1–2. The exact positive-energy unitary series is explicitly attributed to Friedan–Qiu–Shenker. Parsed statement read; page2 screenshot failed. The original FQS proof remains an imported interface.
+[W] A. Wassermann, arXiv:1012.6003v1, introduction pp. 1–2.
+The positive-energy unitary Virasoro series is explicitly attributed there
+to Friedan–Qiu–Shenker and is used as an imported classification theorem.
 https://arxiv.org/abs/1012.6003
 
-[M] A. Matsuo, arXiv:math/0007169v1, mode conventions and Ising spectral interface. Parsed passages rechecked; neither mixed fifth-order coefficient nor the large-Aut trace hypothesis is used to prove Q1–Q4.
+[M] A. Matsuo, arXiv:math/0007169v1, section 1 and the Ising spectral
+interface. These provide mode conventions and the weight-two algebraic language.
+The Q1–Q4 argument uses the stated identities independently of the mixed
+fifth-order coefficient and large-automorphism trace hypotheses.
 https://arxiv.org/abs/math/0007169
 
-[LP] T. L. Loi, P. Phien, *The Quantitative Morse Theorem*, arXiv:1305.3352v1, Lemma2.11 and Theorem3.1. The hypotheses, perturbed output f=f0+h, and explicit conclusions were read in parsed text. Screenshot of PDF index4 failed. The proof is not a premise of Q1, which is supplied directly.
+[LP] T. L. Loi, P. Phien, *The Quantitative Morse Theorem*,
+arXiv:1305.3352v1, Lemma 2.11 and Theorem 3.1. The perturbed output f=f0+h
+provides the comparison with established quantitative geometry. Q1 has a direct
+proof and does not depend on this theorem.
 https://arxiv.org/abs/1305.3352
 
-[JZ] X. Jiao, W. Zheng, *Vertex operator algebras generated by two Ising vectors*, arXiv:2201.11359v1. Abstract, introduction, exact-pair hypotheses and main identification inspected in parsed text. The whole 6A classification proof was not independently audited and is not a dependency.
+[JZ] X. Jiao, W. Zheng, *Vertex operator algebras generated by two Ising vectors*,
+arXiv:2201.11359v1. The introduction, exact-pair hypotheses, and main
+identification supply the generated-subVOA comparison.
 https://arxiv.org/abs/2201.11359
 
-[CC] S. Carpi, G. Codogni, *Vertex operator algebras, partition functions and Teichmüller modular forms*, arXiv:2605.26972v1. Introduction, Conjecture1.3, Theorem1.4 and section14 framing inspected in HTML. Used only for background and the distinction between partition data and reconstruction. No numerical character coefficient is copied from its introductory HTML, which contains an apparent extra digit in that example. Its classification theorems are not premises of Q1–Q4.
+[CC] S. Carpi, G. Codogni, *Vertex operator algebras, partition functions and
+Teichmüller modular forms*, arXiv:2605.26972v1, introduction, Conjecture 1.3,
+Theorem 1.4, and section 14. This is background for the distinction between
+partition data and reconstruction; its classification results are separate
+from the proof of Q1–Q4.
 https://arxiv.org/abs/2605.26972
 
-Read-depth reporting is evidence discipline, not a claim that finite excerpts audit all foundational mathematics. No papers are bundled. Bibliographic details and theorem attribution remain separate from any private submission planning.
+The [contribution comparison](../audits/quantitative_contribution_verdict.md)
+and [proof review](../audits/final_quantitative_review.md) record the scope of
+the source checks and the comparison with prior work.

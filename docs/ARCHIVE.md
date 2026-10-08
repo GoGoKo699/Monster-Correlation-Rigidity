@@ -2,17 +2,8 @@
 
 [Overview](../README.md) · [Current scientific status](RESEARCH_STATUS.md) · [Reproduction](REPRODUCIBILITY.md)
 
-## The active path
-
-The released-science scope, when a release is tagged, is the
-[quantitative correlation criterion](../research/uniform_extraction_core.md)
-and [sharpness/calibration](../research/sharpness_and_calibration.md).
-Start learning with [Gaberdiel and the physics lessons](learn/README.md), using
-Yamauchi only as the secondary algebraic supplement.
-
-**Only [Current scientific status](RESEARCH_STATUS.md) is authoritative for the
-present project.** The older ledgers below describe earlier research directions.
-They are preserved as records, not silently reinterpreted as current claims.
+This index collects earlier research, corrections, and fixed source records.
+The [result map](RESEARCH_STATUS.md) covers the correlation criterion.
 
 ## Historical research on main
 
@@ -83,7 +74,3 @@ The import-era `STATUS.md` is protected by the original seed verifier and remain
 byte-identical, including its dated headings. Use this index and the current
 scientific-status page rather than interpreting its old “current” label as a
 statement about the release candidate.
-
-## Purpose and contact
-
-This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).

@@ -8,7 +8,7 @@ Read Gaberdiel Sections 2.1, 3.1, 3.4, and 3.5 for the state, amplitude, OPE, an
 
 ## A state and its field are two descriptions of the same input
 
-Write a chiral state as $x$ and its field as $\phi_x(z)$. The state–field correspondence makes the field depend linearly on the state. A linear combination of states therefore specifies a linear combination of fields. We are not choosing an arbitrary classical function of position.
+Write a chiral state as $x$ and its field as $\phi_x(z)$. The state–field correspondence makes the field depend linearly on the state. A linear combination of states therefore specifies a linear combination of fields.
 
 The chiral conformal weight is the eigenvalue of $L_0$. In this project, the supplied fields have **exact weight two**:
 
@@ -16,7 +16,7 @@ The chiral conformal weight is the eigenvalue of $L_0$. In this project, the sup
 L_0x=2x.
 ```
 
-“Low energy” refers here to a low conformal grade. It is not a numerical energy in joules, an experimental bandwidth, or a claim that a laboratory can isolate that grade.
+“Low energy” refers here to a low conformal grade.
 
 A primary state also obeys $L_nx=0$ for every positive integer $n$. This is stronger than merely having weight two. The ambient stress tensor has weight two but is not primary at nonzero central charge.
 
@@ -46,7 +46,7 @@ For a unit vector $x$, define its self-three-point coefficient by
 f(x)=C(x,x,x).
 ```
 
-The normalized theorem takes $f(x)$, $f(y)$, and $\langle x,y\rangle$ as input. “Three coefficients” does not mean three individual measurement shots; the theorem does not specify a measurement protocol or sample complexity.
+The normalized theorem takes $f(x)$, $f(y)$, and $\langle x,y\rangle$ as input. These inputs are certified coefficient values.
 
 ## Why normalization cannot be skipped
 
@@ -60,13 +60,13 @@ For a nonzero real primary $w$, the scale-corrected quantity is
 
 It is invariant under positive rescaling. Under a negative rescaling, its sign changes. Flipping only $x$ also changes the sign of $\langle x,y\rangle$, so the two signs cannot be chosen independently just to make each inequality look favorable.
 
-Throughout the proof, “real” means fixed by the theory's specified unitary conjugation, often called its PCT involution. On this subspace the metric is positive definite and the cubic is real. Real does not mean merely writing coordinates that look real in an arbitrary complex basis. No choice of a complex phase is silently absorbed into the hypotheses.
+Throughout the proof, “real” means fixed by the theory's specified unitary conjugation, often called its PCT involution. On this subspace the metric is positive definite and the cubic is real. Real does not mean merely writing coordinates that look real in an arbitrary complex basis.
 
 ## The physical question
 
 Suppose an exact candidate theory and two appropriate fields are supplied. Can unusually large normalized self-couplings, together with their mutual overlap, force that theory to have a particular algebraic identity?
 
-This is a conditional identification question, not a procedure for discovering the fields. It also does not reconstruct a full nonchiral theory or an apparatus from correlator samples. The [assumptions page](assumptions_and_sources.md) separates what is assumed from what is concluded.
+The [assumptions page](assumptions_and_sources.md) states the exact class, supplied-field requirements, and conditional identification conclusion.
 
 ## Check your understanding
 
